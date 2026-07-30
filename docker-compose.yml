@@ -7,17 +7,29 @@ services:
     image: qdrant/qdrant:v1.12.0
     container_name: vlearn-qdrant
     restart: unless-stopped
+    # ARM Mac (Apple Silicon) cần ép platform amd64 — Qdrant binary chính chỉ chạy ổn trên amd64
+    # Nếu máy Intel/amd64, comment 2 dòng dưới
+    platform: linux/amd64
     ports:
       - "6333:6333"   # REST API
       - "6334:6334"   # gRPC
     volumes:
       - qdrant_data:/qdrant/storage
+    # Một số môi trường cần privileged hoặc security_opt cho Qdrant
+    security_opt:
+      - no-new-privileges:true
+    # Giới hạn resource để tránh treo máy dev
+    deploy:
+      resources:
+        limits:
+          memory: 1G
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:6333/healthz"]
+      # Thử cả /healthz (mới) và / (fallback cũ)
+      test: ["CMD-SHELL", "wget -qO- http://localhost:6333/healthz || exit 1"]
       interval: 10s
-      timeout: 3s
-      retries: 5
-      start_period: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
 
   # ============== App server ==============
   app:
@@ -46,7 +58,7 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
-      start_period: 15s
+      start_period: 30s
 
 volumes:
   qdrant_data:
