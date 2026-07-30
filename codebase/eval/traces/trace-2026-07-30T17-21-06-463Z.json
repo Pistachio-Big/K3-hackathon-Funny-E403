@@ -1,0 +1,56 @@
+{
+  "question": "hjx mình ko hiểu gì hết",
+  "retrieved": [
+    {
+      "code": "T03-098",
+      "score": 0.3768
+    },
+    {
+      "code": "T06-085",
+      "score": 0.3766
+    },
+    {
+      "code": "T01-031",
+      "score": 0.3668
+    },
+    {
+      "code": "T01-059",
+      "score": 0.361
+    },
+    {
+      "code": "T01-005",
+      "score": 0.3569
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nĐể hiểu và sử dụng hiệu quả một công cụ như AI, người dùng cần xác định rõ ràng phạm vi (scope) và làm theo hướng dẫn. Việc không hiểu rõ mục tiêu và yêu cầu có thể dẫn đến kết quả không như mong đợi.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Cần xác định rõ ràng phạm vi và yêu cầu để hiểu và sử dụng AI hiệu quả.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-098] (Bài giảng)\nNội dung: Cái mà em thiếu là em không hiểu về cái scope: em đặt ra một bài toán nhưng em không có scope của em. Giống như em giải bài toán \"bạn An đi chợ mua hai quả táo\" — nó rõ ràng hết đúng không? Không có vụ tự nhiên bạn em bảo \"bài táo này phải là năm quả, tại vì lúc ấy trên trời có một quả táo rơi xuống chỗ bạn An\". Em có chấp nhận câu trả lời này không? Dĩ nhiên là không. Tại vì sao? Vì em có một cái scope. Hay bây giờ em mở PlayStation lên chơi, họ bảo bạn phải calibrate cái tay cầm để đảm bảo trải nghiệm tốt nhất đúng không? Em để tay cầm lung tung, em đua xe nó đâm quẹt — em không thể trách nhà sản xuất, bởi vì nhà sản xuất đã đưa ra instruction mà em không follow. Bây giờ mọi người hay bảo \"con AI nó ngu, tôi hỏi nó trả lời sai hết\", nhưng có nhiều người lại bảo \"không, tôi thấy nó rất tốt\". Tại sao cùng một sản phẩm ChatGPT, có người dùng được, có người không? Skill issue đúng không? Có người họ đọc hướng dẫn, họ làm theo những prompt mẫu đảm bảo kết quả, thử là ra kết quả đúng; còn có người không đọc hướng dẫn, tự làm theo ý họ, họ nghĩ là họ hiểu đúng chứ nó không nằm trong hướng dẫn. Nên câu hỏi của bạn em ngay từ đầu: em phải xác định cái scope, và do em không có scope nên bạn em hỏi một phát là em \"chết\". Em nghĩ em làm được cái thứ rất perfect luôn, hệ thống lỗi đâu vẫn chạy được — thấy sai đúng không? Hệ thống của em dựa vào sensor đúng không — sensor \"đơ\" thì đành chịu. Còn em nhận dạng sai thì đó là vấn đề khác: nhận dạng sai thì em phải nói hệ thống em nhận dạng với độ chính xác bao nhiêu phần trăm — đấy là bảng khác đúng không?\n\n[2] Mã: [T06-085] (Bài giảng)\nNội dung: Ở định nghĩa này mình muốn nhấn mạnh lại là các bạn nhớ cho được những kiến trúc đấy. Trong transformer có một paper gọi là \"Attention Is All You Need\" của các nhà khoa học ở Google. Đại ý là: các bạn có một cái não bộ rất tốt, và tất cả những gì bạn cần lúc này là chú ý hết sức vào công việc. Quá trình huấn luyện, hiểu nôm na, là làm thế nào để đảm bảo rằng nó chú ý hết mọi ngữ cảnh, đảm bảo nó không quên. Một trong những nguyên nhân hallucination là nó chạy hết cả đoạn dài trong context window, quên ở giữa, rồi nó sẽ hallucinate — attention sẽ khắc phục được câu chuyện đấy.\n\n[3] Mã: [T01-031] (Bài giảng)\nNội dung: Thực ra ngày xưa mình cũng mắc phải cái đấy nhiều lắm, bởi vì bản thân mình cũng là một người tự build. Mình dùng rất nhiều công cụ — mình xài các công cụ low-code no-code cả chục năm rồi, và mình cũng tự build được sản phẩm mà không cần phải đi sâu vào code, bởi vì mình có thể lắp ghép nhiều bên thứ ba để làm được. Nên nhiều khi trong đầu mình sẽ hay hình thành các giải pháp luôn, và khi nói chuyện với các bạn thì nhiều khi mình hay bật ra luôn: chị muốn này, chị muốn kia, chị muốn cái chức năng như nào — mình nói thẳng khoảng giải pháp luôn. Sau đấy mình phải học cách chậm lại: ok, mình cố gắng nói cái thứ mình muốn, cái mục đích mình muốn làm, mình dừng lại, lùi lại, đưa ra một bài toán để cho các bạn ấy hiểu, sau đấy các bạn có không gian để đưa ra giải pháp — chứ không phải mình đưa thẳng ra cái giải pháp luôn.\n\n[4] Mã: [T01-059] (Bài giảng)\nNội dung: Nếu bạn làm sai cái đúng — đây là vấn đề đúng nhá — thì chúng ta làm gì? Chúng ta đi tìm giải pháp, bạn sẽ thử. Trong quá trình đấy, tất nhiên mỗi lần thử bạn sẽ học được — như nãy rất nhiều bạn nói: bạn học được cách làm, hoặc học được cả cách thất bại. Vì khi bạn đã xác định vấn đề này rồi thì ngay từ đầu bạn đã khoanh một không gian giải pháp rồi; bạn chỉ cần kiên trì thử thì chắc chắn sẽ tìm ra được một cái đúng.\n\n[5] Mã: [T01-005] (Bài giảng)\nNội dung: Mình nghĩ một điểm có thể tạo ra sự khác biệt với tất cả các bạn ở đây là chúng ta rèn luyện một tư duy để làm được một việc — chỉ một dòng thôi nhưng rất khó: từ mục tiêu, yêu cầu mơ hồ, biến nó thành thứ cụ thể có thể triển khai được trong thời gian ngắn và ra được kết quả. Cực kỳ khó luôn. Thường các bạn sẽ phải đối diện với việc là các bạn được thả vào một môi trường, stakeholder hay sếp sẽ đưa những đề bài khá mơ hồ, và thậm chí cái người đưa đề bài cho các bạn còn không hiểu họ muốn gì. Mình thấy rất nhiều người giao đề bài cho các bạn còn không biết cái họ muốn dùng như thế nào. Cho nên đừng kỳ vọng người khác sẽ đưa cho bạn một thứ cụ thể — bạn hãy luôn giữ cho mình tư duy phản biện và luyện một kỹ năng là bóc tách từ cái mơ hồ ra cái cụ thể.\n\nCÂU HỎI HỌC VIÊN: hjx mình ko hiểu gì hết\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-098], giảng viên có nói: \"Cái mà em thiếu là em không hiểu về cái scope: em đặt ra một bài toán nhưng em không có scope của em. Giống như em giải bài toán \"bạn An đi chợ mua hai quả táo\" — nó rõ ràng hết đúng không? Không có v...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-098"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-098",
+      "T01-005"
+    ],
+    "allowedCodes": [
+      "T03-098",
+      "T06-085",
+      "T01-031",
+      "T01-059",
+      "T01-005"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Để hiểu và sử dụng hiệu quả một công cụ như AI, người dùng cần xác định rõ ràng phạm vi (scope) và làm theo hướng dẫn. Việc không hiểu rõ mục tiêu và yêu cầu có thể dẫn đến kết quả không như mong đợi.",
+    "answerDirection": "Hướng trả lời: Cần xác định rõ ràng phạm vi và yêu cầu để hiểu và sử dụng AI hiệu quả.",
+    "focusedChunks": [
+      "T03-098",
+      "T01-005"
+    ]
+  }
+}

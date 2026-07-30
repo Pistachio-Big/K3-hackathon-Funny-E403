@@ -1,0 +1,48 @@
+{
+  "question": "Context là gì? Giải thích ngắn gọn",
+  "retrieved": [
+    {
+      "code": "C0002-T0330-A",
+      "score": 0.4492
+    },
+    {
+      "code": "T04-052",
+      "score": 0.4361
+    },
+    {
+      "code": "T06-150",
+      "score": 0.4302
+    },
+    {
+      "code": "C0013-T0990-A",
+      "score": 0.3956
+    },
+    {
+      "code": "C0247-T1194-A",
+      "score": 0.3931
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Context (bối cảnh, ngữ cảnh) là toàn bộ thông tin mà một mô hình có thể tiêu thụ trong một lần. Nói cách khác, context cung cấp ngữ cảnh cho các thông tin mà mô hình cần xử lý. Càng nhiều context mà mô hình có, nó càng có khả năng tiêu thụ và hiểu được nhiều thông tin hơn. Tuy nhiên, cần lưu ý rằng nếu context quá lớn, mô hình có thể gặp khó khăn trong việc nhớ những thông tin quan trọng từ đầu, dẫn đến hiệu suất kém hơn [T04-051].",
+  "verified": null,
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_APRcma2m4iMIGZZRYbndMC9E",
+      "name": "lookup_document",
+      "args": {
+        "topic": "context"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Context (ngữ cảnh) là một khái niệm quan trọng trong kỹ thuật lập trình Agent, được hình dung như một 'bàn làm việc' có giới hạn của mô hình ngôn ngữ, ảnh hưởng đến khả năng xử lý thông tin của mô hình. Việc quản lý ngữ cảnh hiệu quả không chỉ liên quan đến việc cung cấp nhiều thông tin mà còn cần cân nhắc đến giới hạn của nó.",
+    "answerDirection": "Hướng trả lời: Giải thích ngắn gọn về khái niệm context và vai trò của nó trong mô hình ngôn ngữ.",
+    "focusedChunks": [
+      "C0002-T0330-A",
+      "C0013-T0990-A"
+    ]
+  }
+}

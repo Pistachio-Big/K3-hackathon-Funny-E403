@@ -49,15 +49,20 @@ function call(method, path, body) {
       let buf = "";
       res.on("data", (c) => (buf += c));
       res.on("end", () => {
-        if (res.statusCode >= 400) {
-          return reject(new Error(`Qdrant HTTP ${res.statusCode}: ${buf.slice(0, 300)}`));
-        }
-        if (!buf) return resolve(null);
-        try {
-          resolve(JSON.parse(buf));
-        } catch (e) {
-          reject(new Error(`Qdrant JSON parse: ${buf.slice(0, 200)}`));
-        }
+    if (res.statusCode >= 400) {
+      return reject(new Error(`Qdrant HTTP ${res.statusCode}: ${buf.slice(0, 300)}`));
+    }
+    if (!buf) return resolve(null);
+    // Some endpoints (e.g. /healthz) return plain text — try JSON first, fallback to text
+    try {
+      resolve(JSON.parse(buf));
+    } catch (e) {
+      // If it looks like a plain text health response, just return it as a string
+      if (buf.length < 200 && res.statusCode === 200) {
+        return resolve(buf);
+      }
+      reject(new Error(`Qdrant JSON parse: ${buf.slice(0, 200)}`));
+    }
       });
     });
     req.on("error", reject);
@@ -101,12 +106,10 @@ async function upsertPoints(points) {
   return points.length;
 }
 
-async function search(vector, topK = 5) {
-  const j = await call("POST", `/collections/${COLLECTION}/points/search`, {
-    vector,
-    limit: topK,
-    with_payload: true,
-  });
+async function search(vector, topK = 5, filter = null) {
+  const body = { vector, limit: topK, with_payload: true };
+  if (filter) body.filter = filter;
+  const j = await call("POST", `/collections/${COLLECTION}/points/search`, body);
   return j.result.map((p) => ({
     id: p.id,
     score: p.score,
@@ -116,7 +119,8 @@ async function search(vector, topK = 5) {
 
 async function count() {
   const j = await call("GET", `/collections/${COLLECTION}`);
-  return j.result?.vectors_count || 0;
+  // Qdrant v1.12+: use "points_count" (was "vectors_count" in older versions)
+  return j.result?.points_count ?? j.result?.vectors_count ?? 0;
 }
 
 async function deleteAll() {
@@ -126,7 +130,8 @@ async function deleteAll() {
 
 async function health() {
   try {
-    await call("GET", "/healthz");
+    const res = await call("GET", "/healthz");
+    // /healthz returns plain text "healthz check passed" — null/boolean OK
     return { ok: true };
   } catch (e) {
     const msg = e?.message || String(e) || "unknown error";

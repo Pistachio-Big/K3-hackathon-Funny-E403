@@ -1,0 +1,60 @@
+{
+  "question": "em copy câu hỏi từ slide rồi paste vào đây nhưng ko hiểu j hết",
+  "retrieved": [
+    {
+      "code": "T03-061",
+      "score": 0.4405
+    },
+    {
+      "code": "T03-055",
+      "score": 0.4386
+    },
+    {
+      "code": "T03-069",
+      "score": 0.4343
+    },
+    {
+      "code": "T03-073",
+      "score": 0.4189
+    },
+    {
+      "code": "T03-065",
+      "score": 0.4154
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nCác giảng viên đang thảo luận về việc tạo ra đề bài mới từ các đề cũ và cách thức đảm bảo tính chính xác của các bài toán mới. Họ cũng nhấn mạnh tầm quan trọng của việc kiểm tra lại các đề bài sau khi tạo ra.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Cần làm rõ cách tạo đề mới từ đề cũ và đảm bảo tính chính xác thông qua kiểm tra và cấu trúc bài toán.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-061] (Bài giảng)\nNội dung: **Giảng viên:** Tức là em giữ số, viết lại cái đề thôi đúng không? Ok, thế thôi đúng không? Rồi, còn em?\n\n[2] Mã: [T03-055] (Bài giảng)\nNội dung: **Giảng viên:** Em đang bảo nó ra cái đề mới dựa trên hai cái đề cũ, thế em có chắc là phương pháp của em đúng không? Em cũng không chắc đúng không? Ok. Bạn đầu tiên đưa ra là mình sẽ đánh dấu ở trong đề bài toán để biết chỗ này có thể thay đổi — theo ngôn ngữ lập trình là các bạn làm một cái placeholder, xong rồi bảo LLM tự điền vào placeholder đấy đúng không? Rồi, còn ai nữa không?\n\n[3] Mã: [T03-069] (Bài giảng)\nNội dung: **Giảng viên:** Em suy luận bằng cách nào? Tức là em dựng một cái bản đồ bài toán đúng không — một bài toán lớn sẽ đi qua nhiều stage, mỗi stage trước đó là một bài toán nhỏ, và nó sẽ học theo cái flow. Nhưng nó học cái flow xong, làm sao nó tự chế ra được bài toán mới mà đảm bảo không sai? Em chỉ cho nó thấy một cái example graph đúng không, em bảo nó làm cái graph mới hoàn toàn thì có chắc là nó vẫn giữ được cấu trúc bài toán đấy không? Chắc chưa? Em định biểu diễn data như thế nào — như bạn kia dùng logic sentence à? Rồi, còn bạn cuối.\n\n[4] Mã: [T03-073] (Bài giảng)\nNội dung: **Giảng viên:** Nhưng em cũng phải nhìn lại lần cuối đúng không? Tức là nó đi qua thêm một lần check nữa đúng không? Em có tự tin không? Không tự tin đúng không? Ok, cảm ơn các bạn nhá. Rất nhiều solution sáng tạo, có vài cái khả thi, có cái gần như không khả thi.\n\n[5] Mã: [T03-065] (Bài giảng)\nNội dung: **Giảng viên:** Cái của em đang ở mức độ khác: em đang xáo những câu hỏi có sẵn để đưa vào đề kiểm tra đúng không? Còn thầy đang hỏi là từ một bài toán thôi, có cách nào làm ra bài toán mới không. Ok, còn bạn nào có idea nữa không? Nói to lên em ơi.\n\nCÂU HỎI HỌC VIÊN: em copy câu hỏi từ slide rồi paste vào đây nhưng ko hiểu j hết\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-055], giảng viên có nói: \"**Giảng viên:** Em đang bảo nó ra cái đề mới dựa trên hai cái đề cũ, thế em có chắc là phương pháp của em đúng không? Em cũng không chắc đúng không? Ok. Bạn đầu tiên đưa ra là mình sẽ đánh dấu ở trong...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-055"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-055",
+      "T03-069",
+      "T03-073",
+      "T03-065"
+    ],
+    "allowedCodes": [
+      "T03-061",
+      "T03-055",
+      "T03-069",
+      "T03-073",
+      "T03-065"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Các giảng viên đang thảo luận về việc tạo ra đề bài mới từ các đề cũ và cách thức đảm bảo tính chính xác của các bài toán mới. Họ cũng nhấn mạnh tầm quan trọng của việc kiểm tra lại các đề bài sau khi tạo ra.",
+    "answerDirection": "Hướng trả lời: Cần làm rõ cách tạo đề mới từ đề cũ và đảm bảo tính chính xác thông qua kiểm tra và cấu trúc bài toán.",
+    "focusedChunks": [
+      "T03-055",
+      "T03-069",
+      "T03-073",
+      "T03-065"
+    ]
+  }
+}

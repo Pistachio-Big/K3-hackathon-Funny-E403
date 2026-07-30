@@ -1,0 +1,58 @@
+{
+  "question": "nếu em hiểu LLM chỉ predict token thì có sai ko thầy?",
+  "retrieved": [
+    {
+      "code": "T06-136",
+      "score": 0.6463
+    },
+    {
+      "code": "T06-135",
+      "score": 0.6193
+    },
+    {
+      "code": "T03-035",
+      "score": 0.595
+    },
+    {
+      "code": "T06-134",
+      "score": 0.5764
+    },
+    {
+      "code": "T06-083",
+      "score": 0.5764
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nLLM (Large Language Model) không hiểu ngôn ngữ như con người mà chỉ dự đoán token có xác suất cao nhất. Quá trình này dựa trên việc tính toán similarity score giữa các token và không đọc ký tự hay từ theo cách thông thường.\n\n## HƯỚNG TRẢ LỜI\nCâu hỏi về việc LLM chỉ dự đoán token là đúng, vì LLM không hiểu ngôn ngữ như con người mà chỉ dự đoán dựa trên xác suất.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-136] (Bài giảng)\nNội dung: Quá trình dự báo next token: cái LLM nó không hiểu ngôn ngữ giống con người nhá, mà nó chỉ dự đoán token nào có xác suất cao nhất — hay còn gọi là similarity score. Các bạn học xác suất thống kê có cái biểu đồ phân bố đấy. Trong quá trình dự báo đó, mình có một số tham số để điều chỉnh, ví dụ điều chỉnh temperature — tức điều chỉnh mức độ sáng tạo. Nó lên 1 thì việc trả về các random token cao hơn; còn nếu set về gần 0 thì theo lý thuyết nó sẽ rất chặt chẽ.\n\n[2] Mã: [T06-135] (Bài giảng)\nNội dung: Cái LLM nó không đọc ký tự các bạn nhá. Cái đầu tiên các bạn cần nhớ: nó không đọc ký tự trái sang phải, cũng không đọc word by word, mà nó đọc token. Và như lúc nãy nói, token lại được sinh ra bởi quá trình chúng ta biểu diễn văn bản trong không gian toán học. Vì là không gian toán học thì mới tính được, và tính được thì mới trả lại đáp án nhanh được. Khác biệt lớn nhất — mình nhắc đi nhắc lại — là cơ chế tự chú ý: token này chú ý và tự đánh giá ra điểm similarity score, từ đó đoán từ kế tiếp.\n\n[3] Mã: [T03-035] (Bài giảng)\nNội dung: Nếu bây giờ các bạn bảo: tôi dùng thuần tuý luôn, dùng LLM để trả lời số lượng chữ cái cho một cái từ — khả năng các bạn fail là rất cao. Trong khi các bạn chỉ cần lắp thêm một cái lớp nữa bắt cái intent: ok, người dùng đang muốn làm phép cộng đúng không — bắt hai cái số trong phép cộng đấy nhét vào. Thật ra dĩ nhiên bây giờ LLM nó thông minh hơn, ở cái mức độ là nếu các bạn cho một phép tính mà bắt nó reasoning từng bước thì khả năng nó vẫn làm ra được nhé. Tức là như nãy mình bảo — LLM bản chất là gì? Là được train trên một chuỗi reasoning, trên một văn bản. Thế thì nếu các bạn train nó và bắt nó reasoning từng bước theo như một cái văn bản mà đúng cái logic các bạn cần làm, thì nó cũng có thể đưa ra được cái đáp án. Đấy là cái vấn đề cách sử dụng hiệu quả thôi.\n\n[4] Mã: [T06-134] (Bài giảng)\nNội dung: Đơn vị cơ bản của LLM là cái nãy giờ chúng ta gọi là token. Quá trình huấn luyện dữ liệu đầu vào trước đây chủ yếu dùng tiếng Anh, bởi vậy logic của nó vẫn đi từ trái sang phải, và bởi vậy nếu các bạn gõ tiếng Việt thì bao giờ lượng token nó burn cũng cao hơn tiếng Anh. Ví dụ từ \"Hello World\" được tách thành hai token, nhưng \"Xin chào Việt Nam\" đôi khi lại thành ba token. Rồi một từ dùng trong code, ví dụ \"def function\", thì là bốn token — nó có những logic nhất định.\n\n[5] Mã: [T06-083] (Bài giảng)\nNội dung: Một điểm mình muốn các bạn hết sức chú ý: bản chất của LLM là dự đoán — các bạn có thể dùng từ xác suất cũng được. Nó dự đoán từ kế tiếp. Từ kế tiếp càng chính xác thì kết quả càng chính xác. Còn câu chuyện làm thế nào để nâng cấp nó lên thì như mọi người vừa nói, nó đi từ việc có kiến trúc transformer vân vân — slide kế tiếp chúng ta sẽ đến câu chuyện đấy.\n\nCÂU HỎI HỌC VIÊN: nếu em hiểu LLM chỉ predict token thì có sai ko thầy?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-136], giảng viên có nói: \"Quá trình dự báo next token: cái LLM nó không hiểu ngôn ngữ giống con người nhá, mà nó chỉ dự đoán token nào có xác suất cao nhất — hay còn gọi là similarity score. Các bạn học xác suất thống kê có cá...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-136"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-136",
+      "T06-135",
+      "T06-083"
+    ],
+    "allowedCodes": [
+      "T06-136",
+      "T06-135",
+      "T03-035",
+      "T06-134",
+      "T06-083"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "LLM (Large Language Model) không hiểu ngôn ngữ như con người mà chỉ dự đoán token có xác suất cao nhất. Quá trình này dựa trên việc tính toán similarity score giữa các token và không đọc ký tự hay từ theo cách thông thường.",
+    "answerDirection": "Câu hỏi về việc LLM chỉ dự đoán token là đúng, vì LLM không hiểu ngôn ngữ như con người mà chỉ dự đoán dựa trên xác suất.",
+    "focusedChunks": [
+      "T06-136",
+      "T06-135",
+      "T06-083"
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "question": "thầy ơi cho em xin deadline nộp bài tuần này",
+  "retrieved": [
+    {
+      "code": "T06-117",
+      "score": 0.3859
+    },
+    {
+      "code": "T06-162",
+      "score": 0.3598
+    },
+    {
+      "code": "T06-065",
+      "score": 0.3492
+    },
+    {
+      "code": "T01-034",
+      "score": 0.3432
+    },
+    {
+      "code": "T06-125",
+      "score": 0.331
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[qdrant] top-1 score 0.386 < threshold 0.4"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "thầy ơi cho em xin deadline nộp bài tuần này",
+    "topChunks": [
+      {
+        "code": "T06-117",
+        "score": 0.38593042
+      },
+      {
+        "code": "T06-162",
+        "score": 0.3598278
+      },
+      {
+        "code": "T06-065",
+        "score": 0.34920853
+      },
+      {
+        "code": "T01-034",
+        "score": 0.34317857
+      },
+      {
+        "code": "T06-125",
+        "score": 0.3309558
+      }
+    ]
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đoạn tài liệu không cung cấp thông tin cụ thể về deadline nộp bài cho tuần này. Tuy nhiên, có thông tin rằng bài lab chưa tính điểm và chưa cần nộp vào GitHub Classroom.",
+    "answerDirection": "Hướng trả lời: Cần xác nhận lại với thầy về deadline nộp bài cụ thể cho tuần này.",
+    "focusedChunks": [
+      "T06-162"
+    ]
+  }
+}

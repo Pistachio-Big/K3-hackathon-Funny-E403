@@ -1,0 +1,111 @@
+{
+  "question": "Memory injection là gì?",
+  "retrieved": [
+    {
+      "code": "T03-133",
+      "score": 0.75
+    },
+    {
+      "code": "T01-003",
+      "score": 0.5
+    },
+    {
+      "code": "T01-030",
+      "score": 0.5
+    },
+    {
+      "code": "T01-059",
+      "score": 0.5
+    },
+    {
+      "code": "T01-062",
+      "score": 0.5
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-5 đoạn):\n[1] Mã đoạn: [T03-133] (Bài giảng)\nNội dung: Còn cái parallel thì có nhiều cách để xử lý nhá. Ví dụ người dùng bảo các bạn tổng hợp cho họ 100 quyển sách chuyên ngành toán tốt nhất, mới nhất bây giờ. Nếu các bạn gọi tool call lần lượt — đọc quyển sách một, quyển sách hai — các bạn phải chạy lần lượt 100 lần. Trong khi về lý thuyết các bạn có thể expand một luồng gọi bốn cái research cùng lúc, hoặc 10 research cùng lúc. Hoặc tình huống nữa là gì: các bạn không thể nào nhét toàn bộ nội dung 100 quyển sách vào cái prompt được — chúng ta vẫn có số lượng token giới hạn đúng không? Thế cách tốt nhất là gì? Vẫn phải summarize 10 quyển thành một: các bạn zip 10 quyển thành một quyển, tiếp tục 10 quyển zip thành một quyển, làm rất nhiều lần cho đến khi fit được hết. Để làm được như vậy các bạn phải xử lý luồng song song. Anyway, bất kỳ luồng nào mà thay vì gọi lần lượt các bạn có thể làm song song mà không ảnh hưởng kết quả thì nên dùng. Tuy nhiên luồng song song này sẽ đụng đến ông MLOps, tại vì ông MLOps sẽ phải hỏi bạn: một luồng như vậy tốn bộ nhớ bao nhiêu, RAM bao nhiêu? Vì sao? Các bạn muốn chạy song song các bạn phải thuê được cái máy chủ trên AWS, phải host được một server có khả năng chạy full luồng. Lúc đấy hai bên ngồi lại với nhau: à đây, sếp cho cái budget là mua con này, mua con này tối đa chỉ được bấy nhiêu luồng thôi, thì code của bạn phải tối ưu — cái bộ nhớ memory khi chạy xử lý song song nó sẽ nhân lên bốn lần, năm lần. Đó là thứ mà bên AI với bên MLOps phải ngồi lại với nhau. Chứ nếu không, các ông AI cứ \"ôi cho chạy 10 luồng luôn, máy nhà mình xịn lắm\", xong cái setting đấy quăng cho bên DevOps không nói lời nào hết, cứ đẩy lên thôi — trong khi thuê mấy cái server rất là cùi, chạy được hai luồng là đã gãy rồi. Nên các bạn phải lưu ý: mình đi làm việc thì phải clear được scope và những khả năng có ảnh hưởng đến phần việc của người khác. Các bạn clear được cái này, các bạn liên hệ hai bên nói chuyện là nhanh nhất; còn nếu không, phải đợi cái problem nó arise lên, sếp phát hiện, thì bạn sẽ bị blame rất nhiều nha. Đây vẫn là ưu tiên nhá: dân kỹ sư chúng ta rất là lười, rất ngại làm việc phức tạp, nên phải ưu tiên giải pháp đơn giản. Đừng cố gắng làm những thứ phức tạp — nó vừa tốn kém vừa khó debug nữa.\n\n[2] Mã đoạn: [T01-003] (Bài giảng)\nNội dung: Thực tế có những nghiên cứu, những thống kê trên thế giới nói rằng việc đưa AI vào ứng dụng, đặc biệt trong doanh nghiệp, thì 70% của nó đến từ con người và vận hành chứ không phải đến từ công nghệ. Không phải là chúng ta nhìn thấy AI có thể làm được mọi thứ, lúc nào cũng AI first — nhưng cuối cùng AI để giải cái gì?\n\n[3] Mã đoạn: [T01-030] (Bài giảng)\nNội dung: Đây là một câu mà mình gặp được rất nhiều — nhiều công ty hay đặt ra câu hỏi này, nhiều sếp hay bảo là muốn xây dựng AI chatbot support. Khi nhận cái đề bài này thì các bạn sẽ phải tự tay xử lý toàn bộ. Với mình, đề bài này là rất lớn: support — cuối cùng là support để làm gì? Đây là một đề bài vẫn còn mơ hồ và nó quá rộng. Việc của chúng ta sẽ là phải xác định được cái mục tiêu, cái pain point thực sự ở phía sau đấy là gì. Nhiều khi sếp bảo là xây dựng chatbot cho khách hàng, nhưng cuối cùng khi hỏi ra thì thực ra lý do là vì sale đang quá tải. Bạn hỏi ra thì mình biết là sale đang quá tải; thế thì bắt đầu đi vào hỏi sale: thực ra quá tải chỗ nào? Có khi bạn có một giải pháp khác mà bạn không cần build chatbot. Đấy là cách bạn thực sự đi khai thác: từ câu hỏi đấy bạn nên khai thác ra cái insight thực sự phía sau. Có một framework rất phổ biến là bạn dùng Five Whys — bạn hỏi why đến năm lần, nó cũng giúp bạn đào sâu được. Mình nghĩ cái đầu tiên là khi bạn nhận một đề bài, hãy phản biện nó, và hãy cố gắng từ cái đề bài đấy mình dò, mình tìm ra được cái point thực sự, cái vấn đề thực sự phía sau — bởi vì đề bài của bạn có thể chỉ là thứ bề mặt thôi. Một cái AI chatbot chỉ là một thứ mà người ta — đặc biệt là rất nhiều lãnh đạo — hay có kiểu ngay lập tức nhảy vào đưa ra một cái giải pháp.\n\n[4] Mã đoạn: [T01-059] (Bài giảng)\nNội dung: Nếu bạn làm sai cái đúng — đây là vấn đề đúng nhá — thì chúng ta làm gì? Chúng ta đi tìm giải pháp, bạn sẽ thử. Trong quá trình đấy, tất nhiên mỗi lần thử bạn sẽ học được — như nãy rất nhiều bạn nói: bạn học được cách làm, hoặc học được cả cách thất bại. Vì khi bạn đã xác định vấn đề này rồi thì ngay từ đầu bạn đã khoanh một không gian giải pháp rồi; bạn chỉ cần kiên trì thử thì chắc chắn sẽ tìm ra được một cái đúng.\n\n[5] Mã đoạn: [T01-062] (Bài giảng)\nNội dung: Thực ra có một bài rất hay về Elon Musk — vì bạn ấy vừa nhắc đến Musk thì mình gửi cho mọi người, mình rất thích bài đấy — nói về cách ông ấy dùng để giải quyết một vấn đề. Elon Musk rất nổi tiếng với việc sử dụng First Principle Thinking. First principle thinking là tư duy từ nguyên bản: không đi sao chép cách làm của người khác, mà cố gắng bóc tách vấn đề về những nguyên lý nguyên bản nhất — không thể nào chia nhỏ hơn được nữa — và đi giải các vấn đề. Ông ấy giải bài SpaceX như thế: vấn đề ngày xưa là chi phí sản xuất tên lửa quá đắt đỏ. Ông quay trở lại: tại sao đắt? Một cái tên lửa gồm những gì? Khi chia nhỏ các cấu phần đấy ra thì nó đâu có đắt như vậy. Rồi: nếu nó đắt, thì phóng lên xong nó rơi xuống, tái sử dụng những cái đấy có được hay không? Ông đặt ra những câu hỏi như thế và cố gắng giải quyết vấn đề đấy. Trong cái mental model — sơ đồ tư duy của ông ấy trong đầu — ông cũng xây dựng một bộ khung tư duy về việc luôn cập nhật bối cảnh mới của thế giới vào những hộp tư duy của mình, để luôn có thể xem lại các vấn đề hiện tại có thực sự còn đúng trong bối cảnh đấy hay không, và các giải pháp mới trong bối cảnh này còn có thể là gì.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] What is Memory Injection? (July 2026) | Plurilock Glossary\nURL: https://plurilock.com/glossary/memory-injection\nNội dung: ### Tech Terminology\n\n### Compliance Terminology\n\nMemory injection is a cyberattack technique where malicious code gets inserted directly into a running process's memory space. [...] Memory injection represents a fundamental challenge to traditional security models that assume file system visibility\n\n[Nguồn 2] Understanding Memory Injection Attacks: Process Hollowing, DLL | eSHIELD IT SERVICES\nURL: https://eshielditservices.com/understanding-memory-injection-attacks-process-hollowing-dll-injection-code-injection-explained\nNội dung: ## What Is It?\n\nA memory injection attack happens when an attacker loads harmful code into a running process instead of using a normal executable file. This is often called fileless malware because nothing obvious sits on your disk.\n\nThink of it like a criminal sneaking into a moving car instead of \n\n[Nguồn 3] Unveiling Memory Injection Techniques: A Red Team Tutorial | Infosec\nURL: https://www.infosecinstitute.com/resources/penetration-testing/red-team-tutorial-a-walkthrough-on-memory-injection-techniques\nNội dung: DLL injection is a classic method of putting code into another process in memory. The first stage — the loader — adds the path of the new DLL in the virtual address space of the target process. Next, the target process will load the DLL by creating a remote thread and execute it. [...] Figure 4: Cry\n\n[Nguồn 4] Memory Injection: Definition and Key Concepts\nURL: https://www.securview.com/ai-security-essentials/memory-injection\nNội dung: . Process hollowing creates a suspended legitimate process, replaces its code with malicious code, and then resumes it. Reflective DLL injection loads a DLL directly from memory without writing it to disk, making detection harder. These methods aim to execute arbitrary code.\n\nHow can organizations p\n\n[Nguồn 5] What is Process Injection​​​? Techniques & Preventions\nURL: https://www.sentinelone.com/cybersecurity-101/cybersecurity/process-injection\nNội dung: Code injection is a form of attack that injects malicious code into a process memory space, and the code executes upon it. This simply writes a code to the address of a process memory space. This is a multi-step technique that includes getting a handle on the process, using VirtualAllocEx() to alloc\n\nCÂU HỎI HỌC VIÊN: Memory injection là gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Memory injection là một kỹ thuật tấn công mạng, trong đó mã độc được chèn trực tiếp vào không gian bộ nhớ của một quá trình đang chạy. Kỹ thuật này thường được gọi là malware không có tệp (fileless malware) vì không có tệp nào rõ ràng nằm trên đĩa của bạn. Thay vì sử dụng một tệp thực thi thông thường, kẻ tấn công sẽ tải mã độc vào một quá trình đang hoạt động, khiến cho việc phát hiện trở nên khó khăn hơn (Nguồn: Understanding Memory Injection Attacks: Process Hollowing, DLL).\n\nTrong bối cảnh của AI và MLOps, việc hiểu rõ về các kỹ thuật tấn công như memory injection là rất quan trọng, vì nó có thể ảnh hưởng đến an ninh và hiệu suất của các ứng dụng mà bạn phát triển. Khi triển khai các giải pháp AI, bạn cần đảm bảo rằng hệ thống của mình được bảo vệ khỏi các lỗ hổng bảo mật như vậy.",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "failSafe": "no-valid-citation → MOCK_NOT_FOUND"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Memory injection là gì?",
+    "topChunks": [
+      {
+        "code": "T03-133",
+        "score": 0.75
+      },
+      {
+        "code": "T01-003",
+        "score": 0.5
+      },
+      {
+        "code": "T01-030",
+        "score": 0.5
+      },
+      {
+        "code": "T01-059",
+        "score": 0.5
+      },
+      {
+        "code": "T01-062",
+        "score": 0.5
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Memory injection là gì?",
+      "Memory injection là gì? T03-133"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "What is Memory Injection? (July 2026) | Plurilock Glossary",
+        "url": "https://plurilock.com/glossary/memory-injection",
+        "snippet": "### Tech Terminology\n\n### Compliance Terminology\n\nMemory injection is a cyberattack technique where malicious code gets inserted directly into a running process's memory space. [...] Memory injection represents a fundamental challenge to traditional security models that assume file system visibility"
+      },
+      {
+        "id": "S2",
+        "title": "Understanding Memory Injection Attacks: Process Hollowing, DLL | eSHIELD IT SERVICES",
+        "url": "https://eshielditservices.com/understanding-memory-injection-attacks-process-hollowing-dll-injection-code-injection-explained",
+        "snippet": "## What Is It?\n\nA memory injection attack happens when an attacker loads harmful code into a running process instead of using a normal executable file. This is often called fileless malware because nothing obvious sits on your disk.\n\nThink of it like a criminal sneaking into a moving car instead of "
+      },
+      {
+        "id": "S3",
+        "title": "Unveiling Memory Injection Techniques: A Red Team Tutorial | Infosec",
+        "url": "https://www.infosecinstitute.com/resources/penetration-testing/red-team-tutorial-a-walkthrough-on-memory-injection-techniques",
+        "snippet": "DLL injection is a classic method of putting code into another process in memory. The first stage — the loader — adds the path of the new DLL in the virtual address space of the target process. Next, the target process will load the DLL by creating a remote thread and execute it. [...] Figure 4: Cry"
+      },
+      {
+        "id": "S4",
+        "title": "Memory Injection: Definition and Key Concepts",
+        "url": "https://www.securview.com/ai-security-essentials/memory-injection",
+        "snippet": ". Process hollowing creates a suspended legitimate process, replaces its code with malicious code, and then resumes it. Reflective DLL injection loads a DLL directly from memory without writing it to disk, making detection harder. These methods aim to execute arbitrary code.\n\nHow can organizations p"
+      },
+      {
+        "id": "S5",
+        "title": "What is Process Injection​​​? Techniques & Preventions",
+        "url": "https://www.sentinelone.com/cybersecurity-101/cybersecurity/process-injection",
+        "snippet": "Code injection is a form of attack that injects malicious code into a process memory space, and the code executes upon it. This simply writes a code to the address of a process memory space. This is a multi-step technique that includes getting a handle on the process, using VirtualAllocEx() to alloc"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [
+    {
+      "id": "call_QdegV5BeQky4aWxu7Wh0ILAl",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Memory injection"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Memory injection là một kỹ thuật trong lập trình và bảo mật, cho phép một chương trình chèn mã vào bộ nhớ của một chương trình khác để thực thi mã đó. Kỹ thuật này thường được sử dụng trong các cuộc tấn công mạng nhằm khai thác lỗ hổng bảo mật.",
+    "answerDirection": "Hướng trả lời: Memory injection là một kỹ thuật cho phép chèn mã vào bộ nhớ của một chương trình khác để thực thi mã đó, thường được sử dụng trong các cuộc tấn công mạng.",
+    "focusedChunks": []
+  }
+}

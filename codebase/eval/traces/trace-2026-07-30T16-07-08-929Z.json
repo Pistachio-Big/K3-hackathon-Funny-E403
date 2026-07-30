@@ -1,0 +1,44 @@
+{
+  "question": "d",
+  "retrieved": [
+    {
+      "code": "T01-049",
+      "score": 0.164
+    },
+    {
+      "code": "T01-045",
+      "score": 0.1483
+    },
+    {
+      "code": "T06-100",
+      "score": 0.1473
+    },
+    {
+      "code": "T01-081",
+      "score": 0.1395
+    },
+    {
+      "code": "T03-154",
+      "score": 0.1275
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nCâu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.\n\nQUY TẮC BẮT BUỘC:\n1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.\n2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)\n3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.\n\nTHÔNG TIN TỪ TÌM KIẾM WEB:\n[Nguồn 1] Tìm kiếm: d\nURL: https://www.google.com/search?q=d\nNội dung: Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau.\n\n[Nguồn 2] Yu-Gi-Oh! - Reinforcements (DT01-EN049) - Duel Terminal 1\nURL: https://www.amazon.de/-/en/Yu-Gi-Oh-Reinforcements-DT01-EN049-Terminal-Common/dp/B0062DXBIC\nNội dung: A single card from the Yu-Gi-Oh! Trading and Collectible Card Game (TCG/CCG); This is of common rarity. From the Duel Terminal 1 set; You will receive the\n\n[Nguồn 3] Reinforcements [DT01-EN049] Common\nURL: https://dragonsdenshop.com/products/reinforcements-dt01-en049-common\nNội dung: Set: Duel Terminal 1 Card type: Normal Trap Rarity: Common Attack: 0 Defense: 0 Target face-up monster gains 500 ATK until the End Phase.\n\n[Nguồn 4] Reinforcements DT01-EN049 YuGiOh Duel Terminal 1\nURL: https://www.pricecharting.com/game/yugioh-duel-terminal-1/reinforcements-dt01-en049\nNội dung: OK. Reinforcements DT01-EN049 Duel Terminal Parallel Rare LP #DT01-EN049 [eBay], $6.00, Report It. 2026-06-22. Ships Immediately #DT01-EN049 Near Mint English [\n\n[Nguồn 5] D-TO2, D-TO1, FLEX Thrust Setting - Infinite Flight Community\nURL: https://community.infiniteflight.com/t/d-to2-d-to1-flex-thrust-setting/1062089\nNội dung: Powered by Discourse, best viewed with JavaScript enabled [...] The settings you mentioned D - TO1 , D TO2  \nThese are different derated takeoff thrust settings what that means is pilots use less thrust to preserve engine life and accommodate temperature\n\nUsually as a rule of thumb you can remember \n\nNGUỒN THAM KHẢO:\n[1] Tìm kiếm: d (https://www.google.com/search?q=d)\n[2] Yu-Gi-Oh! - Reinforcements (DT01-EN049) - Duel Terminal 1 (https://www.amazon.de/-/en/Yu-Gi-Oh-Reinforcements-DT01-EN049-Terminal-Common/dp/B0062DXBIC)\n[3] Reinforcements [DT01-EN049] Common (https://dragonsdenshop.com/products/reinforcements-dt01-en049-common)\n[4] Reinforcements DT01-EN049 YuGiOh Duel Terminal 1 (https://www.pricecharting.com/game/yugioh-duel-terminal-1/reinforcements-dt01-en049)\n[5] D-TO2, D-TO1, FLEX Thrust Setting - Infinite Flight Community (https://community.infiniteflight.com/t/d-to2-d-to1-flex-thrust-setting/1062089)\n\nCÂU HỎI HỌC VIÊN: d\n\nTRẢ LỜI:",
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[qdrant] top-1 score 0.164 < threshold 0.4"
+  },
+  "mode": "LIVE",
+  "research": {
+    "error": "OpenRouter HTTP 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 2094. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\",\"provider_name\":null,\"previous_errors\":[{\"code\":402,\"message\":\"This request req"
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đoạn tài liệu đề cập đến việc khám phá vấn đề và giải pháp trong thiết kế sản phẩm, nhấn mạnh tầm quan trọng của việc xác định đúng vấn đề trước khi tìm kiếm giải pháp. Mô hình double diamond được giới thiệu như một công cụ hữu ích trong quá trình này.",
+    "answerDirection": "Hướng trả lời: Tìm hiểu và xác định vấn đề thực sự trước khi tìm giải pháp.",
+    "focusedChunks": [
+      "T01-049",
+      "T01-045"
+    ]
+  }
+}

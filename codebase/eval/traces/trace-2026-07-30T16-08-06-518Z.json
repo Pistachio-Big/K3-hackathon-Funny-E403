@@ -1,0 +1,68 @@
+{
+  "question": "hjx mình ko hiểu gì hết",
+  "retrieved": [
+    {
+      "code": "T03-098",
+      "score": 0.3768
+    },
+    {
+      "code": "T06-085",
+      "score": 0.3766
+    },
+    {
+      "code": "T01-031",
+      "score": 0.3668
+    },
+    {
+      "code": "T01-059",
+      "score": 0.361
+    },
+    {
+      "code": "T01-005",
+      "score": 0.3569
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[qdrant] top-1 score 0.377 < threshold 0.4"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "hjx mình ko hiểu gì hết",
+    "topChunks": [
+      {
+        "code": "T03-098",
+        "score": 0.376828
+      },
+      {
+        "code": "T06-085",
+        "score": 0.37660414
+      },
+      {
+        "code": "T01-031",
+        "score": 0.36679035
+      },
+      {
+        "code": "T01-059",
+        "score": 0.36103407
+      },
+      {
+        "code": "T01-005",
+        "score": 0.3569221
+      }
+    ]
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": null,
+    "focusedChunks": [
+      "T03-098",
+      "T06-085",
+      "T01-031",
+      "T01-059",
+      "T01-005"
+    ]
+  }
+}

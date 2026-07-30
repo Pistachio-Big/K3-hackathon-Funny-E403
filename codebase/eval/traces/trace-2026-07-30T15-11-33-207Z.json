@@ -1,0 +1,65 @@
+{
+  "question": "RTFC là gì? Giải thích 4 thành phần",
+  "retrieved": [
+    {
+      "code": "T01-062",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-095",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-133",
+      "score": 0.7143
+    },
+    {
+      "code": "T05-082",
+      "score": 0.7143
+    },
+    {
+      "code": "T06-075",
+      "score": 0.7143
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.714 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "RTFC là gì? Giải thích 4 thành phần",
+    "topChunks": [
+      {
+        "code": "T01-062",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-095",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-133",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T05-082",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T06-075",
+        "score": 0.7142857142857143
+      }
+    ]
+  },
+  "toolCalls": [],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "RTFC là một khái niệm liên quan đến việc phân tích và giải quyết vấn đề thông qua bốn thành phần chính. Các thành phần này bao gồm: 1) Xác định vấn đề, 2) Phân tích nguyên nhân gốc rễ, 3) Đề xuất giải pháp, và 4) Thực hiện và đánh giá giải pháp.",
+    "answerDirection": "Hướng trả lời: RTFC là một phương pháp giải quyết vấn đề thông qua việc phân tích và tìm ra các thành phần cơ bản của vấn đề.",
+    "focusedChunks": [
+      "T01-062"
+    ]
+  }
+}

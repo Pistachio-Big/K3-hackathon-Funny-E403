@@ -1,0 +1,54 @@
+{
+  "question": "Slide ngày mai có gì?",
+  "retrieved": [
+    {
+      "code": "T03-006",
+      "score": 0.4138
+    },
+    {
+      "code": "T04-014",
+      "score": 0.3957
+    },
+    {
+      "code": "T05-002",
+      "score": 0.3531
+    },
+    {
+      "code": "T05-003",
+      "score": 0.3483
+    },
+    {
+      "code": "T05-007",
+      "score": 0.3356
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nNgày mai sẽ có một bài lab liên quan đến việc cài đặt môi trường, đăng ký tài khoản và API key cần thiết để bắt đầu gọi API. Cuối buổi sẽ có một quiz ngắn trên Kahoot để mọi người chơi vui và có cơ hội nhận bonus.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Ngày mai sẽ có bài lab về cài đặt môi trường và quiz trên Kahoot.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-006] (Bài giảng)\nNội dung: Các bạn hiện tại tiếp cận rất nhiều slide của chương trình. Cái slide này không phải chỉ một người làm mà rất nhiều người làm: ban đầu sẽ có một hội đồng nhóm các anh chị đưa ra định hướng high level như thế nào, break down từng thứ từng thứ, xong rồi từng người sẽ custom lại cho phù hợp với style của họ. Hiện tại mình đang chọn slide của một chị cũng khá là ổn. Chị đang làm bên FPT Long Châu, làm product manager chuyên về những dự án AI. Tại vì mình thiên về kỹ sư, mà đây là những slide về product, mình không có nhiều kinh nghiệm thực tế, cho nên mình sẽ sử dụng slide của những người có kinh nghiệm.\n\n[2] Mã: [T04-014] (Bài giảng)\nNội dung: Cuối buổi chúng ta sẽ có một quiz ngắn để mọi người chơi vui trên Kahoot với nhau; một số bạn điểm cao thì mình sẽ cộng bonus cho mọi người. Và sáng ngày mai chúng ta sẽ làm một bài lab — bài lab này phần lớn liên quan đến việc các bạn bắt đầu cài đặt môi trường, đăng ký các loại tài khoản, API key cần thiết, và bắt đầu gọi những API đầu tiên. Đấy là nội dung của ngày hôm nay và sáng ngày mai nhá.\n\n[3] Mã: [T05-002] (Bài giảng)\nNội dung: Mình nói một chút về nội dung buổi chiều nhé. Chiều hôm nay, cái chúng ta học sẽ là xác định bài toán kinh doanh cho AI, hay nói nôm na là chúng ta sẽ chọn làm cái gì và không làm cái gì.\n\n[4] Mã: [T05-003] (Bài giảng)\nNội dung: Ví dụ, những người nào sẽ là những người hưởng lợi tốt nhất từ chuyện này? Ví dụ như bạn làm marketing hôm qua — hôm qua có bạn nói là đang làm một hệ thống marketing, build một cái agent generate ra kế hoạch marketing phù hợp cho từng ngân hàng, từng công ty. Có những trường hợp là chúng ta bắt tay vào làm, làm tới làm lui, xong rồi đến lúc không biết hướng nào tiếp. Thì buổi của ngày hôm nay sẽ giúp chúng ta có được cái khung nền tảng lý thuyết về việc nên chọn làm bên nào và không nên chọn làm bên nào. Suy cho cùng, chuyện này quan trọng hơn chuyện các bạn biết sử dụng công cụ gì. Tại vì nhiều người đi một đoạn rồi mới thấy hoá ra mình đi sai, đến lúc quay về làm lại từ đầu thì cảm giác rất là khó khăn.\n\n[5] Mã: [T05-007] (Bài giảng)\nNội dung: Nói theo nghĩa đó thì sáng hôm nay các bạn bắt đầu code rồi đúng không, và các bạn bắt đầu nhờ AI code cùng rồi đúng không? Trong khi đó, buổi hôm nay — buổi về lý thuyết — chúng ta đang nói đến chuyện: trước khi code thì chúng ta sẽ làm cái gì trước đấy. Và ở chỗ này mình nói với các bạn thêm một chuyện: trên thực tế, đôi khi không làm gì sẽ còn tốt hơn là làm, để rồi nhận ra chúng ta sai — nó sẽ tuỳ vào từng trường hợp nhé.\n\nCÂU HỎI HỌC VIÊN: Slide ngày mai có gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T04-014], giảng viên có nói: \"Cuối buổi chúng ta sẽ có một quiz ngắn để mọi người chơi vui trên Kahoot với nhau; một số bạn điểm cao thì mình sẽ cộng bonus cho mọi người. Và sáng ngày mai chúng ta sẽ làm một bài lab — bài lab này ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T04-014"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T04-014"
+    ],
+    "allowedCodes": [
+      "T03-006",
+      "T04-014",
+      "T05-002",
+      "T05-003",
+      "T05-007"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Ngày mai sẽ có một bài lab liên quan đến việc cài đặt môi trường, đăng ký tài khoản và API key cần thiết để bắt đầu gọi API. Cuối buổi sẽ có một quiz ngắn trên Kahoot để mọi người chơi vui và có cơ hội nhận bonus.",
+    "answerDirection": "Hướng trả lời: Ngày mai sẽ có bài lab về cài đặt môi trường và quiz trên Kahoot.",
+    "focusedChunks": [
+      "T04-014"
+    ]
+  }
+}

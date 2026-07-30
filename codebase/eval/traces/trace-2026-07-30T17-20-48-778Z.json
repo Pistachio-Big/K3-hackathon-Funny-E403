@@ -1,0 +1,116 @@
+{
+  "question": "thầy ơi kìa",
+  "retrieved": [
+    {
+      "code": "T06-117",
+      "score": 0.3959
+    },
+    {
+      "code": "T01-034",
+      "score": 0.3581
+    },
+    {
+      "code": "T03-065",
+      "score": 0.354
+    },
+    {
+      "code": "T06-005",
+      "score": 0.3433
+    },
+    {
+      "code": "T06-014",
+      "score": 0.3358
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-5 đoạn):\n[1] Mã đoạn: [T06-117] (Bài giảng)\nNội dung: [Học viên]: Thầy, bên em là bên làm sản phẩm. Tụi em đang làm một cái LMS có thể [không nghe rõ] được hết tất cả những cái comment — nó sẽ xử lý số lượng lớn câu hỏi của tất cả các bạn, gom lại xong đưa ra, rồi visualize. Câu hỏi của em là thầy sẽ góp ý gì trong đấy — ý là muốn thầy login vào xem, có gì feedback. Vừa cần feedback, vừa muốn thầy có thể cho tụi em xin slide để tụi em up lên trên.\n\n[2] Mã đoạn: [T01-034] (Bài giảng)\nNội dung: Rồi, bây giờ có một đề bài nhỏ cho mọi người — mọi người vào Discord nhá. Đề bài: bây giờ lớp mình khai giảng khoá mới và cả lớp có khoảng 1000 bạn đang học cùng một lúc, thế mà số lượng trợ giảng thì có hạn. Nếu các bạn nhận một đề bài là dùng AI để giải quyết cái việc này, các bạn sẽ làm như thế nào? Mọi người chat vào Discord nhá.\n\n[3] Mã đoạn: [T03-065] (Bài giảng)\nNội dung: **Giảng viên:** Cái của em đang ở mức độ khác: em đang xáo những câu hỏi có sẵn để đưa vào đề kiểm tra đúng không? Còn thầy đang hỏi là từ một bài toán thôi, có cách nào làm ra bài toán mới không. Ok, còn bạn nào có idea nữa không? Nói to lên em ơi.\n\n[4] Mã đoạn: [T06-005] (Bài giảng)\nNội dung: [học viên]: Vâng, chào thầy. Em đi làm đến năm nay là 18 năm.\n\n[5] Mã đoạn: [T06-014] (Bài giảng)\nNội dung: Ok, các bạn thấy đấy đúng không ạ? Mình đang thấy có một phần hay nhất trong phần trình bày của bạn — bạn tên gì nhỉ? [học viên] đúng không? Phần hay nhất trong phần trình bày vừa rồi của [học viên] là gì? Đó là vibe code. Bây giờ có bạn nào không đồng tình chuyện này không? Em không đồng tình — vì sao, cầm mic lên. Các bạn khác chưa làm thì tranh thủ làm cho xong nhé.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] 🙏 THẦY ƠI - Thiền ca Làng Mai | Sáng tác, trình bày: Sư cô Trăng Từ Hiếu & Plum Village Band ----- Thầy ơi, Con đã đi tìm Thầy từ muôn vạn kiếp trước Con đã đi tìm như thể đó là lời hẹn ước Từ thuở nước non đang còn tuổi sơ sinh Thầy ơi! Con đã đi tìm Thầy khi mặt trời vừa rạng ánh bình minh. Hay trong đem tối con bàng hoàng thức giấc Con đã tìm Thầy từ khi con còn là đất, là núi, là mây, là cây cỏ chốn rừng thiêng. Con đã tìm Thầy như đi tìm chốn bình yên Trong những nỗi khổ đau cùng cực nhất Và rồi khi hạt mưa xuân thấm nhẹ trên mặt đất, con đã thấy Thầy trong hơi thở, bước chân con. Thầy ơi, Thầy vẫn lặng lẽ ngồi thật yên, Cạnh bên con trong những lần con chênh vênh cùng tột. Thầy đã bao giờ bỏ mặc con đâu. ______ Written and Composed by: Sister Trăng Từ Hiếu String arrangement: Brother Spirit Vocals: Sister Trăng Từ Hiếu, Sister Trăng Hồ Sen Guitar: Sister Trăng Từ Hiếu Cello: Brother Spirit... - Sư Ông Làng Mai Thích Nhất Hạnh - những lời dạy an lạc thân tâm\nURL: https://www.facebook.com/HT.ThichNhatHanh/posts/-th%E1%BA%A7y-%C6%A1i-thi%E1%BB%81n-ca-l%C3%A0ng-mai-s%C3%A1ng-t%C3%A1c-tr%C3%ACnh-b%C3%A0y-s%C6%B0-c%C3%B4-tr%C4%83ng-t%E1%BB%AB-hi%E1%BA%BFu-plum-village-b/838358521616687\nNội dung: Con đã tìm Thầy từ khi con còn là đất, là núi, là my, là cy cỏ chốn rừng thiêng.\n\nCon đã tìm Thầy như đi tìm chốn bình yên\n\nTrong những nỗi khổ đau cùng cực nhất\n\nVà rồi khi hạt mưa xun thấm nhẹ trên mặt đất, con đã thấy Thầy trong hơi thở, bước chn con.\n\nThầy ơi, Thầy vẫn lặng lẽ ngồi thật yên,\n\nCạ\n\n[Nguồn 2] Lời bài hát Thầy Ơi - Tìm lời nhạc ở tkaraoke.com\nURL: https://lyric.tkaraoke.com/39275/thay_oi.html\nNội dung: Thầy ơi ! tháng năm dài bên viên phấn trắng dạy dỗ chúng em. Từng đêm, vẫn miệt mài bên trang giáo án, Thầy có tính chi.\n\n[Nguồn 3] Tavily AI Answer\nURL: \nNội dung: \"Thầy ơi\" is a song by Thiền sư Thích Nhất Hạnh, expressing deep devotion and search for spiritual guidance. The lyrics highlight the seeker's long-lasting quest for the teacher's presence. The song is popular and often performed in mindfulness settings.\n\n[Nguồn 4] Thầy Ơi (Official Video) | Plum Village Band\nURL: https://www.youtube.com/watch?v=5sxR_In9L1M\nNội dung: Lyric:\nThầy ơi,\nCon đã đi tìm Thầy từ muôn vạng kiếp trước\nCon đã đi tìm như thể đó là lời hẹn ước\nTừ thuở nước non đang còn tuổi sơ sinh\nThầy ơi!\nCon đã đi tìm Thầy khi mặt trời vừa rạng ánh bình minh.\nHay trong đem tối con bàng hoàng thức giấc \nCon đã tìm Thầy từ khi con còn là đất, là núi, là mây\n\n[Nguồn 5] Vui quá Thầy ơi! Phật Tử cười rỉ rả suốt buổi giảng - Pháp Thoại Người ...\nURL: https://www.youtube.com/watch?v=-yLqyrv_UaI\nNội dung: Vui quá Thầy ơi! Phật Tử cười rỉ rả suốt buổi giảng - Pháp Thoại Người sống biết trước biết sau. @TrucLamThichPhapHoa19 likes833 views1\n\nCÂU HỎI HỌC VIÊN: thầy ơi kìa\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-117], giảng viên có nói: \"[Học viên]: Thầy, bên em là bên làm sản phẩm. Tụi em đang làm một cái LMS có thể [không nghe rõ] được hết tất cả những cái comment — nó sẽ xử lý số lượng lớn câu hỏi của tất cả các bạn, gom lại xong đ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-117"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-117"
+    ],
+    "allowedCodes": [
+      "T06-117",
+      "T01-034",
+      "T03-065",
+      "T06-005",
+      "T06-014"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "thầy ơi kìa",
+    "topChunks": [
+      {
+        "code": "T06-117",
+        "score": 0.39585108
+      },
+      {
+        "code": "T01-034",
+        "score": 0.35813493
+      },
+      {
+        "code": "T03-065",
+        "score": 0.35398868
+      },
+      {
+        "code": "T06-005",
+        "score": 0.34330335
+      },
+      {
+        "code": "T06-014",
+        "score": 0.33584884
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "thầy ơi kìa",
+      "thầy ơi kìa T06-117"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "🙏 THẦY ƠI - Thiền ca Làng Mai | Sáng tác, trình bày: Sư cô Trăng Từ Hiếu & Plum Village Band ----- Thầy ơi, Con đã đi tìm Thầy từ muôn vạn kiếp trước Con đã đi tìm như thể đó là lời hẹn ước Từ thuở nước non đang còn tuổi sơ sinh Thầy ơi! Con đã đi tìm Thầy khi mặt trời vừa rạng ánh bình minh. Hay trong đem tối con bàng hoàng thức giấc Con đã tìm Thầy từ khi con còn là đất, là núi, là mây, là cây cỏ chốn rừng thiêng. Con đã tìm Thầy như đi tìm chốn bình yên Trong những nỗi khổ đau cùng cực nhất Và rồi khi hạt mưa xuân thấm nhẹ trên mặt đất, con đã thấy Thầy trong hơi thở, bước chân con. Thầy ơi, Thầy vẫn lặng lẽ ngồi thật yên, Cạnh bên con trong những lần con chênh vênh cùng tột. Thầy đã bao giờ bỏ mặc con đâu. ______ Written and Composed by: Sister Trăng Từ Hiếu String arrangement: Brother Spirit Vocals: Sister Trăng Từ Hiếu, Sister Trăng Hồ Sen Guitar: Sister Trăng Từ Hiếu Cello: Brother Spirit... - Sư Ông Làng Mai Thích Nhất Hạnh - những lời dạy an lạc thân tâm",
+        "url": "https://www.facebook.com/HT.ThichNhatHanh/posts/-th%E1%BA%A7y-%C6%A1i-thi%E1%BB%81n-ca-l%C3%A0ng-mai-s%C3%A1ng-t%C3%A1c-tr%C3%ACnh-b%C3%A0y-s%C6%B0-c%C3%B4-tr%C4%83ng-t%E1%BB%AB-hi%E1%BA%BFu-plum-village-b/838358521616687",
+        "snippet": "Con đã tìm Thầy từ khi con còn là đất, là núi, là my, là cy cỏ chốn rừng thiêng.\n\nCon đã tìm Thầy như đi tìm chốn bình yên\n\nTrong những nỗi khổ đau cùng cực nhất\n\nVà rồi khi hạt mưa xun thấm nhẹ trên mặt đất, con đã thấy Thầy trong hơi thở, bước chn con.\n\nThầy ơi, Thầy vẫn lặng lẽ ngồi thật yên,\n\nCạ"
+      },
+      {
+        "id": "S2",
+        "title": "Lời bài hát Thầy Ơi - Tìm lời nhạc ở tkaraoke.com",
+        "url": "https://lyric.tkaraoke.com/39275/thay_oi.html",
+        "snippet": "Thầy ơi ! tháng năm dài bên viên phấn trắng dạy dỗ chúng em. Từng đêm, vẫn miệt mài bên trang giáo án, Thầy có tính chi."
+      },
+      {
+        "id": "S3",
+        "title": "Tavily AI Answer",
+        "url": "",
+        "snippet": "\"Thầy ơi\" is a song by Thiền sư Thích Nhất Hạnh, expressing deep devotion and search for spiritual guidance. The lyrics highlight the seeker's long-lasting quest for the teacher's presence. The song is popular and often performed in mindfulness settings."
+      },
+      {
+        "id": "S4",
+        "title": "Thầy Ơi (Official Video) | Plum Village Band",
+        "url": "https://www.youtube.com/watch?v=5sxR_In9L1M",
+        "snippet": "Lyric:\nThầy ơi,\nCon đã đi tìm Thầy từ muôn vạng kiếp trước\nCon đã đi tìm như thể đó là lời hẹn ước\nTừ thuở nước non đang còn tuổi sơ sinh\nThầy ơi!\nCon đã đi tìm Thầy khi mặt trời vừa rạng ánh bình minh.\nHay trong đem tối con bàng hoàng thức giấc \nCon đã tìm Thầy từ khi con còn là đất, là núi, là mây"
+      },
+      {
+        "id": "S5",
+        "title": "Vui quá Thầy ơi! Phật Tử cười rỉ rả suốt buổi giảng - Pháp Thoại Người ...",
+        "url": "https://www.youtube.com/watch?v=-yLqyrv_UaI",
+        "snippet": "Vui quá Thầy ơi! Phật Tử cười rỉ rả suốt buổi giảng - Pháp Thoại Người sống biết trước biết sau. @TrucLamThichPhapHoa19 likes833 views1"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Học viên đang phát triển một LMS và muốn giảng viên góp ý cũng như cung cấp slide để họ có thể sử dụng. Họ cần sự phản hồi từ giảng viên để cải thiện sản phẩm của mình.",
+    "answerDirection": "Hướng trả lời: Giảng viên có thể xem xét và cung cấp phản hồi cho LMS mà học viên đang phát triển.",
+    "focusedChunks": [
+      "T06-117"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "question": "Context là gì?",
+  "retrieved": [
+    {
+      "code": "C0002-T0330-A",
+      "score": 0.4544
+    },
+    {
+      "code": "T06-150",
+      "score": 0.4307
+    },
+    {
+      "code": "T04-052",
+      "score": 0.4282
+    },
+    {
+      "code": "C0013-T0990-A",
+      "score": 0.3889
+    },
+    {
+      "code": "C0247-T1194-A",
+      "score": 0.383
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nCâu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.\n\nQUY TẮC BẮT BUỘC:\n1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.\n2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)\n3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.\n\nTHÔNG TIN TỪ TÌM KIẾM WEB:\n[Nguồn 1] Context trong communication là gì?\nURL: https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html\nNội dung: Context (bối cảnh) bắt nguồn từ tiếng Latin, có nghĩa là những gì xung quanh một sự kiện hoặc thực tế. Bối cảnh là hoàn cảnh, môi trường, vật lý hoặc biểu tượng, tập hợp các hiện tượng, tình huống và hoàn cảnh (giới tính, tuổi tác, communication, kinh nghiệm, sở thích, v.v), không thể so sánh với nh\n\n[Nguồn 2] Tìm hiểu về Context trong các ứng dụng Android\nURL: https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG\nNội dung: # 1. Context là gì ?\n\nContext trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác.\n\nMột vài quan điểm về context: [...] Nó là bối cảnh hiện tại của ứng dụng.\n Nó có thể được sử dụng để lấy thông tin liên quan đến activity và ứng dụng.\n Nó có thể được sử dụng để truy cập vào các\n\n[Nguồn 3] Nghĩa của từ Context - Từ điển Anh - Việt\nURL: http://tratu.soha.vn/dict/en_vn/Context\nNội dung: và cỡ chữ. Trong MS-DOS và Microsoft Windows, thuộc tính là thông tin về tập tin để chỉ đó là loại tập tin chỉ đọc ra, tập tin ẩn, hoặc tập tin hệ thống. [...] cùng với mỗi ký tự trogn vùng đệm video của một adapter video chạy ở chế độ ký tự như: các thuộc tính điều khiển màu nền và màu ký tự, gạch \n\n[Nguồn 4] Cái \"context\" là cái gì vậy trời? : r/golang\nURL: https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi\nNội dung: \"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. Tao\n\n[Nguồn 5] CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge\nURL: https://dictionary.cambridge.org/vi/dictionary/english/context\nNội dung: to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl\n\nNGUỒN THAM KHẢO:\n[1] Context trong communication là gì? (https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html)\n[2] Tìm hiểu về Context trong các ứng dụng Android (https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG)\n[3] Nghĩa của từ Context - Từ điển Anh - Việt (http://tratu.soha.vn/dict/en_vn/Context)\n[4] Cái \"context\" là cái gì vậy trời? : r/golang (https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi)\n[5] CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge (https://dictionary.cambridge.org/vi/dictionary/english/context)\n\nCÂU HỎI HỌC VIÊN: Context là gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Chào bạn! Mình xin trả lời câu hỏi của bạn về \"Context\".\n\nContext (bối cảnh) có thể hiểu là những gì xung quanh một sự kiện hoặc thực tế. Nó bao gồm hoàn cảnh, môi trường, các yếu tố vật lý hoặc biểu tượng, cũng như các tình huống và hoàn cảnh như giới tính, tuổi tác, kinh nghiệm, sở thích, v.v. (Nguồn: Context trong communication là gì? - https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html).\n\nTrong lập trình, đặc biệt là trong các ứng dụng Android, context được hiểu là bối cảnh của nơi mà ứng dụng đang hoạt động. Nó cho phép truy cập thông tin liên quan đến activity và ứng dụng, giúp thực hiện các tác vụ như lấy tài nguyên, khởi tạo các thành phần khác trong ứng dụng (Ngu��n: Tìm hiểu về Context trong các ứng dụng Android - https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG).\n\nHy vọng thông tin này sẽ giúp bạn hiểu rõ hơn về khái niệm \"Context\"! Nếu bạn có thêm câu hỏi nào khác, đừng ngần ngại nhé!",
+  "verified": {
+    "fromResearch": true,
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Context trong communication là gì?",
+        "url": "https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html",
+        "snippet": "Context (bối cảnh) bắt nguồn từ tiếng Latin, có nghĩa là những gì xung quanh một sự kiện hoặc thực tế. Bối cảnh là hoàn cảnh, môi trường, vật lý hoặc biểu tượng, tập hợp các hiện tượng, tình huống và hoàn cảnh (giới tính, tuổi tác, communication, kinh nghiệm, sở thích, v.v), không thể so sánh với nh"
+      },
+      {
+        "id": "S2",
+        "title": "Tìm hiểu về Context trong các ứng dụng Android",
+        "url": "https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG",
+        "snippet": "# 1. Context là gì ?\n\nContext trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác.\n\nMột vài quan điểm về context: [...] Nó là bối cảnh hiện tại của ứng dụng.\n Nó có thể được sử dụng để lấy thông tin liên quan đến activity và ứng dụng.\n Nó có thể được sử dụng để truy cập vào các"
+      },
+      {
+        "id": "S3",
+        "title": "Nghĩa của từ Context - Từ điển Anh - Việt",
+        "url": "http://tratu.soha.vn/dict/en_vn/Context",
+        "snippet": "và cỡ chữ. Trong MS-DOS và Microsoft Windows, thuộc tính là thông tin về tập tin để chỉ đó là loại tập tin chỉ đọc ra, tập tin ẩn, hoặc tập tin hệ thống. [...] cùng với mỗi ký tự trogn vùng đệm video của một adapter video chạy ở chế độ ký tự như: các thuộc tính điều khiển màu nền và màu ký tự, gạch "
+      },
+      {
+        "id": "S4",
+        "title": "Cái \"context\" là cái gì vậy trời? : r/golang",
+        "url": "https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi",
+        "snippet": "\"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. Tao"
+      },
+      {
+        "id": "S5",
+        "title": "CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge",
+        "url": "https://dictionary.cambridge.org/vi/dictionary/english/context",
+        "snippet": "to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl"
+      }
+    ],
+    "verifiedCitations": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Context là gì?",
+    "topChunks": [
+      {
+        "code": "C0002-T0330-A",
+        "score": 0.45443094
+      },
+      {
+        "code": "T06-150",
+        "score": 0.43069482
+      },
+      {
+        "code": "T04-052",
+        "score": 0.42822772
+      },
+      {
+        "code": "C0013-T0990-A",
+        "score": 0.38889033
+      },
+      {
+        "code": "C0247-T1194-A",
+        "score": 0.38301387
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Context là gì?",
+      "Context là gì? C0002-T0330-A"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_fukPXo4WexsMoHXwAqUTX70U",
+      "name": "lookup_document",
+      "args": {
+        "topic": "context"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Context là một khái niệm quan trọng trong kỹ thuật lập trình Agent, liên quan đến việc quản lý thông tin mà mô hình ngôn ngữ sử dụng. Nó có thể được hình dung như một 'bàn làm việc' có giới hạn, và việc quản lý ngữ cảnh hiệu quả là cần thiết để tối ưu hóa khả năng của mô hình.",
+    "answerDirection": "Hướng trả lời: Context là khái niệm liên quan đến việc quản lý thông tin trong mô hình ngôn ngữ, có thể hình dung như một bàn làm việc có giới hạn.",
+    "focusedChunks": [
+      "C0002-T0330-A",
+      "C0013-T0990-A"
+    ]
+  }
+}

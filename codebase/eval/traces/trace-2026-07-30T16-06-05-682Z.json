@@ -1,0 +1,58 @@
+{
+  "question": "Mô hình ngôn ngữ (LLM) được huấn luyện như thế nào?",
+  "retrieved": [
+    {
+      "code": "T06-141",
+      "score": 0.6041
+    },
+    {
+      "code": "T06-134",
+      "score": 0.5761
+    },
+    {
+      "code": "T06-075",
+      "score": 0.5658
+    },
+    {
+      "code": "T04-059",
+      "score": 0.5265
+    },
+    {
+      "code": "T06-078",
+      "score": 0.5263
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nMô hình ngôn ngữ lớn (LLM) được huấn luyện qua hai giai đoạn chính: pretraining, nơi nó tiếp nhận và ghi nhớ kiến thức từ dữ liệu lớn, và giai đoạn fine-tuning, nơi nó học cách áp dụng kiến thức đó thông qua reinforcement learning với sự tham gia của con người.\n\n## HƯỚNG TRẢ LỜI\nMô hình ngôn ngữ lớn được huấn luyện qua các giai đoạn tiếp nhận dữ liệu và học hỏi từ phản hồi, sử dụng các kỹ thuật như reinforcement learning.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-141] (Bài giảng)\nNội dung: Nói một chút nữa là cái LLM được tạo ra như thế nào. Đầu tiên là giai đoạn training: nó đọc hết tất cả các ngôn ngữ và kiến thức trên thế giới. Việc của chúng ta là feed dữ liệu vào cho nó đọc. Hết giai đoạn số một — giai đoạn pretraining — thì nó chỉ biết kiến thức nhưng chưa biết dùng đúng lúc, đúng không? Giống như quay về câu chuyện các bạn học lớp sáu lúc nãy: các bạn có thể đọc một cuốn sách, nhớ được những từ đó, nhưng không biết ngữ pháp của nó là gì đúng không ạ? Đấy là những gì xảy ra ở giai đoạn training trên toàn bộ tri thức của loài người.\n\n[2] Mã: [T06-134] (Bài giảng)\nNội dung: Đơn vị cơ bản của LLM là cái nãy giờ chúng ta gọi là token. Quá trình huấn luyện dữ liệu đầu vào trước đây chủ yếu dùng tiếng Anh, bởi vậy logic của nó vẫn đi từ trái sang phải, và bởi vậy nếu các bạn gõ tiếng Việt thì bao giờ lượng token nó burn cũng cao hơn tiếng Anh. Ví dụ từ \"Hello World\" được tách thành hai token, nhưng \"Xin chào Việt Nam\" đôi khi lại thành ba token. Rồi một từ dùng trong code, ví dụ \"def function\", thì là bốn token — nó có những logic nhất định.\n\n[3] Mã: [T06-075] (Bài giảng)\nNội dung: Rồi, sang phần số hai, cũng là phần quan trọng nhất trong buổi hôm nay. Sau phần này sẽ có một bạn hỗ trợ, các bạn sẽ tự thực hành để demo cái cơ chế transformer hoạt động như thế nào, attention hoạt động như thế nào. Cái LLM thì chúng ta có thể xem nó là gì? Là một mô hình ngôn ngữ rất lớn, dựa trên kiến trúc transformer, và huấn luyện dựa trên lượng dữ liệu có cấu trúc hoặc không có cấu trúc rất khổng lồ — người ta định nghĩa token đấy. Như lúc nãy nói, nó có thể tạo ra cái mới: có thể là văn bản, trả lời câu hỏi, viết code, hoặc quá trình lý luận nhiều bước phức tạp. Đặc điểm chính của LLM, đầu tiên là việc decode. Cho mình hỏi ở đây có bạn nào giải thích được encode và decode như nào không? À, em để dành cho người khác nhá. Các bạn nhớ lúc nãy chúng ta có concept giơ tay phát biểu thì sẽ có ghi nhận và tích điểm đúng không? Bây giờ mình mời bạn ở phía xa đầu kia trước. Mời em, giới thiệu tên và giải thích ngắn gọn encode và decode.\n\n[4] Mã: [T04-059] (Bài giảng)\nNội dung: Rồi cái này mình nghĩ sẽ là một cái quan trọng chúng ta cũng cần biết: làm thế nào để mô hình nó thông minh hơn. Nó sẽ dựa trên một công nghệ, một kỹ thuật là reinforcement learning với con người tham gia — viết tắt là RLHF. Hiểu nôm na là bạn đào tạo cái mô hình: bạn sẽ thiết kế, tạo ra một luật chơi cho mô hình đấy và cho nó một nhiệm vụ. Nếu nó làm đúng thì nó sẽ được điểm reward, nếu nó làm sai nó sẽ bị trừ điểm. Sau đấy bạn sẽ có một cơ chế để cho nó cứ chạy và khám phá việc đấy, để nó biết được khi nào nó được cộng điểm và khi nào nó bị trừ điểm. Và dần dần nó sẽ học được qua những lần đấy. Mô hình kiểu này trong những bài toán như kiểu chơi game nó rất là dễ hình dung — ví dụ như khi đi vào [không nghe rõ] thì sao, nó sẽ tự học được luật qua những lần đấy. Thực ra game hay là toán, hay những cái mà nó có logic rất rõ ràng, thì cái logic đấy hoàn toàn là bạn có thể để cho các mô hình tự khám phá. Bạn chỉ cần cài cho nó một số luật cơ bản: khi nó đi vào cái này thì nó bị trừ điểm, khi đi vào cái này nó được cộng điểm. Nhưng mà với những tác vụ mang tính phức tạp hơn và cần sự đánh giá của con người, thì lúc này chúng ta sẽ cần con người tham gia vào quá trình này.\n\n[5] Mã: [T06-078] (Bài giảng)\nNội dung: [Học viên]: Em xin phép giới thiệu bản thân, em tên là [học viên]. Phần nội dung bạn vừa nói thì hơi cao quá, em xin xét lại phần encode với decode ạ. Đầu tiên, input của các mô hình ngôn ngữ sẽ là các con số, nó sẽ được tính toán và tính ra xác suất. Mình cần phải mã hóa các ngôn ngữ — kiểu ngôn ngữ tự nhiên — thành số để máy đọc được, học được đúng không? Và sau khi mô hình tính toán ra xác suất xong thì nó phải chuyển hóa cái số đấy thành ngôn ngữ mà con người có thể hiểu được.\n\nCÂU HỎI HỌC VIÊN: Mô hình ngôn ngữ (LLM) được huấn luyện như thế nào?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-141], giảng viên có nói: \"Nói một chút nữa là cái LLM được tạo ra như thế nào. Đầu tiên là giai đoạn training: nó đọc hết tất cả các ngôn ngữ và kiến thức trên thế giới. Việc của chúng ta là feed dữ liệu vào cho nó đọc. Hết gi...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-141"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-141",
+      "T06-075",
+      "T04-059"
+    ],
+    "allowedCodes": [
+      "T06-141",
+      "T06-134",
+      "T06-075",
+      "T04-059",
+      "T06-078"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Mô hình ngôn ngữ lớn (LLM) được huấn luyện qua hai giai đoạn chính: pretraining, nơi nó tiếp nhận và ghi nhớ kiến thức từ dữ liệu lớn, và giai đoạn fine-tuning, nơi nó học cách áp dụng kiến thức đó thông qua reinforcement learning với sự tham gia của con người.",
+    "answerDirection": "Mô hình ngôn ngữ lớn được huấn luyện qua các giai đoạn tiếp nhận dữ liệu và học hỏi từ phản hồi, sử dụng các kỹ thuật như reinforcement learning.",
+    "focusedChunks": [
+      "T06-141",
+      "T06-075",
+      "T04-059"
+    ]
+  }
+}

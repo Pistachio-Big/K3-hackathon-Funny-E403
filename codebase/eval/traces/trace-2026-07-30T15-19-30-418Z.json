@@ -1,0 +1,115 @@
+{
+  "question": "d",
+  "retrieved": [
+    {
+      "code": "T01-001",
+      "score": 0
+    },
+    {
+      "code": "T01-002",
+      "score": 0
+    },
+    {
+      "code": "T01-003",
+      "score": 0
+    },
+    {
+      "code": "T01-004",
+      "score": 0
+    },
+    {
+      "code": "T01-005",
+      "score": 0
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nCâu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.\n\nQUY TẮC BẮT BUỘC:\n1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.\n2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)\n3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.\n\nTHÔNG TIN TỪ TÌM KIẾM WEB:\n[Nguồn 1] Tìm kiếm: d\nURL: https://www.google.com/search?q=d\nNội dung: Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau.\n\n[Nguồn 2] E-T-A Circuit Protection and Control EM12-T01-001-DC24V-40A ...\nURL: https://us.rs-online.com/product/e-t-a-circuit-protection-and-control/em12-t01-001-dc24v-40a/71072524\nNội dung: It comprises the EM12-T supply module for the plus and minus potential via a single or double channel REX12-T electronic circuit protector which can be mounted\n\n[Nguồn 3] EM-T01-001-24-40A - Modular Circuit Protector\nURL: https://www.automationdirect.com/adc/shopping/catalog/circuit_protection_-z-_fuses_-z-_disconnects/circuit_breakers_-a-_circuit_protectors/electronic_circuit_protection/em-t01-001-24-40a\nNội dung: EM-T01-001-24-40A - E-T-A REX series modular circuit protector, mains supply, 40A, 24 VDC operating voltage, 35mm DIN rail mount.\n\n[Nguồn 4] T01-1-d<sub>5</sub>\nURL: https://www.medchemexpress.com/search.html?q=T01-1-d%3Csub%3E5%3C%2Fsub%3E&ft=&fa=&fp=\nNội dung: T01-1-d 5 related products. MedChemExpress (MCE) provides thousands of inhibitors, modulators and agonists with high purity and quality, excellent customer\n\n[Nguồn 5] Eagle Eye Camera DT01\nURL: https://www.een.com/wp-content/uploads/2025/12/Eagle-Eye-DT01-Camera-DataSheet.pdf\nNội dung: Key features •\t4 Megapixel •\tIndoor/outdoor waterproof turret •\tDurable all-aluminum housing, IP66 •\tFixed 2.8 mm lens •\tWide dynamic range & ultra low-light color •\tNight vision Smart IR, IR LEDs, 40 m range EAGLE EYE PART NUMBERS EN-CDUT-001a Eagle Eye Camera DT01 Indoor/Outdoor Turret 4MP, H265, \n\nNGUỒN THAM KHẢO:\n[1] Tìm kiếm: d (https://www.google.com/search?q=d)\n[2] E-T-A Circuit Protection and Control EM12-T01-001-DC24V-40A ... (https://us.rs-online.com/product/e-t-a-circuit-protection-and-control/em12-t01-001-dc24v-40a/71072524)\n[3] EM-T01-001-24-40A - Modular Circuit Protector (https://www.automationdirect.com/adc/shopping/catalog/circuit_protection_-z-_fuses_-z-_disconnects/circuit_breakers_-a-_circuit_protectors/electronic_circuit_protection/em-t01-001-24-40a)\n[4] T01-1-d<sub>5</sub> (https://www.medchemexpress.com/search.html?q=T01-1-d%3Csub%3E5%3C%2Fsub%3E&ft=&fa=&fp=)\n[5] Eagle Eye Camera DT01 (https://www.een.com/wp-content/uploads/2025/12/Eagle-Eye-DT01-Camera-DataSheet.pdf)\n\nCÂU HỎI HỌC VIÊN: d\n\nTRẢ LỜI:",
+  "rawAnswer": "Chào bạn! Mình không tìm thấy thông tin cụ thể liên quan đến từ khóa \"d\" mà bạn đã hỏi. Khi mình tìm kiếm, kết quả trả về không thể kết nối đến máy chủ tìm kiếm (Nguồn: Tìm kiếm - https://www.google.com/search?q=d). \n\nNếu bạn có thêm thông tin hoặc ngữ cảnh cụ thể hơn về câu hỏi của mình, hãy cho mình biết để mình có thể hỗ trợ tốt hơn nhé!",
+  "verified": {
+    "fromResearch": true,
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Tìm kiếm: d",
+        "url": "https://www.google.com/search?q=d",
+        "snippet": "Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau."
+      },
+      {
+        "id": "S2",
+        "title": "E-T-A Circuit Protection and Control EM12-T01-001-DC24V-40A ...",
+        "url": "https://us.rs-online.com/product/e-t-a-circuit-protection-and-control/em12-t01-001-dc24v-40a/71072524",
+        "snippet": "It comprises the EM12-T supply module for the plus and minus potential via a single or double channel REX12-T electronic circuit protector which can be mounted"
+      },
+      {
+        "id": "S3",
+        "title": "EM-T01-001-24-40A - Modular Circuit Protector",
+        "url": "https://www.automationdirect.com/adc/shopping/catalog/circuit_protection_-z-_fuses_-z-_disconnects/circuit_breakers_-a-_circuit_protectors/electronic_circuit_protection/em-t01-001-24-40a",
+        "snippet": "EM-T01-001-24-40A - E-T-A REX series modular circuit protector, mains supply, 40A, 24 VDC operating voltage, 35mm DIN rail mount."
+      },
+      {
+        "id": "S4",
+        "title": "T01-1-d<sub>5</sub>",
+        "url": "https://www.medchemexpress.com/search.html?q=T01-1-d%3Csub%3E5%3C%2Fsub%3E&ft=&fa=&fp=",
+        "snippet": "T01-1-d 5 related products. MedChemExpress (MCE) provides thousands of inhibitors, modulators and agonists with high purity and quality, excellent customer"
+      },
+      {
+        "id": "S5",
+        "title": "Eagle Eye Camera DT01",
+        "url": "https://www.een.com/wp-content/uploads/2025/12/Eagle-Eye-DT01-Camera-DataSheet.pdf",
+        "snippet": "Key features •\t4 Megapixel •\tIndoor/outdoor waterproof turret •\tDurable all-aluminum housing, IP66 •\tFixed 2.8 mm lens •\tWide dynamic range & ultra low-light color •\tNight vision Smart IR, IR LEDs, 40 m range EAGLE EYE PART NUMBERS EN-CDUT-001a Eagle Eye Camera DT01 Indoor/Outdoor Turret 4MP, H265, "
+      }
+    ],
+    "verifiedCitations": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "d",
+    "topChunks": [
+      {
+        "code": "T01-001",
+        "score": 0
+      },
+      {
+        "code": "T01-002",
+        "score": 0
+      },
+      {
+        "code": "T01-003",
+        "score": 0
+      },
+      {
+        "code": "T01-004",
+        "score": 0
+      },
+      {
+        "code": "T01-005",
+        "score": 0
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "d",
+      "d T01-001"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_Gq6zBmQgo1i83m8Pbhne5ZMY",
+      "name": "lookup_document",
+      "args": {
+        "topic": "d"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Để đưa AI vào ứng dụng hiệu quả, cần xác định rõ bài toán từ những yêu cầu mơ hồ và có sự tham gia của con người trong quá trình vận hành. Việc chỉ tuyển dụng AI engineer mà không có người đặt ra đề bài cụ thể sẽ dẫn đến hiệu quả kém.",
+    "answerDirection": "Hướng trả lời: Cần xác định rõ bài toán và có sự tham gia của con người trong quá trình ứng dụng AI để đạt hiệu quả cao.",
+    "focusedChunks": [
+      "T01-001",
+      "T01-002",
+      "T01-003",
+      "T01-004",
+      "T01-005"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "question": "Wizard of Oz MVP là gì?",
+  "retrieved": [
+    {
+      "code": "T06-130",
+      "score": 0.2078
+    },
+    {
+      "code": "T01-008",
+      "score": 0.1969
+    },
+    {
+      "code": "T01-062",
+      "score": 0.1754
+    },
+    {
+      "code": "T01-011",
+      "score": 0.1747
+    },
+    {
+      "code": "T03-043",
+      "score": 0.1683
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Tuy nhiên, mình có thể cung cấp thông tin bổ sung từ các nguồn web.\n\n**Wizard of Oz MVP** là một chiến lược trong phát triển sản phẩm, nơi mà người dùng được giới thiệu một sản phẩm dường như tự động hoàn toàn, nhưng thực tế có một người (hay \"phù thủy\") đang thực hiện các tác vụ ở phía sau. Điều này cho phép các nhà phát triển kiểm tra ý tưởng sản phẩm mà không cần phải xây dựng toàn bộ hệ thống tự động ngay từ đầu.\n\nCụ thể, với Wizard of Oz MVP, bạn có thể xây dựng một giao diện người dùng (frontend) nhưng thay vì có một hệ thống tự động hoàn chỉnh, các tác vụ được thực hiện thủ công bởi con người. Điều này giúp tiết kiệm thời gian và chi phí trong giai đoạn đầu của phát triển sản phẩm, đồng thời cho phép phản hồi nhanh chóng từ người dùng thực tế [Nguồn 1](https://wearelighthouse.com/blog/the-wizard-of-oz-mvp-all-style-no-substance).\n\nNếu bạn cần thêm thông tin chi tiết hoặc có câu hỏi cụ thể nào khác, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T06-130",
+      "T01-008",
+      "T01-062",
+      "T01-011",
+      "T03-043"
+    ],
+    "focusedCodes": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Wizard of Oz MVP là gì?",
+    "topChunks": [
+      {
+        "code": "T06-130",
+        "score": 0.20777614
+      },
+      {
+        "code": "T01-008",
+        "score": 0.19690952
+      },
+      {
+        "code": "T01-062",
+        "score": 0.17543158
+      },
+      {
+        "code": "T01-011",
+        "score": 0.17467226
+      },
+      {
+        "code": "T03-043",
+        "score": 0.16826802
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Wizard of Oz MVP là gì?",
+      "Wizard of Oz MVP là gì? T06-130"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_QKTmzwz6gFcOP2xKPKl81udX",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Wizard of Oz MVP"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Wizard of Oz MVP (Minimum Viable Product) là một phương pháp phát triển sản phẩm trong đó một sản phẩm giả lập được tạo ra để kiểm tra ý tưởng mà không cần phát triển toàn bộ sản phẩm. Phương pháp này cho phép nhóm phát triển thu thập phản hồi từ người dùng và điều chỉnh sản phẩm dựa trên phản hồi đó trước khi đầu tư vào việc phát triển thực tế.",
+    "answerDirection": "Hướng trả lời: Wizard of Oz MVP là một phương pháp phát triển sản phẩm giả lập để kiểm tra ý tưởng và thu thập phản hồi từ người dùng.",
+    "focusedChunks": []
+  }
+}

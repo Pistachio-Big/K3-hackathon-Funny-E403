@@ -29,7 +29,7 @@ const MIN_RELEVANT_CHUNKS = 3;            // Số chunks tối thiểu cần có
 const CONTEXT_COVERAGE_THRESHOLD = 0.4;   // % keywords có trong context
 
 // Tavily API key - load từ .env
-const TAVILY_API_KEY = process.env.TAVILY_API_KEY || process.env.GEMINI_API_KEY; // fallback
+const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
 
 // Keywords cần thiết để trả lời (đoán đơn giản bằng token overlap)
 // Nếu < 40% keywords của question có trong context → cần research

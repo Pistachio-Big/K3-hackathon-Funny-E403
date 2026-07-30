@@ -89,8 +89,17 @@ async function chatWithTools(systemPrompt, userPrompt, tools = null) {
     max_tokens: 4096
   };
 
+  // OpenAI-compatible format requires type:"function" wrapper on each tool
   if (tools && tools.length > 0) {
-    requestOptions.tools = tools;
+    const wrapped = tools.map(t => ({
+      type: "function",
+      function: {
+        name: t.name,
+        description: t.description,
+        parameters: t.parameters
+      }
+    }));
+    requestOptions.tools = wrapped;
     requestOptions.tool_choice = "auto";
   }
 

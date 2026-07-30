@@ -1,0 +1,74 @@
+{
+  "question": "slide 37 có gì vậy thầy",
+  "retrieved": [
+    {
+      "code": "T03-104",
+      "score": 0.6667
+    },
+    {
+      "code": "T04-047",
+      "score": 0.6667
+    },
+    {
+      "code": "T04-085",
+      "score": 0.6667
+    },
+    {
+      "code": "T05-050",
+      "score": 0.6667
+    },
+    {
+      "code": "T05-131",
+      "score": 0.6667
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.667 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "slide 37 có gì vậy thầy",
+    "topChunks": [
+      {
+        "code": "T03-104",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T04-047",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T04-085",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T05-050",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T05-131",
+        "score": 0.6666666666666666
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_vhcjulRCxOdFE2RrUyNAGSHJ",
+      "name": "lookup_document",
+      "args": {
+        "topic": "slide 37"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Slide 37 có thể liên quan đến việc thực hành và áp dụng các mô hình ngôn ngữ lớn, như Kimi K3, trong việc xây dựng sản phẩm và quản lý dự án. Nó cũng có thể chứa thông tin về cách các mô hình này hoạt động và ứng dụng thực tế của chúng.",
+    "answerDirection": "Hướng trả lời: Slide 37 có thể chứa thông tin về việc sử dụng các mô hình ngôn ngữ lớn trong thực hành và xây dựng sản phẩm.",
+    "focusedChunks": [
+      "T03-104",
+      "T04-085"
+    ]
+  }
+}

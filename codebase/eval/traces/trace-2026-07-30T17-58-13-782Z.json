@@ -1,0 +1,54 @@
+{
+  "question": "MVP là gì? Cho ví dụ",
+  "retrieved": [
+    {
+      "code": "T01-008",
+      "score": 0.3826
+    },
+    {
+      "code": "T03-043",
+      "score": 0.3156
+    },
+    {
+      "code": "T03-151",
+      "score": 0.2859
+    },
+    {
+      "code": "T01-072",
+      "score": 0.2779
+    },
+    {
+      "code": "T06-014",
+      "score": 0.2701
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nMVP (Minimum Viable Product) là sản phẩm tối thiểu có thể ra mắt để thu thập phản hồi từ người dùng và kiểm tra ý tưởng sản phẩm. Một ví dụ điển hình là sản phẩm NotebookLM của Google, được phát triển từ một dự án nhỏ với đội ngũ gồm một PM và một kỹ sư, nhằm giải quyết nhu cầu của học sinh sinh viên trong việc nghiên cứu tài liệu.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: MVP là sản phẩm tối thiểu có thể ra mắt để ki���m tra ý tưởng, ví dụ là NotebookLM của Google.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T01-008] (Bài giảng)\nNội dung: Bây giờ trong một team có bạn product owner, product manager. PM ở đây mình nói P là product nhá, không phải project — nó khác nhau. Có ai định nghĩa được nó khác như thế nào không? Tại vì ở Việt Nam từ PM hay dùng cho project nhiều hơn, bởi vì các công ty outsourcing nhiều, giờ mình cần định nghĩa lại nhá.\n\n[2] Mã: [T03-043] (Bài giảng)\nNội dung: Nên cái vai trò của ông PM này rất là quan trọng. Tức là người PM phải viết ra được những cái metric đánh giá, để biết sau 3 tháng nếu không đạt được cái mục tiêu mình đặt ra thì mình phải tự biết là khả năng fail nó sẽ tăng lên bao nhiêu; và nếu sau 4 tháng lại càng không đạt được, thì tôi nên dừng luôn dự án hay là nên tiếp tục — nó rất là quan trọng nhá. Tức là thà là các bạn biết là các bạn làm không được, vì sao, và các bạn dừng — còn hơn là các bạn cứ làm cứ làm cứ làm, xong rồi đến khi hết tiền thì thôi. Nó khác nhé. Giống như ví dụ bạn làm dự án cho những công ty to như Google này nọ — họ cần rất nhiều idea để phát triển sản phẩm đúng không? Để promote một idea, các bạn phải chứng minh idea nó work. Sếp sẽ hỏi: bạn cần bao lâu? Nếu là PM, bạn ngồi với team engineer. Kỹ sư bảo: em phải thí nghiệm trong vòng tháng này, deploy tháng này — như vậy cho em 3 tháng. Các bạn chốt lại: ok, 3 tháng phải đạt được mức A, mức B, mức C, mức D; đạt không được thì xem như fail. Ok chưa? Trình lên sếp, sếp duyệt, cả team đi làm 3 tháng. 3 tháng sau may mắn quá, vừa suýt soát đạt — ok, mình sang phase tiếp theo làm tiếp. Còn nếu 3 tháng sau cả team tự biết luôn là không đạt được — liệt kê ra lý do. Sẽ có hai trường hợp. Thứ nhất: team biết lý do và phát hiện được solution để thử, thì có thể xin thêm 1 tháng để thử. Còn không — team hết ý tưởng rồi, đã cố gắng hết sức rồi — ok, xin sếp luôn, đổi dự án khác. Còn hơn làm thêm 3 tháng nữa là 6 tháng, sếp lại check không có kết quả — ok, đuổi việc. Đấy, rất thực tế nhá. Còn nếu to hơn nữa, các bạn làm dự án startup, sếp tin tưởng các bạn — sếp không phải người chuyên về kỹ thuật đúng không, các bạn cứ bùa sếp là \"cứ làm đi sếp, cứ làm đi sếp\" — không biết khi nào dừng luôn. Đến một ngày sếp bảo: thôi, hết tiền rồi, công ty giải tán. Nên rất quan trọng nhá: deadline và cái metric đánh giá.\n\n[3] Mã: [T03-151] (Bài giảng)\nNội dung: Trả lời (trợ giảng): Về project của nhóm thì chương trình sẽ đưa cho bạn một list các vấn đề gặp phải của tập đoàn Vingroup, và bạn có thể tự tạo thêm những dự án riêng — nghĩa là cái dự án bạn propose thật sự có ý nghĩa, tức là trên xã hội hiện tại người ta đang gặp vấn đề đó — thì các anh mentor có thể approve cho bạn làm.\n\n[4] Mã: [T01-072] (Bài giảng)\nNội dung: Trong này có kỹ năng liên quan đến quan sát — mình nghĩ nó rất quan trọng. Quan sát ở đây là: nếu bạn build một sản phẩm cho một đối tượng nào đấy, thì thực sự bạn nên tìm cái nơi mà họ hay xuất hiện, ngồi cùng với họ là tốt nhất. Có rất nhiều sản phẩm mà họ đã làm đến mức đấy. NotebookLM là một sản phẩm rất nổi tiếng của Google đúng không — sản phẩm đấy xuất phát từ một dự án Google Labs. Google có một văn hóa là cho nhân viên 20% thời gian để phát triển các dự án cá nhân hoặc các dự án khác; nếu thành công thì công ty sẽ đầu tư cho nó. Team đầu tiên của họ chỉ có ba người, trong đấy chỉ có một người full-time, còn hai người part-time: một chị là PM, một bác là chuyên gia nghiên cứu rất lâu năm trong ngành tâm lý — về thiết kế tư duy — và một bạn là engineer. Sản phẩm đấy đầu tiên họ định vị là công cụ cho học sinh sinh viên để nghiên cứu, học bài, nghiên cứu các tài liệu. Cách tiếp cận của NotebookLM là để giải quyết hiện tượng AI bị ảo giác: thay vì cho AI tìm những thông tin ở bên ngoài để trả lời câu hỏi, người dùng sẽ là người chọn lọc các dữ liệu đấy, và AI giúp người dùng khám phá thông tin đấy một cách nhanh nhất và hiệu quả nhất. Họ xác định đối tượng là học sinh sinh viên, và chị PM đấy đến ngồi cạnh các bạn học sinh sinh viên hằng ngày luôn — để theo dõi, để xem các bạn thực sự làm gì.\n\n[5] Mã: [T06-014] (Bài giảng)\nNội dung: Ok, các bạn thấy đấy đúng không ạ? Mình đang thấy có một phần hay nhất trong phần trình bày của bạn — bạn tên gì nhỉ? [học viên] đúng không? Phần hay nhất trong phần trình bày vừa rồi của [học viên] là gì? Đó là vibe code. Bây giờ có bạn nào không đồng tình chuyện này không? Em không đồng tình — vì sao, cầm mic lên. Các bạn khác chưa làm thì tranh thủ làm cho xong nhé.\n\nCÂU HỎI HỌC VIÊN: MVP là gì? Cho ví dụ\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T01-072], giảng viên có nói: \"Trong này có kỹ năng liên quan đến quan sát — mình nghĩ nó rất quan trọng. Quan sát ở đây là: nếu bạn build một sản phẩm cho một đối tượng nào đấy, thì thực sự bạn nên tìm cái nơi mà họ hay xuất hiện,...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T01-072"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T01-072"
+    ],
+    "allowedCodes": [
+      "T01-008",
+      "T03-043",
+      "T03-151",
+      "T01-072",
+      "T06-014"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "MVP (Minimum Viable Product) là sản phẩm tối thiểu có thể ra mắt để thu thập phản hồi từ người dùng và kiểm tra ý tưởng sản phẩm. Một ví dụ điển hình là sản phẩm NotebookLM của Google, được phát triển từ một dự án nhỏ với đội ngũ gồm một PM và một kỹ sư, nhằm giải quyết nhu cầu của học sinh sinh viên trong việc nghiên cứu tài liệu.",
+    "answerDirection": "Hướng trả lời: MVP là sản phẩm tối thiểu có thể ra mắt để ki���m tra ý tưởng, ví dụ là NotebookLM của Google.",
+    "focusedChunks": [
+      "T01-072"
+    ]
+  }
+}

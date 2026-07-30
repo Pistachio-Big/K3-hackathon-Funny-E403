@@ -1,0 +1,54 @@
+{
+  "question": "Mô hình ngôn ngữ (LLM) được huấn luyện như thế nào?",
+  "retrieved": [
+    {
+      "code": "T04-060",
+      "score": 0.8182
+    },
+    {
+      "code": "T06-075",
+      "score": 0.8182
+    },
+    {
+      "code": "T01-029",
+      "score": 0.6364
+    },
+    {
+      "code": "T03-012",
+      "score": 0.6364
+    },
+    {
+      "code": "T04-003",
+      "score": 0.6364
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nMô hình ngôn ngữ lớn (LLM) được huấn luyện dựa trên kiến trúc transformer và lượng dữ liệu khổng lồ, có thể là có cấu trúc hoặc không có cấu trúc. Quá trình huấn luyện cần sự tham gia của con người để đánh giá và cải thiện chất lượng câu trả lời của mô hình.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Mô hình ngôn ngữ lớn được huấn luyện thông qua kiến trúc transformer và dữ liệu lớn, với sự tham gia của con người trong quá trình đánh giá.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T04-060] (Bài giảng)\nNội dung: Cho nên bản chất tất cả những mô hình ngôn ngữ lớn bây giờ, mặc dù nó đã đạt đến mức năng lực như vậy rồi, nhưng nó vẫn luôn cần con người tham gia vào việc huấn luyện các dữ liệu đấy. Con người sẽ là những người có khả năng đánh giá được đấy là câu trả lời tốt hay không. Ví dụ như các bạn khi xài ChatGPT sẽ thấy là từng câu trả lời của nó luôn có like hoặc dislike — đấy sẽ là những tương tác để cho mô hình học được lần sau nó có thể trả lời như thế nào. Hay là thỉnh thoảng nó sẽ sinh ra hai đến ba option để cho mình tự chọn là mình nên trả lời như thế nào. Hay đến bây giờ, các bài toán cần con người tham gia đánh giá kết quả đã đạt đến mức là cần các chuyên gia. Có một cái ngành xây dựng các bộ dữ liệu cho các công ty làm AI, đấy là ngành gán nhãn dữ liệu — labeling, data annotation. Đây là cái ngành khiến cho Scale AI trở thành công ty tỷ đô. Scale AI là công ty startup của tỷ phú tự thân trẻ nhất thế giới — Alexandr Wang. Ông đấy vừa về lead cái team AI của Meta, được Meta acquire về với giá rất là đắt — mình cũng không nhớ, mười mấy tỷ ạ. Tỷ phú tự thân trẻ nhất, có 27 tuổi thôi.\n\n[2] Mã: [T06-075] (Bài giảng)\nNội dung: Rồi, sang phần số hai, cũng là phần quan trọng nhất trong buổi hôm nay. Sau phần này sẽ có một bạn hỗ trợ, các bạn sẽ tự thực hành để demo cái cơ chế transformer hoạt động như thế nào, attention hoạt động như thế nào. Cái LLM thì chúng ta có thể xem nó là gì? Là một mô hình ngôn ngữ rất lớn, dựa trên kiến trúc transformer, và huấn luyện dựa trên lượng dữ liệu có cấu trúc hoặc không có cấu trúc rất khổng lồ — người ta định nghĩa token đấy. Như lúc nãy nói, nó có thể tạo ra cái mới: có thể là văn bản, trả lời câu hỏi, viết code, hoặc quá trình lý luận nhiều bước phức tạp. Đặc điểm chính của LLM, đầu tiên là việc decode. Cho mình hỏi ở đây có bạn nào giải thích được encode và decode như nào không? À, em để dành cho người khác nhá. Các bạn nhớ lúc nãy chúng ta có concept giơ tay phát biểu thì sẽ có ghi nhận và tích điểm đúng không? Bây giờ mình mời bạn ở phía xa đầu kia trước. Mời em, giới thiệu tên và giải thích ngắn gọn encode và decode.\n\n[3] Mã: [T01-029] (Bài giảng)\nNội dung: Có một tài liệu của Google — People + AI Guidebook — mọi người click vào cái link. Cái này cũng sẽ là một tài liệu ngày hôm nay chúng ta sẽ đọc. Cái framework này của Google rất chi tiết, rất đầy đủ luôn, chắc nó thay được cả buổi học luôn — nó chia đến các module như này. Thực ra nó được xây dựng từ cái thời các mô hình AI machine learning thôi, hồi đấy đã có cái này rồi, và bây giờ được update dần lên để có thể adapt được với các mô hình ngôn ngữ lớn. Bạn sẽ nhìn được các module như thế này, và mình nghĩ bạn hoàn toàn có thể dùng nó làm một cái sườn để đi theo từng bước một trong cả quá trình mình làm sản phẩm — hoàn toàn có thể là một cái sườn để các bạn bám vào. Buổi ngày hôm nay mình sẽ đi nhiều vào phần đầu tiên là define success. Trong này có các module kiến thức về data, về mental model — mental model và expectation chính là mô hình tư duy của con người như thế nào; mình hiểu được cái đấy thì mình mới thiết kế được sản phẩm, trải nghiệm phù hợp. Rồi các layer về làm thế nào để giữ được niềm tin của người dùng với sản phẩm AI, và có rất nhiều những ví dụ ở phía bên trong nữa. Một chương này cực kỳ dài — khối lượng kiến thức rất nhiều, và bạn rất nên dành thời gian để đọc sâu hơn. Ở cuối nó còn có những bài tập nhỏ để các bạn có thể ứng dụng nữa. Ngày hôm nay chúng ta sẽ đi sâu hơn vào chương đầu tiên: xác định nhu cầu của user, đánh giá sức mạnh của AI, và từ đấy tìm ra được cái nơi mà nên đưa AI vào trong sản phẩm. Còn lại hai phần chúng ta có thể đọc thêm một số bài viết của Anthropic hay của Google để các bạn hiểu được một số cách chúng ta chọn — chắc là khi bạn định đưa AI vào thì trong AI nó cũng có rất nhiều mức độ chứ không phải chỉ có một mức độ, bạn cũng phải chọn cái mức độ phù hợp.\n\n[4] Mã: [T03-012] (Bài giảng)\nNội dung: Rồi các bạn nghĩ xa hơn tí đi. Bây giờ mầm non, lớp 1 lớp 2, trẻ em đi học — việc học bây giờ khác gì ngày xưa? Ngày xưa để giải đáp được một bài toán, thường phụ huynh phải tự giải được bài toán đấy đúng không? Hoặc phải có giáo viên chuyên về phần đấy. Nhất là môn ngoại ngữ tiếng Anh — mình đang không nói môn toán, tại vì những môn toán và vật lý nó có cái khó khăn khác. Nếu các bạn theo dõi chuyên sâu thì các bạn sẽ biết anh Lương Minh Thắng ở team Google DeepMind làm cái model có thể giải được những bài toán Olympic, chắc bây giờ là mức độ huy chương vàng Olympic thế giới rồi. Nên để làm được mô hình AI giải toán thì đấy là một vấn đề khác, mình sẽ không nói. Tuy nhiên bây giờ những cái như ngôn ngữ này, đọc viết này, những activity chuyên biệt cho trẻ em hay cho một nhóm người nhất định, thì nó là một xu hướng đang rất cần.\n\n[5] Mã: [T04-003] (Bài giảng)\nNội dung: Ngày hôm nay chúng ta vào bài đầu tiên: học về nền tảng của AI và các mô hình ngôn ngữ lớn — LLM. Giải thích tại sao ChatGPT có thể làm được những việc đấy — bây giờ có rất nhiều: Gemini, Claude — tại sao nó có thể làm được rất nhiều việc như vậy, phía bên dưới nó vận hành như thế nào. Đây sẽ là kiến thức nền tảng mà chúng ta cần nắm vững, bởi vì khoá học, chương trình lần này được xây dựng, thiết kế để các bạn ứng dụng nhiều hơn. AI thì rất là rộng: trước khi ChatGPT ra đời, chúng ta đã có AI vài chục năm rồi, và ngày xưa đã có những mô hình AI mà bọn mình hay gọi là AI truyền thống — AI trước thời ChatGPT — đã có rất nhiều rồi. Thế nhưng sau thời ChatGPT thì các mô hình ngôn ngữ lớn nổi lên với những năng lực rất khác. Ngày hôm nay chúng ta sẽ trả lời câu hỏi: nó khác nhau như thế nào, và với năng lực mới này thì tôi có thể làm được cái gì. Toàn bộ khoá học lần này được thiết kế để chúng ta đi sâu vào phần LLM hơn, và build các công cụ trên nền tảng large language model, build agent — đấy là scope của khoá này.\n\nCÂU HỎI HỌC VIÊN: Mô hình ngôn ngữ (LLM) được huấn luyện như thế nào?\n\nTRẢ LỜI:",
+  "rawAnswer": "Mô hình ngôn ngữ lớn (LLM) được huấn luyện dựa trên kiến trúc transformer và lượng dữ liệu khổng lồ, bao gồm cả dữ liệu có cấu trúc và không có cấu trúc. Quá trình huấn luyện này cần sự tham gia của con người để đánh giá và cải thiện chất lượng câu trả lời của mô hình. Con người sẽ đánh giá xem câu trả lời nào là tốt hay không, ví dụ như thông qua các tương tác like hoặc dislike khi sử dụng mô hình như ChatGPT [T04-060].",
+  "verified": {
+    "verifiedCitations": [
+      "T04-060"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_Pxgo1loOsCv4Sg8HbIhfFWcx",
+      "name": "lookup_document",
+      "args": {
+        "topic": "mô hình ngôn ngữ (LLM) huấn luyện"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Mô hình ngôn ngữ lớn (LLM) được huấn luyện dựa trên kiến trúc transformer và lượng dữ liệu khổng lồ, có thể là có cấu trúc hoặc không có cấu trúc. Quá trình huấn luyện cần sự tham gia của con người để đánh giá và cải thiện chất lượng câu trả lời của mô hình.",
+    "answerDirection": "Hướng trả lời: Mô hình ngôn ngữ lớn được huấn luyện thông qua kiến trúc transformer và dữ liệu lớn, với sự tham gia của con người trong quá trình đánh giá.",
+    "focusedChunks": [
+      "T04-060",
+      "T06-075",
+      "T05-003"
+    ]
+  }
+}

@@ -43,12 +43,11 @@ services:
       - "3000:3000"
     environment:
       # API key + config — truyền qua env, không bake vào image
-      GEMINI_API_KEY: ${GEMINI_API_KEY:?Set GEMINI_API_KEY in .env or environment}
-      GEMINI_MODEL_EMBED: ${GEMINI_MODEL_EMBED:-text-embedding-004}
-      GEMINI_MODEL_GEN: ${GEMINI_MODEL_GEN:-gemini-3-flash}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in .env or environment}
+      JINA_API_KEY: ${JINA_API_KEY:?Set JINA_API_KEY in .env or environment}
       QDRANT_URL: http://qdrant:6333
       QDRANT_COLLECTION: ${QDRANT_COLLECTION:-vlearn_tutor}
-      VECTOR_DIM: ${VECTOR_DIM:-768}
+      VECTOR_DIM: ${VECTOR_DIM:-1024}
       PORT: 3000
     volumes:
       # Mount eval/ để persist cache + chunks nếu sửa data

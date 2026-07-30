@@ -1,0 +1,58 @@
+{
+  "question": "nếu thầy trả lời sai thì em điểm thấp thì sao ạ",
+  "retrieved": [
+    {
+      "code": "T01-059",
+      "score": 0.5029
+    },
+    {
+      "code": "T01-053",
+      "score": 0.4822
+    },
+    {
+      "code": "T03-098",
+      "score": 0.4631
+    },
+    {
+      "code": "T01-051",
+      "score": 0.4213
+    },
+    {
+      "code": "T03-070",
+      "score": 0.4173
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nNếu thầy trả lời sai, học viên có thể học được từ sai lầm đó, nhưng nếu nhận định vấn đề sai ngay từ đầu thì sẽ không học được gì và mất thời gian. Việc xác định đúng vấn đề và phạm vi là rất quan trọng để tránh những sai lầm không cần thiết.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Nếu thầy trả lời sai, em vẫn có thể học được từ sai lầm đó, nhưng cần phải nhận định đúng vấn đề ngay từ đầu để không mất thời gian.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T01-059] (Bài giảng)\nNội dung: Nếu bạn làm sai cái đúng — đây là vấn đề đúng nhá — thì chúng ta làm gì? Chúng ta đi tìm giải pháp, bạn sẽ thử. Trong quá trình đấy, tất nhiên mỗi lần thử bạn sẽ học được — như nãy rất nhiều bạn nói: bạn học được cách làm, hoặc học được cả cách thất bại. Vì khi bạn đã xác định vấn đề này rồi thì ngay từ đầu bạn đã khoanh một không gian giải pháp rồi; bạn chỉ cần kiên trì thử thì chắc chắn sẽ tìm ra được một cái đúng.\n\n[2] Mã: [T01-053] (Bài giảng)\nNội dung: [Học viên]: Lập luận của em đơn giản thôi. Khi em nhận diện một bài toán đúng từ đầu, cho dù em có làm sai thì em học được bài học từ cái sai đấy. Nhưng khi ngay từ đầu em nhận định vấn đề sai, mà em lại làm, thì em mất thời gian mà chẳng học được bài học gì. Em nhận định vấn đề sai — cái đấy thôi.\n\n[3] Mã: [T03-098] (Bài giảng)\nNội dung: Cái mà em thiếu là em không hiểu về cái scope: em đặt ra một bài toán nhưng em không có scope của em. Giống như em giải bài toán \"bạn An đi chợ mua hai quả táo\" — nó rõ ràng hết đúng không? Không có vụ tự nhiên bạn em bảo \"bài táo này phải là năm quả, tại vì lúc ấy trên trời có một quả táo rơi xuống chỗ bạn An\". Em có chấp nhận câu trả lời này không? Dĩ nhiên là không. Tại vì sao? Vì em có một cái scope. Hay bây giờ em mở PlayStation lên chơi, họ bảo bạn phải calibrate cái tay cầm để đảm bảo trải nghiệm tốt nhất đúng không? Em để tay cầm lung tung, em đua xe nó đâm quẹt — em không thể trách nhà sản xuất, bởi vì nhà sản xuất đã đưa ra instruction mà em không follow. Bây giờ mọi người hay bảo \"con AI nó ngu, tôi hỏi nó trả lời sai hết\", nhưng có nhiều người lại bảo \"không, tôi thấy nó rất tốt\". Tại sao cùng một sản phẩm ChatGPT, có người dùng được, có người không? Skill issue đúng không? Có người họ đọc hướng dẫn, họ làm theo những prompt mẫu đảm bảo kết quả, thử là ra kết quả đúng; còn có người không đọc hướng dẫn, tự làm theo ý họ, họ nghĩ là họ hiểu đúng chứ nó không nằm trong hướng dẫn. Nên câu hỏi của bạn em ngay từ đầu: em phải xác định cái scope, và do em không có scope nên bạn em hỏi một phát là em \"chết\". Em nghĩ em làm được cái thứ rất perfect luôn, hệ thống lỗi đâu vẫn chạy được — thấy sai đúng không? Hệ thống của em dựa vào sensor đúng không — sensor \"đơ\" thì đành chịu. Còn em nhận dạng sai thì đó là vấn đề khác: nhận dạng sai thì em phải nói hệ thống em nhận dạng với độ chính xác bao nhiêu phần trăm — đấy là bảng khác đúng không?\n\n[4] Mã: [T01-051] (Bài giảng)\nNội dung: [Học viên]: Do the wrong thing right nguy hiểm hơn. Khi mình giải quyết một vấn đề, cái kết quả không quan trọng bằng con đường — con đường và tư duy có đúng hay không. Con đường và tư duy đúng thì cho dù bài toán như thế nào chúng ta cũng sẽ tìm được; có thể sai một lần, hai lần, nhưng con đường đi là đúng thì chúng ta vẫn đang đi đúng hướng. Còn nếu con đường đã sai từ đầu rồi thì cho dù có làm nhiều lần vẫn không [không nghe rõ]. The wrong nguy hiểm hơn.\n\n[5] Mã: [T03-070] (Bài giảng)\nNội dung: **[Học viên]:** Em thưa thầy với các bạn, em đóng góp một ý tưởng như sau: ban đầu em sẽ có một bộ những cái đáp án trước, rồi từ đấy em sẽ nhờ AI viết ra đề bài cho cái đáp án đấy. Sau khi viết ra đề bài xong thì AI sẽ lại còn một bước nữa là nhìn lại bài toán đấy và giải xem có ra đúng đáp án hay không, để phòng trường hợp AI bịa ra.\n\nCÂU HỎI HỌC VIÊN: nếu thầy trả lời sai thì em điểm thấp thì sao ạ\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T01-053], giảng viên có nói: \"[Học viên]: Lập luận của em đơn giản thôi. Khi em nhận diện một bài toán đúng từ đầu, cho dù em có làm sai thì em học được bài học từ cái sai đấy. Nhưng khi ngay từ đầu em nhận định vấn đề sai, mà em ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T01-053"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T01-053",
+      "T03-098",
+      "T01-051"
+    ],
+    "allowedCodes": [
+      "T01-059",
+      "T01-053",
+      "T03-098",
+      "T01-051",
+      "T03-070"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Nếu thầy trả lời sai, học viên có thể học được từ sai lầm đó, nhưng nếu nhận định vấn đề sai ngay từ đầu thì sẽ không học được gì và mất thời gian. Việc xác định đúng vấn đề và phạm vi là rất quan trọng để tránh những sai lầm không cần thiết.",
+    "answerDirection": "Hướng trả lời: Nếu thầy trả lời sai, em vẫn có thể học được từ sai lầm đó, nhưng cần phải nhận định đúng vấn đề ngay từ đầu để không mất thời gian.",
+    "focusedChunks": [
+      "T01-053",
+      "T03-098",
+      "T01-051"
+    ]
+  }
+}

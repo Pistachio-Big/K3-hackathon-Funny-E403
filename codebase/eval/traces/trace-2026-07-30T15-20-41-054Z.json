@@ -1,0 +1,81 @@
+{
+  "question": "vậy cho em hỏi luôn là attention vs self-attention khác nhau chỗ nào",
+  "retrieved": [
+    {
+      "code": "T03-124",
+      "score": 0.6923
+    },
+    {
+      "code": "T03-133",
+      "score": 0.6923
+    },
+    {
+      "code": "T06-059",
+      "score": 0.6923
+    },
+    {
+      "code": "T06-086",
+      "score": 0.6923
+    },
+    {
+      "code": "T01-062",
+      "score": 0.6154
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.692 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "vậy cho em hỏi luôn là attention vs self-attention khác nhau chỗ nào",
+    "topChunks": [
+      {
+        "code": "T03-124",
+        "score": 0.6923076923076923
+      },
+      {
+        "code": "T03-133",
+        "score": 0.6923076923076923
+      },
+      {
+        "code": "T06-059",
+        "score": 0.6923076923076923
+      },
+      {
+        "code": "T06-086",
+        "score": 0.6923076923076923
+      },
+      {
+        "code": "T01-062",
+        "score": 0.6153846153846154
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_OnvvsqYsZUyNdZyqQvBp3N5s",
+      "name": "lookup_document",
+      "args": {
+        "topic": "attention"
+      }
+    },
+    {
+      "id": "call_PNZPCXX54dTcaZxL9QepZyKB",
+      "name": "lookup_document",
+      "args": {
+        "topic": "self-attention"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Attention là cơ chế cho phép mô hình tập trung vào các phần khác nhau của đầu vào, trong khi self-attention là một dạng cụ thể của attention, nơi mỗi token trong chuỗi đầu vào tương tác với các token khác trong cùng một chuỗi để tạo ra một biểu diễn ngữ nghĩa phong phú hơn.",
+    "answerDirection": "Hướng trả lời: Attention là cơ chế tổng quát, trong khi self-attention là một ứng dụng cụ thể của nó trong việc xử lý chuỗi dữ liệu.",
+    "focusedChunks": [
+      "T06-086",
+      "T06-059"
+    ]
+  }
+}

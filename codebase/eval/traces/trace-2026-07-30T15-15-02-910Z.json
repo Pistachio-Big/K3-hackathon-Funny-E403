@@ -1,0 +1,54 @@
+{
+  "question": "Transformer hoạt động thế nào?",
+  "retrieved": [
+    {
+      "code": "T04-038",
+      "score": 0.8
+    },
+    {
+      "code": "T04-040",
+      "score": 0.8
+    },
+    {
+      "code": "T04-070",
+      "score": 0.8
+    },
+    {
+      "code": "T04-091",
+      "score": 0.8
+    },
+    {
+      "code": "T06-075",
+      "score": 0.8
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nTransformer hoạt động dựa trên cơ chế attention, cho phép nó nhận diện và xử lý các từ trong một câu dài, xác định các từ quan trọng và mối liên hệ giữa chúng. Mô hình này không chỉ đọc từng từ một mà còn hiểu được ngữ nghĩa của cả đoạn văn bản thông qua việc tập trung vào các từ khóa.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Transformer hoạt động thông qua cơ chế attention, cho phép nó hiểu và xử lý ngữ nghĩa của văn bản bằng cách xác định các từ quan trọng và mối liên hệ giữa chúng.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T04-038] (Bài giảng)\nNội dung: À, mình để nhầm thứ tự slide một chút. Sau đấy, đến năm 2017 là bài báo rất nổi tiếng — \"Attention Is All You Need\". Không biết có ai biết bài báo này không? Cũng có nhiều bạn không biết. Nếu nói đến ChatGPT là nói đến kiến trúc transformer — đấy là những thuật ngữ chúng ta cần biết: kiến trúc transformer, ChatGPT. Bài báo khởi điểm của kiến trúc đấy là \"Attention Is All You Need\", xuất bản năm 2017, do team của Google làm. Lát nữa chúng ta sẽ có những phần đi sâu hơn về cách tìm hiểu mô hình này, và có một số platform online để các bạn vào tự trải nghiệm, xem thực sự transformer hoạt động như thế nào.\n\n[2] Mã: [T04-040] (Bài giảng)\nNội dung: Transformer có một cách tiếp cận khác, đặc biệt hơn — tại sao lại có chữ attention trong \"Attention Is All You Need\" ở đây: thay vì lần lượt đọc và dịch từng chữ một, nó sẽ đọc cả cụm đấy, và nhận diện được đâu là — hiểu nôm na — những keyword, đâu là những cụm từ có sự liên quan đến nhau, để nhận diện ra được mối liên kết giữa nhiều từ trong một câu. Nó có thể xử lý được cả một câu dài: thay vì chỉ nhìn từng chữ nhỏ lẻ, nhìn từng phần nhỏ lẻ, nó sẽ nhìn cả một đoạn dài và tìm ra các mối liên hệ giữa các từ ở trong đấy. Thực ra trong một câu, trong một văn bản, không phải mọi từ đều có độ quan trọng như nhau. Sẽ có những từ là keyword — những từ chiếm tỉ trọng phần lớn để xác định được ngữ nghĩa của văn bản đấy. Mô hình này được xây ra để có thể nhận diện được ngay lập tức đâu là những thứ chúng ta cần tập trung. Đấy là lý do của chữ attention: trong toàn bộ dữ liệu này, tôi sẽ tập trung vào những từ này — đấy là những chữ quan trọng của đoạn văn bản này, và những chữ này liên quan đến nhau, khi đứng với nhau thì có ý nghĩa như thế này. Đấy là diễn giải một cách dễ hiểu nhất về cách transformer hoạt động. Bài báo này xây dựng ra nền tảng của transformer từ tận năm 2017 cơ — và thậm chí là từ team Google luôn.\n\n[3] Mã: [T04-070] (Bài giảng)\nNội dung: Đại khái là ở đây sẽ là một nền tảng tương tác — một công cụ giúp chúng ta hiểu về Transformer, kiến trúc Transformer, cách mà nó sinh ra những từ tiếp theo, và cách mà nó hoạt động dựa trên xác suất như thế nào — thì mọi người có thể dành thời gian để thử. Cái này bình thường là máy nó có thể download cái mô hình GPT-2 về và nó tự động chạy. Hoặc nếu không, bạn có thể chọn những câu mẫu ở đây và bạn nhìn được cách mà nó sinh ra. Có một cái rất hay ở đây mà mình nghĩ là chúng ta sẽ cần hiểu, vì sau này khi các bạn làm việc với API, các bạn sẽ cần phải chọn chỉnh như này. Không biết ở đây đã có ai gọi API của các AI model chưa? Mọi người có biết mấy cái chỉ số kiểu temperature không? Sampling không? Top k, top p gì đấy không? Có hiểu nó là gì không?\n\n[4] Mã: [T04-091] (Bài giảng)\nNội dung: Tóm lại buổi chiều hôm nay — buổi đầu tiên của chúng ta — mọi người cần nhớ: thứ nhất, các mô hình ngôn ngữ lớn bây giờ hoạt động trên nền tảng Transformer và sinh các token tiếp theo — dự đoán các token tiếp theo. Để càng ngày càng thông minh như bây giờ, nó phải có những lớp công cụ — tool, context, các lớp hệ thống — bao phủ trên mô hình đấy; bản thân mô hình bị giới hạn, để thực sự đưa ra đời thật và có tác dụng thì phải xây dựng thêm lớp bên ngoài. Để lựa chọn được mô hình phù hợp, bạn phải thực sự hiểu điểm mạnh của mô hình đấy, hiểu công việc bạn đang cần, và phải có sự thử nghiệm — bạn phải thử và biết nó có thực sự đủ mạnh hay không. Một điều quan trọng nữa: trong quá trình chúng ta build sản phẩm sắp tới, việc xây dựng cho mình tư duy đánh giá kết quả đầu ra — mindset về evaluation — theo mình rất quan trọng: nó giúp các bạn không bị vỡ mộng khi đưa sản phẩm ra đời thật, và có thể đi nhanh hơn trong một thế giới đang thay đổi rất nhanh. Mọi người có ai có câu hỏi gì không?\n\n[5] Mã: [T06-075] (Bài giảng)\nNội dung: Rồi, sang phần số hai, cũng là phần quan trọng nhất trong buổi hôm nay. Sau phần này sẽ có một bạn hỗ trợ, các bạn sẽ tự thực hành để demo cái cơ chế transformer hoạt động như thế nào, attention hoạt động như thế nào. Cái LLM thì chúng ta có thể xem nó là gì? Là một mô hình ngôn ngữ rất lớn, dựa trên kiến trúc transformer, và huấn luyện dựa trên lượng dữ liệu có cấu trúc hoặc không có cấu trúc rất khổng lồ — người ta định nghĩa token đấy. Như lúc nãy nói, nó có thể tạo ra cái mới: có thể là văn bản, trả lời câu hỏi, viết code, hoặc quá trình lý luận nhiều bước phức tạp. Đặc điểm chính của LLM, đầu tiên là việc decode. Cho mình hỏi ở đây có bạn nào giải thích được encode và decode như nào không? À, em để dành cho người khác nhá. Các bạn nhớ lúc nãy chúng ta có concept giơ tay phát biểu thì sẽ có ghi nhận và tích điểm đúng không? Bây giờ mình mời bạn ở phía xa đầu kia trước. Mời em, giới thiệu tên và giải thích ngắn gọn encode và decode.\n\nCÂU HỎI HỌC VIÊN: Transformer hoạt động thế nào?\n\nTRẢ LỜI:",
+  "rawAnswer": "Transformer hoạt động thông qua cơ chế attention, cho phép nó hiểu và xử lý ngữ nghĩa của văn bản bằng cách xác định các từ quan trọng và mối liên hệ giữa chúng. Thay vì đọc từng từ một cách tuần tự, Transformer có khả năng đọc cả một cụm từ, nhận diện các từ khóa và mối liên hệ giữa chúng, giúp nó xử lý được cả những câu dài. Mô hình này được thiết kế để nhận diện ngay lập tức những từ cần tập trung, từ đó hiểu được ngữ nghĩa của toàn bộ đoạn văn bản [T04-040].",
+  "verified": {
+    "verifiedCitations": [
+      "T04-040"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_Egd9eCWwB5ulEr4puF4ayDmL",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Transformer hoạt động"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Transformer hoạt động dựa trên cơ chế attention, cho phép nó nhận diện và xử lý các từ trong một câu dài, xác định các từ quan trọng và mối liên hệ giữa chúng. Mô hình này không chỉ đọc từng từ một mà còn hiểu được ngữ nghĩa của cả đoạn văn bản thông qua việc tập trung vào các từ khóa.",
+    "answerDirection": "Hướng trả lời: Transformer hoạt động thông qua cơ chế attention, cho phép nó hiểu và xử lý ngữ nghĩa của văn bản bằng cách xác định các từ quan trọng và mối liên hệ giữa chúng.",
+    "focusedChunks": [
+      "T04-040",
+      "T04-091",
+      "T06-075"
+    ]
+  }
+}

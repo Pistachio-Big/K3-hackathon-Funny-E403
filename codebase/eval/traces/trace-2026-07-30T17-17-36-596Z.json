@@ -1,0 +1,85 @@
+{
+  "question": "Wizard of Oz MVP là gì?",
+  "retrieved": [
+    {
+      "code": "T06-130",
+      "score": 0.2078
+    },
+    {
+      "code": "T01-008",
+      "score": 0.1969
+    },
+    {
+      "code": "T01-062",
+      "score": 0.1754
+    },
+    {
+      "code": "T01-011",
+      "score": 0.1747
+    },
+    {
+      "code": "T03-043",
+      "score": 0.1683
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Bạn nên:\n• Hỏi giảng viên hoặc TA trong Discord\n• Tra cứu tài liệu bên ngoài",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T06-130",
+      "T01-008",
+      "T01-062",
+      "T01-011",
+      "T03-043"
+    ],
+    "focusedCodes": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Wizard of Oz MVP là gì?",
+    "topChunks": [
+      {
+        "code": "T06-130",
+        "score": 0.20777614
+      },
+      {
+        "code": "T01-008",
+        "score": 0.19690952
+      },
+      {
+        "code": "T01-062",
+        "score": 0.17543158
+      },
+      {
+        "code": "T01-011",
+        "score": 0.17467226
+      },
+      {
+        "code": "T03-043",
+        "score": 0.16826802
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Wizard of Oz MVP là gì?",
+      "Wizard of Oz MVP là gì? T06-130"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_UXFu2jyd9s0FvMkbgIam9yR1",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Wizard of Oz MVP"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Wizard of Oz MVP (Minimum Viable Product) là một phương pháp phát triển sản phẩm trong đó một sản phẩm được tạo ra với sự hỗ trợ của con người thay vì công nghệ, nhằm kiểm tra ý tưởng và thu thập phản hồi từ người dùng mà không cần phát triển toàn bộ sản phẩm ngay từ đầu.",
+    "answerDirection": "Hướng trả lời: Wizard of Oz MVP là một phương pháp thử nghiệm sản phẩm bằng cách sử dụng con người để giả lập các chức năng của sản phẩm, giúp thu thập dữ liệu và phản hồi từ người dùng mà không cần phát triển toàn bộ sản phẩm.",
+    "focusedChunks": []
+  }
+}

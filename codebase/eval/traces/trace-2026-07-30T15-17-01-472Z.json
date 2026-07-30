@@ -1,0 +1,81 @@
+{
+  "question": "Giải thích token và embedding cho người hoàn toàn mới",
+  "retrieved": [
+    {
+      "code": "T03-122",
+      "score": 0.7
+    },
+    {
+      "code": "T03-133",
+      "score": 0.7
+    },
+    {
+      "code": "T04-050",
+      "score": 0.7
+    },
+    {
+      "code": "T04-076",
+      "score": 0.7
+    },
+    {
+      "code": "T06-075",
+      "score": 0.7
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.700 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Giải thích token và embedding cho người hoàn toàn mới",
+    "topChunks": [
+      {
+        "code": "T03-122",
+        "score": 0.7
+      },
+      {
+        "code": "T03-133",
+        "score": 0.7
+      },
+      {
+        "code": "T04-050",
+        "score": 0.7
+      },
+      {
+        "code": "T04-076",
+        "score": 0.7
+      },
+      {
+        "code": "T06-075",
+        "score": 0.7
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_O3Bo8gLkw3IpAsyggVUr7zzx",
+      "name": "lookup_document",
+      "args": {
+        "topic": "token"
+      }
+    },
+    {
+      "id": "call_bAmEGKKgD57ThwYqOtJdfXnd",
+      "name": "lookup_document",
+      "args": {
+        "topic": "embedding"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Token là đơn vị cơ bản trong xử lý ngôn ngữ tự nhiên, thường được quy đổi từ ký tự hoặc từ trong văn bản. Embedding là quá trình chuyển đổi token thành các vector số để máy tính có thể hiểu và xử lý thông tin ngôn ngữ.",
+    "answerDirection": "Hướng trả lời: Giải thích khái niệm token và embedding trong ngữ cảnh xử lý ngôn ngữ tự nhiên, nhấn mạnh vai trò của chúng trong các mô hình ngôn ngữ lớn.",
+    "focusedChunks": [
+      "T04-050",
+      "T06-075"
+    ]
+  }
+}

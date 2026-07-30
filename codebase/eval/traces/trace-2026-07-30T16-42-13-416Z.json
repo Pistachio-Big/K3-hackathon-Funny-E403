@@ -1,0 +1,90 @@
+{
+  "question": "RTFC là gì? Giải thích 4 thành phần",
+  "retrieved": [
+    {
+      "code": "T06-155",
+      "score": 0.2078
+    },
+    {
+      "code": "T04-012",
+      "score": 0.2026
+    },
+    {
+      "code": "T05-135",
+      "score": 0.2019
+    },
+    {
+      "code": "T04-094",
+      "score": 0.1959
+    },
+    {
+      "code": "T06-080",
+      "score": 0.1891
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Bạn nên:\n• Hỏi giảng viên hoặc TA trong Discord\n• Tra cứu tài liệu bên ngoài",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T06-155",
+      "T04-012",
+      "T05-135",
+      "T04-094",
+      "T06-080"
+    ],
+    "focusedCodes": [
+      "T06-080"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "RTFC là gì? Giải thích 4 thành phần",
+    "topChunks": [
+      {
+        "code": "T06-155",
+        "score": 0.20775837
+      },
+      {
+        "code": "T04-012",
+        "score": 0.20263378
+      },
+      {
+        "code": "T05-135",
+        "score": 0.20189503
+      },
+      {
+        "code": "T04-094",
+        "score": 0.19589028
+      },
+      {
+        "code": "T06-080",
+        "score": 0.18910319
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "RTFC là gì? Giải thích 4 thành phần",
+      "rtfc giải thích thành",
+      "RTFC là gì? Giải thích 4 thành phần T06-155"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_rGzgl5MOV4fmYrIa0YgsTytP",
+      "name": "lookup_document",
+      "args": {
+        "topic": "RTFC"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "RTFC là một mô hình học sâu với bốn thành phần chính: kiến trúc transformer chỉ sử dụng decoder, quá trình pretraining, giai đoạn fine-tuning qua reinforcement learning, và khả năng dự đoán từ tiếp theo.",
+    "answerDirection": "Hướng trả lời: RTFC là một mô hình học sâu với bốn thành phần chính đã được nêu rõ trong đoạn tài liệu.",
+    "focusedChunks": [
+      "T06-080"
+    ]
+  }
+}

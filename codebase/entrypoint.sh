@@ -21,11 +21,11 @@ for i in $(seq 1 30); do
 done
 
 # Kiểm tra collection — nếu không có hoặc rỗng, chạy ingest
-if [ -n "$GEMINI_API_KEY" ]; then
+if [ -n "$JINA_API_KEY" ]; then
   echo "[entrypoint] Checking collection..."
   COUNT=$(wget -qO- http://qdrant:6333/collections/${QDRANT_COLLECTION:-vlearn_tutor} 2>/dev/null \
-    | grep -o '"vectors_count":[0-9]*' \
-    | grep -o '[0-9]*' \
+    | grep -oE '"(points|vectors)_count":[0-9]*' \
+    | grep -oE '[0-9]+' \
     | head -1)
   COUNT=${COUNT:-0}
   echo "[entrypoint] Collection has ${COUNT} vectors."
@@ -36,7 +36,7 @@ if [ -n "$GEMINI_API_KEY" ]; then
     echo "[entrypoint] Ingest done."
   fi
 else
-  echo "[entrypoint] ⚠ No GEMINI_API_KEY — skipping auto-ingest"
+  echo "[entrypoint] ⚠ No JINA_API_KEY — skipping auto-ingest"
 fi
 
 echo "[entrypoint] Starting server..."

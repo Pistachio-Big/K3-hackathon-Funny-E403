@@ -19,7 +19,6 @@ require("./loadenv.js"); // Load API keys
 
 // ============== CONFIG ==============
 const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 // Load chunks for document lookup
 const CHUNKS_PATH = path.resolve(__dirname, "chunks.json");
@@ -37,7 +36,7 @@ function loadChunks() {
 }
 loadChunks();
 
-// ============== TOOL DEFINITIONS (for Gemini) ==============
+// ============== TOOL DEFINITIONS (for OpenRouter/OpenAI-compatible) ==============
 const TOOL_DEFINITIONS = {
   tools: [
     {
@@ -327,12 +326,16 @@ Trả lời câu hỏi của học viên một cách chính xác, dựa trên t�
 ### 2. KHÔNG ĐƯỢC bịa đặt
 - Tuyệt đối không tạo thông tin không có trong tài liệu
 - Nếu không tìm thấy, thừa nhận rõ ràng: "Mình không tìm thấy nội dung này trong tài liệu"
-- Không dùng **[Txx-NNN]** hoặc **[Cxxxx]** nếu không có thật trong kết quả tra cứu
 
-### 3. Trích dẫn đúng cách
+### 3. Trích dẫn — BẮT BUỘC, KHÔNG ĐƯỢC BỎ QUA
+- Mọi nhận định, khái niệm, hoặc phát biểu có nội dung từ tài liệu **phải** kèm mã trích dẫn ngay trong câu.
 - Đoạn bài giảng: dùng mã **[Txx-NNN]** (ví dụ: [T02-045])
 - Hội thoại học viên: dùng **[Cxxxx-Tyyyy-Q]** hoặc **[Cxxxx-Tyyyy-A]**
 - Nguồn web: ghi rõ (Nguồn: tiêu đề - url)
+- Đặt mã trích dẫn **ở cuối câu** chứa thông tin đó, ví dụ: "...AI là khả năng máy tính thực hiện các tác vụ giống con người [T01-002]."
+- **CẤM** tuyệt đối:
+  - Trả lời dài mà **0 trích dẫn** khi câu hỏi nằm trong phạm vi tài liệu.
+  - Dùng **[Txx-NNN]** hoặc **[Cxxxx]** nếu không có thật trong kết quả tra cứu.
 
 ### 4. Khi tài liệu không đủ
 - Dùng tool search_web để tìm thông tin bổ sung

@@ -1,0 +1,78 @@
+{
+  "question": "LayerNorm và BatchNorm khác nhau thế nào?",
+  "retrieved": [
+    {
+      "code": "T01-009",
+      "score": 0.5714
+    },
+    {
+      "code": "T01-016",
+      "score": 0.5714
+    },
+    {
+      "code": "T01-019",
+      "score": 0.5714
+    },
+    {
+      "code": "T01-025",
+      "score": 0.5714
+    },
+    {
+      "code": "T01-030",
+      "score": 0.5714
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.571 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "LayerNorm và BatchNorm khác nhau thế nào?",
+    "topChunks": [
+      {
+        "code": "T01-009",
+        "score": 0.5714285714285714
+      },
+      {
+        "code": "T01-016",
+        "score": 0.5714285714285714
+      },
+      {
+        "code": "T01-019",
+        "score": 0.5714285714285714
+      },
+      {
+        "code": "T01-025",
+        "score": 0.5714285714285714
+      },
+      {
+        "code": "T01-030",
+        "score": 0.5714285714285714
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_5dZvp50oDqAc9vSWNas8geEY",
+      "name": "lookup_document",
+      "args": {
+        "topic": "LayerNorm"
+      }
+    },
+    {
+      "id": "call_AzYkA9ZZxOO2IXVMn8I57U4X",
+      "name": "lookup_document",
+      "args": {
+        "topic": "BatchNorm"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Không có đoạn tài liệu nào liên quan trực tiếp đến sự khác nhau giữa LayerNorm và BatchNorm.",
+    "answerDirection": "Cần tìm kiếm tài liệu khác có thông tin về LayerNorm và BatchNorm.",
+    "focusedChunks": []
+  }
+}

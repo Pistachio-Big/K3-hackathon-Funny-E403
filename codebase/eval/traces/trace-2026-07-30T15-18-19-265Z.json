@@ -1,0 +1,53 @@
+{
+  "question": "Slide ngày mai có gì?",
+  "retrieved": [
+    {
+      "code": "T03-121",
+      "score": 0.8
+    },
+    {
+      "code": "T06-064",
+      "score": 0.8
+    },
+    {
+      "code": "T01-033",
+      "score": 0.6
+    },
+    {
+      "code": "T01-043",
+      "score": 0.6
+    },
+    {
+      "code": "T01-062",
+      "score": 0.6
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nSlide ngày mai sẽ trình bày về lý thuyết và thực hành trong quá trình học, bao gồm các kiến thức cơ bản về hệ thống AI, dữ liệu, và các phương pháp như human-in-the-loop system. Ngoài ra, sẽ có một slide tổng hợp nội dung khóa học để các bạn nắm rõ những gì sẽ được học.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Nội dung slide ngày mai sẽ bao gồm lý thuyết về hệ thống AI và tổng quan về khóa học.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-121] (Bài giảng)\nNội dung: Các bạn chú ý: nội dung slide này là về mặt lý thuyết — mình sẽ dự trù được nó làm được hay không. Quay lại lời mình nói hồi đầu buổi: có khả năng ở giai đoạn này, các bạn dùng tất cả kiến thức của ngày hôm nay, xác định một cái agent system cho hệ thống AI này. Nhưng trong tương lai, khoảng 5-6 tuần các bạn học, các bạn làm dự án thật, các bạn phát hiện: ồ thôi, fail rồi. Nhưng không sao — nếu các bạn có kế hoạch đầy đủ, có metric để đánh giá fail, thì sau 6 tuần làm thấy fail rồi vẫn tính là pass. Vì sao? Vì các bạn đã nhìn ra được cái risk của nó, đo đạc được, và fail là vì chưa đủ cái này cái kia — chưa đủ thiết bị, chưa đủ data, chưa đủ đề án. Các bạn có một reasoning hợp lý, dựa trên đúng tiên đoán của các bạn lúc lập kế hoạch phát triển hệ thống, thì tất cả vẫn sẽ được chấp nhận. Tức là dự án không phải như đi học — bắt buộc làm được bài mới qua môn. Làm dự án thật là gì? Bạn có kế hoạch đầy đủ, khả năng chứng minh đầy đủ, xong các bạn làm thôi. Các bạn nói: sếp ơi em làm không nổi nữa, tại vì thế này thế này, đổi dự án đi, kế hoạch này fail rồi — thì ok, mọi người vẫn sẽ ok thôi. Bây giờ đi làm mà ai làm cũng thành công, cũng xong hệ thống, thì đâu cần đến các bạn phải làm nữa đúng không? Nên vẫn sẽ có chấp nhận rủi ro. Nhưng như nãy mình nói, khi làm kế hoạch các bạn phải xác định được mức độ nào là có thể đi tiếp, mức độ nào nên dừng, không follow được. Lúc đầu mình đưa ra những đánh giá, những câu hỏi; trong quá trình làm dự án, câu hỏi A được trả lời, câu hỏi B được trả lời, các bạn có thêm thông tin, dần dần hình dung được: ok dự án này đi được 50%, 60%, hoặc dự án này không đi được nữa, phải dừng. Các bạn cũng cần lưu ý.\n\n[2] Mã: [T06-064] (Bài giảng)\nNội dung: À, một câu hỏi rất hay, em vừa có một góp ý hay đấy. Mình sẽ có tổng cộng 14 ngày học, mình đi qua nhiều subject, sẽ có lý thuyết rồi có thực hành. Lý thuyết thì mình đi từ những cái cơ bản như thế này — cái foundation này — xong đó mình đi đến phần dữ liệu, rồi phần [không nghe rõ], rồi các kiến trúc về cách các hệ thống nó suy nghĩ như thế nào, rồi cách chúng ta dùng guardrail, dùng human-in-the-loop system, rồi data observability, vân vân. Để tí nữa anh sẽ giới thiệu cho mọi người một chút về chuyện này. Còn nếu học kiểu bài bản, bắt đầu từ ma trận số trở đi, thì không thể học được trong 15 ngày. Nhưng câu hỏi rất hay, tí nữa anh nghĩ cách để show cái này cho mọi người. Vương, em chuẩn bị giùm anh một cái slide — câu hỏi của bạn rất hay nhá — là: vậy thì cả khóa mình sẽ học những cái gì?\n\n[3] Mã: [T01-033] (Bài giảng)\nNội dung: Có những việc, ví dụ như có những bài toán mỗi tuần sẽ phải làm cái report một lần. Hỏi: làm một tuần một lần, mất bao lâu để làm việc đấy? Các bạn bảo là mất khoảng độ hai tiếng để tổng hợp. Tổng hợp từ những đâu — từ email hay từ cái này cái kia, hay từ mấy cái file này? Thế thì bây giờ có một giải pháp khác: bạn viết một cái skill — đây, ai cũng có Claude Code, Claude Cowork đúng không? Viết một cái skill và bạn chỉ việc đưa dữ liệu, nó tự động làm ra format — đâu có cần phải build một cái agent gì đấy to đâu, đúng không? Thế nhưng giả sử cũng có một việc mà pain point nó lớn hơn — nó diễn ra hàng ngày, nó mất 2 tiếng — thì theo mình đấy là việc đáng làm hơn. Cho nên mình nghĩ việc đầu tiên là chúng ta cần đi rất sâu vào cái vấn đề, vào cái bài toán, tìm cái vấn đề thực sự cuối cùng; rồi tiếp tục xác định xem vấn đề đấy có thực sự đau không, nó đủ đau hay không, nên coi đến đâu, có những lời giải nào tương tự có thể giải được nó hay không; rồi cuối cùng mình mới đưa ra quyết định: ok, mình có chọn AI không và mình sẽ xây dựng nó như thế nào. Trừ phi công ty của bạn tiếp cận theo kiểu muốn xây dựng đội ngũ tinh nhuệ và tôi sẽ dùng cái này để cho các bạn học qua quá trình — thì không nói nhá. Nhưng giả sử nguồn lực công ty có hạn, và bây giờ có khi còn rất nhiều bài toán khác đáng giải hơn, thì không nên lao đầu đi làm một cái mà bạn có thể giải tốt bằng công cụ bên ngoài hoặc có thể xử lý rất nhanh chóng bằng con người.\n\n[4] Mã: [T01-043] (Bài giảng)\nNội dung: Thực ra bản thân mình cũng đã từng build những sản phẩm như vậy, và nó có một cái cảm giác thế này khi bạn tự tay build sản phẩm bạn phải xài: mình đã từng build sản phẩm, sau đấy mình xài thì mình bị cái bug và mất sạch dữ liệu — mà đấy là dữ liệu mình làm thật. Đấy là một động lực để fix ngay lập tức, fix đến cùng. Đấy là những cái mình nghĩ bạn hãy thử trải nghiệm đi: nếu bạn là user và bạn rất nghiêm túc với sản phẩm của bạn, bạn sẽ có cách tiếp cận sản phẩm rất khác. Đấy là một điểm xuất phát đầu tiên mà mình nghĩ rất nên thử. Bạn nào có thể build một cái tool để ghi lại, ôn lại bài, xong rồi tự dùng tự xài cũng được — đấy cũng là một ví dụ hoàn toàn rất hay, vì mỗi ngày các bạn sẽ phải dành 4 tiếng ở trên đây để xem slide đúng không, xong rồi các bạn sẽ ôn bài, phải làm quiz đúng không?\n\n[5] Mã: [T01-062] (Bài giảng)\nNội dung: Thực ra có một bài rất hay về Elon Musk — vì bạn ấy vừa nhắc đến Musk thì mình gửi cho mọi người, mình rất thích bài đấy — nói về cách ông ấy dùng để giải quyết một vấn đề. Elon Musk rất nổi tiếng với việc sử dụng First Principle Thinking. First principle thinking là tư duy từ nguyên bản: không đi sao chép cách làm của người khác, mà cố gắng bóc tách vấn đề về những nguyên lý nguyên bản nhất — không thể nào chia nhỏ hơn được nữa — và đi giải các vấn đề. Ông ấy giải bài SpaceX như thế: vấn đề ngày xưa là chi phí sản xuất tên lửa quá đắt đỏ. Ông quay trở lại: tại sao đắt? Một cái tên lửa gồm những gì? Khi chia nhỏ các cấu phần đấy ra thì nó đâu có đắt như vậy. Rồi: nếu nó đắt, thì phóng lên xong nó rơi xuống, tái sử dụng những cái đấy có được hay không? Ông đặt ra những câu hỏi như thế và cố gắng giải quyết vấn đề đấy. Trong cái mental model — sơ đồ tư duy của ông ấy trong đầu — ông cũng xây dựng một bộ khung tư duy về việc luôn cập nhật bối cảnh mới của thế giới vào những hộp tư duy của mình, để luôn có thể xem lại các vấn đề hiện tại có thực sự còn đúng trong bối cảnh đấy hay không, và các giải pháp mới trong bối cảnh này còn có thể là gì.\n\nCÂU HỎI HỌC VIÊN: Slide ngày mai có gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Slide ngày mai sẽ trình bày về lý thuyết và thực hành trong quá trình học, bao gồm các kiến thức cơ bản về hệ thống AI, dữ liệu, và các phương pháp như human-in-the-loop system. Ngoài ra, sẽ có một slide tổng hợp nội dung khóa học để các bạn nắm rõ những gì sẽ được học [T06-064].",
+  "verified": {
+    "verifiedCitations": [
+      "T06-064"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_rTzxgFbxexYTFBhpuOvrRYVi",
+      "name": "lookup_document",
+      "args": {
+        "topic": "slide ngày mai"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Slide ngày mai sẽ trình bày về lý thuyết và thực hành trong quá trình học, bao gồm các kiến thức cơ bản về hệ thống AI, dữ liệu, và các phương pháp như human-in-the-loop system. Ngoài ra, sẽ có một slide tổng hợp nội dung khóa học để các bạn nắm rõ những gì sẽ được học.",
+    "answerDirection": "Hướng trả lời: Nội dung slide ngày mai sẽ bao gồm lý thuyết về hệ thống AI và tổng quan về khóa học.",
+    "focusedChunks": [
+      "T03-121",
+      "T06-064"
+    ]
+  }
+}

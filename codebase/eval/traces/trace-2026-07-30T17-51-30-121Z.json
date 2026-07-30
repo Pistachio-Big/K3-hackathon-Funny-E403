@@ -1,0 +1,120 @@
+{
+  "question": "context là gì",
+  "retrieved": [
+    {
+      "code": "T04-052",
+      "score": 0.4304
+    },
+    {
+      "code": "T06-150",
+      "score": 0.4207
+    },
+    {
+      "code": "T04-051",
+      "score": 0.3612
+    },
+    {
+      "code": "T06-133",
+      "score": 0.3159
+    },
+    {
+      "code": "T06-157",
+      "score": 0.3079
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-5 đoạn):\n[1] Mã đoạn: [T04-052] (Bài giảng)\nNội dung: Tuy nhiên cái context này nó cũng có một khái niệm là context rot. Có nghĩa là khi bạn càng đưa nhiều thông tin, càng đưa nhiều ngữ cảnh, thì cái mô hình càng ngày về sau nó sẽ càng kém đi, và nó sẽ thường quên những thông tin ở lúc đầu. Cho nên không phải cứ context lớn là nó sẽ tốt. Thực tế đã có rất nhiều chuyên gia, nhiều người sử dụng các mô hình — ví dụ như Opus 4.7 và 4.8 chẳng hạn, context 1 triệu — nhưng không phải 1 triệu là nó tốt hơn nhiều. Mình cũng là người sử dụng, mà mình thấy là khi mình bật chế độ context 1 triệu, mình thấy nó không thông minh bằng khi context nó ngắn hơn.\n\n[2] Mã đoạn: [T06-150] (Bài giảng)\nNội dung: Các mô hình, ví dụ bên [không nghe rõ], người ta tiếp cận theo hướng context window của nó 512K thôi; còn bên Google thì lên 1 triệu, thậm chí bây giờ là 2 triệu. Bởi vậy nếu các bạn dùng những mô hình của Google cho workflow phức tạp thì sẽ tốt hơn; còn làm cái gì đó fast, nhanh, thì bên nào cũng ok. Để hiểu về context window, các bạn cứ tưởng tượng một học giả rất uyên bác, nhưng ông chỉ sống trong một cái buồng nào đó và trước mắt chỉ nhìn được [không nghe rõ] sách thôi — vì trong cái buồng đấy nên đôi khi ông sẽ bị quên. Đó là lý do sinh ra giới hạn về context window.\n\n[3] Mã đoạn: [T04-051] (Bài giảng)\nNội dung: Rồi sau token thì cũng có một khái niệm rất là quan trọng, đấy là context. Context nghĩa là bối cảnh, ngữ cảnh. Context ở đây nghĩa là gì? Là toàn bộ những thông tin mà một mô hình nó có thể tiêu thụ trong một lần — có thể hiểu nôm na là thế. Context càng nhiều thì nó càng có thể tiêu thụ được nhiều thông tin. Ví dụ như những mô hình thời đầu, khi context này nó ngắn, nó có giới hạn ngữ cảnh — có một từ là context window ấy, nghĩa là cửa sổ ngữ cảnh — là một mô hình một lúc nó chỉ tiếp nhận được một số lượng nhất định, ví dụ như kiểu vài chục trang sách thôi. Lúc đấy bạn có thể gửi cho nó vài chục trang sách một lúc thì nó có thể đọc, tóm tắt được hết. Nhưng giả sử bạn gửi cho nó vài quyển sách chẳng hạn, thì nó sẽ không thể nào xử lý được hết, nó phải cắt nhỏ ra và làm. Thế thì khi nó cắt nhỏ ra và xử lý, thứ nhất là nó sẽ phức tạp hơn, bởi vì nó có thể bị mất mát thông tin của những phần phía trước. Thậm chí khi nó tiếp nhận một lượng thông tin có giới hạn, nó sẽ chỉ nhìn trong một phạm vi hẹp thôi, nó không thể nhìn được rộng hơn. Thế nhưng bây giờ cửa sổ ngữ cảnh của các mô hình càng ngày càng lớn rồi. Đến bây giờ thì 1 triệu token là một chuyện bình thường. 1 triệu token sẽ rơi vào khoảng — ở đây mình lấy một ví dụ thôi — khoảng bốn đến năm cuốn sách một lúc. Nhưng mà ngày xưa, những mô hình đầu tiên thời đầu, nó chỉ là một cuốn sách khoảng 300 trang thôi. Mình có thể hình dung context đó là một cái bàn làm việc của một mô hình: trong một thời điểm nó có thể bày ra được tối đa bao nhiêu, thì nó có thể xử lý được chừng đấy thông tin trong thời điểm đấy thôi.\n\n[4] Mã đoạn: [T06-133] (Bài giảng)\nNội dung: Mình sẽ cố gắng giải thích tiếp chuyện này thêm vài phút nữa, sau đó các bạn sẽ trực tiếp làm cái này để hiểu cách nó gán việc token này nhìn sang token khác như thế nào — sẽ dễ hiểu hơn nhá. Và có một thuật ngữ quan trọng nữa, đó là ngữ cảnh: nó nhìn hết từ này xong từ kia rồi nó đoán.\n\n[5] Mã đoạn: [T06-157] (Bài giảng)\nNội dung: Cái context window lúc nãy mình nói cũng rất quan trọng nhá. Sau này khi các bạn thiết kế một hệ thống thật, giống như của bạn kia, đôi khi không hiểu tại sao nó trả về không đúng như mọi khi — đơn giản là người ta giới hạn token mà query của user thì dài. Các bạn thử đẩy lên GPT khoảng tầm 100 cuốn ebook, nó sẽ báo input đầu vào vượt quá context; hoặc đơn giản là đưa một video dài, nó cũng vậy. Chỗ này các bạn nhớ thêm những thông tin như thế này — đây là một gợi ý ví dụ để các bạn tính.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] context là gì? | Từ điển Anh - Việt bằng video siêu dễ hiểu\nURL: https://www.youtube.com/watch?v=a3XfOsjp-hI\nNội dung: 📚 Từ vựng: context\n🏷️ Loại từ: danh từ\n🇻🇳 Nghĩa tiếng Việt: [\"bối cảnh\",\"hoàn cảnh\",\"ngữ cảnh\"]\n📝 Sắc thái từ: 'in context' nghĩa là xem xét một điều gì đó trong bối cảnh của nó. 'within context' tương tự như 'in context', nhấn mạnh sự bao hàm. 'without context' nghĩa là không xem xét bối cảnh,\n\n[Nguồn 2] Tìm hiểu về Context trong các ứng dụng Android\nURL: https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG\nNội dung: # 1. Context là gì ?\n\nContext trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác.\n\nMột vài quan điểm về context: [...] Nó là bối cảnh hiện tại của ứng dụng.\n Nó có thể được sử dụng để lấy thông tin liên quan đến activity và ứng dụng.\n Nó có thể được sử dụng để truy cập vào các\n\n[Nguồn 3] Nghĩa của từ Context - Từ điển Anh - Việt\nURL: http://tratu.soha.vn/dict/en_vn/Context\nNội dung: và cỡ chữ. Trong MS-DOS và Microsoft Windows, thuộc tính là thông tin về tập tin để chỉ đó là loại tập tin chỉ đọc ra, tập tin ẩn, hoặc tập tin hệ thống. [...] cùng với mỗi ký tự trogn vùng đệm video của một adapter video chạy ở chế độ ký tự như: các thuộc tính điều khiển màu nền và màu ký tự, gạch \n\n[Nguồn 4] Cái \"context\" là cái gì vậy trời? : r/golang\nURL: https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi\nNội dung: \"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. \n\nTao\n\n[Nguồn 5] CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge\nURL: https://dictionary.cambridge.org/vi/dictionary/english/context\nNội dung: to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl\n\nCÂU HỎI HỌC VIÊN: context là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T04-052], giảng viên có nói: \"Tuy nhiên cái context này nó cũng có một khái niệm là context rot. Có nghĩa là khi bạn càng đưa nhiều thông tin, càng đưa nhiều ngữ cảnh, thì cái mô hình càng ngày về sau nó sẽ càng kém đi, và nó sẽ t...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T04-052"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T04-051",
+      "T04-052",
+      "T06-150"
+    ],
+    "allowedCodes": [
+      "T04-052",
+      "T06-150",
+      "T04-051",
+      "T06-133",
+      "T06-157"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "context là gì",
+    "topChunks": [
+      {
+        "code": "T04-052",
+        "score": 0.43042696
+      },
+      {
+        "code": "T06-150",
+        "score": 0.42066655
+      },
+      {
+        "code": "T04-051",
+        "score": 0.3611955
+      },
+      {
+        "code": "T06-133",
+        "score": 0.3159141
+      },
+      {
+        "code": "T06-157",
+        "score": 0.30786628
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "context là gì",
+      "context là gì T04-052"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "context là gì? | Từ điển Anh - Việt bằng video siêu dễ hiểu",
+        "url": "https://www.youtube.com/watch?v=a3XfOsjp-hI",
+        "snippet": "📚 Từ vựng: context\n🏷️ Loại từ: danh từ\n🇻🇳 Nghĩa tiếng Việt: [\"bối cảnh\",\"hoàn cảnh\",\"ngữ cảnh\"]\n📝 Sắc thái từ: 'in context' nghĩa là xem xét một điều gì đó trong bối cảnh của nó. 'within context' tương tự như 'in context', nhấn mạnh sự bao hàm. 'without context' nghĩa là không xem xét bối cảnh,"
+      },
+      {
+        "id": "S2",
+        "title": "Tìm hiểu về Context trong các ứng dụng Android",
+        "url": "https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG",
+        "snippet": "# 1. Context là gì ?\n\nContext trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác.\n\nMột vài quan điểm về context: [...] Nó là bối cảnh hiện tại của ứng dụng.\n Nó có thể được sử dụng để lấy thông tin liên quan đến activity và ứng dụng.\n Nó có thể được sử dụng để truy cập vào các"
+      },
+      {
+        "id": "S3",
+        "title": "Nghĩa của từ Context - Từ điển Anh - Việt",
+        "url": "http://tratu.soha.vn/dict/en_vn/Context",
+        "snippet": "và cỡ chữ. Trong MS-DOS và Microsoft Windows, thuộc tính là thông tin về tập tin để chỉ đó là loại tập tin chỉ đọc ra, tập tin ẩn, hoặc tập tin hệ thống. [...] cùng với mỗi ký tự trogn vùng đệm video của một adapter video chạy ở chế độ ký tự như: các thuộc tính điều khiển màu nền và màu ký tự, gạch "
+      },
+      {
+        "id": "S4",
+        "title": "Cái \"context\" là cái gì vậy trời? : r/golang",
+        "url": "https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi",
+        "snippet": "\"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. \n\nTao"
+      },
+      {
+        "id": "S5",
+        "title": "CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge",
+        "url": "https://dictionary.cambridge.org/vi/dictionary/english/context",
+        "snippet": "to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Context là bối cảnh, ngữ cảnh mà một mô hình có thể tiêu thụ trong một lần, bao gồm toàn bộ thông tin mà nó có thể xử lý. Context window là giới hạn về lượng thông tin mà mô hình có thể tiếp nhận cùng một lúc, ảnh hưởng đến khả năng xử lý và hiểu biết của mô hình.",
+    "answerDirection": "Hướng trả lời: Giải thích về khái niệm context và context window trong mô hình xử lý thông tin.",
+    "focusedChunks": [
+      "T04-051",
+      "T04-052",
+      "T06-150"
+    ]
+  }
+}

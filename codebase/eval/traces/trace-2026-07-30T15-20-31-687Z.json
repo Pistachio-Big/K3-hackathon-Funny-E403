@@ -1,0 +1,111 @@
+{
+  "question": "thầy ơi kìa",
+  "retrieved": [
+    {
+      "code": "T03-065",
+      "score": 0.6667
+    },
+    {
+      "code": "T05-050",
+      "score": 0.6667
+    },
+    {
+      "code": "T05-091",
+      "score": 0.6667
+    },
+    {
+      "code": "T05-131",
+      "score": 0.6667
+    },
+    {
+      "code": "T06-019",
+      "score": 0.6667
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nCâu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.\n\nQUY TẮC BẮT BUỘC:\n1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.\n2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)\n3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.\n\nTHÔNG TIN TỪ TÌM KIẾM WEB:\n[Nguồn 1] Lời bài hát Thầy Ơi - Tìm lời nhạc ở tkaraoke.com\nURL: https://lyric.tkaraoke.com/39275/thay_oi.html\nNội dung: Thầy ơi ! tháng năm dài bên viên phấn trắng dạy dỗ chúng em. Từng đêm, vẫn miệt mài bên trang giáo án, Thầy có tính chi.\n\n[Nguồn 2] Thầy Ơi (Official Video) | Plum Village Band\nURL: https://www.youtube.com/watch?v=5sxR_In9L1M\nNội dung: ... Thầy ơi, Con đã đi tìm Thầy từ muôn vạng kiếp trước Con đã đi tìm như thể đó là lời hẹn ước Từ thuở nước non đang còn tuổi sơ sinh Thầy ơi\n\n[Nguồn 3] THẦY ƠI - Sư cô Trăng Từ Hiếu & Plum Village Band\nURL: https://www.facebook.com/HT.ThichNhatHanh/posts/-th%E1%BA%A7y-%C6%A1i-thi%E1%BB%81n-ca-l%C3%A0ng-mai-s%C3%A1ng-t%C3%A1c-tr%C3%ACnh-b%C3%A0y-s%C6%B0-c%C3%B4-tr%C4%83ng-t%E1%BB%AB-hi%E1%BA%BFu-plum-village-b/838358521616687\nNội dung: THẦY ƠI - Thiền ca Làng Mai | Sáng tác, trình bày: Sư cô Trăng Từ Hiếu & Plum Village Band ----- Thầy ơi, Con đã đi tìm Thầy từ muôn vạn kiếp\n\n[Nguồn 4] Ơn Thầy Thầy Ơi | Bé Bảo An\nURL: https://www.youtube.com/watch?v=VBWGOUiUif0\nNội dung: #bebaoan #onthaythayoi #onthay Mừng ngày Nhà Giáo Việt Nam 20-11- 2015 .Bé Bào An kính tặng thầy cô bài hát mới sáng tác Ơn Thầy Thầy Ơi .do\n\n[Nguồn 5] Được cái này phải mất cái kia, muốn có thành công thì phải trả giá bằng ...\nURL: https://www.youtube.com/watch?v=4H6FNOPhFtY\nNội dung: Được cái này phải mất cái kia, muốn có thành công thì phải trả giá bằng nỗ lực - Thầy Pháp Hòa @PhapThoaiThichPhapHoa28 likes2K views1 year ago\n\nNGUỒN THAM KHẢO:\n[1] Lời bài hát Thầy Ơi - Tìm lời nhạc ở tkaraoke.com (https://lyric.tkaraoke.com/39275/thay_oi.html)\n[2] Thầy Ơi (Official Video) | Plum Village Band (https://www.youtube.com/watch?v=5sxR_In9L1M)\n[3] THẦY ƠI - Sư cô Trăng Từ Hiếu & Plum Village Band (https://www.facebook.com/HT.ThichNhatHanh/posts/-th%E1%BA%A7y-%C6%A1i-thi%E1%BB%81n-ca-l%C3%A0ng-mai-s%C3%A1ng-t%C3%A1c-tr%C3%ACnh-b%C3%A0y-s%C6%B0-c%C3%B4-tr%C4%83ng-t%E1%BB%AB-hi%E1%BA%BFu-plum-village-b/838358521616687)\n[4] Ơn Thầy Thầy Ơi | Bé Bảo An (https://www.youtube.com/watch?v=VBWGOUiUif0)\n[5] Được cái này phải mất cái kia, muốn có thành công thì phải trả giá bằng ... (https://www.youtube.com/watch?v=4H6FNOPhFtY)\n\nCÂU HỎI HỌC VIÊN: thầy ơi kìa\n\nTRẢ LỜI:",
+  "rawAnswer": "Chào bạn! Mình thấy bạn đang nhắc đến bài hát \"Thầy Ơi\". Đây là một bài hát rất ý nghĩa, thường được dùng để tri ân thầy cô giáo. Nội dung bài hát thể hiện lòng biết ơn và tình cảm sâu sắc của học trò dành cho thầy cô, với những hình ảnh đẹp về quá trình dạy dỗ và chăm sóc của thầy.\n\nNếu bạn muốn tìm hiểu thêm về lời bài hát, mình có thể chia sẻ một số thông tin bổ sung từ tìm kiếm web:\n\n1. Trong bài hát, có những câu như: \"Thầy ơi! tháng năm dài bên viên phấn trắng dạy dỗ chúng em. Từng đêm, vẫn miệt mài bên trang giáo án, Thầy có tính chi.\" (Nguồn: Lời bài hát Thầy Ơi - https://lyric.tkaraoke.com/39275/thay_oi.html)\n\n2. Bài hát cũng được thể hiện qua video của Plum Village Band, với những câu như: \"Thầy ơi, Con đã đi tìm Thầy từ muôn vạn kiếp trước.\" (Nguồn: Thầy Ơi (Official Video) | Plum Village Band - https://www.youtube.com/watch?v=5sxR_In9L1M)\n\nNếu bạn cần thêm thông tin gì khác về bài hát này hoặc có câu hỏi nào khác, cứ thoải mái hỏi mình nhé!",
+  "verified": {
+    "fromResearch": true,
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Lời bài hát Thầy Ơi - Tìm lời nhạc ở tkaraoke.com",
+        "url": "https://lyric.tkaraoke.com/39275/thay_oi.html",
+        "snippet": "Thầy ơi ! tháng năm dài bên viên phấn trắng dạy dỗ chúng em. Từng đêm, vẫn miệt mài bên trang giáo án, Thầy có tính chi."
+      },
+      {
+        "id": "S2",
+        "title": "Thầy Ơi (Official Video) | Plum Village Band",
+        "url": "https://www.youtube.com/watch?v=5sxR_In9L1M",
+        "snippet": "... Thầy ơi, Con đã đi tìm Thầy từ muôn vạng kiếp trước Con đã đi tìm như thể đó là lời hẹn ước Từ thuở nước non đang còn tuổi sơ sinh Thầy ơi"
+      },
+      {
+        "id": "S3",
+        "title": "THẦY ƠI - Sư cô Trăng Từ Hiếu & Plum Village Band",
+        "url": "https://www.facebook.com/HT.ThichNhatHanh/posts/-th%E1%BA%A7y-%C6%A1i-thi%E1%BB%81n-ca-l%C3%A0ng-mai-s%C3%A1ng-t%C3%A1c-tr%C3%ACnh-b%C3%A0y-s%C6%B0-c%C3%B4-tr%C4%83ng-t%E1%BB%AB-hi%E1%BA%BFu-plum-village-b/838358521616687",
+        "snippet": "THẦY ƠI - Thiền ca Làng Mai | Sáng tác, trình bày: Sư cô Trăng Từ Hiếu & Plum Village Band ----- Thầy ơi, Con đã đi tìm Thầy từ muôn vạn kiếp"
+      },
+      {
+        "id": "S4",
+        "title": "Ơn Thầy Thầy Ơi | Bé Bảo An",
+        "url": "https://www.youtube.com/watch?v=VBWGOUiUif0",
+        "snippet": "#bebaoan #onthaythayoi #onthay Mừng ngày Nhà Giáo Việt Nam 20-11- 2015 .Bé Bào An kính tặng thầy cô bài hát mới sáng tác Ơn Thầy Thầy Ơi .do"
+      },
+      {
+        "id": "S5",
+        "title": "Được cái này phải mất cái kia, muốn có thành công thì phải trả giá bằng ...",
+        "url": "https://www.youtube.com/watch?v=4H6FNOPhFtY",
+        "snippet": "Được cái này phải mất cái kia, muốn có thành công thì phải trả giá bằng nỗ lực - Thầy Pháp Hòa @PhapThoaiThichPhapHoa28 likes2K views1 year ago"
+      }
+    ],
+    "verifiedCitations": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "thầy ơi kìa",
+    "topChunks": [
+      {
+        "code": "T03-065",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T05-050",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T05-091",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T05-131",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T06-019",
+        "score": 0.6666666666666666
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "thầy ơi kìa",
+      "thầy ơi kìa T03-065"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_cfGFMLuboLRvxgS1UIw0szDt",
+      "name": "lookup_document",
+      "args": {
+        "topic": "thầy ơi kìa"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Đoạn tài liệu đề cập đến việc học viên hỏi về sự lựa chọn giữa các lĩnh vực khác nhau trong ngành công nghệ, và sự cần thiết phải xác định rõ giá trị của từng hệ thống trong quá trình học tập và thực hành.",
+    "answerDirection": "Hướng trả lời: Cần làm rõ sự lựa chọn giữa các lĩnh vực trong công nghệ và giá trị của từng hệ thống trong quá trình học tập.",
+    "focusedChunks": [
+      "T05-050"
+    ]
+  }
+}

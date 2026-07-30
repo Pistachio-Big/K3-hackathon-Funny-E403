@@ -1,0 +1,73 @@
+{
+  "question": "nếu em hiểu LLM chỉ predict token thì có sai ko thầy?",
+  "retrieved": [
+    {
+      "code": "T03-127",
+      "score": 0.6667
+    },
+    {
+      "code": "T06-136",
+      "score": 0.6667
+    },
+    {
+      "code": "T03-021",
+      "score": 0.5833
+    },
+    {
+      "code": "T03-033",
+      "score": 0.5833
+    },
+    {
+      "code": "T03-118",
+      "score": 0.5833
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.667 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "nếu em hiểu LLM chỉ predict token thì có sai ko thầy?",
+    "topChunks": [
+      {
+        "code": "T03-127",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T06-136",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T03-021",
+        "score": 0.5833333333333334
+      },
+      {
+        "code": "T03-033",
+        "score": 0.5833333333333334
+      },
+      {
+        "code": "T03-118",
+        "score": 0.5833333333333334
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_37JQVecxEYe9VjITeaEIEwqq",
+      "name": "lookup_document",
+      "args": {
+        "topic": "LLM predict token"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "LLM chỉ dự đoán token có xác suất cao nhất mà không hiểu ngôn ngữ như con người. Điều này có nghĩa là việc dự đoán token không đảm bảo chính xác hoàn toàn, mà chỉ dựa trên xác suất và sự tương đồng giữa các token.",
+    "answerDirection": "Hướng trả lời: Nếu em hiểu LLM chỉ predict token thì không sai, vì thực tế LLM hoạt động dựa trên xác suất và không có khả năng hiểu ngôn ngữ như con người.",
+    "focusedChunks": [
+      "T06-136"
+    ]
+  }
+}

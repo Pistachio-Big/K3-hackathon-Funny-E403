@@ -1,0 +1,76 @@
+{
+  "question": "t có hỏi vs mấy bạn vs vs mình vs vs",
+  "retrieved": [
+    {
+      "code": "T01-033",
+      "score": 0.5
+    },
+    {
+      "code": "T03-034",
+      "score": 0.5
+    },
+    {
+      "code": "T03-037",
+      "score": 0.5
+    },
+    {
+      "code": "T03-133",
+      "score": 0.5
+    },
+    {
+      "code": "T05-152",
+      "score": 0.5
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.500 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "t có hỏi vs mấy bạn vs vs mình vs vs",
+    "topChunks": [
+      {
+        "code": "T01-033",
+        "score": 0.5
+      },
+      {
+        "code": "T03-034",
+        "score": 0.5
+      },
+      {
+        "code": "T03-037",
+        "score": 0.5
+      },
+      {
+        "code": "T03-133",
+        "score": 0.5
+      },
+      {
+        "code": "T05-152",
+        "score": 0.5
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_8Z0clCzabcBCSEaoRedKqfoo",
+      "name": "lookup_document",
+      "args": {
+        "topic": "t có hỏi vs mấy bạn vs vs mình vs vs"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Các đoạn tài liệu đề cập đến việc xác định và giải quyết các vấn đề thực sự trong công việc, cũng như việc sử dụng AI và các công cụ hiện có để tối ưu hóa quy trình làm việc. Việc hiểu rõ nhu cầu của người dùng và khả năng cạnh tranh với các sản phẩm hiện có trên thị trường cũng là yếu tố quan trọng.",
+    "answerDirection": "Hướng trả lời: Cần xác định rõ vấn đề và nhu cầu của người dùng trước khi quyết định phát triển sản phẩm hay sử dụng công cụ hiện có.",
+    "focusedChunks": [
+      "T01-033",
+      "T03-034",
+      "T03-037",
+      "T05-152"
+    ]
+  }
+}

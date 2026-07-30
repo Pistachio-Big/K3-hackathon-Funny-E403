@@ -1,0 +1,144 @@
+{
+  "question": "Wizard of Oz MVP là gì?",
+  "retrieved": [
+    {
+      "code": "T06-130",
+      "score": 0.0548
+    },
+    {
+      "code": "C0161-T1254-A",
+      "score": 0.041
+    },
+    {
+      "code": "C0026-T0225-A",
+      "score": 0.0403
+    },
+    {
+      "code": "C0034-T0235-A",
+      "score": 0.0397
+    },
+    {
+      "code": "C0026-T0383-A",
+      "score": 0.0386
+    },
+    {
+      "code": "C0026-T0725-A",
+      "score": 0.0381
+    },
+    {
+      "code": "T01-008",
+      "score": 0.0323
+    },
+    {
+      "code": "T01-062",
+      "score": 0.0317
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-8 đoạn):\n[1] Mã đoạn: [T06-130] (Bài giảng)\nNội dung: Cái cơ chế self-attention ở đây, hiểu một cách thân thiện: cứ một từ — đơn giản hóa gọi một từ là một token — thì làm sao mỗi từ đấy chúng ta biểu diễn nó trong không gian toán học để tự cái từ đấy nhìn được những từ khác. Sau khi nó tự nhìn được và tự đánh giá được mức độ similarity score — mức độ tương đồng — thì sau đó nó mới đoán được \"nó\" ở đây chính là con mèo. Thế thì nó có công thức Q, K, V với hàm softmax — các bạn nhìn vào phần bên trái trước đã, để mình lấy ví dụ cho dễ. Chữ Q đại diện cho query — cái truy vấn mà các bạn gửi vào. Chữ K đại diện cho key — cái nhãn. Còn chữ V là value.\n\n[2] Mã đoạn: [C0161-T1254-A] (Hội thoại học viên)\nNội dung: \"Wizard of Oz MVP\" (tạm dịch là MVP kiểu \"Phù thủy xứ Oz\") là phương pháp thử nghiệm giả thuyết kinh doanh bằng cách tạo ra hình ảnh sản phẩm trông có vẻ tự động hoặc đã hoàn thiện, nhưng thực tế đằng sau vẫn đang được thực hiện thủ công bởi con người [trang 14].\n\n[3] Mã đoạn: [C0026-T0225-A] (Hội thoại học viên)\nNội dung: **Wizard of Oz MVP** (hay còn gọi là mô hình \"Phù thủy xứ Oz\") là phương pháp kiểm chứng giả thuyết sản phẩm bằng cách tạo ra ảo giác rằng hệ thống đã hoàn toàn tự động, trong khi thực tế các tác vụ lại được thực hiện thủ công bởi con người ở phía sau [trang 14].\n\n[4] Mã đoạn: [C0034-T0235-A] (Hội thoại học viên)\nNội dung: \"Wizard of Oz\" (Phù thủy xứ Oz) là một phương pháp xây dựng sản phẩm tối thiểu (MVP) mà ở đó, các chức năng được khách hàng nhìn thấy như là tự động hoặc được thực hiện bởi máy móc, nhưng thực tế đằng sau hậu trường lại được thực hiện thủ công bởi con người [trang 14, 15].\n\n[5] Mã đoạn: [C0026-T0383-A] (Hội thoại học viên)\nNội dung: Trong bối cảnh phát triển sản phẩm, **MVP (Minimum Viable Product - Sản phẩm khả thi tối thiểu)** là phiên bản của sản phẩm có đầy đủ các tính năng cơ bản nhất để giải quyết vấn đề cốt lõi và mang lại giá trị cho người dùng, từ đó cho phép đội ngũ kiểm chứng giả thuyết kinh doanh với nỗ lực và chi phí thấp nhất [trang 9].\n\n[6] Mã đoạn: [C0026-T0725-A] (Hội thoại học viên)\nNội dung: Khái niệm \"AI Prototyping & MVP\" đề cập đến phương pháp phát triển sản phẩm AI theo hướng thử nghiệm nhanh [trang 3]. Thay vì xây dựng ngay một sản phẩm hoàn chỉnh, mục tiêu là kiểm chứng các giả thuyết bằng cách tạo ra các bản mẫu (prototype) với chi phí thấp nhất có thể trước khi tiến hành xây dựng sản phẩm thực tế [trang 4].\n\n[7] Mã đoạn: [T01-008] (Bài giảng)\nNội dung: Bây giờ trong một team có bạn product owner, product manager. PM ở đây mình nói P là product nhá, không phải project — nó khác nhau. Có ai định nghĩa được nó khác như thế nào không? Tại vì ở Việt Nam từ PM hay dùng cho project nhiều hơn, bởi vì các công ty outsourcing nhiều, giờ mình cần định nghĩa lại nhá.\n\n[8] Mã đoạn: [T01-062] (Bài giảng)\nNội dung: Thực ra có một bài rất hay về Elon Musk — vì bạn ấy vừa nhắc đến Musk thì mình gửi cho mọi người, mình rất thích bài đấy — nói về cách ông ấy dùng để giải quyết một vấn đề. Elon Musk rất nổi tiếng với việc sử dụng First Principle Thinking. First principle thinking là tư duy từ nguyên bản: không đi sao chép cách làm của người khác, mà cố gắng bóc tách vấn đề về những nguyên lý nguyên bản nhất — không thể nào chia nhỏ hơn được nữa — và đi giải các vấn đề. Ông ấy giải bài SpaceX như thế: vấn đề ngày xưa là chi phí sản xuất tên lửa quá đắt đỏ. Ông quay trở lại: tại sao đắt? Một cái tên lửa gồm những gì? Khi chia nhỏ các cấu phần đấy ra thì nó đâu có đắt như vậy. Rồi: nếu nó đắt, thì phóng lên xong nó rơi xuống, tái sử dụng những cái đấy có được hay không? Ông đặt ra những câu hỏi như thế và cố gắng giải quyết vấn đề đấy. Trong cái mental model — sơ đồ tư duy của ông ấy trong đầu — ông cũng xây dựng một bộ khung tư duy về việc luôn cập nhật bối cảnh mới của thế giới vào những hộp tư duy của mình, để luôn có thể xem lại các vấn đề hiện tại có thực sự còn đúng trong bối cảnh đấy hay không, và các giải pháp mới trong bối cảnh này còn có thể là gì.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] Wizard of Oz MVP: Test Demand Before You Build the Tech |\nURL: https://www.exponentially.com/wizard-of-oz-mvp\nNội dung: AWizard of Oz MVP — also known as Wizard of Oz testing or a Wizard of Oz experiment — is a pretotyping method where users interact with a product that looks fully automated, but humans secretly do the work behind the scenes. Like the man pulling levers behind the curtain in the 1939 film, you build \n\n[Nguồn 2] Bài 17 — Wizard of Oz MVP — Zero to One Product Discovery\nURL: https://www.vietnamcos.com/courses/lesson/zero-to-one-product-discovery/bai-17-wizard-of-oz-mvp\nNội dung: Hoàn thành 6 bước này, bạn đã có một kế hoạch Wizard of Oz MVP sẵn sàng chạy trong tuần tới — mà không cần viết một dòng code backend nào.\n\n## Tóm tắt\n\nWizard of Oz MVP là kỹ thuật validation trong đó user trải nghiệm một sản phẩm trông như tự động và thông minh, nhưng phần xử lý phía sau do con ngư\n\n[Nguồn 3] Concierge vs. Wizard of Oz MVP\nURL: https://blog.logrocket.com/product-management/concierge-wizard-of-oz-mvp\nNội dung: A Wizard of Oz MVP is based on the same principles. You make your users believe that the product completes a specific task for them, while in reality, humans do the work in the background.\n\nIn other words, the frontend layer of the product is usually there, but human actions support a very limited b\n\n[Nguồn 4] Wizard of Oz MVP, Concierge MVP & More - Which to Choose?\nURL: https://www.rabitsolutions.com/blog/examples-of-mvp\nNội dung: The Wizard of Oz MVP creates an illusion of a fully functional product, but secretly depends on manpower to deliver the solution. On the front end, you deliver the impression of a completely functional product; however, on the back end of the product, you have to execute all orders manually.\n\nWith t\n\n[Nguồn 5] Two MVPs every product manager should know, and how ...\nURL: https://www.mindtheproduct.com/wizard-of-oz-vs-concierge-testing-behind-the-curtain-or-behind-the-desk\nNội dung: With a Wizard of Oz MVP, you have built a front end, but you are substituting manual work for the back end (or the integration to an existing back end). The name comes from the scene in the film where Toto exposes that the great and powerful wizard is really just a man hiding behind a curtain, pushi\n\nCÂU HỎI HỌC VIÊN: Wizard of Oz MVP là gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Mình tìm thấy một hội thoại học viên liên quan [C0161-T1254-A], nhưng chưa tổng hợp được câu trả lời (FALLBACK mode cần Gemini API để sinh).",
+  "verified": {
+    "verifiedCitations": [
+      "C0161-T1254-A"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "C0161-T1254-A",
+      "C0026-T0225-A",
+      "C0034-T0235-A"
+    ],
+    "allowedCodes": [
+      "T06-130",
+      "C0161-T1254-A",
+      "C0026-T0225-A",
+      "C0034-T0235-A",
+      "C0026-T0383-A"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "Wizard of Oz MVP là gì?",
+    "topChunks": [
+      {
+        "code": "T06-130",
+        "score": 0.054845708775313404
+      },
+      {
+        "code": "C0161-T1254-A",
+        "score": 0.04098360655737705
+      },
+      {
+        "code": "C0026-T0225-A",
+        "score": 0.04032258064516129
+      },
+      {
+        "code": "C0034-T0235-A",
+        "score": 0.03968253968253968
+      },
+      {
+        "code": "C0026-T0383-A",
+        "score": 0.03858901515151515
+      },
+      {
+        "code": "C0026-T0725-A",
+        "score": 0.03811188811188811
+      },
+      {
+        "code": "T01-008",
+        "score": 0.03225806451612903
+      },
+      {
+        "code": "T01-062",
+        "score": 0.031746031746031744
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Wizard of Oz MVP là gì?",
+      "Wizard of Oz MVP là gì? T06-130"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Wizard of Oz MVP: Test Demand Before You Build the Tech |",
+        "url": "https://www.exponentially.com/wizard-of-oz-mvp",
+        "snippet": "AWizard of Oz MVP — also known as Wizard of Oz testing or a Wizard of Oz experiment — is a pretotyping method where users interact with a product that looks fully automated, but humans secretly do the work behind the scenes. Like the man pulling levers behind the curtain in the 1939 film, you build "
+      },
+      {
+        "id": "S2",
+        "title": "Bài 17 — Wizard of Oz MVP — Zero to One Product Discovery",
+        "url": "https://www.vietnamcos.com/courses/lesson/zero-to-one-product-discovery/bai-17-wizard-of-oz-mvp",
+        "snippet": "Hoàn thành 6 bước này, bạn đã có một kế hoạch Wizard of Oz MVP sẵn sàng chạy trong tuần tới — mà không cần viết một dòng code backend nào.\n\n## Tóm tắt\n\nWizard of Oz MVP là kỹ thuật validation trong đó user trải nghiệm một sản phẩm trông như tự động và thông minh, nhưng phần xử lý phía sau do con ngư"
+      },
+      {
+        "id": "S3",
+        "title": "Concierge vs. Wizard of Oz MVP",
+        "url": "https://blog.logrocket.com/product-management/concierge-wizard-of-oz-mvp",
+        "snippet": "A Wizard of Oz MVP is based on the same principles. You make your users believe that the product completes a specific task for them, while in reality, humans do the work in the background.\n\nIn other words, the frontend layer of the product is usually there, but human actions support a very limited b"
+      },
+      {
+        "id": "S4",
+        "title": "Wizard of Oz MVP, Concierge MVP & More - Which to Choose?",
+        "url": "https://www.rabitsolutions.com/blog/examples-of-mvp",
+        "snippet": "The Wizard of Oz MVP creates an illusion of a fully functional product, but secretly depends on manpower to deliver the solution. On the front end, you deliver the impression of a completely functional product; however, on the back end of the product, you have to execute all orders manually.\n\nWith t"
+      },
+      {
+        "id": "S5",
+        "title": "Two MVPs every product manager should know, and how ...",
+        "url": "https://www.mindtheproduct.com/wizard-of-oz-vs-concierge-testing-behind-the-curtain-or-behind-the-desk",
+        "snippet": "With a Wizard of Oz MVP, you have built a front end, but you are substituting manual work for the back end (or the integration to an existing back end). The name comes from the scene in the film where Toto exposes that the great and powerful wizard is really just a man hiding behind a curtain, pushi"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant-hybrid",
+  "docSummary": {
+    "summary": "Wizard of Oz MVP là phương pháp thử nghiệm giả thuyết kinh doanh bằng cách tạo ra hình ảnh sản phẩm trông có vẻ tự động hoặc đã hoàn thiện, nhưng thực tế các tác vụ lại được thực hiện thủ công bởi con người.",
+    "answerDirection": "Hướng trả lời: Wizard of Oz MVP là một phương pháp thử nghiệm giả thuyết kinh doanh, tạo ra ảo giác về sản phẩm tự động nhưng thực tế được thực hiện thủ công.",
+    "focusedChunks": [
+      "C0161-T1254-A",
+      "C0026-T0225-A",
+      "C0034-T0235-A"
+    ]
+  }
+}

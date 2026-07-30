@@ -5,7 +5,7 @@
  * Luồng:  query → embed → cosine top-k → Gemini prompt → verifier → result
  *
  * Hai chế độ:
- *   - LIVE  (có GEMINI_API_KEY): embed query bằng Gemini + gọi Gemini sinh câu trả lời
+ *   - LIVE  (có OPENROUTER + JINA keys): embed query bằng Jina + OpenRouter sinh câu trả lời
  *   - FALLBACK (không có key):   dùng TF-IDF cho retrieval, mock-snippet cho answer
  *     (vẫn chạy flow đầy đủ + verifier để test logic; answer là string cứng)
  *
@@ -16,7 +16,8 @@
  *   }
  *
  * Biến môi trường:
- *   GEMINI_API_KEY   — để bật LIVE mode
+ *   OPENROUTER_API_KEY  — để bật LIVE mode (chat + tool calling)
+ *   JINA_API_KEY         — để embed query bằng Jina v3
  *
  * Chạy CLI: node codebase/eval/rag.js "Câu hỏi của bạn?"
  *   (không có key sẽ tự chạy FALLBACK để bạn xem flow + verifier có hoạt động)
@@ -29,7 +30,7 @@ const qdrant = require("./qdrant.js");
 const { webResearch, checkSufficientContext, isResearchNeeded } = require("./research.js");
 const { TOOL_DEFINITIONS, SYSTEM_PROMPT, processToolCalls, formatToolResults } = require("./tools.js");
 const openrouter = require("./openrouter.js");
-require("./loadenv.js"); // load OPENROUTER_API_KEY và GEMINI_API_KEY từ .env
+require("./loadenv.js"); // load OPENROUTER_API_KEY và JINA_API_KEY từ .env
 
 const CHUNKS = path.resolve(__dirname, "chunks.json");
 const TRACE_DIR = path.resolve(__dirname, "traces");
@@ -48,9 +49,9 @@ const DIM = 1024; // Jina v3 dims
 const USE_TOOL_CALLING = true;
 
 // Ngưỡng tối thi thiểu để coi như retrieval "có thật" — nếu top-1 dưới ngưỡng này → fail-safe
-// - Qdrant + Gemini embed: 0.5 (semantic hiểu nghĩa tốt)
+// - Qdrant + Jina v3: 0.35 (semantic hiểu nghĩa tốt, score cosine thường 0.3-0.7 với short query)
 // - TF-IDF fallback: cao hơn (vì naive)
-const THRESHOLD_QDRANT = 0.5;
+const THRESHOLD_QDRANT = 0.35;
 const THRESHOLD_TFIDF = 0.75;
 
 // ============== LOAD DATA ==============
@@ -102,7 +103,7 @@ function embedQueryLive(text) {
         let data = "";
         res.on("data", (c) => (data += c));
         res.on("end", () => {
-          if (res.statusCode >= 400) return reject(new Error(`embed HTTP ${res.statusCode}: ${data.slice(0, 200)}`));
+          if (res.statusCode >= 400) return reject(new Error(`Jina embed HTTP ${res.statusCode}: ${data.slice(0, 200)}`));
           try {
             resolve(JSON.parse(data).data[0].embedding);
           } catch (e) {
@@ -130,16 +131,30 @@ function tfidfScore(query, chunkText) {
 }
 
 async function retrieve(query) {
-  // 1. Ưu tiên Qdrant + Gemini embed (semantic, nhanh)
-  if (apiKey) {
+  // 1. Ưu tiên Qdrant + Jina embed (semantic, nhanh)
+  if (apiKey && JINA_API_KEY) {
     try {
       const qdrantHealth = await qdrant.health();
       if (qdrantHealth.ok) {
         const n = await qdrant.count();
         if (n > 0) {
           const qv = await embedQueryLive(query);
-          const results = await qdrant.search(qv, TOP_K);
-          return { mode: "qdrant", top: results.map((r) => ({ code: r.payload.code, score: r.score })) };
+          // 2 search song song: transcript ưu tiên 1, chatlog fallback
+          const [transcriptResults, allResults] = await Promise.all([
+            qdrant.search(qv, TOP_K, { must: [{ key: "source", match: { value: "transcript" } }] }),
+            qdrant.search(qv, TOP_K, null),
+          ]);
+          const seen = new Set();
+          const combined = [];
+          for (const r of [...transcriptResults, ...allResults]) {
+            const code = r.payload.code;
+            if (!seen.has(code)) {
+              seen.add(code);
+              combined.push(r);
+            }
+            if (combined.length >= TOP_K) break;
+          }
+          return { mode: "qdrant", top: combined.map((r) => ({ code: r.payload.code, score: r.score })) };
         }
       }
     } catch (e) {
@@ -289,10 +304,10 @@ TRẢ LỜI:`;
  * @param {Array} tools - Tool definitions
  * @returns {Promise<{text: string, toolCalls: Array|null}>}
  */
-async function callGeminiWithTools(systemPrompt, userPrompt, tools = null) {
+async function callOpenRouterWithTools(systemPrompt, userPrompt, tools = null) {
   return openrouter.chatWithTools(systemPrompt, userPrompt, tools)
     .catch(e => {
-      console.error(`[callGeminiWithTools] OpenRouter error: ${e.message}`);
+      console.error(`[callOpenRouterWithTools] OpenRouter error: ${e.message}`);
       throw e;
     });
 }
@@ -300,27 +315,35 @@ async function callGeminiWithTools(systemPrompt, userPrompt, tools = null) {
 /**
  * Gọi OpenRouter continuation sau tool results
  */
-async function callGeminiContinuation(messages, tools = null) {
+async function callOpenRouterContinuation(messages, tools = null) {
   // messages đã đúng format cho OpenRouter
   const requestOptions = { temperature: 0.3, max_tokens: 4096 };
   if (tools && tools.length > 0) {
-    requestOptions.tools = tools;
+    // OpenAI-compatible format requires type:"function" wrapper
+    requestOptions.tools = tools.map(t => ({
+      type: "function",
+      function: {
+        name: t.name,
+        description: t.description,
+        parameters: t.parameters
+      }
+    }));
     requestOptions.tool_choice = "auto";
   }
-  
+
   return openrouter.chat(messages, requestOptions);
 }
 
 // Legacy synchronous wrapper - dùng user prompt trực tiếp, không có system prompt
-function callGemini(prompt) {
-  return callGeminiSimple(prompt);
+function callOpenRouter(prompt) {
+  return callOpenRouterSimple(prompt);
 }
 
 /**
  * Simple OpenRouter call cho answer generation
  * Không dùng system prompt vì prompt đã có đầy đủ context
  */
-async function callGeminiSimple(userPrompt) {
+async function callOpenRouterSimple(userPrompt) {
   return openrouter.chat(userPrompt, { temperature: 0.3, max_tokens: 4096 });
 }
 
@@ -343,11 +366,13 @@ function buildPrompt(question, topChunks, chunkTexts = null, researchResult = nu
   return `Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.
 Học viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.
 
-QUY TẮC BẮT BUỘC:
-1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.
+QUY TẮC BẮT BUỘC (mọi điểm đều quan trọng):
+1. **TRÍCH DẪN LÀ BẮT BUỘC** — Mỗi phát biểu mang thông tin phải kèm mã trích dẫn ngay trong câu, ở cuối câu đó.
    - Đoạn bài giảng: [Txx-NNN]
    - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)
-2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.
+   - Ví dụ đúng: "AI là khả năng máy tính thực hiện các tác vụ giống con người [T01-002]."
+   - Ví dụ SAI: "AI là khả năng máy tính thực hiện các tác vụ giống con người." (thiếu citation)
+2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã — bịa mã sẽ bị strip và đánh fail.
 3. Nếu context không đủ để trả lời, hãy nói thẳng: "Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc."
 4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng "mình".
 5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN]. Hội thoại học viên [Cxxxx] chỉ dùng để bổ sung ngữ cảnh khi bài giảng không có.${researchSection}
@@ -357,7 +382,7 @@ ${ctx}
 
 CÂU HỎI HỌC VIÊN: ${question}
 
-TRẢ LỜI:`;
+Hãy trả lời và gắn citation code cho MỌI phát biểu mang thông tin. Bắt đầu trả lời:`;
 }
 
 /**
@@ -531,7 +556,7 @@ async function askTutor(question, opts = {}) {
       const userPrompt = `Câu hỏi: ${question}\n\nHãy tra cứu tài liệu trước, sau đó trả lời.`;
 
       // First call - AI may request tool calls
-      const firstResponse = await callGeminiWithTools(SYSTEM_PROMPT, userPrompt, tools);
+      const firstResponse = await callOpenRouterWithTools(SYSTEM_PROMPT, userPrompt, tools);
       trace.rawAnswer = firstResponse.text;
 
       let finalText = firstResponse.text;
@@ -546,34 +571,41 @@ async function askTutor(question, opts = {}) {
         const results = await processToolCalls(firstResponse.toolCalls);
         toolResults.push(...results);
 
-        // Build continuation messages
+        // Build continuation messages (OpenAI-compatible format)
+        // Note: mỗi tool_call phải có 1 tool message response với tool_call_id tương ứng
+        const toolMessages = firstResponse.toolCalls.map((tc, i) => ({
+          role: "tool",
+          tool_call_id: tc.id,
+          content: JSON.stringify(results[i]?.result || results[i] || {})
+        }));
         const messages = [
-          { role: "user", parts: [{ text: SYSTEM_PROMPT }] },
-          { role: "model", parts: [{ text: "Tôi đã hiểu. Tôi sẽ tuân thủ nghiêm ngặt các nguyên tắc và chỉ trả lời dựa trên thông tin từ tài liệu hoặc tìm kiếm web." }] },
-          { role: "user", parts: [{ text: userPrompt }] },
+          { role: "user", content: SYSTEM_PROMPT },
+          { role: "assistant", content: "Tôi đã hiểu. Tôi sẽ tuân thủ nghiêm ngặt các nguyên tắc và chỉ trả lời dựa trên thông tin từ tài liệu hoặc tìm kiếm web." },
+          { role: "user", content: userPrompt },
           {
-            role: "model",
-            parts: firstResponse.toolCalls.map(tc => ({
-              functionCall: {
+            role: "assistant",
+            content: null,
+            tool_calls: firstResponse.toolCalls.map(tc => ({
+              id: tc.id,
+              type: "function",
+              function: {
                 name: tc.name,
-                args: tc.args,
-                id: tc.id
+                arguments: JSON.stringify(tc.args || {})
               }
             }))
           },
-          {
-            role: "user",
-            parts: [{ text: formatToolResultsForUser(results) }]
-          }
+          ...toolMessages
         ];
 
         // Get final response
-        finalText = await callGeminiContinuation(messages, tools);
+        finalText = await callOpenRouterContinuation(messages, tools);
         trace.rawAnswer = finalText;
       }
 
-      // Verify and return (dùng focusedCodes thay vì allowedCodes)
-      const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(finalText, focusedCodes);
+      // Verify and return (dùng allowedCodes = full retrieved, KHÔNG dùng focusedCodes)
+      const codeAllow = top.map(t => t.code);
+      const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(finalText, codeAllow);
+      trace.verified = { verifiedCitations, hallucinated, allowedCodes: codeAllow.slice(0,5), focusedCodes: focusedCodes.slice(0,5) };
 
       // Check if we have valid citations - if not, might need web research
       let needWebSearch = verifiedCitations.length === 0 && hasLowScore;
@@ -591,7 +623,7 @@ async function askTutor(question, opts = {}) {
 
             // Regenerate with web context
             const webPrompt = buildWebContextPrompt(question, researchResult.mergedContext, researchResult.sources);
-            const webResponse = await callGeminiWithTools(SYSTEM_PROMPT + "\n\n" + webPrompt, "Hãy trả lời dựa trên thông tin web đã cung cấp.", null);
+            const webResponse = await callOpenRouterWithTools(SYSTEM_PROMPT + "\n\n" + webPrompt, "Hãy trả lời dựa trên thông tin web đã cung cấp.", null);
             finalText = webResponse.text || finalText;
             trace.rawAnswer = finalText;
 
@@ -603,7 +635,23 @@ async function askTutor(question, opts = {}) {
         }
       }
 
-      return buildResult(question, cleanedAnswer, verifiedCitations, [], trace, false, null);
+      // Soft-fail logic: nếu có hallucinated citation(s) → strip nhưng vẫn return content
+      // vì answer có thể vẫn correct, chỉ sai citation
+      const hasHallucinated = hallucinated.length > 0;
+      const isFailureSoft = verifiedCitations.length === 0 && !hasHallucinated;
+      return {
+        question,
+        answer: isFailureSoft
+          ? "Mình **không tìm thấy nội dung này** trong tài liệu. Bạn nên hỏi trực tiếp giảng viên hoặc TA."
+          : cleanedAnswer,
+        citations: verifiedCitations,
+        snippets: [],
+        isFailure: isFailureSoft,
+        trace,
+        warningNote: hasHallucinated
+          ? `stripped ${hallucinated.length} hallucinated citation(s): ${hallucinated.join(", ")}`
+          : null
+      };
 
     } catch (e) {
       console.error(`[askTutor] Tool calling failed: ${e.message}, falling back to standard mode`);
@@ -626,7 +674,7 @@ async function askTutor(question, opts = {}) {
           const researchPrompt = buildResearchPrompt(question, researchResult.mergedContext, researchResult.sources);
           trace.prompt = researchPrompt;
 
-          const rawAnswer = await callGemini(researchPrompt);
+          const rawAnswer = await callOpenRouter(researchPrompt);
           trace.rawAnswer = rawAnswer;
 
           const { cleanedAnswer, verifiedCitations } = verifyWebAnswer(rawAnswer, researchResult.sources);
@@ -699,6 +747,33 @@ async function askTutor(question, opts = {}) {
     }
   }
 
+  // ==== HARD FAIL-SAFE ====
+  // Nếu top-1 score quá thấp VÀ web research không bổ sung được gì,
+  // thì KHÔNG cho LLM generate — tránh "guessing" gây unsafe.
+  // Chỉ skip khi research thực sự có mergedContext (đã bổ sung được thông tin)
+  // Đồng thời chỉ trigger khi top-1 score rất thấp (< 0.25) — quá yếu để LLM làm gì được.
+  if (hasLowScore && top[0]?.score < 0.25 && (!researchResult || !researchResult.needed || !researchResult.mergedContext)) {
+    console.log(`[askTutor] Hard fail-safe: very low score (${top[0]?.score?.toFixed(3)}) + no research help → returning early`);
+    if (!fs.existsSync(TRACE_DIR)) fs.mkdirSync(TRACE_DIR, { recursive: true });
+    const ts = new Date().toISOString().replace(/[:.]/g, "-");
+    trace.verified = { hardFailSafe: `very-low-score + no-research, top-1=${top[0]?.score?.toFixed(3)}` };
+    fs.writeFileSync(path.join(TRACE_DIR, `trace-${ts}.json`), JSON.stringify(trace, null, 2));
+    return {
+      question,
+      answer:
+        "Mình **không tìm thấy nội dung này** trong tài liệu bài giảng, và cũng không tìm được thông tin bổ sung phù hợp trên web.\n\n" +
+        "Thay vì đoán và trả lời sai, mình khuyên bạn:\n" +
+        "• Hỏi trực tiếp giảng viên hoặc TA trong Discord khoá.\n" +
+        "• Hoặc mở tài liệu gốc để tìm.\n\n" +
+        "_(Đây là hành vi cố ý của tutor: tránh bịa nguồn — Lớp ① trong spec §5.)_",
+      citations: [],
+      snippets: [],
+      isFailure: true,
+      trace,
+    };
+  }
+  // =========================
+
   // 2. Generate với focused prompt (tài liệu đã được tóm tắt)
   const focusedTop = top.filter(t => focusedCodes.includes(t.code));
   let rawAnswer;
@@ -710,7 +785,7 @@ async function askTutor(question, opts = {}) {
         const chunkTexts = top.map(t => codeToChunk.get(t.code)?.text || "");
         trace.prompt = buildFocusedPrompt(question, top, docSummary);
       }
-      rawAnswer = await callGemini(trace.prompt);
+      rawAnswer = await callOpenRouter(trace.prompt);
     } catch (e) {
       console.error(`[askTutor] gen failed: ${e.message} — fallback`);
       rawAnswer = fallbackAnswer(question, focusedTop);
@@ -730,14 +805,18 @@ async function askTutor(question, opts = {}) {
     };
   }
 
-  // 3. Verify (dùng focusedCodes để verify)
-  const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(rawAnswer, focusedCodes);
-  trace.verified = { verifiedCitations, hallucinated };
+  // 3. Verify (dùng allowedCodes = TẤT CẢ retrieved codes, không filter theo summary)
+  // Summarization chỉ dùng để gợi ý cho LLM, KHÔNG dùng để giới hạn citations hợp lệ
+  // vì model có thể trích dẫn đoạn khác trong retrieved top-K
+  const codesToVerify = top.map(t => t.code); // luôn dùng top retrieved, KHÔNG dùng focusedCodes
+  const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(rawAnswer, codesToVerify);
+  trace.verified = { verifiedCitations, hallucinated, focusedCodes: focusedCodes.slice(0,5), allowedCodes: codesToVerify.slice(0,5) };
 
-  // 4. Fail-safe: nếu không có citation hợp lệ → coi như không tìm thấy
+  // 4. Fail-safe: nếu không có citation hợp lệ → soft fail (giữ answer nếu có hallucinated bị strip)
   let isFailure = false;
   let finalAnswer = cleanedAnswer;
-  if (verifiedCitations.length === 0) {
+  if (verifiedCitations.length === 0 && hallucinated.length === 0) {
+    // Không có citation nào và cũng không có hallucinated → thật sự không tìm thấy
     isFailure = true;
     finalAnswer =
       "Mình **không tìm thấy nội dung này** trong tài liệu.\n\n" +
@@ -747,7 +826,8 @@ async function askTutor(question, opts = {}) {
       "_(Đây là hành vi cố ý của tutor: tránh bịa nguồn — Lớp ① trong spec §5.)_";
     trace.verified.failSafe = "no-valid-citation → MOCK_NOT_FOUND";
   } else if (hallucinated.length > 0) {
-    trace.verified.failSafe = `stripped ${hallucinated.length} hallucinated code(s)`;
+    // Có hallucinated bị strip → vẫn trả answer (đã strip marker), KHÔNG coi là failure
+    trace.verified.failSafe = `stripped ${hallucinated.length} hallucinated code(s): ${hallucinated.join(", ")}`;
   }
 
   // 5. Snippet cho UI — CHỈ trả text nếu là transcript (không lộ nội dung chatlog ra UI)
@@ -801,7 +881,7 @@ function fallbackAnswer(question, top) {
 if (require.main === module) {
   const question = process.argv.slice(2).join(" ").trim();
   if (!question) {
-    console.log(`Cách dùng: GEMINI_API_KEY=... node codebase/eval/rag.js "Câu hỏi của bạn"`);
+    console.log(`Cách dùng: OPENROUTER_API_KEY=... node codebase/eval/rag.js "Câu hỏi của bạn"`);
     process.exit(0);
   }
   askTutor(question)

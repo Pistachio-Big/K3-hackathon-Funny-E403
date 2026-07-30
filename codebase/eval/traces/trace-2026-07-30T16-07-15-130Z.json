@@ -1,0 +1,54 @@
+{
+  "question": "cho hỏi thầy ơi là có đề cương ôn thi ko ạ?",
+  "retrieved": [
+    {
+      "code": "T03-153",
+      "score": 0.4016
+    },
+    {
+      "code": "T06-069",
+      "score": 0.394
+    },
+    {
+      "code": "T03-065",
+      "score": 0.3806
+    },
+    {
+      "code": "T06-063",
+      "score": 0.3789
+    },
+    {
+      "code": "T06-073",
+      "score": 0.3635
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nCó đề cương ôn thi không được đề cập trực tiếp, nhưng có thông tin về việc sẽ có danh sách đề bài được phổ biến trước 1-2 ngày. Danh sách này chỉ giới hạn trong một domain cụ thể.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Có danh sách đề bài sẽ được công bố trước khi thi, nhưng không rõ có đ�� cương ôn thi cụ thể hay không.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-153] (Bài giảng)\nNội dung: Trả lời: Kick-off các bạn sẽ được phổ biến qua, và mình nhớ là trước tầm 1 đến 2 ngày các bạn sẽ được xem danh sách đề bài. Nhưng thật ra danh sách đề bài chỉ giới hạn cái domain thôi — nó chỉ nêu một vấn đề cụ thể, vấn đề trong [không nghe rõ] hoặc trong [không nghe rõ] — nhưng thật sự bạn có thể phóng to chủ đề đó ra thành những chủ đề nhỏ. Tại vì bên mình trước làm cũng là một chủ đề nói chung chung lắm, xong rồi mình tự vẽ ra một chủ đề khác làm trong vấn đề đó.\n\n[2] Mã: [T06-069] (Bài giảng)\nNội dung: [Học viên]: Vâng, kiểu như cái syllabus. — Ờ, syllabus thì trên LMS có. — Thế cái email lập cho bọn em thì có truy cập được không, đăng nhập sao? — Ok. Ok em cảm ơn nhá, câu hỏi hay.\n\n[3] Mã: [T03-065] (Bài giảng)\nNội dung: **Giảng viên:** Cái của em đang ở mức độ khác: em đang xáo những câu hỏi có sẵn để đưa vào đề kiểm tra đúng không? Còn thầy đang hỏi là từ một bài toán thôi, có cách nào làm ra bài toán mới không. Ok, còn bạn nào có idea nữa không? Nói to lên em ơi.\n\n[4] Mã: [T06-063] (Bài giảng)\nNội dung: [Học viên]: Xin phép hỏi, cái scope của lớp mình sẽ tập trung xung quanh buổi này, hay là chủ đề của cả khóa?\n\n[5] Mã: [T06-073] (Bài giảng)\nNội dung: [Học viên]: Dạ, lúc nãy em có lên hỏi thầy là quy mô và chủ đề mà khóa mình sẽ cover theo từng bài học bao gồm cái gì, và nó có tập trung hoàn toàn vào [không nghe rõ] không, hay là cả các chủ đề khác về AI?\n\nCÂU HỎI HỌC VIÊN: cho hỏi thầy ơi là có đề cương ôn thi ko ạ?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-153], giảng viên có nói: \"Trả lời: Kick-off các bạn sẽ được phổ biến qua, và mình nhớ là trước tầm 1 đến 2 ngày các bạn sẽ được xem danh sách đề bài. Nhưng thật ra danh sách đề bài chỉ giới hạn cái domain thôi — nó chỉ nêu một...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-153"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-153"
+    ],
+    "allowedCodes": [
+      "T03-153",
+      "T06-069",
+      "T03-065",
+      "T06-063",
+      "T06-073"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Có đề cương ôn thi không được đề cập trực tiếp, nhưng có thông tin về việc sẽ có danh sách đề bài được phổ biến trước 1-2 ngày. Danh sách này chỉ giới hạn trong một domain cụ thể.",
+    "answerDirection": "Hướng trả lời: Có danh sách đề bài sẽ được công bố trước khi thi, nhưng không rõ có đ�� cương ôn thi cụ thể hay không.",
+    "focusedChunks": [
+      "T03-153"
+    ]
+  }
+}

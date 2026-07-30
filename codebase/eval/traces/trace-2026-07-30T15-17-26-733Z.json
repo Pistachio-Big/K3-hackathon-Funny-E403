@@ -1,0 +1,53 @@
+{
+  "question": "Giảng viên có thể đổi đề thi không?",
+  "retrieved": [
+    {
+      "code": "T03-055",
+      "score": 0.875
+    },
+    {
+      "code": "T06-074",
+      "score": 0.875
+    },
+    {
+      "code": "T03-051",
+      "score": 0.75
+    },
+    {
+      "code": "T03-076",
+      "score": 0.75
+    },
+    {
+      "code": "T03-083",
+      "score": 0.75
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nGiảng viên có thể thay đổi đề thi bằng cách điều chỉnh các số liệu trong đề, ví dụ như trong các bài trắc nghiệm hóa học, chỉ cần thay đổi con số là vẫn có thể tạo ra đề mới.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Giảng viên có thể đổi đề thi bằng cách thay đổi các số liệu trong đề.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-055] (Bài giảng)\nNội dung: **Giảng viên:** Em đang bảo nó ra cái đề mới dựa trên hai cái đề cũ, thế em có chắc là phương pháp của em đúng không? Em cũng không chắc đúng không? Ok. Bạn đầu tiên đưa ra là mình sẽ đánh dấu ở trong đề bài toán để biết chỗ này có thể thay đổi — theo ngôn ngữ lập trình là các bạn làm một cái placeholder, xong rồi bảo LLM tự điền vào placeholder đấy đúng không? Rồi, còn ai nữa không?\n\n[2] Mã: [T06-074] (Bài giảng)\nNội dung: Ok, cảm ơn em nhá. Mọi người lưu ý, câu hỏi đấy rất hay. Lúc sáng [giảng viên] cũng đã trao đổi đầu buổi, mình cũng vì việc này việc kia mà không đi hết được cái summary này cho các bạn. Trong vòng 15 ngày thì gần như các bạn sẽ học được toàn diện. Trong khi chờ đợi thì mình đã summarize như này, các bạn có thể đọc để nắm được tổng thể. Còn chi tiết toàn bộ chương trình, mỗi ngày học cái gì, các bạn cập nhật trên LMS. Tổng thể là: cung cấp kiến thức toàn diện và kỹ năng thực tế để các bạn đi từ thiết kế, phát triển, quản lý đến triển khai các ứng dụng AI ở cấp độ production, cũng như các quy trình về dữ liệu. Mục tiêu chính bao gồm AI/ML này, các kỹ thuật nhắc lệnh — prompt engineering này, các mô hình thiết kế này. Ở đây vẫn còn thiếu: các bạn cũng sẽ học về CI/CD, học về tương tác trên cloud environment, cloud infrastructure — tổng lại là khá toàn diện. Còn toàn bộ chủ đề từng ngày các bạn sẽ nhìn thấy trên LMS đây: nó sẽ có các buổi như thế này, những ngày như thế này. Các bạn thậm chí còn được học cả kỹ năng quản trị dự án. Rồi đây, data pipeline này, guardrail này — những chủ đề mà mình nghĩ các trường đại học bên ngoài đang đào tạo thuần về lý thuyết thì ở đây các bạn sẽ được học, ví dụ như evaluation pipeline chẳng hạn. Đấy là cái tổng thể, các bạn có thể nhìn vào đây. Thôi, chúng ta quay lại nhá.\n\n[3] Mã: [T03-051] (Bài giảng)\nNội dung: **Giảng viên:** Ok. Tức là em vẫn cho LLM quyền đổi số, em chỉ biết là những số này có thể đổi, và đổi sao cho nó đúng, đúng không? Rồi, một idea. Bạn nào nữa không? Em nói đi.\n\n[4] Mã: [T03-076] (Bài giảng)\nNội dung: Nên sau này các bạn làm một cái solution thì cần chú ý: mình là dân kỹ sư mà, mình nên có một cái suy nghĩ hơi \"lười\" một tí. Tức là idea đầu của các bạn có thể là có cái gì làm cái đấy, nhưng các bạn phải nghĩ đến việc thu data, thu dữ liệu xong rồi phải ngồi check lại từng cái — các bạn sẽ phải đánh đổi cực lớn, không nên đúng không? Trong khi các bạn phải xác định được tính chất của bài toán các bạn đang làm. Ví dụ nhá: các bạn muốn soạn đề toán, soạn đề vật lý, soạn bài hóa. Bài hóa có làm được không? Có một vài bài hóa làm được nhé — ví dụ đề thi trắc nghiệm hỏi số mol, phân tử, thì cũng là bài đấy, các bạn chỉ thay đổi con số thôi, vẫn ok đúng không?\n\n[5] Mã: [T03-083] (Bài giảng)\nNội dung: Những phần này mình thích trao đổi với các bạn trong lúc làm lab hơn là giảng lý thuyết. Để hiểu slide này thì mình quay về thực tế luôn. Các bạn là nhân viên đi làm đúng không? Thế thì sếp thích nhất là gì? Sếp thích nhất là sản phẩm của công ty mình tốn ít tiền để vận hành nhưng khách hàng vẫn chịu trả rất nhiều tiền để sử dụng đúng không? Mình đang ở góc độ AI engineer và PM của dự án. Còn ông MLOps thì có thể ổng chỉ quan tâm việc nếu hệ thống default bị break thì cái cost để backup, fallback là bao nhiêu — vẫn là bài toán chung thôi. Sếp chỉ quan tâm chi phí trả ra và cái thứ khách hàng nhận được như thế nào. Họ sẽ cần con số.\n\nCÂU HỎI HỌC VIÊN: Giảng viên có thể đổi đề thi không?\n\nTRẢ LỜI:",
+  "rawAnswer": "Có, giảng viên có thể đổi đề thi bằng cách thay đổi các số liệu trong đề. Ví dụ, trong các bài trắc nghiệm hóa học, chỉ cần thay đổi con số là vẫn có thể tạo ra đề mới [T03-076].",
+  "verified": {
+    "verifiedCitations": [
+      "T03-076"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_DboWovOObM3lFOInUiTyTj1i",
+      "name": "lookup_document",
+      "args": {
+        "topic": "đổi đề thi"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Giảng viên có thể thay đổi đề thi bằng cách điều chỉnh các số liệu trong đề, ví dụ như trong các bài trắc nghiệm hóa học, chỉ cần thay đổi con số là vẫn có thể tạo ra đề mới.",
+    "answerDirection": "Hướng trả lời: Giảng viên có thể đổi đề thi bằng cách thay đổi các số liệu trong đề.",
+    "focusedChunks": [
+      "T03-051",
+      "T03-076"
+    ]
+  }
+}

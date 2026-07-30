@@ -1,0 +1,61 @@
+{
+  "question": "ReAct là gì? Tác dụng khi dùng trong Agent",
+  "retrieved": [
+    {
+      "code": "T05-139",
+      "score": 0.4884
+    },
+    {
+      "code": "T03-128",
+      "score": 0.4027
+    },
+    {
+      "code": "T02-038",
+      "score": 0.3958
+    },
+    {
+      "code": "T06-051",
+      "score": 0.3934
+    },
+    {
+      "code": "T02-037",
+      "score": 0.391
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T05-139] (Bài giảng)\nNội dung: Và ở bước cuối cùng là chúng ta sẽ ra agent. Agent sẽ là cái gì đó có tính nhiều bước và sử dụng nhiều tool, và trạng thái này có thể thay đổi liên tục. Mình lấy ví dụ: trong một siêu thị chẳng hạn, chúng ta nói cái camera theo dõi — quan sát một tên trộm trong một siêu thị thì nó đòi hỏi rất nhiều bước, từ hành vi của người đấy cho đến hành động đúng không? Trạng thái của người đi vào siêu thị thay đổi liên tục — đấy là đặc điểm đơn giản để chúng ta cần đến lớp thứ ba. Và đặc điểm nữa: chúng ta cần những cái ra quyết định, hay nói hơn nữa là có thể gọi tool để làm.\n\n[2] Mã: [T03-128] (Bài giảng)\nNội dung: Ở đây là một phân biệt đơn giản nhỏ thôi. Rule script — các bạn có thể gọi là SQL hoặc những cái cố định như function code, database query bình thường — tức là các bạn đảm bảo chỉ một input đầu vào format như vậy thì không thể nào vượt qua cái scope được. Tuy nhiên rule script có giới hạn: dĩ nhiên nó không adapt được theo thời gian mà các bạn phải tự cập nhật thêm, và có khả năng nó narrow down cái scope trả lời của system của các bạn. LLM thì các bạn cũng hiểu rồi — nó là probability model nên không có chắc chắn. Còn agent là kết hợp của hai thằng trước, nên nó sẽ có phần deterministic — nếu các bạn dùng tool thì chắc chắn gọi đúng tool đấy ra đúng kết quả đấy; còn gọi nhánh liên quan đến LLM hoặc thuật toán xác suất, model deep learning có xác suất trong đấy, thì vẫn có khả năng nó respond không chắc chắn. Đấy là ba định nghĩa cơ bản thôi.\n\n[3] Mã: [T02-038] (Bài giảng)\nNội dung: Phía dưới thì bạn sẽ cần những cái phức tạp hơn — ví dụ xây dựng hẳn một đội agent, sub-agent để làm việc với nhau: có một agent chia việc, sau đấy chia cho những agent khác để làm các việc đấy, hay thậm chí làm xong lại có một agent để đánh giá, sau đấy quay trở lại. Những cái phía sau này thường chỉ đến khi ba cách tiếp cận phía trước chạm trần thì mình mới tiếp cận đến — bởi vì lúc đấy chi phí vận hành rất cao. Các bạn biết là nếu build agent thực sự — agent mà có thể suy nghĩ rồi xài tool các thứ — thì nó rất tốn kém, bạn không kiểm soát được cái đấy. Ở đây không biết có ai thử chưa: mình prompt một câu thôi, cái tool mới ra, một phát nó chạy — nó spawn ra hơn trăm agent, chạy hết 4 triệu token, hết [không nghe rõ] của mình luôn. Nó sẽ tốn rất nhiều token nếu không kiểm soát được.\n\n[4] Mã: [T06-051] (Bài giảng)\nNội dung: Nhóm đầu tiên là cái gọi là discriminative AI — nói một tiếng là phân loại, dự đoán. Cái này thường được sử dụng nhiều ở giai đoạn chúng ta huấn luyện mô hình, chúng ta gán nhãn vân vân, và vẫn thường được ứng dụng vào các việc như gán nhãn, hay là phân tích giao dịch xem giao dịch là giả mạo hay không giả mạo. Mình lấy cho các bạn một ví dụ: giả sử các bạn là người own cái hệ thống nhận diện giao dịch giả mạo của ngân hàng, thì các bạn có đồng ý là sẽ sử dụng cái quá trình reasoning trong quá trình detect fraud không, hay các bạn sẽ sử dụng theo dạng nhóm thứ nhất? Ví dụ như bài toán của Momo chẳng hạn — một ngày khoảng 20 triệu giao dịch, có bộ phận chuyên đi detect xem trong số đó có bao nhiêu giao dịch giả mạo — thì theo các bạn là nên dựa vào gen AI hay là dựa vào discriminative AI? Đấy là những tình huống mà sau này các bạn sẽ phải trả lời. Ở phần thứ nhất các bạn nhớ rằng chức năng chính của nhóm thứ nhất là gì: khi các bạn input vào một cái gì đó, nhập vào một cái gì đó, thì nó sẽ trả ra cho chúng ta một cái nhãn — đó là spam hay không spam, nó là chó hay là mèo. Đấy là nhóm thứ nhất. Nhóm thứ hai là generative AI: bản chất chức năng chính của nó là chúng ta prompt — prompt cũng có thể hiểu là một input — nhưng nó trả về cho chúng ta cái content. Cái content này có thể là nhạc, có thể là hình ảnh, có thể là mã code, có thể là file audio, rồi bây giờ có thể là bản đồ, có thể là ứng dụng, có thể là game — cái danh sách càng ngày càng dài ra. Đấy là nhóm số hai. Và nhóm cuối cùng là nhóm mà nó có khả năng tự lập kế hoạch và hành động. Khi nói kế hoạch và hành động, các bạn cứ tưởng tượng là chúng ta có cái não để nghĩ và chúng ta có cánh tay để làm. Với agentic AI, khi các bạn đã nghĩ rõ về mục tiêu của mình — ví dụ các bạn có thể hỏi là cách tôi tạo cái web thì sao — nó ra các bước luôn: mục tiêu của cái web này nó là gì, thì sau đấy nó sẽ hành động cho các bạn luôn. Và các bạn tưởng tượng cái này một cách đơn giản: trước đây khi chúng ta search Google về câu chuyện là tôi đặt vé đợt hè, ví dụ như là giá rẻ dưới 2 triệu chẳng hạn, thì trước đây chúng ta vẫn phải search, nó trả cái kết quả, chúng ta ngồi lựa chọn. Còn với agentic AI, nó sẽ thay chúng ta: nó sẽ hiểu luôn cái individual context của từng bạn khi các bạn đặt cái mục tiêu đấy, và nó sẽ săn — ví dụ buổi sáng nó vào chưa thấy giá tốt nhất, nó dừng lại; buổi chiều nó vào tiếp lần nữa, nó thấy giá phù hợp với mục tiêu, nó sẽ đặt luôn cho các bạn. Ở cái hướng của agentic AI, nó sẽ đạt đến câu chuyện như vậy. Ba nhóm này rất là quan trọng nếu các bạn là kỹ sư AI — và thực tế thì các bạn cũng đang hướng đến là AI engineer — các bạn cần phải nắm rõ bản chất của từng loại, để sau này các bạn phải tư vấn được cho từng trường hợp, từng cái use case. Và mở rộng thêm một chút: trước đây cái AI nó chỉ được áp dụng ở những nơi [không nghe rõ] — những nơi rất nhiều tiền — và bởi vậy cái cách tiếp cận đầu tiên, cái khối đầu tiên bên trái, gọi là AI hẹp, AI truyền thống.\n\n[5] Mã: [T02-037] (Bài giảng)\nNội dung: Cấp độ hai là build theo dạng workflow. Lúc này, mặc dù rule-based không xử lý được nữa, nhưng nhìn chung nó vẫn có thể chia thành các bước lớn, thiết kế được thành workflow, và trong từng nút đấy chúng ta sẽ có AI agent, AI LLM để hỗ trợ. Ở đây có một ví dụ — cái này chắc để slide mọi người xem thêm nhá. Anthropic họ có một bài blog mọi người có thể xem — Building Effective Agents — họ đưa ra một số pattern trong việc build các agent. Họ nói luôn là trong thiết kế các phần build agent có khoảng sáu mức độ tăng dần theo sự phức tạp, và ba cái đầu tiên là cực kỳ hiệu quả, đã đủ đáp ứng hầu hết các nhu cầu cơ bản — chưa cần phải nghĩ cái phức tạp, chúng ta hoàn toàn có thể bắt đầu từ những cái này. Đây là dạng workflow: nó phức tạp hơn rule-based nhưng chưa đạt mức đủ phức tạp như agent. Ví dụ bạn có thể chia được thành các bước tuần tự, có LLM ở giữa, và có những gate để kiểm tra giữa các bước — ví dụ bạn cần làm một luồng là tóm tắt, sau đấy viết bài — đấy là dạng đơn giản nhất. Cái thứ hai là có phân nhánh: không phải đi tuần tự từng bước nữa, mà nó sẽ phải xác định đây là công việc kiểu gì, mỗi công việc phân nhánh xử lý khác nhau, sau đó hợp lại ở cuối chẳng hạn. Bước thứ ba là chạy song song. Team Anthropic họ nói: ba mô hình cơ bản này bạn áp dụng vào là đã có thể xử lý được kha khá các vấn đề của mình rồi, và bạn không cần đến cái phức tạp ở phía dưới.\n\nCÂU HỎI HỌC VIÊN: ReAct là gì? Tác dụng khi dùng trong Agent\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T05-139], giảng viên có nói: \"Và ở bước cuối cùng là chúng ta sẽ ra agent. Agent sẽ là cái gì đó có tính nhiều bước và sử dụng nhiều tool, và trạng thái này có thể thay đổi liên tục. Mình lấy ví dụ: trong một siêu thị chẳng hạn, c...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T05-139"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T05-139",
+      "T03-128",
+      "T02-038",
+      "T06-051",
+      "T02-037"
+    ],
+    "allowedCodes": [
+      "T05-139",
+      "T03-128",
+      "T02-038",
+      "T06-051",
+      "T02-037"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": null,
+    "focusedChunks": [
+      "T05-139",
+      "T03-128",
+      "T02-038",
+      "T06-051",
+      "T02-037"
+    ]
+  }
+}

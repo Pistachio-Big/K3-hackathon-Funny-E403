@@ -1,0 +1,144 @@
+{
+  "question": "MVP là gì? Cho ví dụ",
+  "retrieved": [
+    {
+      "code": "T01-008",
+      "score": 0.0552
+    },
+    {
+      "code": "C0161-T1254-A",
+      "score": 0.0406
+    },
+    {
+      "code": "C0026-T0383-A",
+      "score": 0.0402
+    },
+    {
+      "code": "C0026-T0725-A",
+      "score": 0.0393
+    },
+    {
+      "code": "C0026-T0225-A",
+      "score": 0.0392
+    },
+    {
+      "code": "C0034-T0235-A",
+      "score": 0.0379
+    },
+    {
+      "code": "C0182-T0609-A",
+      "score": 0.0378
+    },
+    {
+      "code": "C0155-T0895-A",
+      "score": 0.037
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-8 đoạn):\n[1] Mã đoạn: [T01-008] (Bài giảng)\nNội dung: Bây giờ trong một team có bạn product owner, product manager. PM ở đây mình nói P là product nhá, không phải project — nó khác nhau. Có ai định nghĩa được nó khác như thế nào không? Tại vì ở Việt Nam từ PM hay dùng cho project nhiều hơn, bởi vì các công ty outsourcing nhiều, giờ mình cần định nghĩa lại nhá.\n\n[2] Mã đoạn: [C0161-T1254-A] (Hội thoại học viên)\nNội dung: \"Wizard of Oz MVP\" (tạm dịch là MVP kiểu \"Phù thủy xứ Oz\") là phương pháp thử nghiệm giả thuyết kinh doanh bằng cách tạo ra hình ảnh sản phẩm trông có vẻ tự động hoặc đã hoàn thiện, nhưng thực tế đằng sau vẫn đang được thực hiện thủ công bởi con người [trang 14].\n\n[3] Mã đoạn: [C0026-T0383-A] (Hội thoại học viên)\nNội dung: Trong bối cảnh phát triển sản phẩm, **MVP (Minimum Viable Product - Sản phẩm khả thi tối thiểu)** là phiên bản của sản phẩm có đầy đủ các tính năng cơ bản nhất để giải quyết vấn đề cốt lõi và mang lại giá trị cho người dùng, từ đó cho phép đội ngũ kiểm chứng giả thuyết kinh doanh với nỗ lực và chi phí thấp nhất [trang 9].\n\n[4] Mã đoạn: [C0026-T0725-A] (Hội thoại học viên)\nNội dung: Khái niệm \"AI Prototyping & MVP\" đề cập đến phương pháp phát triển sản phẩm AI theo hướng thử nghiệm nhanh [trang 3]. Thay vì xây dựng ngay một sản phẩm hoàn chỉnh, mục tiêu là kiểm chứng các giả thuyết bằng cách tạo ra các bản mẫu (prototype) với chi phí thấp nhất có thể trước khi tiến hành xây dựng sản phẩm thực tế [trang 4].\n\n[5] Mã đoạn: [C0026-T0225-A] (Hội thoại học viên)\nNội dung: **Wizard of Oz MVP** (hay còn gọi là mô hình \"Phù thủy xứ Oz\") là phương pháp kiểm chứng giả thuyết sản phẩm bằng cách tạo ra ảo giác rằng hệ thống đã hoàn toàn tự động, trong khi thực tế các tác vụ lại được thực hiện thủ công bởi con người ở phía sau [trang 14].\n\n[6] Mã đoạn: [C0034-T0235-A] (Hội thoại học viên)\nNội dung: \"Wizard of Oz\" (Phù thủy xứ Oz) là một phương pháp xây dựng sản phẩm tối thiểu (MVP) mà ở đó, các chức năng được khách hàng nhìn thấy như là tự động hoặc được thực hiện bởi máy móc, nhưng thực tế đằng sau hậu trường lại được thực hiện thủ công bởi con người [trang 14, 15].\n\n[7] Mã đoạn: [C0182-T0609-A] (Hội thoại học viên)\nNội dung: Chào bạn, dưới đây là định nghĩa về AI Prototyping và MVP trong ngữ cảnh phát triển sản phẩm công nghệ:\n\n[8] Mã đoạn: [C0155-T0895-A] (Hội thoại học viên)\nNội dung: AI Prototyping và MVP trong phát triển sản phẩm AI tập trung vào việc thử nghiệm các giả thuyết một cách nhanh chóng và tiết kiệm chi phí nhất trước khi bắt tay vào xây dựng hệ thống hoàn chỉnh [trang 4].\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] MVP là gì? Giải đáp ý nghĩa của MVP trong từng lĩnh vực\nURL: https://cellphones.com.vn/sforum/mvp-la-gi\nNội dung: Tại một số trường hợp, Minimum Viable Product (MVP) còn là một phần của công cụ, phần mềm độc quyền. Đa phần MVP thường được doanh nghiệp ứng dụng tại lĩnh vực công nghệ, ví dụ như máy tính, điện thoại, ô tô, phần mềm, TV,…\n\n## Lời kết\n\nMong rằng sau khi đọc bài viết của Sforum bạn đã hiểu rõ MVP là\n\n[Nguồn 2] MVP (Minimum Viable Product) là gì và 8 lưu ý khi thiết kế MVP cho dự án - ScrumPass\nURL: https://scrumpass.com/mvp-minimum-viable-product-la-gi-va-8-luu-y-khi-thiet-ke-mvp-cho-du-an\nNội dung: Tiết kiệm thời gian và chi phí: Giúp tránh việc đầu tư quá nhiều vào sản phẩm mà không chắc chắn có thị trường hay không.\n Hiểu người dùng: Nhận phản hồi sớm để điều chỉnh sản phẩm phù hợp hơn với nhu cầu thực tế.\n Giảm rủi ro: Phát hiện và sửa lỗi hoặc cải thiện sản phẩm từ giai đoạn sớm.\n\nVí dụ:\n\n\n\n[Nguồn 3] Sản phẩm khả dụng tối thiểu - MVP là gì? | A1 Consulting Vietnam\nURL: https://www.a1consulting.vn/blog/dx-blog-9/mvp-la-gi-187\nNội dung: Hệ quả:\n\n MVP khó nng cấp, phải viết lại từ đầu.\n Tốn kém gấp đôi so với việc có chiến lược ngay từ đầu.  \n   Giải pháp: Khi xy dựng MVP, hãy luôn nghĩ đến khả năng mở rộng: kiến trúc hệ thống, công nghệ cloud, khả năng tích hợp.\n\n## Ví dụ thực tiễn về MVP thành công\n\n### Facebook – Bắt đầu từ Harva\n\n[Nguồn 4] American Express\nURL: https://keyapply.com/blogs/news/minimum-viable-product-mvp\nNội dung: Một ví dụ giai đoạn MVP là việc sáng lập ra Airbnb. Không có tiền để xy dựng doanh nghiệp, những người sáng lập Airbnb đã sử dụng căn hộ của chính họ để xác thực ý tưởng, nhằm tạo ra một thị trường cung cấp nhà cho thuê ngắn hạn ngang hàng trực tuyến. Họ đã tạo một trang web tối giản, đăng ảnh và cá\n\n[Nguồn 5] Bài 15: MVP Là Gì? | Cách Xây Dựng MVP Hiệu Quả | Product Management Gối Đầu Giường\nURL: https://www.youtube.com/watch?v=-9cc19ATOIk\nNội dung: một cái sản phẩm gọi là ít tốn kém nhất và làm sao đó để Build một cách nhanh nhất thì nó sẽ gọi là mvp và sau đó các bạn sẽ mang cái sản phẩm này đi test với user và lấy được feedback và trả lời được những cái câu hỏi ban đầu mà các bạn đặt ra ok Các bạn nhớ bốn bước này cho mình nha Bây giờ mình s\n\nCÂU HỎI HỌC VIÊN: MVP là gì? Cho ví dụ\n\nTRẢ LỜI:",
+  "rawAnswer": "Mình tìm thấy một hội thoại học viên liên quan [C0161-T1254-A], nhưng chưa tổng hợp được câu trả lời (FALLBACK mode cần Gemini API để sinh).",
+  "verified": {
+    "verifiedCitations": [
+      "C0161-T1254-A"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "C0026-T0383-A",
+      "C0161-T1254-A",
+      "C0034-T0235-A"
+    ],
+    "allowedCodes": [
+      "T01-008",
+      "C0161-T1254-A",
+      "C0026-T0383-A",
+      "C0026-T0725-A",
+      "C0026-T0225-A"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "MVP là gì? Cho ví dụ",
+    "topChunks": [
+      {
+        "code": "T01-008",
+        "score": 0.05517494494739418
+      },
+      {
+        "code": "C0161-T1254-A",
+        "score": 0.04058699101004759
+      },
+      {
+        "code": "C0026-T0383-A",
+        "score": 0.04021516393442623
+      },
+      {
+        "code": "C0026-T0725-A",
+        "score": 0.03931051587301587
+      },
+      {
+        "code": "C0026-T0225-A",
+        "score": 0.039194139194139194
+      },
+      {
+        "code": "C0034-T0235-A",
+        "score": 0.03787878787878788
+      },
+      {
+        "code": "C0182-T0609-A",
+        "score": 0.03778280542986426
+      },
+      {
+        "code": "C0155-T0895-A",
+        "score": 0.03698419666374012
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "MVP là gì? Cho ví dụ",
+      "MVP là gì? Cho ví dụ T01-008"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "MVP là gì? Giải đáp ý nghĩa của MVP trong từng lĩnh vực",
+        "url": "https://cellphones.com.vn/sforum/mvp-la-gi",
+        "snippet": "Tại một số trường hợp, Minimum Viable Product (MVP) còn là một phần của công cụ, phần mềm độc quyền. Đa phần MVP thường được doanh nghiệp ứng dụng tại lĩnh vực công nghệ, ví dụ như máy tính, điện thoại, ô tô, phần mềm, TV,…\n\n## Lời kết\n\nMong rằng sau khi đọc bài viết của Sforum bạn đã hiểu rõ MVP là"
+      },
+      {
+        "id": "S2",
+        "title": "MVP (Minimum Viable Product) là gì và 8 lưu ý khi thiết kế MVP cho dự án - ScrumPass",
+        "url": "https://scrumpass.com/mvp-minimum-viable-product-la-gi-va-8-luu-y-khi-thiet-ke-mvp-cho-du-an",
+        "snippet": "Tiết kiệm thời gian và chi phí: Giúp tránh việc đầu tư quá nhiều vào sản phẩm mà không chắc chắn có thị trường hay không.\n Hiểu người dùng: Nhận phản hồi sớm để điều chỉnh sản phẩm phù hợp hơn với nhu cầu thực tế.\n Giảm rủi ro: Phát hiện và sửa lỗi hoặc cải thiện sản phẩm từ giai đoạn sớm.\n\nVí dụ:\n\n"
+      },
+      {
+        "id": "S3",
+        "title": "Sản phẩm khả dụng tối thiểu - MVP là gì? | A1 Consulting Vietnam",
+        "url": "https://www.a1consulting.vn/blog/dx-blog-9/mvp-la-gi-187",
+        "snippet": "Hệ quả:\n\n MVP khó nng cấp, phải viết lại từ đầu.\n Tốn kém gấp đôi so với việc có chiến lược ngay từ đầu.  \n   Giải pháp: Khi xy dựng MVP, hãy luôn nghĩ đến khả năng mở rộng: kiến trúc hệ thống, công nghệ cloud, khả năng tích hợp.\n\n## Ví dụ thực tiễn về MVP thành công\n\n### Facebook – Bắt đầu từ Harva"
+      },
+      {
+        "id": "S4",
+        "title": "American Express",
+        "url": "https://keyapply.com/blogs/news/minimum-viable-product-mvp",
+        "snippet": "Một ví dụ giai đoạn MVP là việc sáng lập ra Airbnb. Không có tiền để xy dựng doanh nghiệp, những người sáng lập Airbnb đã sử dụng căn hộ của chính họ để xác thực ý tưởng, nhằm tạo ra một thị trường cung cấp nhà cho thuê ngắn hạn ngang hàng trực tuyến. Họ đã tạo một trang web tối giản, đăng ảnh và cá"
+      },
+      {
+        "id": "S5",
+        "title": "Bài 15: MVP Là Gì? | Cách Xây Dựng MVP Hiệu Quả | Product Management Gối Đầu Giường",
+        "url": "https://www.youtube.com/watch?v=-9cc19ATOIk",
+        "snippet": "một cái sản phẩm gọi là ít tốn kém nhất và làm sao đó để Build một cách nhanh nhất thì nó sẽ gọi là mvp và sau đó các bạn sẽ mang cái sản phẩm này đi test với user và lấy được feedback và trả lời được những cái câu hỏi ban đầu mà các bạn đặt ra ok Các bạn nhớ bốn bước này cho mình nha Bây giờ mình s"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant-hybrid",
+  "docSummary": {
+    "summary": "MVP (Minimum Viable Product - Sản phẩm khả thi tối thiểu) là phiên bản sản phẩm có đầy đủ các tính năng cơ bản nhất để giải quyết vấn đề cốt lõi và mang lại giá trị cho người dùng, cho phép kiểm chứng giả thuyết kinh doanh với nỗ lực và chi phí thấp nhất.",
+    "answerDirection": "MVP là sản phẩm khả thi tối thiểu với các tính năng cơ bản, ví dụ như phương pháp Wizard of Oz để kiểm chứng giả thuyết.",
+    "focusedChunks": [
+      "C0026-T0383-A",
+      "C0161-T1254-A",
+      "C0034-T0235-A"
+    ]
+  }
+}

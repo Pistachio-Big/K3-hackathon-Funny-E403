@@ -1,0 +1,44 @@
+{
+  "question": "d",
+  "retrieved": [
+    {
+      "code": "T01-049",
+      "score": 0.1632
+    },
+    {
+      "code": "T01-045",
+      "score": 0.1481
+    },
+    {
+      "code": "T06-100",
+      "score": 0.1471
+    },
+    {
+      "code": "T01-081",
+      "score": 0.1397
+    },
+    {
+      "code": "T03-154",
+      "score": 0.1283
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nCâu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.\n\nQUY TẮC BẮT BUỘC:\n1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.\n2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)\n3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.\n\nTHÔNG TIN TỪ TÌM KIẾM WEB:\n[Nguồn 1] Tìm kiếm: d\nURL: https://www.google.com/search?q=d\nNội dung: Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau.\n\n[Nguồn 2] Yu-Gi-Oh! - Reinforcements (DT01-EN049) - Duel Terminal 1 - 1st Edition - Common: Amazon.de: Toys\nURL: https://www.amazon.de/-/en/Yu-Gi-Oh-Reinforcements-DT01-EN049-Terminal-Common/dp/B0062DXBIC\nNội dung: # About this item\n\n# Product Information\n\n|  |  |\n --- |\n| Brand Name | Yu-Gi-Oh! |\n| Included Components | Cards |\n| Item Part Number | DT01-EN049 |\n| Item Weight | 0.06 Ounces |\n| Minimum Age Recommendation | 156.00 |\n| Manufacturer | Konami |\n| ASIN | B0062DXBIC |\n\n### Warranty & Support [...] To\n\n[Nguồn 3] Reinforcements - DT01-EN049 - Duel Terminal Normal Parallel Rare - Duel Terminal\n – Face to Face Games\nURL: https://facetofacegames.com/en-us/products/reinforcements-dt01-en049-duel-terminal-normal-parallel-rare-duel-terminal\nNội dung: #### Riftbound New Releases and Preorders!\n\n#### Spiritforged\n\n#### Unleashed\n\n#### Vendetta\n\n#### Star Wars Sealed Products\n\n#### Star Wars New Releases and Preorders!\n\n#### Legends Of The Force\n\n#### Secrets Of Power\n\n#### A Lawless Time\n\n#### Ashes Of The Empire\n\n#### One Piece Sealed Products\n\n#\n\n[Nguồn 4] Reinforcements [DT01-EN049] Common\nURL: https://dragonsdenshop.com/products/reinforcements-dt01-en049-common\nNội dung: Vendor: Yu-Gi-Oh!\n\nProduct Type : Yugioh Single\n\nAdd to wishlist\n\nAdd to wishlist\n\nView Wishlist\n\nHurry! Only\n\n0\n\nunits left in stock!\n\n-->\n\n Description\n refund policy\n\n|  |  |\n --- |\n| Set: | Duel Terminal 1 |\n| Card type: | Normal Trap |\n| Rarity: | Common |\n| Attack: | 0 |\n| Defense: | 0 |\n\nTarg\n\n[Nguồn 5] Reinforcements DT01-EN049 Prices | YuGiOh Duel Terminal 1 | YuGiOh Cards\nURL: https://www.pricecharting.com/game/yugioh-duel-terminal-1/reinforcements-dt01-en049\nNội dung: + Marvel Comics\n  + DC Comics\n  + Dark Horse\n  + Dell Comics\n  + Image Comics\n  + Other Comics\n Funko Pops Funko\n  + All Funko Sets\n  + Funko Star Wars\n  + Funko Animation\n  + Funko Comics\n  + Funko Disney\n  + Funko Games\n  + Funko Marvel\n  + Funko Movies\n  + Funko TV\n LEGO Sets LEGO\n  + All LEGO Se\n\nNGUỒN THAM KHẢO:\n[1] Tìm kiếm: d (https://www.google.com/search?q=d)\n[2] Yu-Gi-Oh! - Reinforcements (DT01-EN049) - Duel Terminal 1 - 1st Edition - Common: Amazon.de: Toys (https://www.amazon.de/-/en/Yu-Gi-Oh-Reinforcements-DT01-EN049-Terminal-Common/dp/B0062DXBIC)\n[3] Reinforcements - DT01-EN049 - Duel Terminal Normal Parallel Rare - Duel Terminal\n – Face to Face Games (https://facetofacegames.com/en-us/products/reinforcements-dt01-en049-duel-terminal-normal-parallel-rare-duel-terminal)\n[4] Reinforcements [DT01-EN049] Common (https://dragonsdenshop.com/products/reinforcements-dt01-en049-common)\n[5] Reinforcements DT01-EN049 Prices | YuGiOh Duel Terminal 1 | YuGiOh Cards (https://www.pricecharting.com/game/yugioh-duel-terminal-1/reinforcements-dt01-en049)\n\nCÂU HỎI HỌC VIÊN: d\n\nTRẢ LỜI:",
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[qdrant] top-1 score 0.163 < threshold 0.35"
+  },
+  "mode": "LIVE",
+  "research": {
+    "error": "OpenRouter HTTP 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 2923. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\",\"provider_name\":null,\"previous_errors\":[{\"code\":402,\"message\":\"This request req"
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đoạn tài liệu đề cập đến việc khám phá vấn đề và giải pháp trong thiết kế sản phẩm, nhấn mạnh tầm quan trọng của việc xác định đúng vấn đề trước khi tìm kiếm giải pháp. Mô hình double diamond được giới thiệu như một công cụ hữu ích để thực hiện quy trình này.",
+    "answerDirection": "Hướng trả lời: Tập trung vào việc khám phá vấn đề và giải pháp trong thiết kế sản phẩm, sử dụng mô hình double diamond và tầm quan trọng của việc xác định đúng vấn đề.",
+    "focusedChunks": [
+      "T01-049",
+      "T01-045"
+    ]
+  }
+}

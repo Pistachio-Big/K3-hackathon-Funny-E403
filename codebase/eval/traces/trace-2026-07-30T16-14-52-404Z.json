@@ -1,0 +1,89 @@
+{
+  "question": "ReAct là gì?",
+  "retrieved": [
+    {
+      "code": "T01-076",
+      "score": 0.3409
+    },
+    {
+      "code": "T05-139",
+      "score": 0.2966
+    },
+    {
+      "code": "T04-094",
+      "score": 0.2863
+    },
+    {
+      "code": "T05-046",
+      "score": 0.2789
+    },
+    {
+      "code": "T04-054",
+      "score": 0.2778
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Tuy nhiên, mình có thể cung cấp thông tin từ các nguồn web.\n\nReact là một thư viện JavaScript mã nguồn mở được phát triển bởi Facebook (nay là Meta), chuyên dùng để thiết kế và xây dựng giao diện người dùng (UI). React sử dụng kiến trúc dựa trên component, cho phép chia nhỏ giao diện thành các thành phần độc lập, giúp lập trình viên dễ dàng quản lý và tái sử dụng mã nguồn. Mỗi component trong React có thể là một lớp hoặc một hàm JavaScript, chứa logic và giao diện riêng biệt, và có thể lồng vào nhau để tạo ra cấu trúc UI phức tạp hơn ([Nguồn 1](https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/react-la-gi), [Nguồn 4](https://topdev.vn/blog/react-la-gi-lo-trinh)).\n\nNếu bạn cần thêm thông tin cụ thể hơn, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-076",
+      "T05-139",
+      "T04-094",
+      "T05-046",
+      "T04-054"
+    ],
+    "focusedCodes": [
+      "T05-139"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "ReAct là gì?",
+    "topChunks": [
+      {
+        "code": "T01-076",
+        "score": 0.3409381
+      },
+      {
+        "code": "T05-139",
+        "score": 0.29664627
+      },
+      {
+        "code": "T04-094",
+        "score": 0.28631395
+      },
+      {
+        "code": "T05-046",
+        "score": 0.27887154
+      },
+      {
+        "code": "T04-054",
+        "score": 0.27781972
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "ReAct là gì?",
+      "ReAct là gì? T01-076"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_3LKkyP8QkboWKfEXZlZu9wAY",
+      "name": "lookup_document",
+      "args": {
+        "topic": "ReAct"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "ReAct là một phương pháp liên quan đến việc phát triển agent có khả năng thực hiện nhiều bước và sử dụng nhiều công cụ, với trạng thái thay đổi liên tục trong quá trình ra quyết định.",
+    "answerDirection": "Hướng trả lời: ReAct là một phương pháp phát triển agent có khả năng thực hiện nhiều bước và ra quyết định trong môi trường thay đổi liên tục.",
+    "focusedChunks": [
+      "T05-139"
+    ]
+  }
+}

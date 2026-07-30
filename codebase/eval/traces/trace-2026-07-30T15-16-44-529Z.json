@@ -1,0 +1,74 @@
+{
+  "question": "Wizard of Oz MVP là gì?",
+  "retrieved": [
+    {
+      "code": "T03-108",
+      "score": 0.5
+    },
+    {
+      "code": "T03-124",
+      "score": 0.5
+    },
+    {
+      "code": "T03-132",
+      "score": 0.5
+    },
+    {
+      "code": "T04-081",
+      "score": 0.5
+    },
+    {
+      "code": "T05-053",
+      "score": 0.5
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.500 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Wizard of Oz MVP là gì?",
+    "topChunks": [
+      {
+        "code": "T03-108",
+        "score": 0.5
+      },
+      {
+        "code": "T03-124",
+        "score": 0.5
+      },
+      {
+        "code": "T03-132",
+        "score": 0.5
+      },
+      {
+        "code": "T04-081",
+        "score": 0.5
+      },
+      {
+        "code": "T05-053",
+        "score": 0.5
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_pyHGN9Wj3vpRJAZI0HHLPBMN",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Wizard of Oz MVP"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Wizard of Oz MVP (Minimum Viable Product) là một phương pháp phát triển sản phẩm trong đó một hệ thống tự động được giả lập bởi con người để kiểm tra ý tưởng và phản hồi từ người dùng mà không cần xây dựng toàn bộ sản phẩm. Phương pháp này cho phép các nhà phát triển thu thập dữ liệu và điều chỉnh sản phẩm dựa trên phản hồi thực tế trước khi đầu tư vào phát triển công nghệ phức tạp.",
+    "answerDirection": "Hướng trả lời: Wizard of Oz MVP là một phương pháp phát triển sản phẩm cho phép kiểm tra ý tưởng mà không cần xây dựng toàn bộ sản phẩm, thông qua việc giả lập hệ thống tự động.",
+    "focusedChunks": [
+      "T03-108",
+      "T03-124"
+    ]
+  }
+}

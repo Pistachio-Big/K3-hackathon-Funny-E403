@@ -1,0 +1,90 @@
+{
+  "question": "RTFC là gì? Giải thích 4 thành phần",
+  "retrieved": [
+    {
+      "code": "T06-155",
+      "score": 0.2078
+    },
+    {
+      "code": "T04-012",
+      "score": 0.2026
+    },
+    {
+      "code": "T05-135",
+      "score": 0.2019
+    },
+    {
+      "code": "T04-094",
+      "score": 0.1959
+    },
+    {
+      "code": "T06-080",
+      "score": 0.1891
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Bạn nên:\n• Hỏi giảng viên hoặc TA trong Discord\n• Tra cứu tài liệu bên ngoài\n\nNếu bạn có câu hỏi cụ thể nào, hãy cho mình biết để mình có thể hỗ trợ tốt hơn!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T06-155",
+      "T04-012",
+      "T05-135",
+      "T04-094",
+      "T06-080"
+    ],
+    "focusedCodes": [
+      "T06-080"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "RTFC là gì? Giải thích 4 thành phần",
+    "topChunks": [
+      {
+        "code": "T06-155",
+        "score": 0.20775837
+      },
+      {
+        "code": "T04-012",
+        "score": 0.20263378
+      },
+      {
+        "code": "T05-135",
+        "score": 0.20189503
+      },
+      {
+        "code": "T04-094",
+        "score": 0.19589028
+      },
+      {
+        "code": "T06-080",
+        "score": 0.18910319
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "RTFC là gì? Giải thích 4 thành phần",
+      "rtfc giải thích thành",
+      "RTFC là gì? Giải thích 4 thành phần T06-155"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_pXZKjbW095g8vCv2mP5KYbk2",
+      "name": "lookup_document",
+      "args": {
+        "topic": "RTFC"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "RTFC là một mô hình có bốn thành phần chính, bao gồm kiến trúc transformer chỉ sử dụng decoder, việc áp dụng pretraining và reinforcement learning để tinh chỉnh mô hình, khả năng dự đoán từ tiếp theo, và một số tranh luận hiện tại về các khía cạnh của mô hình.",
+    "answerDirection": "Hướng trả lời: RTFC là một mô hình với bốn thành phần chính, bao gồm kiến trúc transformer, phương pháp huấn luyện, khả năng dự đoán và các tranh luận liên quan.",
+    "focusedChunks": [
+      "T06-080"
+    ]
+  }
+}
