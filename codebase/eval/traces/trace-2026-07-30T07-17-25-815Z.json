@@ -1,0 +1,34 @@
+{
+  "question": "Product manager khác project manager ở chỗ nào",
+  "retrieved": [
+    {
+      "code": "T01-008",
+      "score": 0.8571
+    },
+    {
+      "code": "T01-009",
+      "score": 0.8571
+    },
+    {
+      "code": "T01-010",
+      "score": 0.7143
+    },
+    {
+      "code": "T01-011",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-006",
+      "score": 0.5714
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN]. Hội thoại học viên [Cxxxx] chỉ dùng để bổ sung ngữ cảnh khi bài giảng không có.\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã đoạn: [T01-008] (Bài giảng)\nNội dung: Bây giờ trong một team có bạn product owner, product manager. PM ở đây mình nói P là product nhá, không phải project — nó khác nhau. Có ai định nghĩa được nó khác như thế nào không? Tại vì ở Việt Nam từ PM hay dùng cho project nhiều hơn, bởi vì các công ty outsourcing nhiều, giờ mình cần định nghĩa lại nhá.\n\n[2] Mã đoạn: [T01-009] (Bài giảng)\nNội dung: [Học viên]: Project thì kiểu một dự án tạo ra xong rồi là xong luôn, sau đấy người ta có thể bán lại hoặc bàn giao; còn sản phẩm thì người ta hiểu là đứa con của người ta, người ta sẽ tiếp tục bảo trì. Product manager sẽ thiên về nghiên cứu khách hàng, xu hướng ra sao, định hình sản phẩm và những tính năng tương lai sẽ như thế nào. Còn project thường là định vị tiến độ của các đầu việc khác nhau, khi nào hoàn thiện, khi nào khách hàng cần sản phẩm đấy.\n\n[3] Mã đoạn: [T01-010] (Bài giảng)\nNội dung: Đúng như câu trả lời của bạn, nó rõ ràng và đầy đủ hơn. Cái job project manager thường thấy ở các công ty outsourcing nhiều. Đấy là những người mà chức trách là làm thế nào để đảm bảo một dự án hoàn thành đúng tiến độ trong ngân sách cho phép. Những team đấy nhận bài toán từ khách hàng, và bài toán thường rõ ràng: tôi cần build một công cụ cho team kế toán, cho team nhân sự — cơ bản spec ở đấy rất rõ ràng, cụ thể rồi. Cho nên nhiệm vụ của những người đấy là làm thế nào bố trí nguồn lực vào trong một team để có thể chạy được, có những backup plan dự phòng rủi ro. Bạn đấy phải có năng lực phân chia công việc, quản lý dự án, quản lý về con người — phần nhiều liên quan đến công việc quản lý, điều phối để đảm bảo chạy đúng tiến độ, ai có vấn đề thì backup, tính toán chia tiền các thứ. Đấy là công việc chính của các bạn làm project manager.\n\n[4] Mã đoạn: [T01-011] (Bài giảng)\nNội dung: Nhưng product manager, product owner thì bộ skill rất khác. Khi làm product, không có ai đến bảo bạn \"hãy làm cái đấy đi\". Bạn phải là người tự đi tìm bài toán, giải pháp đáng làm và tìm thị trường cho nó. Product manager sẽ rộng hơn, là người đi trước nhiều hơn, nhìn ra cơ hội sau đấy khoanh vùng lại. Còn product owner thì khi bài toán đã khá cụ thể, rõ ràng, có đối tượng user rồi, sẽ đi sâu vào việc khảo sát user, nhìn ra các điểm đau của user, rồi dần dần đưa ra các tính năng và kế hoạch phát triển. Thậm chí ở các công ty lớn, với những sản phẩm có rất nhiều tính năng, mỗi một tính năng còn có thể có một product owner riêng. Đấy là sự khác biệt — bộ skill và tư duy cũng sẽ rất khác nhau. Những người làm product thì mình hay dùng từ user-centered — lấy người dùng làm trung tâm. Tức là mình luôn phải đặt câu hỏi: mình build cái này cho ai, ai sẽ là người dùng nó, và họ có thực sự cần nó hay không? Đấy là những câu chúng ta thường trực trong đầu, và là sự khác biệt so với kiểu dự án project manager xưa.\n\n[5] Mã đoạn: [T03-006] (Bài giảng)\nNội dung: Các bạn hiện tại tiếp cận rất nhiều slide của chương trình. Cái slide này không phải chỉ một người làm mà rất nhiều người làm: ban đầu sẽ có một hội đồng nhóm các anh chị đưa ra định hướng high level như thế nào, break down từng thứ từng thứ, xong rồi từng người sẽ custom lại cho phù hợp với style của họ. Hiện tại mình đang chọn slide của một chị cũng khá là ổn. Chị đang làm bên FPT Long Châu, làm product manager chuyên về những dự án AI. Tại vì mình thiên về kỹ sư, mà đây là những slide về product, mình không có nhiều kinh nghiệm thực tế, cho nên mình sẽ sử dụng slide của những người có kinh nghiệm.\n\nCÂU HỎI HỌC VIÊN: Product manager khác project manager ở chỗ nào\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T01-008], giảng viên có nói: \"Bây giờ trong một team có bạn product owner, product manager. PM ở đây mình nói P là product nhá, không phải project — nó khác nhau. Có ai định nghĩa được nó khác như thế nào không? Tại vì ở Việt Nam ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T01-008"
+    ],
+    "hallucinated": []
+  },
+  "mode": "FALLBACK-AFTER-ERROR"
+}

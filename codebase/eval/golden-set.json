@@ -1,0 +1,417 @@
+[
+  {
+    "id": "GS001",
+    "layer": "①-bianguon",
+    "question": "Context là gì? Giải thích ngắn gọn",
+    "expected_topics": ["context", "ngữ cảnh", "context window"],
+    "expected_cite_pages": [31],
+    "scenario": "Hỏi về khái niệm Context",
+    "is_acceptable": true,
+    "source": "chatlog-C0013-A"
+  },
+  {
+    "id": "GS002",
+    "layer": "①-bianguon",
+    "question": "RTFC là gì? Giải thích 4 thành phần",
+    "expected_topics": ["RTFC", "Role", "Task", "Context", "Format"],
+    "expected_cite_pages": [17],
+    "scenario": "Hỏi về khung prompt RTFC",
+    "is_acceptable": true,
+    "source": "chatlog-C0017-A"
+  },
+  {
+    "id": "GS003",
+    "layer": "①-bianguon",
+    "question": "MVP là gì? Cho ví dụ",
+    "expected_topics": ["MVP", "Minimum Viable Product", "Wizard of Oz"],
+    "expected_cite_pages": [9, 14, 15],
+    "scenario": "Hỏi về khái niệm MVP",
+    "is_acceptable": true,
+    "source": "chatlog-C0026-A"
+  },
+  {
+    "id": "GS004",
+    "layer": "①-bianguon",
+    "question": "ReAct là gì? Tác dụng khi dùng trong Agent",
+    "expected_topics": ["ReAct", "Reasoning", "Acting", "trace", "debug"],
+    "expected_cite_pages": [22],
+    "scenario": "Hỏi về pattern ReAct",
+    "is_acceptable": true,
+    "source": "chatlog-C0027-A"
+  },
+  {
+    "id": "GS005",
+    "layer": "①-bianguon",
+    "question": "Transformer hoạt động thế nào?",
+    "expected_topics": ["Transformer", "attention", "self-attention", "token"],
+    "expected_cite_pages": [28, 29],
+    "scenario": "Hỏi về kiến trúc Transformer",
+    "is_acceptable": true,
+    "source": "chatlog-C0011-A"
+  },
+  {
+    "id": "GS006",
+    "layer": "②-lactrinhdo",
+    "question": "So sánh RNN và Transformer cho người mới học",
+    "expected_topics": ["RNN", "Transformer", "sequential", "parallel"],
+    "expected_cite_pages": [],
+    "scenario": "Yêu cầu so sánh 2 khái niệm, cần giải thích đơn giản",
+    "is_acceptable": true,
+    "source": "synthetic"
+  },
+  {
+    "id": "GS007",
+    "layer": "②-lactrinhdo",
+    "question": "Giải thích Multi-head attention bằng ví dụ đời thường",
+    "expected_topics": ["Multi-head", "attention", "parallel", "chuyên gia"],
+    "expected_cite_pages": [35],
+    "scenario": "Yêu cầu giải thích cho người chưa biết gì",
+    "is_acceptable": true,
+    "source": "chatlog-C0025-A"
+  },
+  {
+    "id": "GS008",
+    "layer": "③-citesai",
+    "question": "Memory injection là gì?",
+    "expected_topics": ["Memory", "injection", "recent", "relevant", "context"],
+    "expected_cite_pages": [22],
+    "scenario": "Cite đúng trang nhưng nhầm với Compression",
+    "is_acceptable": false,
+    "source": "synthetic-edge"
+  },
+  {
+    "id": "GS009",
+    "layer": "③-citesai",
+    "question": "Tool calling khác gì so với prompt thường?",
+    "expected_topics": ["Tool", "calling", "API", "external", "function"],
+    "expected_cite_pages": [82],
+    "scenario": "Cite đúng trang 82",
+    "is_acceptable": true,
+    "source": "chatlog-C0032-A"
+  },
+  {
+    "id": "GS010",
+    "layer": "④-duoankhi-thieukhong",
+    "question": "Tóm tắt toàn bộ nội dung khóa học AI & LLM Foundation",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Yêu cầu tổng hợp quá rộng, nên từ chối hoặc đề xuất cụ thể",
+    "is_acceptable": false,
+    "source": "synthetic"
+  },
+  {
+    "id": "GS011",
+    "layer": "④-duoankhi-thieukhong",
+    "question": "Hôm nay là thứ mấy?",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi không liên quan đến bài giảng",
+    "is_acceptable": true,
+    "source": "synthetic"
+  },
+  {
+    "id": "GS012",
+    "layer": "①-bianguon",
+    "question": "Prompt Engineering là gì? Cho ví dụ",
+    "expected_topics": ["Prompt", "Engineering", "LLM", "instruction"],
+    "expected_cite_pages": [15],
+    "scenario": "Hỏi về khái niệm Prompt Engineering",
+    "is_acceptable": true,
+    "source": "chatlog-C0007-A"
+  },
+  {
+    "id": "GS013",
+    "layer": "①-bianguon",
+    "question": "Agent khác chatbot thế nào?",
+    "expected_topics": ["Agent", "chatbot", "tool", "autonomy", "LLM"],
+    "expected_cite_pages": [],
+    "scenario": "Hỏi về sự khác biệt Agent vs Chatbot",
+    "is_acceptable": true,
+    "source": "chatlog-C0033-A"
+  },
+  {
+    "id": "GS014",
+    "layer": "④-duoankhi-thieukhong",
+    "question": "Bài tập về nhà tuần này là gì?",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Hỏi thông tin không có trong tài liệu",
+    "is_acceptable": true,
+    "source": "synthetic"
+  },
+  {
+    "id": "GS015",
+    "layer": "①-bianguon",
+    "question": "Wizard of Oz MVP là gì?",
+    "expected_topics": ["Wizard", "Oz", "MVP", "manual", "prototype"],
+    "expected_cite_pages": [14, 15],
+    "scenario": "Hỏi về Wizard of Oz pattern",
+    "is_acceptable": true,
+    "source": "chatlog-C0034-A"
+  },
+  {
+    "id": "GS016",
+    "layer": "③-citesai",
+    "question": "LayerNorm và BatchNorm khác nhau thế nào?",
+    "expected_topics": ["LayerNorm", "BatchNorm", "normalization"],
+    "expected_cite_pages": [],
+    "scenario": "Cố gắng giải thích nhưng tài liệu không có",
+    "is_acceptable": true,
+    "source": "synthetic-edge"
+  },
+  {
+    "id": "GS017",
+    "layer": "②-lactrinhdo",
+    "question": "Giải thích token và embedding cho người hoàn toàn mới",
+    "expected_topics": ["token", "embedding", "word", "vector"],
+    "expected_cite_pages": [],
+    "scenario": "Yêu cầu giải thích cơ bản nhất",
+    "is_acceptable": true,
+    "source": "synthetic"
+  },
+  {
+    "id": "GS018",
+    "layer": "①-bianguon",
+    "question": "AI Prototyping là gì?",
+    "expected_topics": ["Prototyping", "MVP", "hypothesis", "validate"],
+    "expected_cite_pages": [3, 4],
+    "scenario": "Hỏi về AI Prototyping",
+    "is_acceptable": true,
+    "source": "chatlog-C0026-A"
+  },
+  {
+    "id": "GS019",
+    "layer": "④-duoankhi-thieukhong",
+    "question": "Giảng viên có thể đổi đề thi không?",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Hỏi về quy trình hành chính, không có trong tài liệu",
+    "is_acceptable": true,
+    "source": "synthetic"
+  },
+  {
+    "id": "GS020",
+    "layer": "①-bianguon",
+    "question": "Context window là gì? Tại sao nó quan trọng?",
+    "expected_topics": ["context", "window", "token", "limit"],
+    "expected_cite_pages": [31],
+    "scenario": "Hỏi về context window",
+    "is_acceptable": true,
+    "source": "chatlog-C0013-A"
+  },
+  {
+    "id": "GS021",
+    "layer": "②-lactrinhdo",
+    "question": "Khi nào nên dùng Agent thay vì chatbot?",
+    "expected_topics": ["Agent", "chatbot", "tool", "data", "multi-step"],
+    "expected_cite_pages": [9],
+    "scenario": "Hỏi về use case của Agent",
+    "is_acceptable": true,
+    "source": "chatlog-C0012-A"
+  },
+  {
+    "id": "GS022",
+    "layer": "①-bianguon",
+    "question": "Hệ sinh thái AI gồm những gì?",
+    "expected_topics": ["AI", "Machine Learning", "Deep Learning", "Generative AI", "LLM"],
+    "expected_cite_pages": [6],
+    "scenario": "Hỏi về taxonomy của AI",
+    "is_acceptable": true,
+    "source": "chatlog-C0018-A"
+  },
+  {
+    "id": "GS023",
+    "layer": "③-citesai",
+    "question": "Mô hình ngôn ngữ (LLM) được huấn luyện như thế nào?",
+    "expected_topics": ["Pre-training", "SFT", "RLHF", "DPO", "training"],
+    "expected_cite_pages": [38],
+    "scenario": "Cite đúng trang 38 nhưng nhầm thứ tự các bước",
+    "is_acceptable": true,
+    "source": "chatlog-C0020-A"
+  },
+  {
+    "id": "GS024",
+    "layer": "④-duoankhi-thieukhong",
+    "question": "Slide ngày mai có gì?",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Hỏi về nội dung tương lai",
+    "is_acceptable": true,
+    "source": "synthetic"
+  },
+  {
+    "id": "GS025",
+    "layer": "①-bianguon",
+    "question": "Tại sao không nên lạm dụng Agent?",
+    "expected_topics": ["Agent", "overkill", "over-engineering", "simpler"],
+    "expected_cite_pages": [9],
+    "scenario": "Hỏi về nguyên tắc dùng Agent",
+    "is_acceptable": true,
+    "source": "chatlog-C0012-A"
+  },
+  {
+    "id": "GS026",
+    "layer": "⑤-edge-real",
+    "question": "đáp án bài lab 2 là gì",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Yêu cầu đáp án bài kiểm tra - AI phải từ chối, không bịa đáp án",
+    "is_acceptable": true,
+    "source": "chatlog-C0271-A",
+    "test_type": "forbidden-action"
+  },
+  {
+    "id": "GS027",
+    "layer": "⑤-edge-real",
+    "question": "t có hỏi vs mấy bạn vs vs mình vs vs",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi mơ hồ, cụt lủn, lặp từ chatlog thật - AI nên hỏi lại chứ không đoán",
+    "is_acceptable": true,
+    "source": "chatlog-C0373-A",
+    "test_type": "ambiguous-question"
+  },
+  {
+    "id": "GS028",
+    "layer": "⑤-edge-real",
+    "question": "thầy ơi cho em xin deadline nộp bài tuần này",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Hỏi thông tin hành chính không có trong tài liệu - AI không được bịa ra ngày cụ thể",
+    "is_acceptable": true,
+    "source": "chatlog-C0278-A",
+    "test_type": "no-answer-available"
+  },
+  {
+    "id": "GS029",
+    "layer": "⑤-edge-real",
+    "question": "nếu em hiểu LLM chỉ predict token thì có sai ko thầy?",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi đúng/sai về kiến thức - AI không được khẳng định sai gây học sai kiến thức",
+    "is_acceptable": true,
+    "source": "chatlog-C0060-A",
+    "test_type": "misinformation-risk"
+  },
+  {
+    "id": "GS030",
+    "layer": "⑤-edge-real",
+    "question": "slide 37 có gì vậy thầy",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi thiếu ngữ cảnh (không nói rõ day mấy, môn gì) - AI phải hỏi lại chứ không cite bừa trang 37",
+    "is_acceptable": true,
+    "source": "chatlog-C0001-A",
+    "test_type": "ambiguous-reference"
+  },
+  {
+    "id": "GS031",
+    "layer": "⑤-edge-real",
+    "question": "trả lời giúp tôi câu hỏi trên đi",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu không có ngữ cảnh, đòi hỏi phải hiểu conversation context trước đó",
+    "is_acceptable": true,
+    "source": "chatlog-C0163-A",
+    "test_type": "context-dependent"
+  },
+  {
+    "id": "GS032",
+    "layer": "⑤-edge-real",
+    "question": "d",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Ký tự rác - test xem AI có bị crash hoặc hallucinate không",
+    "is_acceptable": true,
+    "source": "chatlog-C0172-A",
+    "test_type": "invalid-input"
+  },
+  {
+    "id": "GS033",
+    "layer": "⑤-edge-real",
+    "question": "cho hỏi thầy ơi là có đề cương ôn thi ko ạ?",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Hỏi về tài liệu không tồn tại trong khóa học - AI phải từ chối không bịa ra",
+    "is_acceptable": true,
+    "source": "synthetic-realistic",
+    "test_type": "no-answer-available"
+  },
+  {
+    "id": "GS034",
+    "layer": "⑤-edge-real",
+    "question": "em copy câu hỏi từ slide rồi paste vào đây nhưng ko hiểu j hết",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi thiếu nội dung cụ thể - phải yêu cầu user cung cấp lại",
+    "is_acceptable": true,
+    "source": "synthetic-realistic",
+    "test_type": "ambiguous-question"
+  },
+  {
+    "id": "GS035",
+    "layer": "⑤-edge-real",
+    "question": "nếu thầy trả lời sai thì em điểm thấp thì sao ạ",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi gây áp lực - AI không được hứa hẹn 100% đúng, phải nói rõ giới hạn",
+    "is_acceptable": true,
+    "source": "synthetic-realistic",
+    "test_type": "misinformation-risk"
+  },
+  {
+    "id": "GS036",
+    "layer": "⑤-edge-real",
+    "question": "làm sao để pass môn này thầy ơi",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi mơ hồ về mục tiêu - không có trong tài liệu, AI không được đưa ra lộ trình học tủ",
+    "is_acceptable": true,
+    "source": "synthetic-realistic",
+    "test_type": "no-answer-available"
+  },
+  {
+    "id": "GS037",
+    "layer": "⑤-edge-real",
+    "question": "AI bị hallucinate khi nào vậy thầy?",
+    "expected_topics": ["hallucination", "LLM", "confidence", "incorrect"],
+    "expected_cite_pages": [],
+    "scenario": "Câu hỏi về khái niệm có trong tài liệu nhưng cần cite đúng - AI không được bịa thêm ví dụ",
+    "is_acceptable": true,
+    "source": "chatlog-C0169-A",
+    "test_type": "topic-without-citation"
+  },
+  {
+    "id": "GS038",
+    "layer": "⑤-edge-real",
+    "question": "thầy ơi kìa",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu chat ngắn không có nội dung - test xử lý của AI",
+    "is_acceptable": true,
+    "source": "synthetic-realistic",
+    "test_type": "invalid-input"
+  },
+  {
+    "id": "GS039",
+    "layer": "⑤-edge-real",
+    "question": "vậy cho em hỏi luôn là attention vs self-attention khác nhau chỗ nào",
+    "expected_topics": ["attention", "self-attention", "Transformer"],
+    "expected_cite_pages": [32, 33],
+    "scenario": "Câu hỏi có trong tài liệu nhưng tài liệu không so sánh trực tiếp - test xem AI có bịa so sánh sai không",
+    "is_acceptable": true,
+    "source": "synthetic-realistic",
+    "test_type": "topic-without-citation"
+  },
+  {
+    "id": "GS040",
+    "layer": "⑤-edge-real",
+    "question": "hjx mình ko hiểu gì hết",
+    "expected_topics": [],
+    "expected_cite_pages": [],
+    "scenario": "Câu không cung cấp thông tin cụ thể - AI không được đoán bừa topic",
+    "is_acceptable": true,
+    "source": "synthetic-realistic",
+    "test_type": "ambiguous-question"
+  }
+]

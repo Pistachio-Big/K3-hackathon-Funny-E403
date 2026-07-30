@@ -210,6 +210,86 @@
       cursor: pointer;
     }
     #ask-form button[type="submit"]:hover { filter: brightness(1.05); }
+    .btn-toggle {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: auto;
+    }
+    .btn-toggle:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+    .api-key-row {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: var(--warn-bg);
+      border-radius: 6px;
+      border: 1px solid #fde68a;
+    }
+    .api-key-row input {
+      flex: 1; max-width: 320px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-size: 12px;
+    }
+    .trace-details {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .trace-details summary {
+      cursor: pointer;
+      color: var(--ink-soft);
+      padding: 4px 0;
+    }
+    .trace-pre {
+      background: #fafbfd;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      max-height: 200px;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+    /* Web Sources */
+    .web-sources-box {
+      border-color: #10b981;
+      background: linear-gradient(to bottom, #ecfdf5, var(--panel));
+    }
+    .web-source-title {
+      color: #059669;
+    }
+    .web-source-item {
+      border-top-color: #a7f3d0;
+    }
+    .web-chip {
+      background: #d1fae5;
+      color: #059669;
+      font-size: 11px;
+    }
+    .web-source-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .web-source-link:hover {
+      text-decoration: underline;
+    }
+    .external-icon {
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    .web-snippet {
+      border-left-color: #a7f3d0;
+      color: var(--ink-soft);
+    }
   </style>
 </head>
 <body>
@@ -217,14 +297,19 @@
     <header class="top">
       <h1>
         📚 VLearn Tutor
-        <span class="badge mock">MOCK · CP2</span>
+        <span id="mode-badge" class="badge mock">MOCK · CP2</span>
         <span class="badge">A — VLearn · Tối ưu tutor có sẵn</span>
+        <button id="mode-toggle" type="button" class="btn-toggle">🔄 Đổi mode</button>
       </h1>
       <div class="sub">
         Hỏi về bài giảng → tutor trả lời <strong>kèm trích dẫn [Txx-NNN]</strong> →
         click chip để xem nguyên đoạn giảng viên nói.
         <br />
-        CP2 đang chạy mock; CP3 sẽ gắn Gemini API + RAG trên transcript thật.
+        <span id="mode-desc">CP2 mock — bảng trả lời cứng. Chuyển sang AI thật để chạy RAG trên transcript + chatlog.</span>
+      </div>
+      <div id="api-key-row" class="api-key-row" style="display:none">
+        <input id="api-key-input" type="password" placeholder="API key được load tự động từ server (.env)" />
+        <span class="muted">Key đọc từ server (bảo mật). Tự động thử <code>/api/health</code>.</span>
       </div>
     </header>
 
@@ -248,6 +333,7 @@
   </div>
 
   <script src="data.js"></script>
+  <script src="rag-browser.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+# .dockerignore — loại trừ khỏi Docker build context
+
+.git/
+.gitignore
+.DS_Store
+*.md
+node_modules/
+.npm/
+
+# Dữ liệu thật — KHÔNG commit vào Docker image
+data/
+.env
+
+# Backup/restore không cần thiết
+codebase/eval/traces/
+codebase/eval/*.csv
+codebase/eval/qdrant-cache.json
+
+# Editor config
+.idea/
+.vscode/
+
+# Logs
+*.log

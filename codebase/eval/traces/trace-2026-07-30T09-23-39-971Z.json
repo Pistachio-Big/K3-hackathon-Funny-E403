@@ -1,0 +1,35 @@
+{
+  "question": "halluciantion là gì",
+  "retrieved": [
+    {
+      "code": "T01-002",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-003",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-004",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-005",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-013",
+      "score": 0.6667
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nCâu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.\n\nQUY TẮC BẮT BUỘC:\n1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.\n2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)\n3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.\n\nTHÔNG TIN TỪ TÌM KIẾM WEB:\n[Nguồn 1] Tìm kiếm: halluciantion là gì\nURL: https://www.google.com/search?q=halluciantion%20l%C3%A0%20g%C3%AC\nNội dung: Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau.\n\n[Nguồn 2] Tìm kiếm: halluciantion là gì T01-002\nURL: https://www.google.com/search?q=halluciantion%20l%C3%A0%20g%C3%AC%20T01-002\nNội dung: Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau.\n\nNGUỒN THAM KHẢO:\n[1] Tìm kiếm: halluciantion là gì (https://www.google.com/search?q=halluciantion%20l%C3%A0%20g%C3%AC)\n[2] Tìm kiếm: halluciantion là gì T01-002 (https://www.google.com/search?q=halluciantion%20l%C3%A0%20g%C3%AC%20T01-002)\n\nCÂU HỎI HỌC VIÊN: halluciantion là gì\n\nTRẢ LỜI:",
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.667 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "error": "gen HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/gemini-3-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of avai"
+  },
+  "retrieveMode": "tfidf"
+}
