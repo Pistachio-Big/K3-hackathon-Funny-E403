@@ -1,0 +1,34 @@
+{
+  "question": "Bài toán kinh doanh cho AI là gì?",
+  "retrieved": [
+    {
+      "code": "T05-002",
+      "score": 0.875
+    },
+    {
+      "code": "T06-044",
+      "score": 0.875
+    },
+    {
+      "code": "C0239-T0498-A",
+      "score": 0.875
+    },
+    {
+      "code": "C0264-T0198-A",
+      "score": 0.875
+    },
+    {
+      "code": "T01-001",
+      "score": 0.75
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Theo đoạn [T05-002], giảng viên có nói: \"Mình nói một chút về nội dung buổi chiều nhé. Chiều hôm nay, cái chúng ta học sẽ là xác định bài toán kinh doanh cho AI, hay nói nôm na là chúng ta sẽ chọn làm cái gì và không làm cái gì....\"",
+  "verified": {
+    "verifiedCitations": [
+      "T05-002"
+    ],
+    "hallucinated": []
+  },
+  "mode": "FALLBACK"
+}

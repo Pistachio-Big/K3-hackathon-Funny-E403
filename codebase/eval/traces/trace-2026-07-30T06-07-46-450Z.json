@@ -1,0 +1,34 @@
+{
+  "question": "Làm sao xác định bài toán từ đề bài mơ hồ",
+  "retrieved": [
+    {
+      "code": "T01-001",
+      "score": 0.8182
+    },
+    {
+      "code": "T01-030",
+      "score": 0.8182
+    },
+    {
+      "code": "T03-098",
+      "score": 0.8182
+    },
+    {
+      "code": "T01-006",
+      "score": 0.7273
+    },
+    {
+      "code": "T01-033",
+      "score": 0.7273
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Theo đoạn [T01-001], giảng viên có nói: \"Một trong những kỹ năng mình nghĩ quan trọng và đang cần nhất — đặc biệt ở các công ty muốn đưa AI vào ứng dụng — là khả năng xác định ra một bài toán từ một yêu cầu rất mơ hồ, hoặc khi các bạn tham g...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T01-001"
+    ],
+    "hallucinated": []
+  },
+  "mode": "FALLBACK"
+}

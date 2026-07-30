@@ -1,0 +1,34 @@
+{
+  "question": "Công thức nấu phở bò chuẩn Hà Nội",
+  "retrieved": [
+    {
+      "code": "T06-019",
+      "score": 0.625
+    },
+    {
+      "code": "T01-014",
+      "score": 0.5
+    },
+    {
+      "code": "T01-042",
+      "score": 0.5
+    },
+    {
+      "code": "T03-121",
+      "score": 0.5
+    },
+    {
+      "code": "T05-088",
+      "score": 0.5
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Theo đoạn [T06-019], giảng viên có nói: \"[học viên]: Có một số sản phẩm chạy thử, còn thương mại hóa thì ok ạ. Về bản chất thì vibe code như thầy đã nói — con người ngay từ giây phút mà mọi người phải tranh chấp với nhau về những kiến thức c...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-019"
+    ],
+    "hallucinated": []
+  },
+  "mode": "FALLBACK"
+}

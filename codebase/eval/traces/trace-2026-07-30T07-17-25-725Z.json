@@ -1,0 +1,31 @@
+{
+  "question": "Công thức nấu phở bò chuẩn Hà Nội",
+  "retrieved": [
+    {
+      "code": "T06-019",
+      "score": 0.625
+    },
+    {
+      "code": "T01-014",
+      "score": 0.5
+    },
+    {
+      "code": "T01-042",
+      "score": 0.5
+    },
+    {
+      "code": "T03-121",
+      "score": 0.5
+    },
+    {
+      "code": "T05-088",
+      "score": 0.5
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "top-1 score 0.625 < threshold 0.75"
+  },
+  "mode": "LIVE"
+}

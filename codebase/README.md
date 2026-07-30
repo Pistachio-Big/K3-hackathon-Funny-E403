@@ -1,55 +1,160 @@
-# Codebase — VLearn Tutor (CP2 · Mock)
+# Codebase — VLearn Tutor (CP3 · AI thật + RAG)
 
-> **Mốc:** CP2 — Show được thứ bấm được
-> **Mức prototype:** **Mock** (Sketch/Mock/Working — chọn Mock cho CP2)
-> **Phần nào mock, phần nào thật:**
-> - ✅ **Mock:** toàn bộ "AI" — dùng bảng mock trả lời sẵn (5-6 câu hỏi mẫu)
-> - ✅ **Thật:** flow bấm click xem đoạn gốc (dẫn tới anchor `[Txx-NNN]` đã mở sẵn trong mock-transcripts.html)
-> - ❌ **Chưa có:** lời gọi AI thật → việc của CP3 (sẽ gắn Gemini API + RAG trên transcript).
-
-## Cách chạy
-
-Mở `index.html` trong trình duyệt (click đúp chuột hoặc kéo thả vào Chrome/Safari). Không cần cài đặt gì, không cần server.
-
-```
-open index.html         # macOS
-xdg-open index.html     # Linux
-start index.html        # Windows
-```
+> **Mốc:** CP3 — AI chạy thật + đo lượt đầu
+> **Mức prototype:** **Working** (1 lời gọi AI thật ở quyết định trung tâm)
+> **Stack:** Node 20 (zero-dep) + Qdrant Vector DB + Gemini embed + Gemini generate
 
 ## Cấu trúc
 
 ```
 codebase/
-├── README.md              # file này
-├── index.html             # App chính — mock tutor
-├── mock-transcripts.html  # "Tài liệu" transcript (mở khi click citation)
-├── app.js                 # Logic JS: hiển thị + click citation
-└── data.js                # Bảng mock Q&A + snippets trích dẫn
+├── README.md              ← file này
+├── Dockerfile             ← build app image
+├── .dockerignore
+├── entrypoint.sh          ← auto-ingest + start server
+├── server.js              ← HTTP server (UI + /api/ask + /api/retrieve)
+├── index.html             ← UI chính
+├── app.js                 ← Frontend logic (Mock ↔ AI toggle)
+├── rag-browser.js         ← Browser client (gọi /api/ask, không giữ key)
+├── data.js                ← Mock data cho CP2 (vẫn dùng được ở mode Mock)
+├── mock-transcripts.html  ← Transcript page (click citation)
+├── code.js                ← Mock data + entrypoint
+└── eval/
+    ├── loadenv.js         ← Load GEMINI_API_KEY từ .env
+    ├── chunker.js         ← Tách transcript + chatlog → chunks.json
+    ├── chatlog_chunker.js ← Index chatlog thành Q/A chunks
+    ├── qdrant.js          ← Qdrant REST client (zero-dep)
+    ├── ingest.js          ← Embed + upsert toàn bộ chunks vào Qdrant
+    ├── rag.js             ← Core RAG pipeline (retrieve + generate + verify)
+    ├── chunks.json        ← 2,192 chunks (700 transcript + 1,492 chatlog)
+    ├── qdrant-cache.json  ← Cache embeddings (bypass khi restart)
+    ├── embeddings.json    ← Legacy fallback (chỉ dùng khi không có Qdrant)
+    ├── chatlog-chunks.json
+    └── traces/            ← Log mỗi lần askTutor (1 JSON/turn)
 ```
 
-## Flow demo 60 giây cho TA ở CP2
+## Phần mock vs phần thật
 
-1. Mở `index.html` → thấy ô "Hỏi AI tutor về bài giảng" + 3 câu gợi ý.
-2. Click một trong 3 câu gợi ý (hoặc gõ câu khác) → bấm **Hỏi tutor**.
-3. Sau ~600ms (giả lập AI nghĩ), hiện:
-   - Câu trả lời có đoạn **"Theo đoạn `[T01-XXX]`, giảng viên nói ..."**
-   - Bên dưới: nút citation dạng chip — click được.
-4. Click chip citation `[T01-002]` → mở `mock-transcripts.html` và **scroll thẳng tới đoạn đó**, highlight vàng.
-5. Quay lại `index.html` → ô "Không tìm thấy trong tài liệu?" hiện sẵn — click để xem **Failure path (lớp ①)**: tutor trả lời *thẳng thắn* "Mình không tìm thấy nội dung này trong transcript. Bạn nên hỏi giảng viên hoặc vào tài liệu trực tiếp."
-
-## Khác với CP3 (sẽ làm)
-
-| | CP2 (hiện tại) | CP3 (kế tiếp) |
+| | Mock (CP2) | AI thật (CP3) |
 |---|---|---|
-| AI | Mock bảng | Gemini API + RAG trên transcript thật |
-| Trả lời | 5-6 câu mẫu cứng | Sinh động theo context |
-| Citation | Snippet cứng trong `data.js` | Trích từ kết quả RAG, phải verify mã đoạn có thật |
-| Hallucination | Không có (mock) | Phải test, có thể bịa mã `[Txx-999]` |
+| **Answer** | Bảng cứng trong `data.js` | Gemini `gemini-3-flash` sinh |
+| **Retrieval** | Keyword match | Gemini `text-embedding-004` cosine trong Qdrant |
+| **Citation** | Hardcoded trong mock | RAG tự sinh, **verifier** strip mã bịa |
+| **Hallucination** | Không có | Test bằng 20+ golden case (rubric §7) |
 
-## Trạng thái rubric
+## Cách chạy (Docker — recommended)
 
-- ✅ Flow chính bấm đi hết được (đáp ứng yêu cầu CP2)
-- ✅ Repo có commit (artifact cho CP2)
-- ✅ Đủ 4 đường đi của trải nghiệm: happy path · low-confidence (sẽ có ở CP3) · failure/không-căn-cứ (đã có) · correction (user sửa câu hỏi)
-- ✅ 1 lời gọi AI thật: **CHƯA** — sẽ có ở CP3, gắn Gemini API.
+### 1. Chuẩn bị
+
+```bash
+# Sao chép env mẫu
+cp .env.example .env
+# Điền GEMINI_API_KEY vào .env (lấy từ https://aistudio.google.com/apikey)
+```
+
+### 2. Khởi động stack
+
+```bash
+docker compose up -d
+# - app:  http://localhost:3000
+# - qdrant REST:  http://localhost:6333
+# - qdrant dashboard:  http://localhost:6333/dashboard
+```
+
+`entrypoint.sh` tự động:
+1. Đợi Qdrant healthy
+2. Kiểm tra collection — nếu rỗng → chạy `ingest.js` (embed 2,192 chunks)
+3. Khởi động server
+
+### 3. Mở UI
+
+```
+http://localhost:3000
+```
+
+Toggle **Mock ↔ AI thật** ở góc trên header. AI thật dùng RAG retrieval từ Qdrant.
+
+## Cách chạy (không Docker — dev mode)
+
+```bash
+# 1. Cài Qdrant riêng
+docker run -d -p 6333:6333 -p 6334:6334 \
+  -v $(pwd)/qdrant_storage:/qdrant/storage \
+  qdrant/qdrant:v1.12.0
+
+# 2. Điền key
+cp codebase/eval/.env.example codebase/eval/.env
+# Sửa GEMINI_API_KEY
+
+# 3. Ingest
+node codebase/eval/ingest.js
+
+# 4. Chạy server
+node codebase/server.js
+```
+
+## Pipeline RAG (chi tiết kỹ thuật)
+
+```
+[User question]
+     │
+     ▼
+[Query Analyzer]  ← skip (chỉ 1 loại query: hỏi về tài liệu)
+     │
+     ▼
+[Retriever]       ← Qdrant cosine top-5 (Gemini embed)
+     │
+     ▼
+[Verifier #1]     ← threshold check: top-1 < 0.5 → fail-safe
+     │
+     ▼
+[Prompt builder]  ← ghép context + question + 4 quy tắc cite
+     │
+     ▼
+[Gemini generate] ← gemini-3-flash, temperature 0.2
+     │
+     ▼
+[Verifier #2]     ← regex match [Txx-NNN] / [Cxxxx-Tyyyy-K]
+                    Chỉ giữ mã có thật → strip mã bịa bằng [⚠xxx?]
+     │
+     ▼
+[Fail-safe #2]    ← nếu 0 citation hợp lệ → MOCK_NOT_FOUND
+     │
+     ▼
+[Final answer + citations + snippets]
+```
+
+## 4 lớp chỗ khó (taxonomy)
+
+| Lớp | Cách xử lý |
+|---|---|
+| ① Nguồn sự thật | Verifier strip mã bịa + fail-safe khi 0 citation |
+| ② Mơ hồ / thiếu | Threshold check (top-1 score < 0.5/0.75 → fail) |
+| ③ Ngoài phạm vi | Threshold check + retrieval từ corpus giới hạn |
+| ④ Đặc thù domain | "Tự verify" trace log để audit thủ công |
+
+## Phạm vi & giới hạn
+
+- **Không commit API key** — dùng `.env` (đã `.gitignore`)
+- **Không commit data pack** — dùng mount volume khi dev; production thì ingest trong build
+- **Câu trả lời KHÔNG dùng chatlog text** — chỉ dùng chatlog làm ngữ cảnh retrieval, citation luôn từ transcript
+- **Citation `[Cxxxx]`** — chỉ hiển thị chip, không snippet text (bảo mật dữ liệu học viên)
+
+## Test nhanh
+
+```bash
+# Test pipeline CLI (không cần UI)
+node codebase/eval/rag.js "Làm sao xác định bài toán từ đề bài mơ hồ"
+
+# Test failure path
+node codebase/eval/rag.js "Công thức nấu phở bò"
+
+# Test verifier
+node -e "const {verifyAnswer} = require('./codebase/eval/rag.js'); console.log(verifyAnswer('Theo [T01-001] và [T99-999]', ['T01-001']))"
+```
+
+## Phân công maintain
+
+- **Người 1 (Builder)** — toàn bộ codebase/, đặc biệt rag.js, qdrant.js, server.js
+- **Người 2 (Evaluator)** — golden set, benchmark, đo quality bar
+- **Người 3 (Spec)** — spec.md, changelog, slide
