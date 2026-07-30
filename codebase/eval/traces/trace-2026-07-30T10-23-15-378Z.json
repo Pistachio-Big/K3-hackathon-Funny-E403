@@ -1,0 +1,63 @@
+{
+  "question": "Công thức nấu phở bò chuẩn Hà Nội?",
+  "retrieved": [
+    {
+      "code": "T05-088",
+      "score": 0.5
+    },
+    {
+      "code": "T06-019",
+      "score": 0.5
+    },
+    {
+      "code": "T01-014",
+      "score": 0.375
+    },
+    {
+      "code": "T01-042",
+      "score": 0.375
+    },
+    {
+      "code": "T03-008",
+      "score": 0.375
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.500 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Công thức nấu phở bò chuẩn Hà Nội?",
+    "topChunks": [
+      {
+        "code": "T05-088",
+        "score": 0.5
+      },
+      {
+        "code": "T06-019",
+        "score": 0.5
+      },
+      {
+        "code": "T01-014",
+        "score": 0.375
+      },
+      {
+        "code": "T01-042",
+        "score": 0.375
+      },
+      {
+        "code": "T03-008",
+        "score": 0.375
+      }
+    ]
+  },
+  "toolCalls": [],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Không có đoạn tài liệu nào liên quan trực tiếp đến công thức nấu phở bò chuẩn Hà Nội.",
+    "answerDirection": "Cần tìm kiếm tài liệu khác có thông tin về công thức nấu phở bò chuẩn Hà Nội.",
+    "focusedChunks": []
+  }
+}

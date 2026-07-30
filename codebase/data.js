@@ -64,7 +64,7 @@ window.MOCK_QA = [
 window.MOCK_NOT_FOUND = {
   isFailure: true,
   answer:
-    "Mình **không tìm thấy nội dung này** trong các transcript bài giảng hiện có (đã duyệt 6 file).\n\n" +
+    "Mình **không tìm thấy nội dung này** trong các transcript bài giảng hiện có.\n\n" +
     "Thay vì đoán và trả lời sai, mình khuyên bạn:\n" +
     "• Hỏi trực tiếp giảng viên hoặc TA trong Discord khoá.\n" +
     "• Hoặc mở tài liệu gốc để tìm.\n\n" +

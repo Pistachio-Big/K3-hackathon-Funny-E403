@@ -5,12 +5,8 @@
 const chatEl = document.getElementById("chat");
 const inputEl = document.getElementById("question-input");
 const formEl = document.getElementById("ask-form");
-const suggestedEl = document.getElementById("suggested");
 const modeBadgeEl = document.getElementById("mode-badge");
 const toggleEl = document.getElementById("mode-toggle");
-const apiKeyRowEl = document.getElementById("api-key-row");
-const apiKeyInputEl = document.getElementById("api-key-input");
-const modeDescEl = document.getElementById("mode-desc");
 
 // ============== MODE ==============
 function getMode() {
@@ -23,41 +19,19 @@ function setMode(m) {
 function refreshModeUI() {
   const m = getMode();
   if (m === "ai") {
-    modeBadgeEl.textContent = "AI · RAG";
-    modeBadgeEl.className = "badge live";
-    toggleEl.textContent = "🤖 AI thật";
-    modeDescEl.innerHTML =
-      "Đang chạy RAG: <strong>2,192 chunks</strong> (700 transcript + 1,492 chatlog). " +
-      "Trả lời sinh bởi Gemini <code>gemini-3-flash</code> qua server proxy (key trong <code>.env</code>).";
-    apiKeyRowEl.style.display = "flex";
+    modeBadgeEl.className = "mode-badge live";
+    modeBadgeEl.innerHTML = '<span class="dot-indicator"></span><span>AI · RAG</span>';
+    toggleEl.innerHTML = '<span>🔄</span><span>Đổi mode</span>';
   } else {
-    modeBadgeEl.textContent = "MOCK · CP2";
-    modeBadgeEl.className = "badge mock";
-    toggleEl.textContent = "🎭 Mock";
-    modeDescEl.innerHTML =
-      "CP2 mock — bảng trả lời cứng. Chuyển sang AI thật để chạy RAG trên transcript + chatlog.";
-    apiKeyRowEl.style.display = "none";
+    modeBadgeEl.className = "mode-badge mock";
+    modeBadgeEl.innerHTML = '<span class="dot-indicator"></span><span>MOCK · CP2</span>';
+    toggleEl.innerHTML = '<span>🤖</span><span>AI thật</span>';
   }
 }
 
 toggleEl.addEventListener("click", () => {
   setMode(getMode() === "ai" ? "mock" : "ai");
 });
-
-// Health check khi vào AI mode
-async function checkServerHealth() {
-  try {
-    const r = await fetch("/api/health");
-    const j = await r.json();
-    if (!j.hasKey) {
-      apiKeyInputEl.placeholder = "⚠ Server không có GEMINI_API_KEY. Điền vào codebase/eval/.env rồi restart server.";
-    } else {
-      apiKeyInputEl.placeholder = `✓ Server OK — embed=${j.embed} · gen=${j.gen}`;
-    }
-  } catch (e) {
-    apiKeyInputEl.placeholder = "⚠ Không kết nối được server. Chạy: node codebase/server.js";
-  }
-}
 
 // ============== MOCK DATA ==============
 function findMockAnswer(question) {
@@ -261,7 +235,7 @@ function renderAnswerFromRag(r) {
 
     let traceText = `🔍 Trace: top-1 ${r.trace.retrieved[0]?.score?.toFixed(3) || "?"} · ${r.trace.retrieved.length} retrieved`;
     if (r.researchInfo?.used) {
-      traceText += ` · 🌐 web research (${r.researchInfo.sources?.length || 0} sources)`;
+      traceText += ` · 🌐 web (${r.researchInfo.sources?.length || 0} sources)`;
     }
     summary.textContent = traceText;
 
@@ -360,7 +334,7 @@ function renderAnswerFromMock(entry) {
 function showFailureTriggerRow() {
   const wrap = document.createElement("div");
   wrap.className = "failure-trigger";
-  wrap.innerHTML = '<span class="muted">Thử câu hỏi ngoài phạm vi:</span>';
+  wrap.innerHTML = '<span>Thử câu hỏi ngoài phạm vi:</span>';
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = "btn-small";
@@ -428,22 +402,5 @@ function escapeHtml(s) {
 }
 
 // ============== INIT ==============
-function renderSuggested() {
-  suggestedEl.innerHTML = "";
-  window.SUGGESTED_QUESTIONS.forEach((q) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "suggested-chip";
-    btn.textContent = q;
-    btn.addEventListener("click", () => {
-      inputEl.value = q;
-      inputEl.focus();
-    });
-    suggestedEl.appendChild(btn);
-  });
-}
-
 refreshModeUI();
-if (getMode() === "ai") checkServerHealth();
-renderSuggested();
 inputEl.focus();

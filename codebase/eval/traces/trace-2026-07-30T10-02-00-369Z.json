@@ -1,0 +1,37 @@
+{
+  "question": "Context là gì? Giải thích ngắn gọn",
+  "retrieved": [
+    {
+      "code": "T06-075",
+      "score": 0.8571
+    },
+    {
+      "code": "T01-062",
+      "score": 0.5714
+    },
+    {
+      "code": "T03-021",
+      "score": 0.5714
+    },
+    {
+      "code": "T03-046",
+      "score": 0.5714
+    },
+    {
+      "code": "T03-095",
+      "score": 0.5714
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN]. Hội thoại học viên [Cxxxx] chỉ dùng để bổ sung ngữ cảnh khi bài giảng không có.\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã đoạn: [T06-075] (Bài giảng)\nNội dung: Rồi, sang phần số hai, cũng là phần quan trọng nhất trong buổi hôm nay. Sau phần này sẽ có một bạn hỗ trợ, các bạn sẽ tự thực hành để demo cái cơ chế transformer hoạt động như thế nào, attention hoạt động như thế nào. Cái LLM thì chúng ta có thể xem nó là gì? Là một mô hình ngôn ngữ rất lớn, dựa trên kiến trúc transformer, và huấn luyện dựa trên lượng dữ liệu có cấu trúc hoặc không có cấu trúc rất khổng lồ — người ta định nghĩa token đấy. Như lúc nãy nói, nó có thể tạo ra cái mới: có thể là văn bản, trả lời câu hỏi, viết code, hoặc quá trình lý luận nhiều bước phức tạp. Đặc điểm chính của LLM, đầu tiên là việc decode. Cho mình hỏi ở đây có bạn nào giải thích được encode và decode như nào không? À, em để dành cho người khác nhá. Các bạn nhớ lúc nãy chúng ta có concept giơ tay phát biểu thì sẽ có ghi nhận và tích điểm đúng không? Bây giờ mình mời bạn ở phía xa đầu kia trước. Mời em, giới thiệu tên và giải thích ngắn gọn encode và decode.\n\n[2] Mã đoạn: [T01-062] (Bài giảng)\nNội dung: Thực ra có một bài rất hay về Elon Musk — vì bạn ấy vừa nhắc đến Musk thì mình gửi cho mọi người, mình rất thích bài đấy — nói về cách ông ấy dùng để giải quyết một vấn đề. Elon Musk rất nổi tiếng với việc sử dụng First Principle Thinking. First principle thinking là tư duy từ nguyên bản: không đi sao chép cách làm của người khác, mà cố gắng bóc tách vấn đề về những nguyên lý nguyên bản nhất — không thể nào chia nhỏ hơn được nữa — và đi giải các vấn đề. Ông ấy giải bài SpaceX như thế: vấn đề ngày xưa là chi phí sản xuất tên lửa quá đắt đỏ. Ông quay trở lại: tại sao đắt? Một cái tên lửa gồm những gì? Khi chia nhỏ các cấu phần đấy ra thì nó đâu có đắt như vậy. Rồi: nếu nó đắt, thì phóng lên xong nó rơi xuống, tái sử dụng những cái đấy có được hay không? Ông đặt ra những câu hỏi như thế và cố gắng giải quyết vấn đề đấy. Trong cái mental model — sơ đồ tư duy của ông ấy trong đầu — ông cũng xây dựng một bộ khung tư duy về việc luôn cập nhật bối cảnh mới của thế giới vào những hộp tư duy của mình, để luôn có thể xem lại các vấn đề hiện tại có thực sự còn đúng trong bối cảnh đấy hay không, và các giải pháp mới trong bối cảnh này còn có thể là gì.\n\n[3] Mã đoạn: [T03-021] (Bài giảng)\nNội dung: Ok, quay lại chủ đề bài hôm nay. Chúng ta sẽ học những góc nhìn và những phương pháp để các bạn nhìn thấy được, trong hiện tại hoặc có thể trong tương lai, những lĩnh vực nào, những bài toán nào, những problem nào có thể sử dụng AI agent, LLM để giải quyết được. Hôm nay nó sẽ chuyên về cho track thứ ba. Tuy nhiên với góc nhìn AI Engineer thì các bạn cũng nên học cái này. Để làm gì? Thời đại bây giờ gần như mỗi bạn giống như một giám đốc công ty vậy: chỉ cần trả chắc 20 đô, 30 đô, thế là bạn có cả dàn nhân viên là AI, tha hồ đặt tên A B C D, làm trong phòng này phòng nọ. Nhưng muốn làm được như vậy, các bạn cũng phải hiểu được cái bản chất và cái công việc. Thời buổi bây giờ, nếu muốn CV đẹp khi apply vào những công ty xây dựng hệ thống agentic, các bạn chỉ cần chứng minh được là đã tự xây dựng một hệ thống riêng, một cái assistant cho mình, sử dụng những kỹ thuật A B C D. Càng dùng nhiều kỹ thuật mới, càng tối ưu hệ thống của mình, thì đó gần như là một bằng chứng cực kỳ thuyết phục. Bạn không cần bằng đẹp, điểm cao luôn — bạn show cái hệ thống đấy ra, giải thích tường tận, đảm bảo có việc làm, và việc làm ở mức độ cao ấy nha.\n\n[4] Mã đoạn: [T03-046] (Bài giảng)\nNội dung: Tức là giáo viên viết, có người viết kiểu A, kiểu B, kiểu C, nhưng giáo viên viết càng nhiều thì mô hình tự động nhận dạng chữ viết của giáo viên đấy càng tốt hơn. Nhận dạng chữ viết tốt hơn để làm gì? Giáo viên có thể dùng giống như một cái iPad to: giáo viên đóng khung, bảo OK vẽ đồ thị cho hàm số này, bùm một cái nó vẽ đồ thị, xong rồi tích hợp những cái chat AI vào — giải thích đồ thị, hay là di chuyển, tức là những cái simulation. Những thứ mà ngày xưa các bạn phải lên internet, vào những trang web chuyên biệt để xem đồ thị hàm số. Gần nhất là các bạn học về lập trình, các bạn sẽ hỏi về visualization của những thuật toán sắp xếp — ngày xưa học về thuật toán sắp xếp thì cũng phải lên trang đấy để hiểu cái logic đúng không? Bây giờ nó có hết rồi. Nhưng nếu để người dùng tự làm, họ phải tốn từ bước A, bước B, bước C, bước D. Còn các bạn làm được full từ A đến Z thì nó cực kỳ tốt.\n\n[5] Mã đoạn: [T03-095] (Bài giảng)\nNội dung: **Giảng viên:** Tí nữa em đặt câu hỏi thầy giải thích cho — nhiều bạn hỏi phết, nhưng các bạn vẫn bị mắc vào vài cái lối tư duy: có những việc không nằm trong cái scope của kỹ sư mình, đó là scope khác. Muốn xử lý, em phải vào cái vị trí đấy, em học về cái phần đấy — cái em nói nó liên quan đến pháp luật, quy tắc để sản phẩm chạy. Em là kỹ sư đúng không? Thế làm sao em biết pháp luật thế nào là đúng? Phải có người học chuyên về pháp luật, tâm lý xã hội. Còn ở góc độ kỹ sư, tí nữa thầy sẽ giải thích: mình nên có một cái giới hạn, mình tập trung cái gì. Không phải việc đấy không phải của mình thì mình không làm, nhưng việc mình làm là một phần khác, chứ mình không phải người phán đúng hay sai. Kỹ sư là gì? Đảm bảo hệ thống vận hành an toàn nhất có thể.\n\nCÂU HỎI HỌC VIÊN: Context là gì? Giải thích ngắn gọn\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-075], giảng viên có nói: \"Rồi, sang phần số hai, cũng là phần quan trọng nhất trong buổi hôm nay. Sau phần này sẽ có một bạn hỗ trợ, các bạn sẽ tự thực hành để demo cái cơ chế transformer hoạt động như thế nào, attention hoạt ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-075"
+    ],
+    "hallucinated": []
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "tfidf"
+}

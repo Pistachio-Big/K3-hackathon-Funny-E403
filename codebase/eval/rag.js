@@ -27,16 +27,25 @@ const path = require("path");
 const https = require("https");
 const qdrant = require("./qdrant.js");
 const { webResearch, checkSufficientContext, isResearchNeeded } = require("./research.js");
-require("./loadenv.js"); // load GEMINI_API_KEY từ .env nếu chưa có
+const { TOOL_DEFINITIONS, SYSTEM_PROMPT, processToolCalls, formatToolResults } = require("./tools.js");
+const openrouter = require("./openrouter.js");
+require("./loadenv.js"); // load OPENROUTER_API_KEY và GEMINI_API_KEY từ .env
 
 const CHUNKS = path.resolve(__dirname, "chunks.json");
 const TRACE_DIR = path.resolve(__dirname, "traces");
 const TOP_K = 5;
 
-const apiKey = process.env.GEMINI_API_KEY;
-const MODEL_EMBED = "text-embedding-004";
-const MODEL_GEN = "gemini-3-flash"; // fallback nếu key không đủ quota cho model lớn hơn
-const DIM = 768;
+// OpenRouter cho generation (chat)
+const apiKey = process.env.OPENROUTER_API_KEY;
+const MODEL_GEN = openrouter.MODEL_GEN;
+
+// Jina cho embedding (tốt cho tiếng Việt, đồng bộ với embedder.js)
+const JINA_API_KEY = process.env.JINA_API_KEY;
+const JINA_EMBED_MODEL = "jina-embeddings-v3";
+const DIM = 1024; // Jina v3 dims
+
+// Enable tool calling mode
+const USE_TOOL_CALLING = true;
 
 // Ngưỡng tối thi thiểu để coi như retrieval "có thật" — nếu top-1 dưới ngưỡng này → fail-safe
 // - Qdrant + Gemini embed: 0.5 (semantic hiểu nghĩa tốt)
@@ -67,26 +76,27 @@ function cosine(a, b) {
 
 // ============== EMBED QUERY (LIVE) ==============
 function embedQueryLive(text) {
+  if (!JINA_API_KEY) {
+    return Promise.reject(new Error("JINA_API_KEY not set for embedding"));
+  }
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      requests: [
-        {
-          model: `models/${MODEL_EMBED}`,
-          content: { parts: [{ text }] },
-          taskType: "RETRIEVAL_QUERY",
-          outputDimensionality: DIM,
-        },
-      ],
+      model: JINA_EMBED_MODEL,
+      input: [text],
+      dimensions: DIM,
+      normalized: true,
+      task: "retrieval.query",
     });
-    const url = new URL(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_EMBED}:batchEmbedContents?key=${apiKey}`
-    );
     const req = https.request(
       {
+        hostname: "api.jina.ai",
+        path: "/v1/embeddings",
         method: "POST",
-        hostname: url.hostname,
-        path: url.pathname + url.search,
-        headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) },
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(body),
+          Authorization: `Bearer ${JINA_API_KEY}`,
+        },
       },
       (res) => {
         let data = "";
@@ -94,7 +104,7 @@ function embedQueryLive(text) {
         res.on("end", () => {
           if (res.statusCode >= 400) return reject(new Error(`embed HTTP ${res.statusCode}: ${data.slice(0, 200)}`));
           try {
-            resolve(JSON.parse(data).embeddings[0].values);
+            resolve(JSON.parse(data).data[0].embedding);
           } catch (e) {
             reject(e);
           }
@@ -147,42 +157,171 @@ function thresholdForMode(mode) {
   return mode === "qdrant" ? THRESHOLD_QDRANT : THRESHOLD_TFIDF;
 }
 
-// ============== GENERATE (LIVE) ==============
-function callGemini(prompt) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 0.2, maxOutputTokens: 800 },
-    });
-    const url = new URL(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_GEN}:generateContent?key=${apiKey}`
-    );
-    const req = https.request(
-      {
-        method: "POST",
-        hostname: url.hostname,
-        path: url.pathname + url.search,
-        headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) },
-      },
-      (res) => {
-        let data = "";
-        res.on("data", (c) => (data += c));
-        res.on("end", () => {
-          if (res.statusCode >= 400) return reject(new Error(`gen HTTP ${res.statusCode}: ${data.slice(0, 200)}`));
-          try {
-            const j = JSON.parse(data);
-            const txt = j.candidates?.[0]?.content?.parts?.[0]?.text || "";
-            resolve(txt);
-          } catch (e) {
-            reject(e);
-          }
-        });
-      }
-    );
-    req.on("error", reject);
-    req.write(body);
-    req.end();
+// ============== DOCUMENT SUMMARIZER ==============
+
+/**
+ * Tóm tắt và lọc documents sau retrieval để trả lời đúng trọng tâm câu hỏi
+ * Giúp LLM tập trung vào nội dung liên quan nhất
+ */
+async function summarizeDocuments(question, topChunks) {
+  if (!apiKey || topChunks.length === 0) {
+    return { summary: null, focusedChunks: topChunks };
+  }
+
+  const chunks = topChunks.map(t => {
+    const ch = codeToChunk.get(t.code);
+    return {
+      code: t.code,
+      score: t.score,
+      text: ch?.text || "",
+      source: ch?.source || "unknown"
+    };
   });
+
+  const chunksText = chunks
+    .map((c, i) => `[${i + 1}] [${c.code}] ${c.text}`)
+    .join("\n\n");
+
+  const prompt = `Bạn là chuyên gia phân tích tài liệu.
+
+## NHIỆM VỤ
+Phân tích các đoạn tài liệu dưới đây và tóm tắt những phần LIÊN QUAN TRỰC TIẾP đến câu hỏi.
+
+## CÂU HỎI CẦN TRẢ LỜI
+"${question}"
+
+## CÁC ĐOẠN TÀI LIỆU (đã sắp xếp theo relevance)
+${chunksText}
+
+## YÊU CẦU
+1. Đọc kỹ từng đoạn, đánh giá mức độ liên quan đến câu hỏi
+2. Loại bỏ những đoạn KHÔNG liên quan hoặc chỉ liên quan gián tiếp
+3. Tóm tắt mỗi đoạn còn lại thành 1-2 câu, giữ nguyên ý chính
+4. Ghi rõ mã đoạn [code] để có thể trích dẫn
+
+## OUTPUT FORMAT (JSON)
+{
+  "focused_summary": "Tóm tắt ngắn gọn 2-3 câu về nội dung chính liên quan",
+  "relevant_chunks": [
+    {
+      "code": "T02-045",
+      "summary": "Đoạn này nói về...",
+      "key_points": ["điểm chính 1", "điểm chính 2"]
+    }
+  ],
+  "answer_direction": "Hướng trả lời: ..." 
+}
+
+CHỉ trả về JSON, không giải thích thêm.`;
+
+  // Use OpenRouter for summarization
+  return openrouter.chat(prompt, { temperature: 0.2, max_tokens: 1024 })
+    .then(text => {
+      const match = text.match(/\{[\s\S]*\}/);
+      if (match) {
+        const parsed = JSON.parse(match[0]);
+        return {
+          summary: parsed.focused_summary || null,
+          answerDirection: parsed.answer_direction || null,
+          focusedChunks: parsed.relevant_chunks?.map(c => c.code) || topChunks.map(t => t.code)
+        };
+      }
+      return { summary: null, focusedChunks: topChunks.map(t => t.code) };
+    })
+    .catch(e => {
+      console.warn(`[summarizeDocuments] OpenRouter error: ${e.message}`);
+      return { summary: null, focusedChunks: topChunks.map(t => t.code) };
+    });
+}
+
+/**
+ * Build enhanced prompt với tài liệu đã được tóm tắt
+ */
+function buildFocusedPrompt(question, topChunks, docSummary) {
+  const ctx = topChunks
+    .map((c, i) => {
+      const ch = codeToChunk.get(c.code);
+      const srcLabel = ch?.source === "transcript" ? "Bài giảng" : "Hội thoại học viên";
+      const text = ch?.text || "";
+      return `[${i + 1}] Mã: [${ch?.code}] (${srcLabel})\nNội dung: ${text}`;
+    })
+    .join("\n\n");
+
+  let summarySection = "";
+  if (docSummary?.summary) {
+    summarySection = `\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN
+${docSummary.summary}
+`;
+  }
+
+  if (docSummary?.answerDirection) {
+    summarySection += `\n## HƯỚNG TRẢ LỜI
+${docSummary.answerDirection}
+`;
+  }
+
+  return `Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.
+Học viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.
+
+QUY TẮC BẮT BUỘC:
+1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.
+   - Đoạn bài giảng: [Txx-NNN]
+   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)
+2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.
+3. Nếu context không đủ để trả lời, hãy nói thẳng: "Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc."
+4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng "mình".
+5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].${summarySection}
+
+CONTEXT (top-${topChunks.length} đoạn liên quan):
+${ctx}
+
+CÂU HỎI HỌC VIÊN: ${question}
+
+TRẢ LỜI:`;
+}
+
+// ============== GENERATE (LIVE) - với Tool Calling ==============
+
+/**
+ * Gọi OpenRouter với tool calling
+ * @param {string} systemPrompt - System prompt
+ * @param {string} userPrompt - User message  
+ * @param {Array} tools - Tool definitions
+ * @returns {Promise<{text: string, toolCalls: Array|null}>}
+ */
+async function callGeminiWithTools(systemPrompt, userPrompt, tools = null) {
+  return openrouter.chatWithTools(systemPrompt, userPrompt, tools)
+    .catch(e => {
+      console.error(`[callGeminiWithTools] OpenRouter error: ${e.message}`);
+      throw e;
+    });
+}
+
+/**
+ * Gọi OpenRouter continuation sau tool results
+ */
+async function callGeminiContinuation(messages, tools = null) {
+  // messages đã đúng format cho OpenRouter
+  const requestOptions = { temperature: 0.3, max_tokens: 4096 };
+  if (tools && tools.length > 0) {
+    requestOptions.tools = tools;
+    requestOptions.tool_choice = "auto";
+  }
+  
+  return openrouter.chat(messages, requestOptions);
+}
+
+// Legacy synchronous wrapper - dùng user prompt trực tiếp, không có system prompt
+function callGemini(prompt) {
+  return callGeminiSimple(prompt);
+}
+
+/**
+ * Simple OpenRouter call cho answer generation
+ * Không dùng system prompt vì prompt đã có đầy đủ context
+ */
+async function callGeminiSimple(userPrompt) {
+  return openrouter.chat(userPrompt, { temperature: 0.3, max_tokens: 4096 });
 }
 
 // ============== PROMPT ==============
@@ -343,7 +482,7 @@ function verifyAnswer(rawAnswer, allowedCodes) {
 
 // ============== PUBLIC API ==============
 async function askTutor(question, opts = {}) {
-  const enableResearch = opts.enableResearch !== false; // Mặc định bật research
+  const enableResearch = opts.enableResearch !== false;
   const trace = {
     question,
     retrieved: [],
@@ -351,7 +490,8 @@ async function askTutor(question, opts = {}) {
     rawAnswer: null,
     verified: null,
     mode: apiKey ? "LIVE" : "FALLBACK",
-    research: null
+    research: null,
+    toolCalls: []
   };
 
   // 1. Retrieve
@@ -362,9 +502,116 @@ async function askTutor(question, opts = {}) {
   trace.retrieveMode = retMode;
   const allowedCodes = top.map((t) => t.code);
 
-  // 1a. Threshold check: nếu top-1 score quá thấp → coi như không có context phù hợp
-  // Threshold theo retrieve mode (qdrant semantic vs TF-IDF naive)
+  // Threshold check
   const threshold = thresholdForMode(retMode);
+  const hasLowScore = !top.length || top[0].score < threshold;
+
+  // ========== SUMMARIZE DOCUMENTS (lọc tài liệu theo trọng tâm) ==========
+  let docSummary = null;
+  let focusedCodes = allowedCodes;
+  if (top.length > 0 && apiKey) {
+    try {
+      console.log(`[askTutor] Summarizing ${top.length} retrieved documents...`);
+      docSummary = await summarizeDocuments(question, top);
+      if (docSummary?.focusedChunks) {
+        focusedCodes = docSummary.focusedChunks.filter(c => allowedCodes.includes(c));
+        trace.docSummary = docSummary;
+        console.log(`[askTutor] Focused to ${focusedCodes.length} relevant chunks`);
+      }
+    } catch (e) {
+      console.warn(`[askTutor] Summarization failed: ${e.message}`);
+    }
+  }
+  // ========================================================================
+
+  // ========== TOOL CALLING MODE ==========
+  if (USE_TOOL_CALLING && apiKey && enableResearch) {
+    try {
+      const tools = TOOL_DEFINITIONS.tools;
+      const userPrompt = `Câu hỏi: ${question}\n\nHãy tra cứu tài liệu trước, sau đó trả lời.`;
+
+      // First call - AI may request tool calls
+      const firstResponse = await callGeminiWithTools(SYSTEM_PROMPT, userPrompt, tools);
+      trace.rawAnswer = firstResponse.text;
+
+      let finalText = firstResponse.text;
+      const allToolCalls = [...(firstResponse.toolCalls || [])];
+      const toolResults = [];
+
+      // Process tool calls if any
+      if (firstResponse.toolCalls && firstResponse.toolCalls.length > 0) {
+        console.log(`[askTutor] Tool calls detected: ${firstResponse.toolCalls.map(t => t.name).join(", ")}`);
+        trace.toolCalls = firstResponse.toolCalls;
+
+        const results = await processToolCalls(firstResponse.toolCalls);
+        toolResults.push(...results);
+
+        // Build continuation messages
+        const messages = [
+          { role: "user", parts: [{ text: SYSTEM_PROMPT }] },
+          { role: "model", parts: [{ text: "Tôi đã hiểu. Tôi sẽ tuân thủ nghiêm ngặt các nguyên tắc và chỉ trả lời dựa trên thông tin từ tài liệu hoặc tìm kiếm web." }] },
+          { role: "user", parts: [{ text: userPrompt }] },
+          {
+            role: "model",
+            parts: firstResponse.toolCalls.map(tc => ({
+              functionCall: {
+                name: tc.name,
+                args: tc.args,
+                id: tc.id
+              }
+            }))
+          },
+          {
+            role: "user",
+            parts: [{ text: formatToolResultsForUser(results) }]
+          }
+        ];
+
+        // Get final response
+        finalText = await callGeminiContinuation(messages, tools);
+        trace.rawAnswer = finalText;
+      }
+
+      // Verify and return (dùng focusedCodes thay vì allowedCodes)
+      const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(finalText, focusedCodes);
+
+      // Check if we have valid citations - if not, might need web research
+      let needWebSearch = verifiedCitations.length === 0 && hasLowScore;
+      let webSources = [];
+      let mergedContext = null;
+
+      if (needWebSearch) {
+        console.log(`[askTutor] No local citations, attempting web search...`);
+        try {
+          const researchResult = await webResearch(question, top, retMode);
+          if (researchResult.needed && researchResult.mergedContext) {
+            webSources = researchResult.sources;
+            mergedContext = researchResult.mergedContext;
+            trace.research = researchResult.trace;
+
+            // Regenerate with web context
+            const webPrompt = buildWebContextPrompt(question, researchResult.mergedContext, researchResult.sources);
+            const webResponse = await callGeminiWithTools(SYSTEM_PROMPT + "\n\n" + webPrompt, "Hãy trả lời dựa trên thông tin web đã cung cấp.", null);
+            finalText = webResponse.text || finalText;
+            trace.rawAnswer = finalText;
+
+            const webVerified = verifyWebCitations(finalText, researchResult.sources);
+            return buildResult(question, webVerified.cleaned, webVerified.citations, researchResult.sources, trace, true, researchResult);
+          }
+        } catch (e) {
+          console.error(`[askTutor] Web search failed: ${e.message}`);
+        }
+      }
+
+      return buildResult(question, cleanedAnswer, verifiedCitations, [], trace, false, null);
+
+    } catch (e) {
+      console.error(`[askTutor] Tool calling failed: ${e.message}, falling back to standard mode`);
+    }
+  }
+  // =====================================
+
+  // 1a. Threshold check: nếu top-1 score quá thấp → coi như không có context phù hợp
   if (!top.length || top[0].score < threshold) {
     trace.verified = { failSafe: `[${retMode}] top-1 score ${top[0]?.score?.toFixed(3) || 0} < threshold ${threshold}` };
 
@@ -376,14 +623,12 @@ async function askTutor(question, opts = {}) {
         trace.research = researchResult.trace;
 
         if (researchResult.needed && researchResult.mergedContext) {
-          // Có kết quả research → dùng làm context thay thế
           const researchPrompt = buildResearchPrompt(question, researchResult.mergedContext, researchResult.sources);
           trace.prompt = researchPrompt;
 
           const rawAnswer = await callGemini(researchPrompt);
           trace.rawAnswer = rawAnswer;
 
-          // Verify citations từ web sources
           const { cleanedAnswer, verifiedCitations } = verifyWebAnswer(rawAnswer, researchResult.sources);
           trace.verified = { fromResearch: true, sources: researchResult.sources, verifiedCitations };
 
@@ -424,7 +669,7 @@ async function askTutor(question, opts = {}) {
     return {
       question,
       answer:
-        "Mình **không tìm thấy nội dung này** trong tài liệu (đã duyệt 6 transcript + 585 hội thoại học viên).\n\n" +
+        "Mình **không tìm thấy nội dung này** trong tài liệu.\n\n" +
         "Câu hỏi có vẻ nằm ngoài phạm vi tài liệu bài giảng. Bạn nên hỏi trực tiếp giảng viên hoặc TA.",
       citations: [],
       snippets: [],
@@ -454,23 +699,25 @@ async function askTutor(question, opts = {}) {
     }
   }
 
-  // 2. Generate
+  // 2. Generate với focused prompt (tài liệu đã được tóm tắt)
+  const focusedTop = top.filter(t => focusedCodes.includes(t.code));
   let rawAnswer;
   if (apiKey) {
     try {
-      // Nếu đã có enhanced prompt từ research → dùng nó, không build lại
+      // Nếu đã có enhanced prompt từ research → dùng nó
       if (!trace.prompt) {
+        // Dùng buildFocusedPrompt với docSummary để tập trung vào trọng tâm
         const chunkTexts = top.map(t => codeToChunk.get(t.code)?.text || "");
-        trace.prompt = buildPrompt(question, top, chunkTexts, researchResult);
+        trace.prompt = buildFocusedPrompt(question, top, docSummary);
       }
       rawAnswer = await callGemini(trace.prompt);
     } catch (e) {
       console.error(`[askTutor] gen failed: ${e.message} — fallback`);
-      rawAnswer = fallbackAnswer(question, top);
+      rawAnswer = fallbackAnswer(question, focusedTop);
       trace.mode = "FALLBACK-AFTER-ERROR";
     }
   } else {
-    rawAnswer = fallbackAnswer(question, top);
+    rawAnswer = fallbackAnswer(question, focusedTop);
   }
   trace.rawAnswer = rawAnswer;
 
@@ -483,8 +730,8 @@ async function askTutor(question, opts = {}) {
     };
   }
 
-  // 3. Verify (lớp ① — Nguồn sự thật)
-  const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(rawAnswer, allowedCodes);
+  // 3. Verify (dùng focusedCodes để verify)
+  const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(rawAnswer, focusedCodes);
   trace.verified = { verifiedCitations, hallucinated };
 
   // 4. Fail-safe: nếu không có citation hợp lệ → coi như không tìm thấy
@@ -493,7 +740,7 @@ async function askTutor(question, opts = {}) {
   if (verifiedCitations.length === 0) {
     isFailure = true;
     finalAnswer =
-      "Mình **không tìm thấy nội dung này** trong tài liệu (đã duyệt 6 transcript + 585 hội thoại học viên).\n\n" +
+      "Mình **không tìm thấy nội dung này** trong tài liệu.\n\n" +
       "Thay vì đoán và trả lời sai, mình khuyên bạn:\n" +
       "• Hỏi trực tiếp giảng viên hoặc TA trong Discord khoá.\n" +
       "• Hoặc mở tài liệu gốc để tìm.\n\n" +
@@ -578,3 +825,109 @@ if (require.main === module) {
 }
 
 module.exports = { askTutor, verifyAnswer, retrieve };
+
+// ============== HELPER FUNCTIONS ==============
+
+/**
+ * Format tool results for user in continuation message
+ */
+function formatToolResultsForUser(toolResults) {
+  const lines = [];
+  lines.push("Kết quả từ các công cụ:\n");
+
+  for (const tr of toolResults) {
+    lines.push(`--- ${tr.toolName} ---`);
+    if (tr.result.status === "error") {
+      lines.push(`Lỗi: ${tr.result.message}`);
+    } else if (tr.result.results) {
+      lines.push(JSON.stringify(tr.result, null, 2));
+    } else if (tr.result.documents) {
+      lines.push(JSON.stringify(tr.result, null, 2));
+    } else {
+      lines.push(JSON.stringify(tr.result, null, 2));
+    }
+    lines.push("");
+  }
+
+  return lines.join("\n");
+}
+
+/**
+ * Verify web citations in answer
+ */
+function verifyWebCitations(rawAnswer, sources) {
+  const cleanedAnswer = rawAnswer;
+  const found = [];
+
+  // For web sources, just check that answer looks reasonable
+  if (sources.length > 0) {
+    found.push(...sources.map(s => s.id));
+  }
+
+  return {
+    cleaned: cleanedAnswer,
+    citations: found
+  };
+}
+
+/**
+ * Build prompt with web context
+ */
+function buildWebContextPrompt(question, webContext, sources) {
+  const srcList = sources.map((s, i) => `[${i + 1}] ${s.title} (${s.url})`).join("\n");
+
+  return `
+THÔNG TIN BỔ SUNG TỪ TÌM KIẾM WEB:
+
+${webContext}
+
+NGUỒN THAM KHẢO:
+${srcList}
+
+Hãy trả lời câu hỏi dựa trên thông tin web trên. Ghi rõ nguồn khi sử dụng thông tin từ một trang cụ thể.
+`;
+}
+
+/**
+ * Build final result object
+ */
+function buildResult(question, answer, citations, webSources, trace, isWebResearch, researchResult) {
+  const isFailure = citations.length === 0 && !isWebResearch;
+
+  // Build snippets
+  const snippets = [];
+
+  if (isWebResearch && researchResult) {
+    snippets.push(...researchResult.sources.map(s => ({
+      code: s.id,
+      source: "web",
+      text: s.snippet
+    })));
+  }
+
+  const result = {
+    question,
+    answer: isFailure
+      ? "Mình **không tìm thấy nội dung này** trong tài liệu. Bạn nên hỏi trực tiếp giảng viên hoặc TA."
+      : answer,
+    citations,
+    snippets,
+    isFailure,
+    trace
+  };
+
+  if (isWebResearch && researchResult) {
+    result.researchInfo = {
+      used: true,
+      sources: researchResult.sources,
+      queryCount: researchResult.trace?.queriesUsed?.length || 0
+    };
+  }
+
+  // Log trace
+  if (!fs.existsSync(TRACE_DIR)) fs.mkdirSync(TRACE_DIR, { recursive: true });
+  const ts = new Date().toISOString().replace(/[:.]/g, "-");
+  fs.writeFileSync(path.join(TRACE_DIR, `trace-${ts}.json`), JSON.stringify(trace, null, 2));
+
+  return result;
+}

@@ -329,8 +329,10 @@ Trả lời theo format JSON:
  * @returns {Promise<Object>}
  */
 async function askResearchDecision(question, topChunks, chunkTexts) {
-  // Sử dụng Gemini API nếu có key
-  const apiKey = process.env.GEMINI_API_KEY;
+  // Sử dụng OpenRouter API nếu có key
+  const openrouter = require("./openrouter.js");
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  
   if (!apiKey) {
     // Fallback: dùng heuristic
     const check = checkSufficientContext(topChunks, question);
@@ -344,42 +346,17 @@ async function askResearchDecision(question, topChunks, chunkTexts) {
 
   const prompt = buildResearchDecisionPrompt(question, topChunks, chunkTexts);
 
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 0.1, maxOutputTokens: 200 },
-    });
-
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${apiKey}`;
-    const req = https.request({
-      method: "POST",
-      hostname: "generativelanguage.googleapis.com",
-      path: "/v1beta/models/gemini-3-flash:generateContent?key=" + apiKey,
-      headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) }
-    }, (res) => {
-      let data = "";
-      res.on("data", c => data += c);
-      res.on("end", () => {
-        try {
-          const j = JSON.parse(data);
-          const text = j.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
-          // Parse JSON từ response
-          const match = text.match(/\{[\s\S]*\}/);
-          if (match) {
-            resolve(JSON.parse(match[0]));
-          } else {
-            resolve({ score: 3, needs_research: false, reason: "Parse failed", missing_topics: [] });
-          }
-        } catch (e) {
-          resolve({ score: 3, needs_research: false, reason: "API error: " + e.message, missing_topics: [] });
-        }
-      });
-    });
-
-    req.on("error", (e) => resolve({ score: 3, needs_research: false, reason: e.message, missing_topics: [] }));
-    req.write(body);
-    req.end();
-  });
+  try {
+    const text = await openrouter.chat(prompt, { temperature: 0.1, max_tokens: 200 });
+    // Parse JSON từ response
+    const match = text.match(/\{[\s\S]*\}/);
+    if (match) {
+      return JSON.parse(match[0]);
+    }
+    return { score: 3, needs_research: false, reason: "Parse failed", missing_topics: [] };
+  } catch (e) {
+    return { score: 3, needs_research: false, reason: "API error: " + e.message, missing_topics: [] };
+  }
 }
 
 // ============== MAIN RESEARCH FUNCTION ==============

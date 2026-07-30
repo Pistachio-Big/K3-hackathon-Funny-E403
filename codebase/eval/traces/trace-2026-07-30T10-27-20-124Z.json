@@ -1,0 +1,108 @@
+{
+  "question": "context là gì",
+  "retrieved": [
+    {
+      "code": "T03-125",
+      "score": 1
+    },
+    {
+      "code": "T04-051",
+      "score": 1
+    },
+    {
+      "code": "T04-057",
+      "score": 1
+    },
+    {
+      "code": "T05-106",
+      "score": 1
+    },
+    {
+      "code": "T06-051",
+      "score": 1
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-5 đoạn):\n[1] Mã đoạn: [T03-125] (Bài giảng)\nNội dung: Ok, đây là những hướng các bạn có thể phát triển hệ thống cho dự án: model, context, planning, tool. Rồi mình sẽ nói về keyword UI/UX — sau này khi học các bạn sẽ được nghe rất nhiều. UI là gì? Là cái người dùng nhìn vào, đọc. UI tốt tức là gì? Mô hình có lỗi gì, báo gì, người dùng nhìn một phát: à tôi biết cái này có lỗi rồi; tôi nhìn thấy kết quả của tôi rồi. Còn UX — cái experience này từ đâu? Từ cái interaction với hệ thống của các bạn. Ví dụ nãy mình bảo thi thoảng con ChatGPT đưa ra hai câu trả lời rồi hỏi bạn chọn cái nào — cách họ đưa ra câu trả lời, cách họ cho người dùng select A hay B, phải làm cho người dùng cảm thấy dễ nhất có thể.\n\n[2] Mã đoạn: [T04-051] (Bài giảng)\nNội dung: Rồi sau token thì cũng có một khái niệm rất là quan trọng, đấy là context. Context nghĩa là bối cảnh, ngữ cảnh. Context ở đây nghĩa là gì? Là toàn bộ những thông tin mà một mô hình nó có thể tiêu thụ trong một lần — có thể hiểu nôm na là thế. Context càng nhiều thì nó càng có thể tiêu thụ được nhiều thông tin. Ví dụ như những mô hình thời đầu, khi context này nó ngắn, nó có giới hạn ngữ cảnh — có một từ là context window ấy, nghĩa là cửa sổ ngữ cảnh — là một mô hình một lúc nó chỉ tiếp nhận được một số lượng nhất định, ví dụ như kiểu vài chục trang sách thôi. Lúc đấy bạn có thể gửi cho nó vài chục trang sách một lúc thì nó có thể đọc, tóm tắt được hết. Nhưng giả sử bạn gửi cho nó vài quyển sách chẳng hạn, thì nó sẽ không thể nào xử lý được hết, nó phải cắt nhỏ ra và làm. Thế thì khi nó cắt nhỏ ra và xử lý, thứ nhất là nó sẽ phức tạp hơn, bởi vì nó có thể bị mất mát thông tin của những phần phía trước. Thậm chí khi nó tiếp nhận một lượng thông tin có giới hạn, nó sẽ chỉ nhìn trong một phạm vi hẹp thôi, nó không thể nhìn được rộng hơn. Thế nhưng bây giờ cửa sổ ngữ cảnh của các mô hình càng ngày càng lớn rồi. Đến bây giờ thì 1 triệu token là một chuyện bình thường. 1 triệu token sẽ rơi vào khoảng — ở đây mình lấy một ví dụ thôi — khoảng bốn đến năm cuốn sách một lúc. Nhưng mà ngày xưa, những mô hình đầu tiên thời đầu, nó chỉ là một cuốn sách khoảng 300 trang thôi. Mình có thể hình dung context đó là một cái bàn làm việc của một mô hình: trong một thời điểm nó có thể bày ra được tối đa bao nhiêu, thì nó có thể xử lý được chừng đấy thông tin trong thời điểm đấy thôi.\n\n[3] Mã đoạn: [T04-057] (Bài giảng)\nNội dung: Rồi, thế thì sau tất cả những cái này, mình rút ra một cái mình nghĩ rất là quan trọng cho tất cả chúng ta khi chúng ta sẽ cần làm việc với AI rất nhiều trong giai đoạn tới, đặc biệt là vibe code. Bản chất đấy là: bạn hãy quản lý cái sự chú ý của các mô hình, và quản lý cái context mà bạn đưa cho các mô hình. Mình nghĩ bạn chỉ quản lý việc đấy tốt thôi, bạn sẽ code cũng tốt hơn, bạn build các sản phẩm nó cũng có năng lực tốt và tiết kiệm về mặt chi phí, và bạn vibe code nó sẽ tốt hơn. Không phải bạn cứ trả tiền cho một mô hình có năng lực cao, có cửa sổ ngữ cảnh lớn, là bạn có thể làm được mọi task tốt đâu. Vì cuối cùng càng làm càng về sau, đặc biệt khi bạn càng ngày càng chạm đến giới hạn về ngữ cảnh, thì nó bắt đầu phải tự động tóm tắt ấy. Không biết ở đây các bạn xài Claude Code chẳng hạn — tất cả các sản phẩm nó đều có cái đấy: khi bạn chạm cái ngưỡng của cửa sổ ngữ cảnh của phiên làm việc đấy, nó sẽ có một cơ chế tự động tóm tắt đúng không? Nhưng cái đoạn nó tự động tóm tắt ấy, bạn không kiểm soát được nó tóm tắt cái gì. Thế nên một cái tip mà những chuyên gia vibe code, làm việc với AI, họ sẽ khuyên: đấy là bạn hãy chủ động cho việc giao cho agent, hoặc viết những cái skill, để agent trong quá trình nó làm việc nó tự động ghi lại từng bước một. Nó làm xong thì nó sẽ luôn ghi lại vào một cái file hoặc là plan: tôi đã làm cái gì, tôi đã quyết định gì, những cái gì quan trọng — để mình chủ động cho việc lưu trữ lại những quyết định đấy, thay vì để cho mô hình nó tự động quyết định ở phía cuối. Tất nhiên bây giờ theo như mình quan sát, đã bắt đầu có những mô hình mà khi tràn context nó tự động compact ấy — compacting context — khi đạt được chế độ đấy thì nó cũng bắt đầu thông minh hơn rất nhiều rồi. Tuy nhiên việc đấy vẫn khiến cho bạn có thể tiêu tốn nhiều token hơn khi bạn cố gắng làm việc với một cửa sổ lớn. Bởi vì bản chất ở đây là khi bạn làm việc, chat qua 10 lần, 20 lần, thì mỗi một lần chat tiếp theo là bạn đang phải trả phí cho cả cuộc hội thoại rất là dài. Thì việc bạn quản lý được cái context đấy cũng sẽ khiến cho chúng ta tiết kiệm được chi phí và giữ hiệu năng nữa.\n\n[4] Mã đoạn: [T05-106] (Bài giảng)\nNội dung: Đi theo thứ tự thì tool thường hướng đến hành động. Khi nói đến nhóm này thì sẽ có những rủi ro — ví dụ rủi ro về security khi chúng ta gọi API ra bên ngoài, nó làm cho chính cái AI của chúng ta hiểu sai chẳng hạn. Rồi ở tầng đầu tiên, phần model, rủi ro là gì? Là chúng ta gặp hallucination mà chúng ta không biết. Rủi ro thứ hai là nó vượt quá ngân sách mà chúng ta không biết. Rồi ở tầng ngữ cảnh, ví dụ có rủi ro là chúng ta truy xuất sai dữ liệu cần truy xuất; hay bộ nhớ vượt quá khả năng mà context window có thể xử lý mà chúng ta không lường được. Rồi ở phần planning, rủi ro là có quá nhiều vòng lặp, và đôi khi chúng ta không nhận ra nó vi phạm cái policy mà chúng ta đã thiết lập cho hệ thống. Còn trung tâm sẽ là một cái gọi là orchestrator system — nó sẽ điều phối tất cả.\n\n[5] Mã đoạn: [T06-051] (Bài giảng)\nNội dung: Nhóm đầu tiên là cái gọi là discriminative AI — nói một tiếng là phân loại, dự đoán. Cái này thường được sử dụng nhiều ở giai đoạn chúng ta huấn luyện mô hình, chúng ta gán nhãn vân vân, và vẫn thường được ứng dụng vào các việc như gán nhãn, hay là phân tích giao dịch xem giao dịch là giả mạo hay không giả mạo. Mình lấy cho các bạn một ví dụ: giả sử các bạn là người own cái hệ thống nhận diện giao dịch giả mạo của ngân hàng, thì các bạn có đồng ý là sẽ sử dụng cái quá trình reasoning trong quá trình detect fraud không, hay các bạn sẽ sử dụng theo dạng nhóm thứ nhất? Ví dụ như bài toán của Momo chẳng hạn — một ngày khoảng 20 triệu giao dịch, có bộ phận chuyên đi detect xem trong số đó có bao nhiêu giao dịch giả mạo — thì theo các bạn là nên dựa vào gen AI hay là dựa vào discriminative AI? Đấy là những tình huống mà sau này các bạn sẽ phải trả lời. Ở phần thứ nhất các bạn nhớ rằng chức năng chính của nhóm thứ nhất là gì: khi các bạn input vào một cái gì đó, nhập vào một cái gì đó, thì nó sẽ trả ra cho chúng ta một cái nhãn — đó là spam hay không spam, nó là chó hay là mèo. Đấy là nhóm thứ nhất. Nhóm thứ hai là generative AI: bản chất chức năng chính của nó là chúng ta prompt — prompt cũng có thể hiểu là một input — nhưng nó trả về cho chúng ta cái content. Cái content này có thể là nhạc, có thể là hình ảnh, có thể là mã code, có thể là file audio, rồi bây giờ có thể là bản đồ, có thể là ứng dụng, có thể là game — cái danh sách càng ngày càng dài ra. Đấy là nhóm số hai. Và nhóm cuối cùng là nhóm mà nó có khả năng tự lập kế hoạch và hành động. Khi nói kế hoạch và hành động, các bạn cứ tưởng tượng là chúng ta có cái não để nghĩ và chúng ta có cánh tay để làm. Với agentic AI, khi các bạn đã nghĩ rõ về mục tiêu của mình — ví dụ các bạn có thể hỏi là cách tôi tạo cái web thì sao — nó ra các bước luôn: mục tiêu của cái web này nó là gì, thì sau đấy nó sẽ hành động cho các bạn luôn. Và các bạn tưởng tượng cái này một cách đơn giản: trước đây khi chúng ta search Google về câu chuyện là tôi đặt vé đợt hè, ví dụ như là giá rẻ dưới 2 triệu chẳng hạn, thì trước đây chúng ta vẫn phải search, nó trả cái kết quả, chúng ta ngồi lựa chọn. Còn với agentic AI, nó sẽ thay chúng ta: nó sẽ hiểu luôn cái individual context của từng bạn khi các bạn đặt cái mục tiêu đấy, và nó sẽ săn — ví dụ buổi sáng nó vào chưa thấy giá tốt nhất, nó dừng lại; buổi chiều nó vào tiếp lần nữa, nó thấy giá phù hợp với mục tiêu, nó sẽ đặt luôn cho các bạn. Ở cái hướng của agentic AI, nó sẽ đạt đến câu chuyện như vậy. Ba nhóm này rất là quan trọng nếu các bạn là kỹ sư AI — và thực tế thì các bạn cũng đang hướng đến là AI engineer — các bạn cần phải nắm rõ bản chất của từng loại, để sau này các bạn phải tư vấn được cho từng trường hợp, từng cái use case. Và mở rộng thêm một chút: trước đây cái AI nó chỉ được áp dụng ở những nơi [không nghe rõ] — những nơi rất nhiều tiền — và bởi vậy cái cách tiếp cận đầu tiên, cái khối đầu tiên bên trái, gọi là AI hẹp, AI truyền thống.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] Context là gì? Tìm hiểu vai trò và cách hoạt động ...\nURL: https://fptshop.com.vn/tin-tuc/danh-gia/context-la-gi-185303\nNội dung: Context được dịch đơn giản là “ngữ cảnh”, cho biết ứng dụng đang chạy ở đâu và trong tình huống nào, chẳng hạn trong Activity, Service hay Application. Đây\n\n[Nguồn 2] Context trong communication là gì?\nURL: https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html\nNội dung: Định nghĩa, ý nghĩa và vai trò của context trong communication skill. Context là bối cảnh trong giao tiếp, như là giới tính, tuổi tác,\n\n[Nguồn 3] Tìm hiểu về Context trong các ứng dụng Android - Viblo.asia\nURL: https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG\nNội dung: Context trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác. Một vài quan điểm về context: Nó là bối cảnh hiện tại của ứng dụng.\n\n[Nguồn 4] Cái \"context\" là cái gì vậy trời? : r/golang\nURL: https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi\nNội dung: \"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. \n\nTao\n\n[Nguồn 5] CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge\nURL: https://dictionary.cambridge.org/vi/dictionary/english/context\nNội dung: to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl\n\nCÂU HỎI HỌC VIÊN: context là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Context, hay còn gọi là ngữ cảnh, là một khái niệm rất quan trọng trong lĩnh vực AI, đặc biệt là khi làm việc với các mô hình học máy. Theo bài giảng [T04-051], context được hiểu là toàn bộ thông tin mà một mô hình có thể tiêu thụ trong một lần. Nó có thể được hình dung như một \"cửa sổ ngữ cảnh\" (context window), cho phép mô hình tiếp nhận và xử lý một lượng thông tin nhất định trong một thời điểm.\n\nContext càng lớn thì mô hình càng có khả năng tiếp nhận nhiều thông tin hơn. Ví dụ, các mô hình hiện đại có thể xử lý lên đến 1 triệu token, tương đương với khoảng bốn đến năm cuốn sách. Ngược lại, các mô hình thời kỳ đầu chỉ có thể xử lý một cuốn sách khoảng 300 trang. Việc này có ý nghĩa lớn trong việc giúp mô hình hiểu và phản hồi chính xác hơn với các yêu cầu của người dùng.\n\nNgoài ra, việc quản lý context cũng rất quan trọng. Như trong bài giảng [T04-057], việc bạn chủ động quản lý context mà bạn đưa cho mô hình sẽ giúp tiết kiệm chi phí và nâng cao hiệu suất làm việc. Khi context bị tràn, mô hình có thể tự động tóm tắt thông tin, nhưng bạn sẽ không kiểm soát được những gì nó tóm tắt, điều này có thể dẫn đến mất mát thông tin quan trọng.\n\nTóm lại, context là bối cảnh mà mô hình hoạt động, ảnh hưởng đến khả năng xử lý và phản hồi của nó. Việc hiểu và quản lý tốt context sẽ giúp bạn làm việc hiệu quả hơn với AI.",
+  "verified": {
+    "verifiedCitations": [
+      "T04-051",
+      "T04-057"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "context là gì",
+    "topChunks": [
+      {
+        "code": "T03-125",
+        "score": 1
+      },
+      {
+        "code": "T04-051",
+        "score": 1
+      },
+      {
+        "code": "T04-057",
+        "score": 1
+      },
+      {
+        "code": "T05-106",
+        "score": 1
+      },
+      {
+        "code": "T06-051",
+        "score": 1
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "context là gì",
+      "context là gì T03-125"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Context là gì? Tìm hiểu vai trò và cách hoạt động ...",
+        "url": "https://fptshop.com.vn/tin-tuc/danh-gia/context-la-gi-185303",
+        "snippet": "Context được dịch đơn giản là “ngữ cảnh”, cho biết ứng dụng đang chạy ở đâu và trong tình huống nào, chẳng hạn trong Activity, Service hay Application. Đây"
+      },
+      {
+        "id": "S2",
+        "title": "Context trong communication là gì?",
+        "url": "https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html",
+        "snippet": "Định nghĩa, ý nghĩa và vai trò của context trong communication skill. Context là bối cảnh trong giao tiếp, như là giới tính, tuổi tác,"
+      },
+      {
+        "id": "S3",
+        "title": "Tìm hiểu về Context trong các ứng dụng Android - Viblo.asia",
+        "url": "https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG",
+        "snippet": "Context trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác. Một vài quan điểm về context: Nó là bối cảnh hiện tại của ứng dụng."
+      },
+      {
+        "id": "S4",
+        "title": "Cái \"context\" là cái gì vậy trời? : r/golang",
+        "url": "https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi",
+        "snippet": "\"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. \n\nTao"
+      },
+      {
+        "id": "S5",
+        "title": "CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge",
+        "url": "https://dictionary.cambridge.org/vi/dictionary/english/context",
+        "snippet": "to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Context là bối cảnh hoặc ngữ cảnh mà một mô hình AI có thể tiêu thụ trong một lần, ảnh hưởng đến khả năng xử lý thông tin của nó. Cửa sổ ngữ cảnh càng lớn, mô hình càng có thể tiếp nhận và xử lý nhiều thông tin hơn, nhưng cũng có thể dẫn đến việc mất mát thông tin nếu không được quản lý tốt.",
+    "answerDirection": "Hướng trả lời: Giải thích về khái niệm context trong AI và tầm quan trọng của nó trong việc xử lý thông tin.",
+    "focusedChunks": [
+      "T04-051",
+      "T04-057"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "question": "hallucination là gì",
+  "retrieved": [
+    {
+      "code": "T04-048",
+      "score": 1
+    },
+    {
+      "code": "T05-086",
+      "score": 1
+    },
+    {
+      "code": "T05-106",
+      "score": 1
+    },
+    {
+      "code": "T05-109",
+      "score": 1
+    },
+    {
+      "code": "T06-085",
+      "score": 1
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-5 đoạn):\n[1] Mã đoạn: [T04-048] (Bài giảng)\nNội dung: Và toàn bộ quá trình này có một đặc điểm: các mô hình này bản chất nó chỉ đang dự đoán thôi. Cái này là một cái mà mình thấy thời đầu rất nhiều người hay có câu hỏi là: thế ChatGPT cái gì cũng làm được, thế nó có dự đoán được giá vàng không? Nó có dự đoán được giá Bitcoin không? Có rất nhiều câu như vậy. Nhưng mà bản chất nó chỉ là một cỗ máy, nó sinh ra và tự động nối cái từ tiếp theo vào thôi. Thế nên đấy là một lý do khiến cho văn bản AI sinh ra nhìn trông rất là có lý, trông rất là thuận mắt, nhưng mà thực ra không phải thế — thực ra nó có thể sai. Đấy sẽ là hiện tượng ảo giác mà các bạn có thể gặp phải — hallucination. Nó sinh ra sai chỉ đơn giản là nó đang cố nối những cái từ với nhau cho có nghĩa thôi, nhưng mà thực ra cái thông tin nó sai. Cũng bởi vì nó sinh ra như thế này, cho nên về sau khi các bạn build AI, gọi AI vào và chạy, nó sẽ có một chế độ gọi là streaming. Streaming là một chế độ mà thay vì bạn đợi nó sinh ra cả đoạn văn bản mới trả về kết quả, thì nó sẽ trả về từng từ một cho bạn. Có thể là ngày mai trong bài tập lab chúng ta sẽ có phần đấy, chúng ta bắt đầu gọi thử.\n\n[2] Mã đoạn: [T05-086] (Bài giảng)\nNội dung: Sau đó, cái kế tiếp là giai đoạn build và eval. Đối với các bạn thì mình đặc biệt nhấn mạnh như này: sự khác nhau giữa một cái người builder bên ngoài với người đi học cái khóa này, thì các bạn sẽ có sự khác biệt là gì — là bọn tôi không chỉ biết cách build mà bọn tôi biết cách eval. Tức là bọn tôi biết cách đánh giá, bọn tôi biết cách check xem là cái agent nó đang bị hallucination hay là như thế nào. Và bọn tôi biết cách trực những cái kịch bản của tôi — dùng guardrail, và tôi biết là nó đang như này, nó đang như thế kia.\n\n[3] Mã đoạn: [T05-106] (Bài giảng)\nNội dung: Đi theo thứ tự thì tool thường hướng đến hành động. Khi nói đến nhóm này thì sẽ có những rủi ro — ví dụ rủi ro về security khi chúng ta gọi API ra bên ngoài, nó làm cho chính cái AI của chúng ta hiểu sai chẳng hạn. Rồi ở tầng đầu tiên, phần model, rủi ro là gì? Là chúng ta gặp hallucination mà chúng ta không biết. Rủi ro thứ hai là nó vượt quá ngân sách mà chúng ta không biết. Rồi ở tầng ngữ cảnh, ví dụ có rủi ro là chúng ta truy xuất sai dữ liệu cần truy xuất; hay bộ nhớ vượt quá khả năng mà context window có thể xử lý mà chúng ta không lường được. Rồi ở phần planning, rủi ro là có quá nhiều vòng lặp, và đôi khi chúng ta không nhận ra nó vi phạm cái policy mà chúng ta đã thiết lập cho hệ thống. Còn trung tâm sẽ là một cái gọi là orchestrator system — nó sẽ điều phối tất cả.\n\n[4] Mã đoạn: [T05-109] (Bài giảng)\nNội dung: Trên cái bảng này các bạn thấy: ở phần model, chúng ta cần quan tâm khi một task là mở, cần sự suy luận, cần phải tạo sinh; và mô hình sẽ thất bại lúc nó tạo ra sự inconsistency — cái sau cái trước không liền lạc — và hallucination. Chúng ta sẽ kiểm soát nó bằng cách áp dụng các kỹ thuật về evaluation và guardrail. Guardrail bản chất là gì? Là các bạn tạo ra một lớp yêu cầu: bạn được làm cái này và không được làm cái này. Cái factor dẫn đến chi phí ở điểm này sẽ là token hoặc latency để tạo ra tính ổn định.\n\n[5] Mã đoạn: [T06-085] (Bài giảng)\nNội dung: Ở định nghĩa này mình muốn nhấn mạnh lại là các bạn nhớ cho được những kiến trúc đấy. Trong transformer có một paper gọi là \"Attention Is All You Need\" của các nhà khoa học ở Google. Đại ý là: các bạn có một cái não bộ rất tốt, và tất cả những gì bạn cần lúc này là chú ý hết sức vào công việc. Quá trình huấn luyện, hiểu nôm na, là làm thế nào để đảm bảo rằng nó chú ý hết mọi ngữ cảnh, đảm bảo nó không quên. Một trong những nguyên nhân hallucination là nó chạy hết cả đoạn dài trong context window, quên ở giữa, rồi nó sẽ hallucinate — attention sẽ khắc phục được câu chuyện đấy.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] Tìm kiếm: hallucination là gì\nURL: https://www.google.com/search?q=hallucination%20l%C3%A0%20g%C3%AC\nNội dung: Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau.\n\n[Nguồn 2] Tìm kiếm: hallucination là gì T04-048\nURL: https://www.google.com/search?q=hallucination%20l%C3%A0%20g%C3%AC%20T04-048\nNội dung: Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau.\n\nCÂU HỎI HỌC VIÊN: hallucination là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Hallucination trong ngữ cảnh của AI, đặc biệt là các mô hình ngôn ngữ như ChatGPT, là hiện tượng khi mô hình tạo ra thông tin sai lệch hoặc không chính xác. Điều này xảy ra vì mô hình chỉ đơn giản là dự đoán từ tiếp theo dựa trên các từ đã cho, mà không thực sự hiểu nội dung hay ngữ cảnh. Như mình đã đề cập trong bài giảng [T04-048], mô hình có thể sinh ra văn bản trông rất hợp lý nhưng thực tế có thể chứa thông tin sai. \n\nHallucination có thể gây ra nhiều vấn đề, đặc biệt là khi người dùng dựa vào thông tin đó để đưa ra quyết định. Để kiểm soát hiện tượng này, trong quá trình xây dựng và đánh giá mô hình, chúng ta cần áp dụng các kỹ thuật như evaluation và guardrail, như đã nêu trong bài giảng [T05-109]. \n\nNếu bạn có thêm câu hỏi nào khác về chủ đề này, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [
+      "T04-048",
+      "T05-109"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "hallucination là gì",
+    "topChunks": [
+      {
+        "code": "T04-048",
+        "score": 1
+      },
+      {
+        "code": "T05-086",
+        "score": 1
+      },
+      {
+        "code": "T05-106",
+        "score": 1
+      },
+      {
+        "code": "T05-109",
+        "score": 1
+      },
+      {
+        "code": "T06-085",
+        "score": 1
+      }
+    ],
+    "sourcesFound": 2,
+    "queriesUsed": [
+      "hallucination là gì",
+      "hallucination là gì T04-048"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Tìm kiếm: hallucination là gì",
+        "url": "https://www.google.com/search?q=hallucination%20l%C3%A0%20g%C3%AC",
+        "snippet": "Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau."
+      },
+      {
+        "id": "S2",
+        "title": "Tìm kiếm: hallucination là gì T04-048",
+        "url": "https://www.google.com/search?q=hallucination%20l%C3%A0%20g%C3%AC%20T04-048",
+        "snippet": "Không thể kết nối đến máy chủ tìm kiếm. Vui lòng thử lại sau."
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Hallucination là hiện tượng mà các mô hình AI tạo ra thông tin sai lệch khi chúng chỉ đơn giản là dự đoán và nối các từ với nhau mà không có sự hiểu biết thực sự về nội dung. Điều này có thể xảy ra khi mô hình không giữ được ngữ cảnh hoặc khi nó tạo ra sự không nhất quán trong thông tin.",
+    "answerDirection": "Hallucination là hiện tượng mà mô hình AI tạo ra thông tin sai lệch do chỉ dự đoán và nối từ mà không hiểu nội dung thực sự.",
+    "focusedChunks": [
+      "T04-048",
+      "T05-106",
+      "T05-109",
+      "T06-085"
+    ]
+  }
+}

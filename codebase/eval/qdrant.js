@@ -9,7 +9,7 @@
  *   QDRANT_URL=http://localhost:6333
  *   QDRANT_API_KEY=  (optional — Qdrant Cloud)
  *   QDRANT_COLLECTION=vlearn_tutor
- *   VECTOR_DIM=768
+ *   VECTOR_DIM=1024  (Jina v3)
  *
  * API:
  *   await ensureCollection()       // tạo collection nếu chưa có
@@ -27,7 +27,7 @@ require("./loadenv.js");
 const QDRANT_URL = process.env.QDRANT_URL || "http://localhost:6333";
 const QDRANT_API_KEY = process.env.QDRANT_API_KEY || "";
 const COLLECTION = process.env.QDRANT_COLLECTION || "vlearn_tutor";
-const VECTOR_DIM = parseInt(process.env.VECTOR_DIM || "768", 10);
+const VECTOR_DIM = parseInt(process.env.VECTOR_DIM || "1024", 10); // Jina v3 = 1024 dims
 
 function call(method, path, body) {
   return new Promise((resolve, reject) => {
