@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sơ Đồ Workflow - VLearn Tutor</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #4c46e0;
+      font-size: 24px;
+    }
+
+    /* Flowchart */
+    .flowchart {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Node types */
+    .node {
+      border-radius: 8px;
+      padding: 12px 20px;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+    }
+    .node-start {
+      background: #4c46e0;
+      color: white;
+      border-radius: 25px;
+      padding: 12px 30px;
+      font-weight: 600;
+    }
+    .node-process {
+      background: white;
+      border: 2px solid #4c46e0;
+      color: #1a1a1a;
+      min-width: 280px;
+    }
+    .node-process .title {
+      font-weight: 600;
+      color: #4c46e0;
+      margin-bottom: 4px;
+    }
+    .node-process .detail {
+      font-size: 12px;
+      color: #666;
+      font-weight: normal;
+    }
+    .node-decision {
+      background: #fff3e0;
+      border: 2px solid #ff9800;
+      transform: rotate(0deg);
+      min-width: 260px;
+    }
+    .node-decision .title {
+      font-weight: 600;
+      color: #e65100;
+    }
+    .node-decision .detail {
+      font-size: 12px;
+      color: #666;
+      font-weight: normal;
+    }
+    .node-code {
+      background: #1a1d29;
+      color: #e0e0e0;
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      text-align: left;
+      padding: 12px 16px;
+      min-width: 300px;
+      border-radius: 8px;
+    }
+    .node-code .comment { color: #6a9955; }
+    .node-code .keyword { color: #569cd6; }
+    .node-code .function { color: #dcdcaa; }
+    .node-code .string { color: #ce9178; }
+    .node-end {
+      background: #4c46e0;
+      color: white;
+      border-radius: 25px;
+      padding: 12px 30px;
+      font-weight: 600;
+    }
+    .node-output {
+      background: #e8f5e9;
+      border: 2px solid #4caf50;
+      min-width: 300px;
+    }
+    .node-output .title {
+      font-weight: 600;
+      color: #2e7d32;
+    }
+
+    /* Arrow */
+    .arrow {
+      width: 2px;
+      height: 30px;
+      background: #4c46e0;
+      position: relative;
+    }
+    .arrow::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid #4c46e0;
+    }
+    .arrow-down {
+      width: 2px;
+      height: 20px;
+      background: #4c46e0;
+    }
+
+    /* Branch */
+    .branch {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .branch::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: #4c46e0;
+    }
+    .branch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .branch-label {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .branch-yes {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    .branch-no {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    /* Group */
+    .group {
+      border: 2px dashed #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 10px 0;
+      position: relative;
+    }
+    .group-label {
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #f5f5f5;
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #666;
+    }
+
+    /* Output block */
+    pre {
+      font-family: ui-monospace, monospace;
+      font-size: 11px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sơ Đồ Workflow - VLearn Tutor (CP2)</h1>
+
+  <div class="flowchart">
+    
+    <!-- 1. START -->
+    <div class="node node-start">START</div>
+    <div class="arrow"></div>
+
+    <!-- 2. INIT -->
+    <div class="node node-process">
+      <div class="title">1. KHỞI TẠO</div>
+      <div class="detail">index.html load data.js + app.js</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 3. RENDER SUGGESTED -->
+    <div class="node node-process">
+      <div class="title">2. renderSuggested()</div>
+      <div class="detail">Loop SUGGESTED_QUESTIONS[] → createElement("button") → appendChild(#suggested)</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 4. INPUT -->
+    <div class="node node-process">
+      <div class="title">3. USER NHẬP CÂU HỎI</div>
+      <div class="detail">Gõ vào #question-input hoặc click suggested-chip</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 5. FORM SUBMIT -->
+    <div class="node node-code">
+<span class="comment">// formEl.addEventListener("submit")</span>
+e.preventDefault()
+question = inputEl.value.trim()
+<span class="keyword">if</span> (!question) <span class="keyword">return</span>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 6. RENDER USER MSG -->
+    <div class="node node-process">
+      <div class="title">4. renderUserMsg(question)</div>
+      <div class="detail">createElement("div") → className="msg msg-user" → textContent → appendChild(#chat)</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 7. RENDER THINKING -->
+    <div class="node node-process">
+      <div class="title">5. renderThinking()</div>
+      <div class="detail">createElement("div") → className="msg msg-tutor thinking" → innerHTML với dot animation</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 8. DELAY -->
+    <div class="node node-process">
+      <div class="title">6. setTimeout(600ms)</div>
+      <div class="detail">Đợi 600ms trước khi hiển thị câu trả lời</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 9. FIND ANSWER -->
+    <div class="node node-code">
+<span class="comment">// findMockAnswer(question)</span>
+q = question.toLowerCase()
+<span class="keyword">for</span> (entry <span class="keyword">of</span> MOCK_QA) {
+  <span class="keyword">for</span> (kw <span class="keyword">of</span> entry.keywords) {
+    <span class="keyword">if</span> (q.includes(kw)) <span class="keyword">return</span> entry
+  }
+}
+<span class="keyword">return</span> MOCK_NOT_FOUND
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 10. DECISION -->
+    <div class="node node-decision">
+      <div class="title">7. entry.isFailure ?</div>
+      <div class="detail">Kiểm tra xem có tìm thấy answer không</div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-item">
+        <span class="branch-label branch-yes">YES → Failure Path</span>
+        <div class="arrow-down"></div>
+        <div class="node node-process" style="border-color:#c62828;">
+          <div class="title" style="color:#c62828;">8a. renderAnswer() - Failure</div>
+          <div class="detail">className="answer-text failure" + muted note</div>
+        </div>
+      </div>
+      <div class="branch-item">
+        <span class="branch-label branch-no">NO → Happy Path</span>
+        <div class="arrow-down"></div>
+        <div class="node node-process" style="border-color:#2e7d32;">
+          <div class="title" style="color:#2e7d32;">8b. renderAnswer() - Success</div>
+          <div class="detail">Xử lý answer + citations + snippets</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"></div>
+
+    <!-- 11. SPLIT CITATIONS -->
+    <div class="node node-code">
+<span class="comment">// Tách [Txx-NNN] markers</span>
+parts = entry.answer.split(<span class="string">/(\[[T0-9]+-[0-9]+\])/g</span>)
+<span class="keyword">for</span> (seg <span class="keyword">of</span> parts) {
+  m = seg.match(<span class="string">/^\[([T0-9]+-[0-9]+)\]$/</span>)
+  <span class="keyword">if</span> (m) {
+    appendChild(buildCitationChip(m[1]))
+  }
+}
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 12. BUILD CITATION CHIP -->
+    <div class="node node-process">
+      <div class="title">9. buildCitationChip(code)</div>
+      <div class="detail">createElement("a") → href="mock-transcripts.html#t01-005" → className="cite-chip"</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 13. RENDER SNIPPET BOX -->
+    <div class="node node-process">
+      <div class="title">10. Render snippet-box</div>
+      <div class="detail">Loop entry.citations[] → snippet-item với blockquote</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 14. APPEND TO CHAT -->
+    <div class="node node-process">
+      <div class="title">11. appendChild(renderAnswer)</div>
+      <div class="detail">Thêm answer vào #chat container</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 15. FAILURE SUGGESTION -->
+    <div class="node node-decision" style="min-width:200px;">
+      <div class="title">12. !entry.isFailure ?</div>
+      <div class="detail">Hiện gợi ý thử failure case</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 16. SHOW SUGGESTION -->
+    <div class="node node-process">
+      <div class="title">13. showFailureTriggerRow()</div>
+      <div class="detail">Button "Công thức nấu phở bò chuẩn Hà Nội?"</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 17. CLICK CITATION -->
+    <div class="node node-output">
+      <div class="title">14. USER CLICK CITATION CHIP</div>
+      <div class="detail">Mở mock-transcripts.html#t01-005</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- 18. TRANSCRIPT PAGE -->
+    <div class="node node-process">
+      <div class="title">15. mock-transcripts.html#t01-005</div>
+      <div class="detail">Scroll đến &lt;p id="t01-005"&gt; → CSS :target highlight vàng</div>
+    </div>
+    <div class="arrow"></div>
+
+    <!-- END -->
+    <div class="node node-end">END</div>
+
+  </div>
+</body>
+</html>
