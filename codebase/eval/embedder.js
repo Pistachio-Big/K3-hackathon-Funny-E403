@@ -1,55 +1,55 @@
 #!/usr/bin/env node
 /**
- * embedder.js — Embed 700 chunks bằng Gemini text-embedding-004
+ * embedder.js — Embed chunks bằng Jina API
  *
  * Input:  codebase/eval/chunks.json
- * Output: codebase/eval/embeddings.json  [{code, text, embedding: [...768]}, ...]
+ * Output: codebase/eval/embeddings.json  [{code, text, embedding: [...]}, ...]
  *
- * Biến môi trường: GEMINI_API_KEY
+ * Biến môi trường: JINA_API_KEY
  * Chạy: node codebase/eval/embedder.js
  *
  * Lưu ý:
  *   - Cache theo code: nếu embeddings.json đã có code đó thì bỏ qua
- *   - Batch 100 chunk / lần gọi (giới hạn Gemini batchEmbedContents)
- *   - taskType: RETRIEVAL_DOCUMENT (cho phía tài liệu)
+ *   - Batch 32 chunk / lần gọi (giới hạn Jina)
+ *   - Model: jina-embeddings-v3 (1024 dims)
  */
 
 const fs = require("fs");
 const path = require("path");
 const https = require("https");
-require("./loadenv.js"); // load GEMINI_API_KEY từ .env
+require("./loadenv.js");
 
 const CHUNKS = path.resolve(__dirname, "chunks.json");
 const OUT = path.resolve(__dirname, "embeddings.json");
-const MODEL = "text-embedding-004";
-const BATCH = 100;
-const DIM = 768;
+const MODEL = "jina-embeddings-v3";
+const BATCH = 32;
+const DIM = 1024;
 
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = process.env.JINA_API_KEY;
 if (!apiKey) {
-  console.error("⚠ GEMINI_API_KEY chưa set — sẽ chạy FALLBACK TF-IDF (không cần API).");
-  console.error("  Để có chất lượng tốt hơn, set key rồi chạy lại.");
+  console.error("⚠ JINA_API_KEY chưa set — sẽ chạy FALLBACK TF-IDF (không cần API).");
+  process.exit(1);
 }
 
-function postBatch(requests) {
+function postBatch(texts) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      requests: requests.map((r) => ({
-        model: `models/${MODEL}`,
-        content: { parts: [{ text: r.text }] },
-        taskType: "RETRIEVAL_DOCUMENT",
-        outputDimensionality: DIM,
-      })),
+      model: MODEL,
+      input: texts,
+      dimensions: DIM,
+      normalized: true,
+      task: "retrieval.passage",
     });
-    const url = new URL(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:batchEmbedContents?key=${apiKey}`
-    );
     const req = https.request(
       {
+        hostname: "api.jina.ai",
+        path: "/v1/embeddings",
         method: "POST",
-        hostname: url.hostname,
-        path: url.pathname + url.search,
-        headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) },
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(body),
+          Authorization: `Bearer ${apiKey}`,
+        },
       },
       (res) => {
         let data = "";
@@ -59,7 +59,8 @@ function postBatch(requests) {
             reject(new Error(`HTTP ${res.statusCode}: ${data.slice(0, 300)}`));
           } else {
             try {
-              resolve(JSON.parse(data));
+              const j = JSON.parse(data);
+              resolve(j.data.map((d) => d.embedding));
             } catch (e) {
               reject(e);
             }
@@ -77,41 +78,6 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-/**
- * Fallback TF-IDF — chạy khi không có API key.
- * Cho vector 768 chiều cố định, hầu hết = 0. Đủ để demo flow, không đủ để đo chất lượng.
- */
-function buildTfIdfFallback(chunks) {
-  const vocab = new Map();
-  const docs = chunks.map((c) => {
-    const tokens = c.text
-      .toLowerCase()
-      .replace(/[^\p{L}\p{N}\s]+/gu, " ")
-      .split(/\s+/)
-      .filter((w) => w.length > 1);
-    for (const t of tokens) vocab.set(t, (vocab.get(t) || 0) + 1);
-    return tokens;
-  });
-  // Lấy top 768 từ phổ biến nhất làm chiều vector
-  const top = [...vocab.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, DIM)
-    .map((e) => e[0]);
-  const ix = new Map(top.map((w, i) => [w, i]));
-
-  return chunks.map((c, idx) => {
-    const vec = new Array(DIM).fill(0);
-    const tokens = docs[idx];
-    const tf = new Map();
-    for (const t of tokens) tf.set(t, (tf.get(t) || 0) + 1);
-    for (const [w, n] of tf) {
-      const i = ix.get(w);
-      if (i !== undefined) vec[i] = n / tokens.length;
-    }
-    return { code: c.code, text: c.text, embedding: vec };
-  });
-}
-
 async function main() {
   const chunks = JSON.parse(fs.readFileSync(CHUNKS, "utf-8"));
   let cache = {};
@@ -126,24 +92,16 @@ async function main() {
   const missing = chunks.filter((c) => !cache[c.code]);
   console.log(`→ Cần embed ${missing.length} đoạn mới (tổng ${chunks.length}).`);
 
-  if (!apiKey) {
-    console.log("→ Chạy fallback TF-IDF (chất lượng thấp, chỉ để demo).");
-    const fb = buildTfIdfFallback(chunks);
-    fs.writeFileSync(OUT, JSON.stringify(fb, null, 0));
-    console.log(`→ Đã ghi ${fb.length} embeddings vào ${OUT}`);
-    return;
-  }
-
   let done = 0;
   for (let i = 0; i < missing.length; i += BATCH) {
     const batch = missing.slice(i, i + BATCH);
     let attempt = 0;
     while (true) {
       try {
-        const res = await postBatch(batch);
+        const vecs = await postBatch(batch.map((c) => c.text));
         for (let j = 0; j < batch.length; j++) {
           const code = batch[j].code;
-          cache[code] = { code, text: batch[j].text, embedding: res.embeddings[j].values };
+          cache[code] = { code, text: batch[j].text, embedding: vecs[j] };
         }
         done += batch.length;
         console.log(`  ${done}/${missing.length}`);
@@ -151,19 +109,20 @@ async function main() {
       } catch (e) {
         attempt++;
         if (attempt >= 3) {
-          console.error(`✗ Lỗi sau 3 lần thử tại batch ${i}: ${e.message}`);
+          console.error(`✗ Lỗi sau 3 lần tại batch ${i}: ${e.message}`);
           process.exit(1);
         }
-        console.log(`  ! Retry ${attempt}/3 sau lỗi: ${e.message.slice(0, 100)}`);
+        console.log(`  ! Retry ${attempt}/3: ${e.message.slice(0, 100)}`);
         await sleep(2000 * attempt);
       }
     }
-    await sleep(300); // rate limit nhẹ
+    await sleep(200);
   }
 
   const out = chunks.map((c) => cache[c.code]).filter(Boolean);
   fs.writeFileSync(OUT, JSON.stringify(out));
   console.log(`→ Đã ghi ${out.length} embeddings vào ${OUT}`);
+  console.log(`→ Vector dim: ${DIM}`);
 }
 
 main().catch((e) => {

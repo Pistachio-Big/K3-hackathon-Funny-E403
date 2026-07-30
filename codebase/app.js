@@ -79,17 +79,76 @@ function buildCitationChip(code) {
     a.target = "_blank";
     a.rel = "noopener";
     a.title = `Click để mở transcript tại đoạn ${code}`;
-  } else {
-    // Cxxxx — không có transcript page riêng; chip chỉ để hiển thị
+  } else if (code.startsWith("S")) {
+    // Web source chip
     a.href = "#";
-    a.title = `Mã hội thoại ${code} (không có transcript đính kèm)`;
+    a.title = `Nguồn web #${code}`;
     a.addEventListener("click", (e) => {
       e.preventDefault();
-      alert(`Mã hội thoại học viên: ${code}\n\nXem trong eval/golden-set.jsonl hoặc data/vlearn-pack/chatlog/ để biết nội dung.`);
+      const sourceEl = document.getElementById(`source-${code}`);
+      if (sourceEl) sourceEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  } else {
+    a.href = "#";
+    a.title = `Mã hội thoại ${code}`;
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert(`Mã hội thoại học viên: ${code}`);
     });
   }
   a.textContent = `📎 ${code}`;
   return a;
+}
+
+// ============== WEB SOURCE BOX ==============
+function renderWebSourcesBox(sources) {
+  if (!sources || !sources.length) return null;
+
+  const citBox = document.createElement("div");
+  citBox.className = "snippet-box web-sources-box";
+
+  const title = document.createElement("div");
+  title.className = "snippet-title web-source-title";
+  title.textContent = `🌐 Từ tìm kiếm web (${sources.length} nguồn):`;
+  citBox.appendChild(title);
+
+  sources.forEach((s, i) => {
+    const item = document.createElement("div");
+    item.className = "snippet-item web-source-item";
+    item.id = `source-${s.id}`;
+
+    const head = document.createElement("div");
+    head.className = "snippet-head";
+
+    const label = document.createElement("span");
+    label.className = "cite-chip web-chip";
+    label.textContent = s.id;
+    head.appendChild(label);
+
+    const link = document.createElement("a");
+    link.href = s.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = "web-source-link";
+    link.textContent = s.title;
+    head.appendChild(link);
+
+    const externalIcon = document.createElement("span");
+    externalIcon.className = "external-icon";
+    externalIcon.textContent = " ↗";
+    link.appendChild(externalIcon);
+
+    item.appendChild(head);
+
+    const quote = document.createElement("blockquote");
+    quote.className = "web-snippet";
+    quote.textContent = s.snippet;
+    item.appendChild(quote);
+
+    citBox.appendChild(item);
+  });
+
+  return citBox;
 }
 
 // ============== RENDER ==============
@@ -188,12 +247,24 @@ function renderAnswerFromRag(r) {
     wrap.appendChild(citBox);
   }
 
+  // Web sources box (từ research)
+  if (r.webSources && r.webSources.length) {
+    const webBox = renderWebSourcesBox(r.webSources);
+    if (webBox) wrap.appendChild(webBox);
+  }
+
   // Trace hint (ẩn mặc định, click để xem)
   if (r.trace) {
     const trace = document.createElement("details");
     trace.className = "trace-details";
     const summary = document.createElement("summary");
-    summary.textContent = `🔍 Trace: top-1 ${r.trace.retrieved[0]?.score?.toFixed(3) || "?"} · ${r.trace.retrieved.length} retrieved`;
+
+    let traceText = `🔍 Trace: top-1 ${r.trace.retrieved[0]?.score?.toFixed(3) || "?"} · ${r.trace.retrieved.length} retrieved`;
+    if (r.researchInfo?.used) {
+      traceText += ` · 🌐 web research (${r.researchInfo.sources?.length || 0} sources)`;
+    }
+    summary.textContent = traceText;
+
     trace.appendChild(summary);
     const pre = document.createElement("pre");
     pre.className = "trace-pre";
@@ -201,6 +272,7 @@ function renderAnswerFromRag(r) {
       {
         retrieved: r.trace.retrieved,
         verified: r.trace.verified,
+        research: r.researchInfo || r.trace.research || null,
       },
       null,
       2

@@ -128,10 +128,13 @@ async function handleRetrieve(req, res) {
   }
   const { retrieve } = require("./eval/rag.js");
   try {
-    const top = await retrieve(question);
+    const ret = await retrieve(question);
+    // retrieve() trả về { mode, top } hoặc mảng
+    const topArray = Array.isArray(ret) ? ret : (ret.top || []);
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ retrieved: top.slice(0, topK) }));
+    res.end(JSON.stringify({ retrieved: topArray.slice(0, topK), mode: ret.mode || "unknown" }));
   } catch (e) {
+    console.error(`[handleRetrieve] Error: ${e.message}`);
     res.writeHead(500, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ error: e.message }));
   }
@@ -173,6 +176,59 @@ async function handleAsk(req, res) {
   }
 }
 
+// ============== /api/research ==============
+async function handleResearch(req, res) {
+  let body = "";
+  for await (const c of req) body += c;
+  let payload;
+  try {
+    payload = JSON.parse(body);
+  } catch {
+    res.writeHead(400);
+    res.end(JSON.stringify({ error: "Invalid JSON" }));
+    return;
+  }
+
+  const { question, topChunks, forceResearch = false } = payload;
+  if (!question) {
+    res.writeHead(400);
+    res.end(JSON.stringify({ error: "Thiếu 'question'" }));
+    return;
+  }
+
+  const { webResearch, isResearchNeeded, checkSufficientContext } = require("./eval/research.js");
+
+  try {
+    const analysis = {
+      contextCheck: topChunks ? checkSufficientContext(topChunks, question, "qdrant") : null,
+      shouldResearch: topChunks ? isResearchNeeded(topChunks, question, "qdrant") : true
+    };
+
+    if (forceResearch || analysis.shouldResearch) {
+      const chunks = topChunks || [];
+      const result = await webResearch(question, chunks, "qdrant", { forceResearch });
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({
+        ...analysis,
+        research: {
+          needed: result.needed,
+          sources: result.sources,
+          mergedContext: result.mergedContext
+        }
+      }));
+    } else {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({
+        ...analysis,
+        research: { needed: false, sources: [], mergedContext: null }
+      }));
+    }
+  } catch (e) {
+    res.writeHead(500, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({ error: e.message }));
+  }
+}
+
 // ============== ROUTER ==============
 const server = http.createServer(async (req, res) => {
   try {
@@ -205,6 +261,10 @@ const server = http.createServer(async (req, res) => {
       );
       return;
     }
+    if (pathname === "/api/research" && req.method === "POST") {
+      await handleResearch(req, res);
+      return;
+    }
     if (req.method !== "GET") {
       res.writeHead(405);
       res.end("Method Not Allowed");
@@ -221,6 +281,7 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`\n  VLearn Tutor UI:  http://localhost:${PORT}`);
   console.log(`  Health check:     http://localhost:${PORT}/api/health`);
+  console.log(`  Web Research:     http://localhost:${PORT}/api/research (POST)`);
   console.log(`  Gemini mode:      ${API_KEY ? "✓ enabled (key loaded)" : "✗ no key"}`);
   console.log(`  Embed model:      ${MODEL_EMBED}`);
   console.log(`  Gen model:        ${MODEL_GEN}\n`);

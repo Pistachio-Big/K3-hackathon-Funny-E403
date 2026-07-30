@@ -79,10 +79,18 @@
           text:
             ch?.source === "transcript"
               ? ch.text || ""
+              : ch?.source === "web"
+              ? code // For web sources, code is the ID
               : "[trích từ hội thoại học viên — xem mã]",
         };
       });
     }
+
+    // 4. Handle research info
+    if (result.researchInfo && result.researchInfo.used) {
+      result.webSources = result.researchInfo.sources;
+    }
+
     return result;
   }
 
@@ -90,5 +98,18 @@
     loadCorpus,
     retrieve,
     askTutor,
+    // Direct research access
+    async research(question, topChunks, forceResearch = false) {
+      const r = await fetch("/api/research", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question, topChunks, forceResearch }),
+      });
+      if (!r.ok) {
+        const t = await r.text();
+        throw new Error(`research HTTP ${r.status}: ${t.slice(0, 200)}`);
+      }
+      return await r.json();
+    }
   };
 })();

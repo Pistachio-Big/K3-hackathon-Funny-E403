@@ -1,0 +1,57 @@
+{
+  "question": "Memory Injection và Context Compression trong Prompt Engineering là gì",
+  "retrieved": [
+    {
+      "code": "T03-119",
+      "score": 0.6
+    },
+    {
+      "code": "T03-133",
+      "score": 0.6
+    },
+    {
+      "code": "T04-089",
+      "score": 0.6
+    },
+    {
+      "code": "T06-051",
+      "score": 0.6
+    },
+    {
+      "code": "T06-074",
+      "score": 0.6
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.600 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Memory Injection và Context Compression trong Prompt Engineering là gì",
+    "topChunks": [
+      {
+        "code": "T03-119",
+        "score": 0.6
+      },
+      {
+        "code": "T03-133",
+        "score": 0.6
+      },
+      {
+        "code": "T04-089",
+        "score": 0.6
+      },
+      {
+        "code": "T06-051",
+        "score": 0.6
+      },
+      {
+        "code": "T06-074",
+        "score": 0.6
+      }
+    ]
+  },
+  "retrieveMode": "tfidf"
+}

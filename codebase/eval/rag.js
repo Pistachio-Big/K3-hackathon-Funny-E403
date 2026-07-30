@@ -26,6 +26,7 @@ const fs = require("fs");
 const path = require("path");
 const https = require("https");
 const qdrant = require("./qdrant.js");
+const { webResearch, checkSufficientContext, isResearchNeeded } = require("./research.js");
 require("./loadenv.js"); // load GEMINI_API_KEY từ .env nếu chưa có
 
 const CHUNKS = path.resolve(__dirname, "chunks.json");
@@ -185,14 +186,20 @@ function callGemini(prompt) {
 }
 
 // ============== PROMPT ==============
-function buildPrompt(question, topChunks) {
+function buildPrompt(question, topChunks, chunkTexts = null, researchResult = null) {
+  const texts = chunkTexts || topChunks.map((c) => codeToChunk.get(c.code)?.text || "");
   const ctx = topChunks
     .map((c, i) => {
       const ch = codeToChunk.get(c.code);
       const srcLabel = ch.source === "transcript" ? "Bài giảng" : "Hội thoại học viên";
-      return `[${i + 1}] Mã đoạn: [${ch.code}] (${srcLabel})\nNội dung: ${ch.text}`;
+      return `[${i + 1}] Mã đoạn: [${ch.code}] (${srcLabel})\nNội dung: ${texts[i] || ch.text}`;
     })
     .join("\n\n");
+
+  let researchSection = "";
+  if (researchResult && researchResult.needed && researchResult.mergedContext) {
+    researchSection = `\n\nTHÔNG TIN BỔ SUNG TỪ TÌM KIẾM WEB:\n${researchResult.mergedContext}\n\nNếu thông tin web giúp trả lời câu hỏi tốt hơn, hãy sử dụng nhưng ghi rõ nguồn.`;
+  }
 
   return `Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.
 Học viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.
@@ -204,10 +211,100 @@ QUY TẮC BẮT BUỘC:
 2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.
 3. Nếu context không đủ để trả lời, hãy nói thẳng: "Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc."
 4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng "mình".
-5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN]. Hội thoại học viên [Cxxxx] chỉ dùng để bổ sung ngữ cảnh khi bài giảng không có.
+5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN]. Hội thoại học viên [Cxxxx] chỉ dùng để bổ sung ngữ cảnh khi bài giảng không có.${researchSection}
 
 CONTEXT (top-${topChunks.length} đoạn liên quan):
 ${ctx}
+
+CÂU HỎI HỌC VIÊN: ${question}
+
+TRẢ LỜI:`;
+}
+
+/**
+ * Build prompt cho research fallback (khi không có context local)
+ */
+function buildResearchPrompt(question, webContext, sources) {
+  const srcList = sources.map((s, i) => `[${i + 1}] ${s.title} (${s.url})`).join("\n");
+
+  return `Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.
+Câu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.
+
+QUY TẮC BẮT BUỘC:
+1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.
+2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)
+3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng "mình".
+4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.
+
+THÔNG TIN TỪ TÌM KIẾM WEB:
+${webContext}
+
+NGUỒN THAM KHẢO:
+${srcList}
+
+CÂU HỎI HỌC VIÊN: ${question}
+
+TRẢ LỜI:`;
+}
+
+/**
+ * Verify answer với web sources
+ */
+function verifyWebAnswer(rawAnswer, sources) {
+  const sourceIds = new Set(sources.map(s => s.id));
+  const sourceUrls = new Set(sources.map(s => s.url));
+
+  // Tìm tất cả citations trong answer
+  const citePattern = /\[([^\]]+)\]/g;
+  const found = [];
+  let m;
+  const cleanedAnswer = rawAnswer;
+
+  // Lọc citation - giữ nguyên text
+  while ((m = citePattern.exec(rawAnswer)) !== null) {
+    const code = m[1];
+    if (sourceIds.has(code)) {
+      found.push(code);
+    }
+  }
+
+  return {
+    cleanedAnswer,
+    verifiedCitations: [...new Set(found)]
+  };
+}
+
+/**
+ * Build enhanced prompt khi context local + web research
+ */
+function buildEnhancedPrompt(question, topChunks, chunkTexts, webContext, webSources) {
+  const ctx = topChunks
+    .map((c, i) => {
+      const ch = codeToChunk.get(c.code);
+      const srcLabel = ch.source === "transcript" ? "Bài giảng" : "Hội thoại học viên";
+      return `[${i + 1}] Mã đoạn: [${ch.code}] (${srcLabel})\nNội dung: ${chunkTexts[i] || ch.text}`;
+    })
+    .join("\n\n");
+
+  const webSection = webSources
+    .map((s, i) => `[Nguồn ${i + 1}] ${s.title}\nURL: ${s.url}\nNội dung: ${s.snippet}`)
+    .join("\n\n");
+
+  return `Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.
+Học viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.
+
+QUY TẮC BẮT BUỘC:
+1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.
+2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.
+3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)
+4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.
+5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng "mình".
+
+TÀI LIỆU KHOÁ HỌC (top-${topChunks.length} đoạn):
+${ctx}
+
+THÔNG TIN BỔ SUNG TỪ WEB:
+${webSection}
 
 CÂU HỎI HỌC VIÊN: ${question}
 
@@ -246,7 +343,16 @@ function verifyAnswer(rawAnswer, allowedCodes) {
 
 // ============== PUBLIC API ==============
 async function askTutor(question, opts = {}) {
-  const trace = { question, retrieved: [], prompt: null, rawAnswer: null, verified: null, mode: apiKey ? "LIVE" : "FALLBACK" };
+  const enableResearch = opts.enableResearch !== false; // Mặc định bật research
+  const trace = {
+    question,
+    retrieved: [],
+    prompt: null,
+    rawAnswer: null,
+    verified: null,
+    mode: apiKey ? "LIVE" : "FALLBACK",
+    research: null
+  };
 
   // 1. Retrieve
   const ret = await retrieve(question);
@@ -261,6 +367,57 @@ async function askTutor(question, opts = {}) {
   const threshold = thresholdForMode(retMode);
   if (!top.length || top[0].score < threshold) {
     trace.verified = { failSafe: `[${retMode}] top-1 score ${top[0]?.score?.toFixed(3) || 0} < threshold ${threshold}` };
+
+    // ========== RESEARCH FALLBACK ==========
+    if (enableResearch && apiKey) {
+      console.log(`[askTutor] Low score (${top[0]?.score?.toFixed(3)}), attempting web research...`);
+      try {
+        const researchResult = await webResearch(question, top, retMode);
+        trace.research = researchResult.trace;
+
+        if (researchResult.needed && researchResult.mergedContext) {
+          // Có kết quả research → dùng làm context thay thế
+          const researchPrompt = buildResearchPrompt(question, researchResult.mergedContext, researchResult.sources);
+          trace.prompt = researchPrompt;
+
+          const rawAnswer = await callGemini(researchPrompt);
+          trace.rawAnswer = rawAnswer;
+
+          // Verify citations từ web sources
+          const { cleanedAnswer, verifiedCitations } = verifyWebAnswer(rawAnswer, researchResult.sources);
+          trace.verified = { fromResearch: true, sources: researchResult.sources, verifiedCitations };
+
+          const snippets = researchResult.sources.map(s => ({
+            code: s.id,
+            source: "web",
+            text: s.snippet
+          }));
+
+          if (!fs.existsSync(TRACE_DIR)) fs.mkdirSync(TRACE_DIR, { recursive: true });
+          const ts = new Date().toISOString().replace(/[:.]/g, "-");
+          fs.writeFileSync(path.join(TRACE_DIR, `trace-${ts}.json`), JSON.stringify(trace, null, 2));
+
+          return {
+            question,
+            answer: cleanedAnswer + "\n\n_(Thông tin bổ sung từ tìm kiếm web)_",
+            citations: researchResult.sources.map(s => s.id),
+            snippets,
+            isFailure: false,
+            trace,
+            researchInfo: {
+              used: true,
+              sources: researchResult.sources,
+              queryCount: researchResult.trace.queriesUsed?.length || 0
+            }
+          };
+        }
+      } catch (e) {
+        console.error(`[askTutor] Research failed: ${e.message}`);
+        trace.research = { error: e.message };
+      }
+    }
+    // =======================================
+
     if (!fs.existsSync(TRACE_DIR)) fs.mkdirSync(TRACE_DIR, { recursive: true });
     const ts = new Date().toISOString().replace(/[:.]/g, "-");
     fs.writeFileSync(path.join(TRACE_DIR, `trace-${ts}.json`), JSON.stringify(trace, null, 2));
@@ -276,13 +433,37 @@ async function askTutor(question, opts = {}) {
     };
   }
 
+  // 1b. Kiểm tra context có đủ chất lượng không
+  const contextCheck = checkSufficientContext(top, question, retMode);
+  let researchResult = null;
+
+  if (enableResearch && apiKey && isResearchNeeded(top, question, retMode)) {
+    console.log(`[askTutor] Context insufficient (${contextCheck.score.toFixed(2)}), attempting web research...`);
+    try {
+      researchResult = await webResearch(question, top, retMode);
+      trace.research = researchResult.trace;
+
+      if (researchResult.needed && researchResult.mergedContext) {
+        // Enrich context với web results
+        const chunkTexts = top.map(t => codeToChunk.get(t.code)?.text || "");
+        trace.prompt = buildEnhancedPrompt(question, top, chunkTexts, researchResult.mergedContext, researchResult.sources);
+      }
+    } catch (e) {
+      console.error(`[askTutor] Research failed: ${e.message}`);
+      trace.research = { error: e.message };
+    }
+  }
+
   // 2. Generate
   let rawAnswer;
   if (apiKey) {
     try {
-      const prompt = buildPrompt(question, top);
-      trace.prompt = prompt;
-      rawAnswer = await callGemini(prompt);
+      // Nếu đã có enhanced prompt từ research → dùng nó, không build lại
+      if (!trace.prompt) {
+        const chunkTexts = top.map(t => codeToChunk.get(t.code)?.text || "");
+        trace.prompt = buildPrompt(question, top, chunkTexts, researchResult);
+      }
+      rawAnswer = await callGemini(trace.prompt);
     } catch (e) {
       console.error(`[askTutor] gen failed: ${e.message} — fallback`);
       rawAnswer = fallbackAnswer(question, top);
@@ -292,6 +473,15 @@ async function askTutor(question, opts = {}) {
     rawAnswer = fallbackAnswer(question, top);
   }
   trace.rawAnswer = rawAnswer;
+
+  // Thêm research info vào trace cuối cùng
+  if (researchResult && researchResult.needed) {
+    trace.research = {
+      ...trace.research,
+      sources: researchResult.sources,
+      used: true
+    };
+  }
 
   // 3. Verify (lớp ① — Nguồn sự thật)
   const { cleanedAnswer, verifiedCitations, hallucinated } = verifyAnswer(rawAnswer, allowedCodes);
@@ -328,7 +518,7 @@ async function askTutor(question, opts = {}) {
   const ts = new Date().toISOString().replace(/[:.]/g, "-");
   fs.writeFileSync(path.join(TRACE_DIR, `trace-${ts}.json`), JSON.stringify(trace, null, 2));
 
-  return {
+  const result = {
     question,
     answer: finalAnswer,
     citations: verifiedCitations,
@@ -336,6 +526,17 @@ async function askTutor(question, opts = {}) {
     isFailure,
     trace,
   };
+
+  // Thêm research info nếu đã sử dụng
+  if (researchResult && researchResult.needed) {
+    result.researchInfo = {
+      used: true,
+      sources: researchResult.sources,
+      queryCount: researchResult.trace.queriesUsed?.length || 0
+    };
+  }
+
+  return result;
 }
 
 function fallbackAnswer(question, top) {
@@ -376,4 +577,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = { askTutor, verifyAnswer };
+module.exports = { askTutor, verifyAnswer, retrieve };
