@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VLearn Tutor (Mock) — CP2</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #1a1d29;
+      --ink-soft: #5a607a;
+      --accent: #4c46e0;
+      --accent-soft: #eef0ff;
+      --cite: #1a7f5a;
+      --cite-bg: #e6f5ee;
+      --warn: #b54708;
+      --warn-bg: #fff8e6;
+      --danger: #b42318;
+      --danger-bg: #fef3f2;
+      --line: #e7e9f2;
+      --shadow: 0 4px 18px rgba(28, 32, 58, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      height: 100%;
+    }
+    .app {
+      max-width: 880px;
+      margin: 0 auto;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    header.top {
+      padding: 22px 28px 18px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    header.top h1 {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .badge.mock { background: var(--warn-bg); color: var(--warn); }
+    .badge.live { background: var(--cite-bg); color: var(--cite); }
+    header.top .sub {
+      margin-top: 4px;
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+    main.chat-wrap {
+      flex: 1;
+      padding: 20px 28px 8px;
+      overflow-y: auto;
+    }
+    #chat .msg {
+      max-width: 720px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      box-shadow: var(--shadow);
+      word-wrap: break-word;
+    }
+    .msg-user {
+      background: var(--accent);
+      color: #fff;
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+    .msg-tutor {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-bottom-left-radius: 4px;
+    }
+    .msg-tutor.thinking { color: var(--ink-soft); }
+    .msg-tutor .answer-text { margin: 0 0 8px; }
+    .msg-tutor .answer-text.failure {
+      white-space: pre-line;
+      color: var(--danger);
+      background: var(--danger-bg);
+      padding: 10px 12px;
+      border-radius: 8px;
+      border-left: 3px solid var(--danger);
+    }
+    .cite-chip {
+      display: inline-block;
+      background: var(--cite-bg);
+      color: var(--cite);
+      padding: 1px 8px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 2px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .cite-chip:hover {
+      border-color: var(--cite);
+    }
+    .snippet-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: #fafbfd;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+    }
+    .snippet-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .snippet-item {
+      padding: 6px 0;
+    }
+    .snippet-item + .snippet-item { border-top: 1px solid var(--line); }
+    .snippet-head { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 4px; }
+    .snippet-item blockquote {
+      margin: 0;
+      padding: 0 0 0 10px;
+      border-left: 3px solid var(--accent-soft);
+      color: var(--ink-soft);
+      font-size: 13px;
+      font-style: italic;
+    }
+    .muted { color: var(--ink-soft); font-size: 12px; }
+    .dot {
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--ink-soft);
+      margin-right: 3px;
+      animation: blink 1.2s infinite;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes blink { 50% { opacity: 0.25; } }
+    .failure-suggestion { margin: 4px auto 12px; max-width: 720px; }
+    .failure-trigger { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 6px 12px; }
+    .btn-small {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .btn-small:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+    footer.bottom {
+      padding: 16px 28px 22px;
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -4px 18px rgba(28, 32, 58, 0.06);
+    }
+    #suggested {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;
+    }
+    .suggested-chip {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid transparent;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .suggested-chip:hover { border-color: var(--accent); }
+    #ask-form { display: flex; gap: 8px; }
+    #question-input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      outline: none;
+    }
+    #question-input:focus { border-color: var(--accent); }
+    #ask-form button[type="submit"] {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #ask-form button[type="submit"]:hover { filter: brightness(1.05); }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1>
+        📚 VLearn Tutor
+        <span class="badge mock">MOCK · CP2</span>
+        <span class="badge">A — VLearn · Tối ưu tutor có sẵn</span>
+      </h1>
+      <div class="sub">
+        Hỏi về bài giảng → tutor trả lời <strong>kèm trích dẫn [Txx-NNN]</strong> →
+        click chip để xem nguyên đoạn giảng viên nói.
+        <br />
+        CP2 đang chạy mock; CP3 sẽ gắn Gemini API + RAG trên transcript thật.
+      </div>
+    </header>
+
+    <main class="chat-wrap">
+      <div id="chat"></div>
+    </main>
+
+    <footer class="bottom">
+      <div id="suggested"></div>
+      <form id="ask-form">
+        <input
+          id="question-input"
+          type="text"
+          placeholder="VD: Làm sao xác định bài toán từ đề bài mơ hồ?"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Hỏi tutor</button>
+      </form>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
