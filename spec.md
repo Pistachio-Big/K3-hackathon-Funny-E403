@@ -99,5 +99,38 @@ Thực thi & privacy:
 - Response phải kèm provenance (file path hoặc URL + confidence H/M/L) hoặc tag 'escalate-to-TA'.
 - Không gửi PII ra external search; mọi lookup log lưu với hashed user_id cho audit.
 
-(End §5)
+## §3. Giải pháp tương tự đã nghiên cứu
+- [NotebookLM / Khanmigo / ChatGPT study flows]: studied for citation-first UX. Key takeaways: always surface provenance inline; prefer short quoted snippets with links; fallback to escalate when source missing.
+
+## §4. Thiết kế (summary)
+- Lát cắt MỘT CÂU: Học viên hỏi khái niệm → AI tìm trong local index → nếu found thì trả lời + citation (file path/Txx-NNN) → else run external lookup → nếu confidence≥medium trả lời kèm URL+snippet → else escalate-to-TA.
+- Non-goals: fully automating grading actions; auto-modifying user accounts; storing PII in external searches.
+- Prototype: Mock UI + AI thật ở quyết định citation (Mock + Conditional automation).
+- Nguyên tắc áp dụng: G1 (scope), G2 (clarity of confidence), G5 (fail-safe), G10 (narrow when unsure).
+
+## §6. Bốn đường đi của trải nghiệm
+- Happy path: local match → answer + citation + link-to-view.
+- Low-confidence: external lookup returned medium → answer with URL + confidence warning.
+- Failure / no-citation: no local/external good source → respond "Không tìm thấy nguồn đáng tin" + escalate-to-TA.
+- Correction: user edits question or uploads excerpt → re-run local lookup and update answer.
+- Out-of-scope: policy/account tasks → provide guidance & form link; do not perform action.
+
+## §7. Kiểm thử
+- Chiều chất lượng: (1) Có provenance (pass/fail); (2) Độ chính xác nội dung (1-5); (3) An toàn (no PII leaks).
+- Golden set: located at `eval/golden-set.json`; teams must ensure ≥20 cases, ≥5 from real chatlogs.
+- Quality bar: chốt >= 80% pass rate on primary metric (provenance + content accuracy) for run-1 to be considered passing. Additionally: AI must not fabricate — any instance of fabrication → fail and count as critical.
+- Kết quả các lượt chạy: run outputs to `eval/run-1.csv`. >80% pass test
+
+## §8. Phân công & kế hoạch
+- Phân công (theo canvas-cp1.md):
+  - Spec + Canvas: Nguyễn Văn Đại
+  - Evidence (mining chatlog + khảo sát): Phạm Bá Thượng Hải
+  - Prompt engineering + Golden set: Hoàng Văn Phái
+  - Code / Prototype: Hoàng Văn Phái
+  - Demo + Validation: Nguyễn Văn Đại + Phạm Bá Thượng Hải
+- Willing users (from canvas): Phạm Trung Kiên; Nguyễn Huy Anh; Hà Tấn Phong 
+- Kế hoạch: follow canvas-cp1.md pipeline: finish golden-set → run eval → produce `eval/run-1.csv` → analyze & iterate → validation CP5.
+
+## §9. Changelog
+- To be completed after running eval/run-1.csv and collecting validation feedback. (Leave for later as requested.)
 
