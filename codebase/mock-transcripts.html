@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transcript bài giảng (Mock) — VLearn Tutor</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #1a1d29;
+      --ink-soft: #5a607a;
+      --accent: #4c46e0;
+      --accent-soft: #fff3bf;
+      --highlight: #fff3bf;
+      --line: #e7e9f2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+    }
+    .nav {
+      position: sticky; top: 0;
+      background: var(--panel);
+      padding: 12px 28px;
+      border-bottom: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      z-index: 10;
+    }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 13px; }
+    .nav h2 { margin: 0; font-size: 14px; font-weight: 600; }
+    .container { max-width: 760px; margin: 0 auto; padding: 28px 28px 80px; }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    h2 { font-size: 17px; margin: 32px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+    .meta { color: var(--ink-soft); font-size: 13px; margin-bottom: 20px; }
+    p { margin: 8px 0; }
+    .code-anchor {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      margin-right: 6px;
+    }
+    p:target {
+      background: var(--highlight);
+      padding: 10px 12px;
+      margin-left: -12px;
+      margin-right: -12px;
+      border-radius: 6px;
+      scroll-margin-top: 70px;
+    }
+    p:target .code-anchor { background: var(--accent); color: #fff; }
+    .back-btn {
+      position: fixed; bottom: 20px; right: 20px;
+      background: var(--accent); color: #fff;
+      padding: 10px 16px; border-radius: 999px;
+      text-decoration: none; font-size: 13px; font-weight: 600;
+      box-shadow: 0 4px 12px rgba(76, 70, 224, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">← Quay lại Tutor</a>
+    <h2>📄 Transcript — Day 2 (sáng): Xác định bài toán kinh doanh cho AI</h2>
+  </nav>
+
+  <div class="container">
+    <h1>Transcript bài giảng (bản sạch — trích)</h1>
+    <div class="meta">
+      File gốc: <code>data/vlearn-pack/transcript/transcript-01-clean.md</code> · 89 đoạn.
+      Đây là bản mock — đủ các đoạn <code>[T01-NNN]</code> được trích dẫn trong CP2.
+    </div>
+
+    <h2>Kỹ năng xác định bài toán từ yêu cầu mơ hồ</h2>
+
+    <p id="t01-001"><span class="code-anchor">[T01-001]</span>Một trong những kỹ năng mình nghĩ quan trọng và đang cần nhất — đặc biệt ở các công ty muốn đưa AI vào ứng dụng — là khả năng xác định ra một bài toán từ một yêu cầu rất mơ hồ…</p>
+
+    <p id="t01-002"><span class="code-anchor">[T01-002]</span>Trong khoảng hai năm trở lại đây, sau làn sóng AI, các công ty có áp lực phải đưa AI vào tổ chức của mình…</p>
+
+    <p id="t01-003"><span class="code-anchor">[T01-003]</span>70% của nó đến từ con người và vận hành chứ không phải đến từ công nghệ…</p>
+
+    <p id="t01-004"><span class="code-anchor">[T01-004]</span>Công nghệ sinh ra để giải quyết một vấn đề gì đấy. Đầu tiên mình phải biết vấn đề là gì…</p>
+
+    <p id="t01-005"><span class="code-anchor">[T01-005]</span>Mình nghĩ một điểm có thể tạo ra sự khác biệt với tất cả các bạn ở đây là chúng ta rèn luyện một tư duy để làm được một việc — chỉ một dòng thôi nhưng rất khó: <strong>từ mục tiêu, yêu cầu mơ hồ, biến nó thành thứ cụ thể có thể triển khai được trong thời gian ngắn và ra được kết quả.</strong> Đừng kỳ vọng người khác sẽ đưa cho bạn một thứ cụ thể — bạn hãy luôn giữ cho mình tư duy phản biện và luyện một kỹ năng là bóc tách từ cái mơ hồ ra cái cụ thể.</p>
+
+    <p id="t01-006"><span class="code-anchor">[T01-006]</span>Một cách mình hay làm là mình hỏi lại, hoặc mình thử từ cái đề bài đấy bóc tách ra vài option…</p>
+
+    <h2>Product manager, project manager và văn hoá làm product</h2>
+
+    <p id="t01-007"><span class="code-anchor">[T01-007]</span>Bây giờ các vị trí trong một team bắt đầu xoá mờ ranh giới rồi… có những người generalist…</p>
+
+    <p id="t01-008"><span class="code-anchor">[T01-008]</span>Bây giờ trong một team có bạn product owner, product manager. PM ở đây mình nói P là product nhá, không phải project…</p>
+
+    <p id="t01-009"><span class="code-anchor">[T01-009]</span>[Học viên]: Project thì kiểu một dự án tạo ra xong rồi là xong luôn…</p>
+
+    <p id="t01-010"><span class="code-anchor">[T01-010]</span>Cái job project manager thường thấy ở các công ty outsourcing nhiều. Đấy là những người mà chức trách là làm thế nào để đảm bảo một dự án hoàn thành đúng tiến độ trong ngân sách cho phép. Những team đấy nhận bài toán từ khách hàng, và bài toán thường rõ ràng: tôi cần build một công cụ cho team kế toán, cho team nhân sự — cơ bản spec ở đấy rất rõ ràng, cụ thể rồi.</p>
+
+    <p id="t01-011"><span class="code-anchor">[T01-011]</span>Nhưng product manager, product owner thì bộ skill rất khác. Khi làm product, không có ai đến bảo bạn "hãy làm cái đấy đi". Bạn phải là người tự đi tìm bài toán, giải pháp đáng làm và tìm thị trường cho nó. Những người làm product thì mình hay dùng từ <strong>user-centered</strong> — lấy người dùng làm trung tâm.</p>
+
+    <p id="t01-012"><span class="code-anchor">[T01-012]</span>Cũng có rất nhiều ý kiến nói là người Việt Nam mình build product không tốt…</p>
+
+    <p id="t01-013"><span class="code-anchor">[T01-013]</span>Thậm chí rất nhiều dự án mà theo như mình biết, khi thuê một team làm thì họ để lại rất nhiều nợ kỹ thuật…</p>
+
+    <p id="t01-014"><span class="code-anchor">[T01-014]</span>Nếu ngay trong Việt Nam thôi thì văn hoá làm product mình thấy trong Sài Gòn tốt hơn ở Hà Nội…</p>
+
+    <p id="t01-015"><span class="code-anchor">[T01-015]</span>Nhưng mình nghĩ tất cả những cái này chúng ta hoàn toàn có thể xây dựng được hết…</p>
+
+    <p id="t01-016"><span class="code-anchor">[T01-016]</span>Theo nghiên cứu về não bộ thì não bộ của chúng ta hay đi theo thói quen. Khi bạn luôn nhảy thẳng vào solution thì bạn sẽ bị quen như thế…</p>
+
+    <p id="t01-017"><span class="code-anchor">[T01-017]</span>Rồi, hôm nay mình sẽ đi vào ý chính với câu hỏi trọng tâm: xác định một bài toán thực sự có cần với ai hay không…</p>
+
+    <h2>Phát triển sản phẩm AI có gì khác</h2>
+
+    <p id="t01-018"><span class="code-anchor">[T01-018]</span>Đầu tiên, thế nào là việc phát triển một sản phẩm AI, xây dựng một sản phẩm AI?…</p>
+
+    <p id="t01-019"><span class="code-anchor">[T01-019]</span>Trong quá trình làm sản phẩm AI, bạn phải vừa có năng lực xây dựng sản phẩm; trong quá trình phát triển sản phẩm đấy bạn lại còn phải xài AI… <strong>Sản phẩm truyền thống thì 100 lần chạy có thể trả lời 100 lần như nhau. Nhưng với AI sẽ không như thế, và bạn phải kiểm soát được kỳ vọng của người dùng.</strong></p>
+
+    <p id="t01-020"><span class="code-anchor">[T01-020]</span>Kỳ vọng người dùng bây giờ đang thay đổi rất nhanh… <strong>cuộc chiến là làm thế nào để sản phẩm của bạn giành được sự chú ý của những người khác — cạnh tranh sẽ càng ngày càng cao. Chat một câu đã lỗi rồi là "thôi tôi sang tôi dùng cái khác" — sức cạnh tranh lên rất nhiều.</strong></p>
+
+    <p id="t01-021"><span class="code-anchor">[T01-021]</span>Một cái quan trọng nữa là chi phí chuyển đổi giữa một sản phẩm này sang một sản phẩm khác bây giờ rẻ hơn rất nhiều… <strong>bây giờ cái đấy gần như bị xoá nhoà: bạn rất dễ dàng export và mang được dữ liệu sang.</strong></p>
+
+    <p id="t01-022"><span class="code-anchor">[T01-022]</span>Như các bạn xài sản phẩm AI cũng thế. Bây giờ ở đây bao nhiêu người đang xài Cursor…</p>
+
+    <p id="t01-023"><span class="code-anchor">[T01-023]</span>[Học viên]: Em sử dụng rất nhiều. Bắt đầu em sử dụng Antigravity, xong rồi em chuyển qua dùng [không nghe rõ]…</p>
+
+    <p id="t01-024"><span class="code-anchor">[T01-024]</span>Đấy, thay như thay áo thôi — thấy ngon là thay luôn, mà thay đâu có mất thời gian đâu…</p>
+
+    <p id="t01-025"><span class="code-anchor">[T01-025]</span>Mình hay nói với mọi người là việc bạn build sản phẩm AI sẽ rất khó…</p>
+
+    <p id="t01-026"><span class="code-anchor">[T01-026]</span>Có một số cuốn sách mà mình nghĩ nếu các bạn đam mê thì có thể lên đọc. Với các bạn xây dựng sản phẩm, mình rất recommend đọc cuốn <strong>AI Engineering</strong>. Cuốn này nếu bạn muốn hiểu nền móng về AI, đặc biệt là các mô hình ngôn ngữ lớn…</p>
+
+    <p id="t01-027"><span class="code-anchor">[T01-027]</span>Để học về product thinking, mình nghĩ đây cũng là một cuốn rất hay của [không nghe rõ]…</p>
+
+    <p id="t01-028"><span class="code-anchor">[T01-028]</span>Nếu bạn nào quan tâm đến product ở tầng sâu hơn… thì The Design of Everyday Things là một cuốn nền tảng…</p>
+
+    <p id="t01-029"><span class="code-anchor">[T01-029]</span>Có một tài liệu của Google — People + AI Guidebook…</p>
+
+    <h2>Từ đề bài mơ hồ đến vấn đề thực sự</h2>
+
+    <p id="t01-030"><span class="code-anchor">[T01-030]</span>Đây là một câu mà mình gặp được rất nhiều — nhiều công ty hay đặt ra câu hỏi này, nhiều sếp hay bảo là muốn xây dựng AI chatbot support. <strong>Bạn dùng Five Whys — bạn hỏi why đến năm lần, nó cũng giúp bạn đào sâu được.</strong> Sếp bảo xây chatbot cho khách hàng, nhưng hỏi ra thì thực ra lý do là vì sale đang quá tải.</p>
+
+    <p id="t01-031"><span class="code-anchor">[T01-031]</span>Thực ra ngày xưa mình cũng mắc phải cái đấy nhiều lắm…</p>
+
+    <p id="t01-032"><span class="code-anchor">[T01-032]</span>Các sếp nhiều khi họ sẽ ngay lập tức nhảy thẳng ra giải pháp thôi…</p>
+
+    <p id="t01-033"><span class="code-anchor">[T01-033]</span>Có những việc, ví dụ như có những bài toán mỗi tuần sẽ phải làm cái report một lần…</p>
+  </div>
+
+  <a class="back-btn" href="index.html">← Về Tutor</a>
+</body>
+</html>

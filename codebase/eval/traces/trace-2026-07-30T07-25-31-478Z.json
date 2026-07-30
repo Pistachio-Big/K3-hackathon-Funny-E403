@@ -1,0 +1,31 @@
+{
+  "question": "Công thức nấu phở bò",
+  "retrieved": [
+    {
+      "code": "T01-042",
+      "score": 0.4
+    },
+    {
+      "code": "T03-008",
+      "score": 0.4
+    },
+    {
+      "code": "T03-015",
+      "score": 0.4
+    },
+    {
+      "code": "T03-027",
+      "score": 0.4
+    },
+    {
+      "code": "T03-034",
+      "score": 0.4
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "top-1 score 0.400 < threshold 0.5"
+  },
+  "mode": "LIVE"
+}

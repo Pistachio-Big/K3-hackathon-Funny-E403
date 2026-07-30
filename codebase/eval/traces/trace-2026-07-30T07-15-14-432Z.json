@@ -1,0 +1,31 @@
+{
+  "question": "x",
+  "retrieved": [
+    {
+      "code": "T01-001",
+      "score": 0
+    },
+    {
+      "code": "T01-002",
+      "score": 0
+    },
+    {
+      "code": "T01-003",
+      "score": 0
+    },
+    {
+      "code": "T01-004",
+      "score": 0
+    },
+    {
+      "code": "T01-005",
+      "score": 0
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "top-1 score 0.000 < threshold 0.5"
+  },
+  "mode": "LIVE"
+}

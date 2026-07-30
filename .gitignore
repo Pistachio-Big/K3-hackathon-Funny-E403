@@ -2,3 +2,13 @@
 node_modules/
 *.env
 data/
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+
+# Qdrant cache (có thể regenerate)
+codebase/eval/qdrant-cache.json
+codebase/eval/embeddings.json
