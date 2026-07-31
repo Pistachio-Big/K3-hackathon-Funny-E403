@@ -3,6 +3,8 @@ import requests
 import json
 import re
 
+import os
+
 # Set up page configuration
 st.set_page_config(
     page_title="VLearn Tutor AI",
@@ -10,7 +12,8 @@ st.set_page_config(
     layout="centered"
 )
 
-API_URL = "http://127.0.0.1:3000/api/ask"
+# Use environment variable for backend API URL so it works in Docker and locally
+API_URL = os.getenv("BACKEND_API_URL", "http://127.0.0.1:3000/api/ask")
 
 st.title("🎓 VLearn Tutor AI")
 st.markdown("Hệ thống Agentic RAG hỗ trợ học tập an toàn & chính xác.")

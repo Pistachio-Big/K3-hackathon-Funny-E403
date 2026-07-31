@@ -59,6 +59,21 @@ services:
       retries: 3
       start_period: 30s
 
+  # ============== Streamlit UI ==============
+  ui:
+    build: ./codebase
+    container_name: vlearn-ui
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_API_URL=http://app:3000/api/ask
+    entrypoint: ["streamlit", "run", "app.py"]
+
+
 volumes:
   qdrant_data:
     name: vlearn_qdrant_data
