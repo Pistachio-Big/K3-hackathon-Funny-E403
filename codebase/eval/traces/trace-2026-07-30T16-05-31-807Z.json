@@ -1,0 +1,58 @@
+{
+  "question": "Giảng viên có thể đổi đề thi không?",
+  "retrieved": [
+    {
+      "code": "T03-055",
+      "score": 0.5117
+    },
+    {
+      "code": "T03-065",
+      "score": 0.5067
+    },
+    {
+      "code": "T03-051",
+      "score": 0.4397
+    },
+    {
+      "code": "T01-037",
+      "score": 0.4287
+    },
+    {
+      "code": "T03-061",
+      "score": 0.4116
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nGiảng viên đang thảo luận về việc tạo ra đề thi mới từ các đề cũ và việc thay đổi các yếu tố trong đề thi, như số liệu, để tạo ra bài toán mới. Có vẻ như giảng viên cho rằng việc thay đổi đề thi là khả thi.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Giảng viên có thể đổi đề thi bằng cách tạo đề mới từ các đề cũ và thay đổi các yếu tố trong đề thi.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-055] (Bài giảng)\nNội dung: **Giảng viên:** Em đang bảo nó ra cái đề mới dựa trên hai cái đề cũ, thế em có chắc là phương pháp của em đúng không? Em cũng không chắc đúng không? Ok. Bạn đầu tiên đưa ra là mình sẽ đánh dấu ở trong đề bài toán để biết chỗ này có thể thay đổi — theo ngôn ngữ lập trình là các bạn làm một cái placeholder, xong rồi bảo LLM tự điền vào placeholder đấy đúng không? Rồi, còn ai nữa không?\n\n[2] Mã: [T03-065] (Bài giảng)\nNội dung: **Giảng viên:** Cái của em đang ở mức độ khác: em đang xáo những câu hỏi có sẵn để đưa vào đề kiểm tra đúng không? Còn thầy đang hỏi là từ một bài toán thôi, có cách nào làm ra bài toán mới không. Ok, còn bạn nào có idea nữa không? Nói to lên em ơi.\n\n[3] Mã: [T03-051] (Bài giảng)\nNội dung: **Giảng viên:** Ok. Tức là em vẫn cho LLM quyền đổi số, em chỉ biết là những số này có thể đổi, và đổi sao cho nó đúng, đúng không? Rồi, một idea. Bạn nào nữa không? Em nói đi.\n\n[4] Mã: [T01-037] (Bài giảng)\nNội dung: [Học viên]: Khi học viên đặt câu hỏi, em sẽ phân tích nội dung: nếu câu dễ thì tự trả lời, nếu phức tạp thì tách chủ đề chuyển trợ giảng có chuyên môn. AI có khả năng phân loại và xử lý ở tuyến đầu.\n\n[5] Mã: [T03-061] (Bài giảng)\nNội dung: **Giảng viên:** Tức là em giữ số, viết lại cái đề thôi đúng không? Ok, thế thôi đúng không? Rồi, còn em?\n\nCÂU HỎI HỌC VIÊN: Giảng viên có thể đổi đề thi không?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-055], giảng viên có nói: \"**Giảng viên:** Em đang bảo nó ra cái đề mới dựa trên hai cái đề cũ, thế em có chắc là phương pháp của em đúng không? Em cũng không chắc đúng không? Ok. Bạn đầu tiên đưa ra là mình sẽ đánh dấu ở trong...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-055"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-055",
+      "T03-065",
+      "T03-051"
+    ],
+    "allowedCodes": [
+      "T03-055",
+      "T03-065",
+      "T03-051",
+      "T01-037",
+      "T03-061"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Giảng viên đang thảo luận về việc tạo ra đề thi mới từ các đề cũ và việc thay đổi các yếu tố trong đề thi, như số liệu, để tạo ra bài toán mới. Có vẻ như giảng viên cho rằng việc thay đổi đề thi là khả thi.",
+    "answerDirection": "Hướng trả lời: Giảng viên có thể đổi đề thi bằng cách tạo đề mới từ các đề cũ và thay đổi các yếu tố trong đề thi.",
+    "focusedChunks": [
+      "T03-055",
+      "T03-065",
+      "T03-051"
+    ]
+  }
+}

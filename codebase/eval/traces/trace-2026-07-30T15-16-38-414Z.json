@@ -1,0 +1,53 @@
+{
+  "question": "Bài tập về nhà tuần này là gì?",
+  "retrieved": [
+    {
+      "code": "T03-007",
+      "score": 0.875
+    },
+    {
+      "code": "T03-040",
+      "score": 0.75
+    },
+    {
+      "code": "T03-108",
+      "score": 0.75
+    },
+    {
+      "code": "T03-121",
+      "score": 0.75
+    },
+    {
+      "code": "T04-081",
+      "score": 0.75
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nBài tập về nhà tuần này không được nêu rõ trong các đoạn tài liệu, nhưng có nhấn mạnh rằng sinh viên cần có mindset làm việc, chủ động trong nhóm và có kế hoạch rõ ràng cho dự án.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Bài tập về nhà không được nêu cụ thể, nhưng cần chú ý đến mindset làm việc và kế hoạch cho dự án.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-007] (Bài giảng)\nNội dung: Cái thứ hai: thời đại bây giờ là thời đại AI rồi đúng không? Bảo về nhà làm bài tập, không ai mà không mở con AI lên trao đổi với nó trước khi làm cả. Đi làm cũng thế, mình nói thật. Trường đại học họ tránh sử dụng AI, nhưng chỉ ở một mức độ thôi; lên mức độ đại học, nghiên cứu thì việc sử dụng AI gần như lại là thứ phải chuyển đổi, vì nó là công cụ của hiện tại và tương lai — có thể tương lai có nhiều thứ mới hơn nữa mình chưa biết nhá. Đi làm các bạn cũng phải dùng AI. Nên những slide này sẽ chứa cái gì? Những cái keyword.\n\n[2] Mã: [T03-040] (Bài giảng)\nNội dung: Ok, thêm một cái thứ mình cần nhá. Nhiều bạn ở đây đi học vẫn mang tư tưởng mình đang là sinh viên đi học. Không — mình nhấn mạnh: đây là các bạn đang đi thực tập làm việc. Các bạn như được trả lương thực tập, đến đây để được làm quen trước với môi trường công việc trong vòng khoảng 4 đến 6 tuần, sau đấy đi làm việc thật ở công ty. Nên các bạn phải có mindset đi làm chứ không phải mindset đi học. Các bạn nhớ nhá. Mindset đi làm tức là gì? Chủ động lên trong nhóm. Ví dụ các bạn nhận setup, nhận làm hết — làm hết thì sẽ được đánh giá cao. Tuy nhiên làm hết là một chuyện nhá — vấn đề là cái kết quả đưa ra phải clear được ngay từ đầu: tôi làm dự án đấy nó có đầu ra hay không. Không hiểu được dự án là gì thì phải hỏi ngay mentor hoặc bên người đưa ra dự án. Nếu cả hai bên nói chuyện mà thấy dự án stuck rồi — đừng làm, chọn cái khác. Trong lớp học cũng vậy: những thứ mình chia sẻ cũng là kinh nghiệm của mình, các bạn được quyền phản biện lại thoải mái luôn nha. Thấy cái gì không hợp lý thì cứ chủ động — như vậy mới có cái mindset chủ động đi làm. Chứ như đợt trước có nhiều bạn hỏi: bài này em đang làm được ít điểm, em được cộng thêm điểm không? Việc điểm cộng không quan trọng đâu. Quan trọng nhất là các bạn có được kỹ năng, hiểu được, và có cái mindset làm việc nha. Nên thay đổi dần — ở đây không phải là đi học nữa nhá, mình đang training.\n\n[3] Mã: [T03-108] (Bài giảng)\nNội dung: Ví dụ nè, ngày xưa mình có một dự án sử dụng điện thoại di động smartphone để detect những khoảng cách bị lệch khi các tấm của xe ô tô ở nhà máy Hyundai gắn vào với nhau — họ bị lệch khoảng 1-2 cm hoặc mm. Dùng điện thoại, các bạn nghe thấy khó không? Khó. Vì nếu các bạn không có constraint, người dùng cầm kiểu nào cũng được, mà các bạn biết rồi: tùy theo cái point of view của camera trên điện thoại mà cái vết lõm hay vết nứt sẽ có độ dài ngắn khác nhau đúng không? Thế làm thế nào giải quyết bài toán này? Lab của mình đưa ra một solution: các bạn vẽ một cái khung UI trên màn hình điện thoại và \"bắt\" luôn — tại vì điện thoại đã có gyroscope rồi, biết được độ nghiêng là bao nhiêu đúng không — mình bắt khách hàng cầm đúng cái độ nghiêng mà mình đã cố định một thuật toán chuyển đổi. Xong rồi khách hàng chỉ cần gắn thêm mấy cái tag định vị, giống như mấy cái QR code ấy, để biết được bốn góc, để mình cố định được gì? Mình tính được cái khoảng cách hình học. Tức là chỉ dùng camera mà có thể estimate được khoảng cách; mà estimate được khoảng cách 3D thì sao — tính toán được luôn độ lớn của cái rãnh hay vết xước trên ảnh, mình chuyển đổi thành kích thước thực tế với độ lệch chấp nhận được. Nên nhớ phải có độ lệch chấp nhận được nhá: cho dù các bạn đo đạc bằng thước dây, bằng thước laser hay bằng mắt, về mặt khoa học đo chính xác tuyệt đối rất khó, nó vẫn sẽ có độ lệch cộng trừ mấy nanomet. Thì quay lại: rõ ràng dự án này, nếu mình không đưa ra cái constraint về việc sử dụng điện thoại di động, và thêm việc bổ trợ thông tin bằng những cái tag QR đính xung quanh vị trí mà người công nhân cần đo đạc, thì gần như không thể làm được — tại vì nó có quá nhiều sự tự do trong việc điều khiển.\n\n[4] Mã: [T03-121] (Bài giảng)\nNội dung: Các bạn chú ý: nội dung slide này là về mặt lý thuyết — mình sẽ dự trù được nó làm được hay không. Quay lại lời mình nói hồi đầu buổi: có khả năng ở giai đoạn này, các bạn dùng tất cả kiến thức của ngày hôm nay, xác định một cái agent system cho hệ thống AI này. Nhưng trong tương lai, khoảng 5-6 tuần các bạn học, các bạn làm dự án thật, các bạn phát hiện: ồ thôi, fail rồi. Nhưng không sao — nếu các bạn có kế hoạch đầy đủ, có metric để đánh giá fail, thì sau 6 tuần làm thấy fail rồi vẫn tính là pass. Vì sao? Vì các bạn đã nhìn ra được cái risk của nó, đo đạc được, và fail là vì chưa đủ cái này cái kia — chưa đủ thiết bị, chưa đủ data, chưa đủ đề án. Các bạn có một reasoning hợp lý, dựa trên đúng tiên đoán của các bạn lúc lập kế hoạch phát triển hệ thống, thì tất cả vẫn sẽ được chấp nhận. Tức là dự án không phải như đi học — bắt buộc làm được bài mới qua môn. Làm dự án thật là gì? Bạn có kế hoạch đầy đủ, khả năng chứng minh đầy đủ, xong các bạn làm thôi. Các bạn nói: sếp ơi em làm không nổi nữa, tại vì thế này thế này, đổi dự án đi, kế hoạch này fail rồi — thì ok, mọi người vẫn sẽ ok thôi. Bây giờ đi làm mà ai làm cũng thành công, cũng xong hệ thống, thì đâu cần đến các bạn phải làm nữa đúng không? Nên vẫn sẽ có chấp nhận rủi ro. Nhưng như nãy mình nói, khi làm kế hoạch các bạn phải xác định được mức độ nào là có thể đi tiếp, mức độ nào nên dừng, không follow được. Lúc đầu mình đưa ra những đánh giá, những câu hỏi; trong quá trình làm dự án, câu hỏi A được trả lời, câu hỏi B được trả lời, các bạn có thêm thông tin, dần dần hình dung được: ok dự án này đi được 50%, 60%, hoặc dự án này không đi được nữa, phải dừng. Các bạn cũng cần lưu ý.\n\n[5] Mã: [T04-081] (Bài giảng)\nNội dung: Đây là một bài test năng lực — một benchmark về software engineering. Các mô hình, đặc biệt là mô hình liên quan đến coding, thường luôn được đo trên bài test này: một bộ đo xem mô hình giải được bao nhiêu bug trong tập bug đã có. Mọi người có thể thấy từ 2024 đến bây giờ là 2 năm: lúc 2024, mô hình mạnh nhất là Claude Sonnet 3.5 chỉ đạt được khoảng 33% thôi, mà đến bây giờ đã đạt trên 80% rồi. Tất nhiên con đường đấy bắt đầu chững lại, sẽ không tăng đột biến nữa — đây là mô hình rất phổ biến: các chỉ số năng lực luôn tăng nhanh lúc đầu và dần đi chậm hơn ở bước sau. Cũng có ý kiến cho rằng đến thời điểm đạt những ngưỡng điểm số rất cao này rồi, thì năng lực lõi của mô hình — những kiến thức nó có thể học — gần như đã học hết kiến thức của thế giới rồi, đúng không? Lúc này sự khác biệt với nhau là gì? Là dần đi đến việc phải chắt lọc được thông tin có ý nghĩa hơn, tối ưu được về mặt chi phí.\n\nCÂU HỎI HỌC VIÊN: Bài tập về nhà tuần này là gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc. Tuy nhiên, mình có thể nhấn mạnh rằng sinh viên cần có mindset làm việc, chủ động trong nhóm và có kế hoạch rõ ràng cho dự án [T03-040].",
+  "verified": {
+    "verifiedCitations": [
+      "T03-040"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_W9VSjSv1IfZwV2d5fKqMC4Oc",
+      "name": "lookup_document",
+      "args": {
+        "topic": "bài tập về nhà tuần này"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Bài tập về nhà tuần này không được nêu rõ trong các đoạn tài liệu, nhưng có nhấn mạnh rằng sinh viên cần có mindset làm việc, chủ động trong nhóm và có kế hoạch rõ ràng cho dự án.",
+    "answerDirection": "Hướng trả lời: Bài tập về nhà không được nêu cụ thể, nhưng cần chú ý đến mindset làm việc và kế hoạch cho dự án.",
+    "focusedChunks": [
+      "T03-040",
+      "T03-121"
+    ]
+  }
+}

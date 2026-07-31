@@ -1,0 +1,64 @@
+{
+  "question": "Context là gì? Giải thích ngắn gọn",
+  "retrieved": [
+    {
+      "code": "C0002-T0330-A",
+      "score": 0.4492
+    },
+    {
+      "code": "T04-052",
+      "score": 0.4361
+    },
+    {
+      "code": "T06-150",
+      "score": 0.4302
+    },
+    {
+      "code": "C0013-T0990-A",
+      "score": 0.3956
+    },
+    {
+      "code": "C0247-T1194-A",
+      "score": 0.3931
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "\"Context\" (bối cảnh, ngữ cảnh) là toàn bộ những thông tin mà một mô hình có thể tiêu thụ trong một lần. Nói cách khác, context giúp mô hình hiểu rõ hơn về tình huống hoặc thông tin liên quan đến dữ liệu mà nó đang xử lý. Context càng phong phú thì mô hình càng có khả năng xử lý và đưa ra kết quả chính xác hơn. Tuy nhiên, nếu context quá lớn, mô hình có thể gặp khó khăn trong việc nhớ và xử lý thông tin từ những phần trước đó, dẫn đến hiệu suất kém hơn [T04-051].",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [
+      "T04-051"
+    ],
+    "allowedCodes": [
+      "C0002-T0330-A",
+      "T04-052",
+      "T06-150",
+      "C0013-T0990-A",
+      "C0247-T1194-A"
+    ],
+    "focusedCodes": [
+      "C0002-T0330-A",
+      "C0013-T0990-A"
+    ]
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_qKjEtNF29dXNj5aZ0nliATfz",
+      "name": "lookup_document",
+      "args": {
+        "topic": "context"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Context (ngữ cảnh) là một cấu trúc quản lý thông tin mà mô hình ngôn ngữ sử dụng để hiểu và xử lý dữ liệu. Nó có thể được hình dung như một 'bàn làm việc' có giới hạn, nơi mà thông tin được cung cấp để mô hình hoạt động hiệu quả.",
+    "answerDirection": "Hướng trả lời: Giải thích ngắn gọn về khái niệm ngữ cảnh trong mô hình ngôn ngữ.",
+    "focusedChunks": [
+      "C0002-T0330-A",
+      "C0013-T0990-A"
+    ]
+  }
+}

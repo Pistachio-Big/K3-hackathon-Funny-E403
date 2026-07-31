@@ -1,0 +1,143 @@
+{
+  "question": "ReAct là gì? Tác dụng khi dùng trong Agent",
+  "retrieved": [
+    {
+      "code": "C0126-T1020-A",
+      "score": 0.037
+    },
+    {
+      "code": "T05-139",
+      "score": 0.0328
+    },
+    {
+      "code": "T03-128",
+      "score": 0.0323
+    },
+    {
+      "code": "T02-038",
+      "score": 0.0317
+    },
+    {
+      "code": "T06-051",
+      "score": 0.0313
+    },
+    {
+      "code": "T02-037",
+      "score": 0.0308
+    },
+    {
+      "code": "T03-134",
+      "score": 0.0303
+    },
+    {
+      "code": "T05-046",
+      "score": 0.0299
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-8 đoạn):\n[1] Mã đoạn: [C0126-T1020-A] (Hội thoại học viên)\nNội dung: ReAct là một phương pháp (pattern) cho phép agent thực hiện các tác vụ phức tạp bằng cách kết hợp khả năng suy luận logic và tương tác với công cụ bên ngoài [trang 21]. Thay vì đưa ra câu trả lời ngay lập tức, agent thực hiện một chu trình lặp đi lặp lại gồm các bước sau [trang 21]:\n\n[2] Mã đoạn: [T05-139] (Bài giảng)\nNội dung: Và ở bước cuối cùng là chúng ta sẽ ra agent. Agent sẽ là cái gì đó có tính nhiều bước và sử dụng nhiều tool, và trạng thái này có thể thay đổi liên tục. Mình lấy ví dụ: trong một siêu thị chẳng hạn, chúng ta nói cái camera theo dõi — quan sát một tên trộm trong một siêu thị thì nó đòi hỏi rất nhiều bước, từ hành vi của người đấy cho đến hành động đúng không? Trạng thái của người đi vào siêu thị thay đổi liên tục — đấy là đặc điểm đơn giản để chúng ta cần đến lớp thứ ba. Và đặc điểm nữa: chúng ta cần những cái ra quyết định, hay nói hơn nữa là có thể gọi tool để làm.\n\n[3] Mã đoạn: [T03-128] (Bài giảng)\nNội dung: Ở đây là một phân biệt đơn giản nhỏ thôi. Rule script — các bạn có thể gọi là SQL hoặc những cái cố định như function code, database query bình thường — tức là các bạn đảm bảo chỉ một input đầu vào format như vậy thì không thể nào vượt qua cái scope được. Tuy nhiên rule script có giới hạn: dĩ nhiên nó không adapt được theo thời gian mà các bạn phải tự cập nhật thêm, và có khả năng nó narrow down cái scope trả lời của system của các bạn. LLM thì các bạn cũng hiểu rồi — nó là probability model nên không có chắc chắn. Còn agent là kết hợp của hai thằng trước, nên nó sẽ có phần deterministic — nếu các bạn dùng tool thì chắc chắn gọi đúng tool đấy ra đúng kết quả đấy; còn gọi nhánh liên quan đến LLM hoặc thuật toán xác suất, model deep learning có xác suất trong đấy, thì vẫn có khả năng nó respond không chắc chắn. Đấy là ba định nghĩa cơ bản thôi.\n\n[4] Mã đoạn: [T02-038] (Bài giảng)\nNội dung: Phía dưới thì bạn sẽ cần những cái phức tạp hơn — ví dụ xây dựng hẳn một đội agent, sub-agent để làm việc với nhau: có một agent chia việc, sau đấy chia cho những agent khác để làm các việc đấy, hay thậm chí làm xong lại có một agent để đánh giá, sau đấy quay trở lại. Những cái phía sau này thường chỉ đến khi ba cách tiếp cận phía trước chạm trần thì mình mới tiếp cận đến — bởi vì lúc đấy chi phí vận hành rất cao. Các bạn biết là nếu build agent thực sự — agent mà có thể suy nghĩ rồi xài tool các thứ — thì nó rất tốn kém, bạn không kiểm soát được cái đấy. Ở đây không biết có ai thử chưa: mình prompt một câu thôi, cái tool mới ra, một phát nó chạy — nó spawn ra hơn trăm agent, chạy hết 4 triệu token, hết [không nghe rõ] của mình luôn. Nó sẽ tốn rất nhiều token nếu không kiểm soát được.\n\n[5] Mã đoạn: [T06-051] (Bài giảng)\nNội dung: Nhóm đầu tiên là cái gọi là discriminative AI — nói một tiếng là phân loại, dự đoán. Cái này thường được sử dụng nhiều ở giai đoạn chúng ta huấn luyện mô hình, chúng ta gán nhãn vân vân, và vẫn thường được ứng dụng vào các việc như gán nhãn, hay là phân tích giao dịch xem giao dịch là giả mạo hay không giả mạo. Mình lấy cho các bạn một ví dụ: giả sử các bạn là người own cái hệ thống nhận diện giao dịch giả mạo của ngân hàng, thì các bạn có đồng ý là sẽ sử dụng cái quá trình reasoning trong quá trình detect fraud không, hay các bạn sẽ sử dụng theo dạng nhóm thứ nhất? Ví dụ như bài toán của Momo chẳng hạn — một ngày khoảng 20 triệu giao dịch, có bộ phận chuyên đi detect xem trong số đó có bao nhiêu giao dịch giả mạo — thì theo các bạn là nên dựa vào gen AI hay là dựa vào discriminative AI? Đấy là những tình huống mà sau này các bạn sẽ phải trả lời. Ở phần thứ nhất các bạn nhớ rằng chức năng chính của nhóm thứ nhất là gì: khi các bạn input vào một cái gì đó, nhập vào một cái gì đó, thì nó sẽ trả ra cho chúng ta một cái nhãn — đó là spam hay không spam, nó là chó hay là mèo. Đấy là nhóm thứ nhất. Nhóm thứ hai là generative AI: bản chất chức năng chính của nó là chúng ta prompt — prompt cũng có thể hiểu là một input — nhưng nó trả về cho chúng ta cái content. Cái content này có thể là nhạc, có thể là hình ảnh, có thể là mã code, có thể là file audio, rồi bây giờ có thể là bản đồ, có thể là ứng dụng, có thể là game — cái danh sách càng ngày càng dài ra. Đấy là nhóm số hai. Và nhóm cuối cùng là nhóm mà nó có khả năng tự lập kế hoạch và hành động. Khi nói kế hoạch và hành động, các bạn cứ tưởng tượng là chúng ta có cái não để nghĩ và chúng ta có cánh tay để làm. Với agentic AI, khi các bạn đã nghĩ rõ về mục tiêu của mình — ví dụ các bạn có thể hỏi là cách tôi tạo cái web thì sao — nó ra các bước luôn: mục tiêu của cái web này nó là gì, thì sau đấy nó sẽ hành động cho các bạn luôn. Và các bạn tưởng tượng cái này một cách đơn giản: trước đây khi chúng ta search Google về câu chuyện là tôi đặt vé đợt hè, ví dụ như là giá rẻ dưới 2 triệu chẳng hạn, thì trước đây chúng ta vẫn phải search, nó trả cái kết quả, chúng ta ngồi lựa chọn. Còn với agentic AI, nó sẽ thay chúng ta: nó sẽ hiểu luôn cái individual context của từng bạn khi các bạn đặt cái mục tiêu đấy, và nó sẽ săn — ví dụ buổi sáng nó vào chưa thấy giá tốt nhất, nó dừng lại; buổi chiều nó vào tiếp lần nữa, nó thấy giá phù hợp với mục tiêu, nó sẽ đặt luôn cho các bạn. Ở cái hướng của agentic AI, nó sẽ đạt đến câu chuyện như vậy. Ba nhóm này rất là quan trọng nếu các bạn là kỹ sư AI — và thực tế thì các bạn cũng đang hướng đến là AI engineer — các bạn cần phải nắm rõ bản chất của từng loại, để sau này các bạn phải tư vấn được cho từng trường hợp, từng cái use case. Và mở rộng thêm một chút: trước đây cái AI nó chỉ được áp dụng ở những nơi [không nghe rõ] — những nơi rất nhiều tiền — và bởi vậy cái cách tiếp cận đầu tiên, cái khối đầu tiên bên trái, gọi là AI hẹp, AI truyền thống.\n\n[6] Mã đoạn: [T02-037] (Bài giảng)\nNội dung: Cấp độ hai là build theo dạng workflow. Lúc này, mặc dù rule-based không xử lý được nữa, nhưng nhìn chung nó vẫn có thể chia thành các bước lớn, thiết kế được thành workflow, và trong từng nút đấy chúng ta sẽ có AI agent, AI LLM để hỗ trợ. Ở đây có một ví dụ — cái này chắc để slide mọi người xem thêm nhá. Anthropic họ có một bài blog mọi người có thể xem — Building Effective Agents — họ đưa ra một số pattern trong việc build các agent. Họ nói luôn là trong thiết kế các phần build agent có khoảng sáu mức độ tăng dần theo sự phức tạp, và ba cái đầu tiên là cực kỳ hiệu quả, đã đủ đáp ứng hầu hết các nhu cầu cơ bản — chưa cần phải nghĩ cái phức tạp, chúng ta hoàn toàn có thể bắt đầu từ những cái này. Đây là dạng workflow: nó phức tạp hơn rule-based nhưng chưa đạt mức đủ phức tạp như agent. Ví dụ bạn có thể chia được thành các bước tuần tự, có LLM ở giữa, và có những gate để kiểm tra giữa các bước — ví dụ bạn cần làm một luồng là tóm tắt, sau đấy viết bài — đấy là dạng đơn giản nhất. Cái thứ hai là có phân nhánh: không phải đi tuần tự từng bước nữa, mà nó sẽ phải xác định đây là công việc kiểu gì, mỗi công việc phân nhánh xử lý khác nhau, sau đó hợp lại ở cuối chẳng hạn. Bước thứ ba là chạy song song. Team Anthropic họ nói: ba mô hình cơ bản này bạn áp dụng vào là đã có thể xử lý được kha khá các vấn đề của mình rồi, và bạn không cần đến cái phức tạp ở phía dưới.\n\n[7] Mã đoạn: [T03-134] (Bài giảng)\nNội dung: Mấy cái này các bạn có thể về bảo con AI, hay tìm cái video giải thích thì nó cũng dễ hiểu hơn — nó cũng không có gì khác đâu. Loanh quanh vẫn chỉ là bây giờ bạn có con agent, bạn bảo nó giải thích, bảo nó chia việc; chia việc xong thì nó có thể gọi tool call, hoặc nó làm một cái việc xong rồi sẽ có một ông agent khác là ông chấm điểm. Như lúc đầu buổi mình có bảo: thời buổi bây giờ mỗi người là một ông giám đốc rồi — những bạn rành về AI, công nghệ thông tin hoặc software chỉ cần thuê một subscription 30 đô là có một team cả 10 ông nhân viên luôn, mỗi ông đứng một vị trí. Nó không khác gì bạn xây dựng một agent system hoặc multi-agent system cả.\n\n[8] Mã đoạn: [T05-046] (Bài giảng)\nNội dung: Rồi cái nữa là không rõ ai sẽ review kết quả cuối cùng — để người review hay để agent review? Và đặc biệt là khi có kịch bản về rollback — tức là khi có một cái lỗi xảy ra. Ví dụ Vinmec chẳng hạn: khi có hồ sơ sức khoẻ mà nó bị lỗi, khám bệnh sai thông qua việc dùng AI, thì kế hoạch khắc phục thế nào — tại vì nó là vấn đề sức khoẻ, ảnh hưởng con người ta đúng không?\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] What is a ReAct Agent? | IBM\nURL: https://www.ibm.com/think/topics/react-agent\nNội dung: More specifically, ReAct is a conceptual framework for building AI agents that can interact with their environment in a structured but adaptable way, by using an LLM as the agent’s “brain” to coordinate anything from simple retrieval augmented generation (RAG) to intricate multiagent workflows. [...\n\n[Nguồn 2] What is a ReAct Agent? | AI21\nURL: https://www.ai21.com/glossary/ai-agent/what-is-a-react-agent\nNội dung: The ReAct framework is an approach to building AI agents that interleaves reasoning and action within a single loop driven by a language model. Short for Reasoning + Acting, ReAct instructs a model to alternate between generating natural-language thoughts – reasoning about the current state of a tas\n\n[Nguồn 3] ReAct Agent Và Cách Kết Hợp Reasoning + Acting\nURL: https://aivietnam.edu.vn/blog/re-act-agent-va-cach-ket-hop-reasoning-acting\nNội dung: ReAct Agent Là Gì? ReAct là viết tắt của Reasoning + Acting. Ý tưởng cốt lõi: Agent suy luận bằng văn bản (giống cách LLM suy nghĩ).\n\n[Nguồn 4] ReAct agents vs function calling agents\nURL: https://www.leewayhertz.com/react-agents-vs-function-calling-agents\nNội dung: The reasoning and action agent, abbreviated as the ReACT agent, is a framework that incorporates the reasoning capabilities of LLMs with the ability to take actionable steps. This means they can not only understand and process information but also take concrete steps based on their understanding. Th\n\n[Nguồn 5] Sự khác nhau giữa Tool Calling, Structured Chat và ReACT Agents là ...\nURL: https://www.reddit.com/r/LangChain/comments/1ffe38x/whats_the_difference_between_tool_calling?tl=vi\nNội dung: Mình đã cố đọc tài liệu về ba loại agents này rồi mà vẫn chưa hiểu rõ sự khác biệt là gì. Cách triển khai trông khá\n\nCÂU HỎI HỌC VIÊN: ReAct là gì? Tác dụng khi dùng trong Agent\n\nTRẢ LỜI:",
+  "rawAnswer": "Mình tìm thấy một hội thoại học viên liên quan [C0126-T1020-A], nhưng chưa tổng hợp được câu trả lời (FALLBACK mode cần Gemini API để sinh).",
+  "verified": {
+    "verifiedCitations": [
+      "C0126-T1020-A"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "C0126-T1020-A",
+      "T03-134"
+    ],
+    "allowedCodes": [
+      "C0126-T1020-A",
+      "T05-139",
+      "T03-128",
+      "T02-038",
+      "T06-051"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "ReAct là gì? Tác dụng khi dùng trong Agent",
+    "topChunks": [
+      {
+        "code": "C0126-T1020-A",
+        "score": 0.036951013513513514
+      },
+      {
+        "code": "T05-139",
+        "score": 0.03278688524590164
+      },
+      {
+        "code": "T03-128",
+        "score": 0.03225806451612903
+      },
+      {
+        "code": "T02-038",
+        "score": 0.031746031746031744
+      },
+      {
+        "code": "T06-051",
+        "score": 0.03125
+      },
+      {
+        "code": "T02-037",
+        "score": 0.03076923076923077
+      },
+      {
+        "code": "T03-134",
+        "score": 0.030303030303030304
+      },
+      {
+        "code": "T05-046",
+        "score": 0.029850746268656716
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "ReAct là gì? Tác dụng khi dùng trong Agent",
+      "react tác dụng dùng",
+      "ReAct là gì? Tác dụng khi dùng trong Agent C0126-T1020-A"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "What is a ReAct Agent? | IBM",
+        "url": "https://www.ibm.com/think/topics/react-agent",
+        "snippet": "More specifically, ReAct is a conceptual framework for building AI agents that can interact with their environment in a structured but adaptable way, by using an LLM as the agent’s “brain” to coordinate anything from simple retrieval augmented generation (RAG) to intricate multiagent workflows. [..."
+      },
+      {
+        "id": "S2",
+        "title": "What is a ReAct Agent? | AI21",
+        "url": "https://www.ai21.com/glossary/ai-agent/what-is-a-react-agent",
+        "snippet": "The ReAct framework is an approach to building AI agents that interleaves reasoning and action within a single loop driven by a language model. Short for Reasoning + Acting, ReAct instructs a model to alternate between generating natural-language thoughts – reasoning about the current state of a tas"
+      },
+      {
+        "id": "S3",
+        "title": "ReAct Agent Và Cách Kết Hợp Reasoning + Acting",
+        "url": "https://aivietnam.edu.vn/blog/re-act-agent-va-cach-ket-hop-reasoning-acting",
+        "snippet": "ReAct Agent Là Gì? ReAct là viết tắt của Reasoning + Acting. Ý tưởng cốt lõi: Agent suy luận bằng văn bản (giống cách LLM suy nghĩ)."
+      },
+      {
+        "id": "S4",
+        "title": "ReAct agents vs function calling agents",
+        "url": "https://www.leewayhertz.com/react-agents-vs-function-calling-agents",
+        "snippet": "The reasoning and action agent, abbreviated as the ReACT agent, is a framework that incorporates the reasoning capabilities of LLMs with the ability to take actionable steps. This means they can not only understand and process information but also take concrete steps based on their understanding. Th"
+      },
+      {
+        "id": "S5",
+        "title": "Sự khác nhau giữa Tool Calling, Structured Chat và ReACT Agents là ...",
+        "url": "https://www.reddit.com/r/LangChain/comments/1ffe38x/whats_the_difference_between_tool_calling?tl=vi",
+        "snippet": "Mình đã cố đọc tài liệu về ba loại agents này rồi mà vẫn chưa hiểu rõ sự khác biệt là gì. Cách triển khai trông khá"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant-hybrid",
+  "docSummary": {
+    "summary": "ReAct là một phương pháp cho phép agent thực hiện các tác vụ phức tạp thông qua việc kết hợp suy luận logic và tương tác với công cụ bên ngoài. Phương pháp này giúp agent thực hiện chu trình lặp đi lặp lại để ra quyết định và thực hiện các hành động cần thiết.",
+    "answerDirection": "Hướng trả lời: ReAct là phương pháp giúp agent thực hiện tác vụ phức tạp thông qua suy luận và công cụ, cho phép ra quyết định hiệu quả.",
+    "focusedChunks": [
+      "C0126-T1020-A",
+      "T03-134"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "question": "d",
+  "retrieved": [
+    {
+      "code": "T01-049",
+      "score": 0.1632
+    },
+    {
+      "code": "T01-045",
+      "score": 0.1481
+    },
+    {
+      "code": "T06-100",
+      "score": 0.1471
+    },
+    {
+      "code": "T01-081",
+      "score": 0.1397
+    },
+    {
+      "code": "T03-154",
+      "score": 0.1283
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Bạn nên:\n• Hỏi giảng viên hoặc TA trong Discord\n• Tra cứu tài liệu bên ngoài\n\nNếu bạn có câu hỏi cụ thể nào khác, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-049",
+      "T01-045",
+      "T06-100",
+      "T01-081",
+      "T03-154"
+    ],
+    "focusedCodes": [
+      "T01-049",
+      "T01-045"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "d",
+    "topChunks": [
+      {
+        "code": "T01-049",
+        "score": 0.16317946
+      },
+      {
+        "code": "T01-045",
+        "score": 0.14807045
+      },
+      {
+        "code": "T06-100",
+        "score": 0.147083
+      },
+      {
+        "code": "T01-081",
+        "score": 0.13970079
+      },
+      {
+        "code": "T03-154",
+        "score": 0.12834351
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "d",
+      "d T01-049"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_d6s6ipA59UysNz02vYEmgvBQ",
+      "name": "lookup_document",
+      "args": {
+        "topic": "d"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đoạn tài liệu đề cập đến việc khám phá vấn đề và giải pháp trong thiết kế sản phẩm thông qua mô hình double diamond, nhấn mạnh tầm quan trọng của việc xác định đúng vấn đề trước khi tìm kiếm giải pháp.",
+    "answerDirection": "Hướng trả lời: Tập trung vào việc khám phá và xác định vấn đề thực sự trước khi tìm kiếm giải pháp.",
+    "focusedChunks": [
+      "T01-049",
+      "T01-045"
+    ]
+  }
+}

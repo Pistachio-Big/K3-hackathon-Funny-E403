@@ -1,0 +1,71 @@
+{
+  "question": "thầy ơi cho em xin deadline nộp bài tuần này",
+  "retrieved": [
+    {
+      "code": "T03-121",
+      "score": 0.6
+    },
+    {
+      "code": "T06-076",
+      "score": 0.6
+    },
+    {
+      "code": "T06-160",
+      "score": 0.6
+    },
+    {
+      "code": "T01-033",
+      "score": 0.5
+    },
+    {
+      "code": "T01-062",
+      "score": 0.5
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.600 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "thầy ơi cho em xin deadline nộp bài tuần này",
+    "topChunks": [
+      {
+        "code": "T03-121",
+        "score": 0.6
+      },
+      {
+        "code": "T06-076",
+        "score": 0.6
+      },
+      {
+        "code": "T06-160",
+        "score": 0.6
+      },
+      {
+        "code": "T01-033",
+        "score": 0.5
+      },
+      {
+        "code": "T01-062",
+        "score": 0.5
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_lvosYKcgu2BMgcO2ZUaDI4TK",
+      "name": "lookup_document",
+      "args": {
+        "topic": "deadline nộp bài"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Không có đoạn tài liệu nào đề cập trực tiếp đến deadline nộp bài cho tuần này.",
+    "answerDirection": "Cần hỏi trực tiếp thầy về deadline nộp bài.",
+    "focusedChunks": []
+  }
+}

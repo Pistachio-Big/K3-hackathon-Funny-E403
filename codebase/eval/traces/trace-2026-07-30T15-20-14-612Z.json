@@ -1,0 +1,73 @@
+{
+  "question": "AI bị hallucinate khi nào vậy thầy?",
+  "retrieved": [
+    {
+      "code": "T03-039",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-090",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-106",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-107",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-117",
+      "score": 0.7143
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.714 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "AI bị hallucinate khi nào vậy thầy?",
+    "topChunks": [
+      {
+        "code": "T03-039",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-090",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-106",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-107",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-117",
+        "score": 0.7142857142857143
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_kJ7Wpa1L8J5UiiSFWFmyY03J",
+      "name": "lookup_document",
+      "args": {
+        "topic": "AI hallucinate"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "AI có thể bị hallucinate khi người dùng không có kiến thức đầy đủ về cách sử dụng, dẫn đến việc AI đưa ra thông tin không chính xác hoặc không mong muốn. Điều này có thể xảy ra khi người dùng cấp quyền cho AI mà không có lớp bảo mật, khiến AI có khả năng phản hồi thông tin nhạy cảm hoặc không chính xác.",
+    "answerDirection": "Hướng trả lời: AI bị hallucinate khi người dùng không hiểu rõ cách sử dụng và cấp quyền cho nó mà không có lớp bảo mật.",
+    "focusedChunks": [
+      "T03-090"
+    ]
+  }
+}

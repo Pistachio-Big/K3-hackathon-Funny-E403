@@ -1,0 +1,54 @@
+{
+  "question": "thầy ơi cho em xin deadline nộp bài tuần này",
+  "retrieved": [
+    {
+      "code": "T06-117",
+      "score": 0.3859
+    },
+    {
+      "code": "T06-162",
+      "score": 0.3598
+    },
+    {
+      "code": "T06-065",
+      "score": 0.3492
+    },
+    {
+      "code": "T01-034",
+      "score": 0.3432
+    },
+    {
+      "code": "T06-125",
+      "score": 0.331
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nĐoạn tài liệu không cung cấp thông tin cụ thể về deadline nộp bài trong tuần này. Tuy nhiên, có thông tin rằng bài lab chưa tính điểm và chưa cần nộp vào GitHub Classroom.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Cần kiểm tra trên LMS hoặc hỏi thầy để biết deadline cụ thể.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-117] (Bài giảng)\nNội dung: [Học viên]: Thầy, bên em là bên làm sản phẩm. Tụi em đang làm một cái LMS có thể [không nghe rõ] được hết tất cả những cái comment — nó sẽ xử lý số lượng lớn câu hỏi của tất cả các bạn, gom lại xong đưa ra, rồi visualize. Câu hỏi của em là thầy sẽ góp ý gì trong đấy — ý là muốn thầy login vào xem, có gì feedback. Vừa cần feedback, vừa muốn thầy có thể cho tụi em xin slide để tụi em up lên trên.\n\n[2] Mã: [T06-162] (Bài giảng)\nNội dung: [Hoạt động lớp: dặn dò cuối buổi — hôm nay bị gián đoạn nhiều nên phần gọi API và phần Colab dời sang chiều mai nếu trống giờ; bài lab nộp chưa tính điểm, chưa cần vào GitHub Classroom; bài tập về nhà: tự chạy demo, ngày mai gọi ngẫu nhiên một vài bạn lên trình bày head view là gì và ý nghĩa ra sao, có chấm điểm; học viên quét mã QR lấy codelab; lịch học sáng/chiều mai xem thông báo trên Discord; câu hỏi về lịch trình được chuyển cho bộ phận operations; chào kết thúc buổi.]\n\n[3] Mã: [T06-065] (Bài giảng)\nNội dung: TA: Cái đấy thì theo nguyên tắc của chương trình là ngày nào sẽ ra ngày đó. Bạn đăng nhập vào LMS của VinUni, trên LMS là có syllabus.\n\n[4] Mã: [T01-034] (Bài giảng)\nNội dung: Rồi, bây giờ có một đề bài nhỏ cho mọi người — mọi người vào Discord nhá. Đề bài: bây giờ lớp mình khai giảng khoá mới và cả lớp có khoảng 1000 bạn đang học cùng một lúc, thế mà số lượng trợ giảng thì có hạn. Nếu các bạn nhận một đề bài là dùng AI để giải quyết cái việc này, các bạn sẽ làm như thế nào? Mọi người chat vào Discord nhá.\n\n[5] Mã: [T06-125] (Bài giảng)\nNội dung: Nói chung hôm nay rất nhiều thay đổi, mình cũng bị gián đoạn và các bạn cũng bị gián đoạn, tại vì chúng ta phải chuyển ngữ cảnh từ bên này sang bên kia — đang học rồi lại chuyển làm thủ tục vân vân. Cũng không ai muốn, tại vì buổi hôm nay có bốn lớp khai giảng, cho nên các bạn thông cảm nhá. Chiều mai mình sẽ dạy các bạn tiếp những phần nào trong buổi hôm nay chưa dạy được hết; ngày mai chúng ta sẽ cố gắng giải quyết cho được. Và mình sẽ dành khoảng 20 phút tới đây, các bạn tập trung nhá — 20 phút tới rất quan trọng vì nó là trái tim của buổi hôm nay.\n\nCÂU HỎI HỌC VIÊN: thầy ơi cho em xin deadline nộp bài tuần này\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-162], giảng viên có nói: \"[Hoạt động lớp: dặn dò cuối buổi — hôm nay bị gián đoạn nhiều nên phần gọi API và phần Colab dời sang chiều mai nếu trống giờ; bài lab nộp chưa tính điểm, chưa cần vào GitHub Classroom; bài tập về nhà...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-162"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-162"
+    ],
+    "allowedCodes": [
+      "T06-117",
+      "T06-162",
+      "T06-065",
+      "T01-034",
+      "T06-125"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đoạn tài liệu không cung cấp thông tin cụ thể về deadline nộp bài trong tuần này. Tuy nhiên, có thông tin rằng bài lab chưa tính điểm và chưa cần nộp vào GitHub Classroom.",
+    "answerDirection": "Hướng trả lời: Cần kiểm tra trên LMS hoặc hỏi thầy để biết deadline cụ thể.",
+    "focusedChunks": [
+      "T06-162"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "question": "d",
+  "retrieved": [
+    {
+      "code": "T01-049",
+      "score": 0.1634
+    },
+    {
+      "code": "T01-045",
+      "score": 0.1482
+    },
+    {
+      "code": "T06-100",
+      "score": 0.1476
+    },
+    {
+      "code": "T01-081",
+      "score": 0.1391
+    },
+    {
+      "code": "T03-154",
+      "score": 0.1284
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Bạn nên:\n• Hỏi giảng viên hoặc TA trong Discord\n• Tra cứu tài liệu bên ngoài",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-049",
+      "T01-045",
+      "T06-100",
+      "T01-081",
+      "T03-154"
+    ],
+    "focusedCodes": [
+      "T01-049",
+      "T01-045"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "d",
+    "topChunks": [
+      {
+        "code": "T01-049",
+        "score": 0.16336489
+      },
+      {
+        "code": "T01-045",
+        "score": 0.14820427
+      },
+      {
+        "code": "T06-100",
+        "score": 0.14760885
+      },
+      {
+        "code": "T01-081",
+        "score": 0.13906136
+      },
+      {
+        "code": "T03-154",
+        "score": 0.12837204
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "d",
+      "d T01-049"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_T4ZXjBnKHQ9WgijSPFoNeBNp",
+      "name": "lookup_document",
+      "args": {
+        "topic": "d"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đoạn tài liệu đề cập đến việc xác định vấn đề thực sự trong thiết kế sản phẩm và nhấn mạnh tầm quan trọng của việc không chỉ giải quyết vấn đề được đưa ra mà còn phải khám phá vấn đề thực sự phía sau nó.",
+    "answerDirection": "Hướng trả lời: Tìm hiểu và xác định vấn đề thực sự trong thiết kế sản phẩm.",
+    "focusedChunks": [
+      "T01-049",
+      "T01-045"
+    ]
+  },
+  "citationPass": "2-pass enforcement (tool-calling path)"
+}

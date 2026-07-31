@@ -1,0 +1,55 @@
+{
+  "question": "làm sao để pass môn này thầy ơi",
+  "retrieved": [
+    {
+      "code": "T05-114",
+      "score": 0.3717
+    },
+    {
+      "code": "T03-076",
+      "score": 0.3518
+    },
+    {
+      "code": "T05-102",
+      "score": 0.3359
+    },
+    {
+      "code": "T06-067",
+      "score": 0.3349
+    },
+    {
+      "code": "T03-068",
+      "score": 0.3348
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nĐể pass môn này, sinh viên cần chú ý đến việc thu thập dữ liệu và kiểm tra lại từng phần, đồng thời xác định rõ tính chất của bài toán. Việc chia nhỏ bài toán phức tạp thành các bài toán nhỏ hơn cũng là một phương pháp hiệu quả.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Tập trung vào việc thu thập dữ liệu, kiểm tra lại và chia nhỏ bài toán để dễ dàng giải quyết.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T05-114] (Bài giảng)\nNội dung: Điểm gợi ý ra quyết định cho các bạn là AI engineer: nếu nó chỉ là việc transform text và summarize, thì chúng ta chỉ cần thử xem liệu tôi chỉ xài prompt — và làm tốt hơn cái trước — thì đã giải quyết được hay chưa. Rồi giả sử nếu bài toán cần tra cứu dữ liệu, các bạn có thể nghĩ xem liệu có cách nào cung cấp cơ chế truy xuất (retrieval) để vượt qua được mà vẫn ổn — chưa chắc chúng ta cần agent. Rồi nếu cần nhiều bước có điều kiện, thì chúng ta đi từ workflow — xem nó có các trạng thái và mỗi trạng thái vượt qua được hay chưa. Đây là cái shortcut cho các bạn — best practice, công thức để làm theo trong các dự án thực tế.\n\n[2] Mã: [T03-076] (Bài giảng)\nNội dung: Nên sau này các bạn làm một cái solution thì cần chú ý: mình là dân kỹ sư mà, mình nên có một cái suy nghĩ hơi \"lười\" một tí. Tức là idea đầu của các bạn có thể là có cái gì làm cái đấy, nhưng các bạn phải nghĩ đến việc thu data, thu dữ liệu xong rồi phải ngồi check lại từng cái — các bạn sẽ phải đánh đổi cực lớn, không nên đúng không? Trong khi các bạn phải xác định được tính chất của bài toán các bạn đang làm. Ví dụ nhá: các bạn muốn soạn đề toán, soạn đề vật lý, soạn bài hóa. Bài hóa có làm được không? Có một vài bài hóa làm được nhé — ví dụ đề thi trắc nghiệm hỏi số mol, phân tử, thì cũng là bài đấy, các bạn chỉ thay đổi con số thôi, vẫn ok đúng không?\n\n[3] Mã: [T05-102] (Bài giảng)\nNội dung: [Hoạt động lớp: Chốt lab — tám nhóm đã hoàn thành, các nhóm còn lại nộp bài trước sáng mai; học viên tự check bảng action để biết mình pass hay chưa. Trò chuyện ngoài lề trong lúc chờ.]\n\n[4] Mã: [T06-067] (Bài giảng)\nNội dung: [Học viên]: Nếu được thì các anh giúp tổng hợp lại các chủ đề của cả lớp, ví dụ như em muốn chuẩn bị trước cho lớp để có thể tiếp thu tốt hơn.\n\n[5] Mã: [T03-068] (Bài giảng)\nNội dung: **[Học viên]:** Theo em nghĩ, bản chất của những bài toán khó là sự gộp lại của những bài toán nhỏ đấy ạ. Trong cơ sở dữ liệu mình sẽ có đầy đủ những bài toán nhỏ, xong rồi từ đấy dùng suy luận đa bước để có thể ghép các bài toán nhỏ đấy thành bài toán to hơn.\n\nCÂU HỎI HỌC VIÊN: làm sao để pass môn này thầy ơi\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-068], giảng viên có nói: \"**[Học viên]:** Theo em nghĩ, bản chất của những bài toán khó là sự gộp lại của những bài toán nhỏ đấy ạ. Trong cơ sở dữ liệu mình sẽ có đầy đủ những bài toán nhỏ, xong rồi từ đấy dùng suy luận đa bướ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-068"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-068"
+    ],
+    "allowedCodes": [
+      "T05-114",
+      "T03-076",
+      "T05-102",
+      "T06-067",
+      "T03-068"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Để pass môn này, sinh viên cần chú ý đến việc thu thập dữ liệu và kiểm tra lại từng phần, đồng thời xác định rõ tính chất của bài toán. Việc chia nhỏ bài toán phức tạp thành các bài toán nhỏ hơn cũng là một phương pháp hiệu quả.",
+    "answerDirection": "Hướng trả lời: Tập trung vào việc thu thập dữ liệu, kiểm tra lại và chia nhỏ bài toán để dễ dàng giải quyết.",
+    "focusedChunks": [
+      "T02-076",
+      "T03-068"
+    ]
+  }
+}

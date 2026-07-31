@@ -1,0 +1,49 @@
+{
+  "question": "Hôm nay là thứ mấy?",
+  "retrieved": [
+    {
+      "code": "T01-017",
+      "score": 0.8
+    },
+    {
+      "code": "T01-029",
+      "score": 0.8
+    },
+    {
+      "code": "T03-014",
+      "score": 0.8
+    },
+    {
+      "code": "T03-021",
+      "score": 0.8
+    },
+    {
+      "code": "T03-022",
+      "score": 0.8
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nKhông có thông tin nào trong các đoạn tài liệu đề cập đến ngày hôm nay là thứ mấy.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Không có thông tin cụ thể về ngày hôm nay trong tài liệu.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T01-017] (Bài giảng)\nNội dung: Rồi, hôm nay mình sẽ đi vào ý chính với câu hỏi trọng tâm: xác định một bài toán thực sự có cần với ai hay không — một bài toán đáng để làm — chọn một giải pháp phù hợp cho nó, và sau đấy viết nó thành một yêu cầu, một problem statement rõ ràng. Nó cũng rất đơn giản thôi. Nội dung ngày hôm nay mình nghĩ thiên về tư duy nhiều hơn — mình sẽ rất cố gắng truyền đạt cho mọi người một số phương pháp và tư duy để mọi người có thể thử luyện tập. Còn framework với mình thực ra chỉ là một cách để áp dụng thôi. Framework là một cái đã được đưa thành workflow, các bước cụ thể để chúng ta có thể áp dụng theo, nhưng khi áp dụng chúng ta cần phải hiểu bản chất của nó phía sau. Cái thứ mình nghĩ khiến các bạn có thể thực sự khác biệt và có được tư duy product là cái bạn phải xây dựng từ tầng tư duy phía dưới: bạn dùng framework thì bạn phải hiểu framework đấy sinh ra làm cái gì, cho ai. Trong ngành sản phẩm thực ra có rất nhiều framework, và thực ra nhiều khi bọn mình làm cũng không cần nhiều framework đến mức vậy đâu. Tư tưởng của mình thì hay kiểu less is more, back to basic — mình hay tin là trong mọi cái việc bạn làm, dù nó phức tạp đến đâu, cũng luôn có thể diễn giải cho dễ hiểu, hoặc đưa nó thành những cái đơn giản nhất có thể. Bài hôm nay mình sẽ cố gắng đưa những thứ đơn giản nhất thôi.\n\n[2] Mã: [T01-029] (Bài giảng)\nNội dung: Có một tài liệu của Google — People + AI Guidebook — mọi người click vào cái link. Cái này cũng sẽ là một tài liệu ngày hôm nay chúng ta sẽ đọc. Cái framework này của Google rất chi tiết, rất đầy đủ luôn, chắc nó thay được cả buổi học luôn — nó chia đến các module như này. Thực ra nó được xây dựng từ cái thời các mô hình AI machine learning thôi, hồi đấy đã có cái này rồi, và bây giờ được update dần lên để có thể adapt được với các mô hình ngôn ngữ lớn. Bạn sẽ nhìn được các module như thế này, và mình nghĩ bạn hoàn toàn có thể dùng nó làm một cái sườn để đi theo từng bước một trong cả quá trình mình làm sản phẩm — hoàn toàn có thể là một cái sườn để các bạn bám vào. Buổi ngày hôm nay mình sẽ đi nhiều vào phần đầu tiên là define success. Trong này có các module kiến thức về data, về mental model — mental model và expectation chính là mô hình tư duy của con người như thế nào; mình hiểu được cái đấy thì mình mới thiết kế được sản phẩm, trải nghiệm phù hợp. Rồi các layer về làm thế nào để giữ được niềm tin của người dùng với sản phẩm AI, và có rất nhiều những ví dụ ở phía bên trong nữa. Một chương này cực kỳ dài — khối lượng kiến thức rất nhiều, và bạn rất nên dành thời gian để đọc sâu hơn. Ở cuối nó còn có những bài tập nhỏ để các bạn có thể ứng dụng nữa. Ngày hôm nay chúng ta sẽ đi sâu hơn vào chương đầu tiên: xác định nhu cầu của user, đánh giá sức mạnh của AI, và từ đấy tìm ra được cái nơi mà nên đưa AI vào trong sản phẩm. Còn lại hai phần chúng ta có thể đọc thêm một số bài viết của Anthropic hay của Google để các bạn hiểu được một số cách chúng ta chọn — chắc là khi bạn định đưa AI vào thì trong AI nó cũng có rất nhiều mức độ chứ không phải chỉ có một mức độ, bạn cũng phải chọn cái mức độ phù hợp.\n\n[3] Mã: [T03-014] (Bài giảng)\nNội dung: Buổi hôm nay chúng ta sẽ học thiên về product management. Sau này các bạn sẽ thấy, trong quá trình của chúng ta ở giai đoạn hai, các bạn sẽ cần phải chọn một trong ba track — mình đang không nhớ số thứ tự nhá, nhưng mình liệt kê. Một là học chuyên về AI Engineer, tức là các bạn học chuyên sâu các kỹ thuật để xử lý cái luồng AI system để đưa ra được kết quả tốt nhất.\n\n[4] Mã: [T03-021] (Bài giảng)\nNội dung: Ok, quay lại chủ đề bài hôm nay. Chúng ta sẽ học những góc nhìn và những phương pháp để các bạn nhìn thấy được, trong hiện tại hoặc có thể trong tương lai, những lĩnh vực nào, những bài toán nào, những problem nào có thể sử dụng AI agent, LLM để giải quyết được. Hôm nay nó sẽ chuyên về cho track thứ ba. Tuy nhiên với góc nhìn AI Engineer thì các bạn cũng nên học cái này. Để làm gì? Thời đại bây giờ gần như mỗi bạn giống như một giám đốc công ty vậy: chỉ cần trả chắc 20 đô, 30 đô, thế là bạn có cả dàn nhân viên là AI, tha hồ đặt tên A B C D, làm trong phòng này phòng nọ. Nhưng muốn làm được như vậy, các bạn cũng phải hiểu được cái bản chất và cái công việc. Thời buổi bây giờ, nếu muốn CV đẹp khi apply vào những công ty xây dựng hệ thống agentic, các bạn chỉ cần chứng minh được là đã tự xây dựng một hệ thống riêng, một cái assistant cho mình, sử dụng những kỹ thuật A B C D. Càng dùng nhiều kỹ thuật mới, càng tối ưu hệ thống của mình, thì đó gần như là một bằng chứng cực kỳ thuyết phục. Bạn không cần bằng đẹp, điểm cao luôn — bạn show cái hệ thống đấy ra, giải thích tường tận, đảm bảo có việc làm, và việc làm ở mức độ cao ấy nha.\n\n[5] Mã: [T03-022] (Bài giảng)\nNội dung: Hôm nay, đây là slide của chị bên Long Châu nhá, mình mượn slide của chị. Nếu có thời gian các bạn có thể đọc thêm về AI Engineering: muốn chuyên về định hướng này thì đọc những cuốn sách, hoặc đơn giản bỏ tiền ra tí, cho con AI summarize, liệt kê tổng hết tất cả document. Rồi — cái này không recommend, nhưng đúng là có thể tìm được những nguồn PDF không chính thống để tiếp cận đọc nhanh. Hoặc nhanh hơn, xem những clip YouTube, nó rất trực quan. Các bạn chỉ cần hiểu được những keyword và kỹ thuật đấy, tại sao phải làm. Cũng đừng lo — xuyên suốt các buổi học các bạn sẽ học hết những kỹ thuật hiện tại, và chương trình cũng đang rất cố gắng: kỹ thuật thay đổi gần như từng ngày luôn, có khả năng cứ một hai khoá là kỹ thuật cũ bị outdated, chương trình phải cố gắng update lại nội dung để các bạn tiếp cận những thứ mới nhất nhá.\n\nCÂU HỎI HỌC VIÊN: Hôm nay là thứ mấy?\n\nTRẢ LỜI:",
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "failSafe": "no-valid-citation → MOCK_NOT_FOUND"
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_GFi2McpoDVdcz85WYtGnEcCf",
+      "name": "lookup_document",
+      "args": {
+        "topic": "hôm nay là thứ mấy"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Không có thông tin nào trong các đoạn tài liệu đề cập đến ngày hôm nay là thứ mấy.",
+    "answerDirection": "Hướng trả lời: Không có thông tin cụ thể về ngày hôm nay trong tài liệu.",
+    "focusedChunks": []
+  }
+}

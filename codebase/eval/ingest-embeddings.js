@@ -2,7 +2,7 @@
 /**
  * ingest-embeddings.js — Đẩy embeddings.json vào Qdrant
  *
- * Không cần GEMINI_API_KEY vì embeddings đã có sẵn (từ embedder.js)
+ * Không cần thêm API key vì embeddings đã có sẵn (từ embedder.js)
  *
  * Chạy: node ingest-embeddings.js
  */

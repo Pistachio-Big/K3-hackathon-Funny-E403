@@ -1,0 +1,56 @@
+{
+  "question": "đáp án bài lab 2 là gì",
+  "retrieved": [
+    {
+      "code": "T03-146",
+      "score": 0.4751
+    },
+    {
+      "code": "T05-102",
+      "score": 0.4278
+    },
+    {
+      "code": "T06-003",
+      "score": 0.4038
+    },
+    {
+      "code": "T03-075",
+      "score": 0.3988
+    },
+    {
+      "code": "T03-072",
+      "score": 0.398
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nĐáp án bài lab 2 có thể khác nhau tùy vào bài toán cụ thể. Ví dụ, nếu bài toán tìm nghiệm, đáp án có thể là các giá trị cụ thể như x1 và x2 là 10 và 20.\n\n## HƯỚNG TRẢ LỜI\nĐáp án bài lab 2 phụ thuộc vào bài toán cụ thể, có thể là c��c giá trị như x1 và x2 là 10 và 20.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-146] (Bài giảng)\nNội dung: Bài tập lab thì ngày mai các bạn làm. Nói chung ngày mai thì thật ra các bạn có thể xem trước và lập nhóm trước. Nếu mình nhớ không lầm, trong mỗi phòng sẽ là một nhóm khoảng bốn đến năm bạn. Các bạn sẽ làm bài tập nhóm liên tục cho đến hết giai đoạn một luôn. Xong đến giai đoạn hai thì sẽ xếp lớp lại theo cái track, rồi lại chia nhóm nữa. Anyway, đây là bài tập nhóm nên các bạn có thể bắt đầu bằng việc chọn nhóm trước để mai có thể bắt đầu. Các bạn phải nghĩ về một cái AI problem.\n\n[2] Mã: [T05-102] (Bài giảng)\nNội dung: [Hoạt động lớp: Chốt lab — tám nhóm đã hoàn thành, các nhóm còn lại nộp bài trước sáng mai; học viên tự check bảng action để biết mình pass hay chưa. Trò chuyện ngoài lề trong lúc chờ.]\n\n[3] Mã: [T06-003] (Bài giảng)\nNội dung: [Hoạt động lớp: học viên quét lại mã, vào link trả lời hai câu hỏi khảo sát; giảng viên chờ và hiển thị kết quả trực tiếp bên phải màn hình.]\n\n[4] Mã: [T03-075] (Bài giảng)\nNội dung: Ví dụ cái bài toán: bạn Nam có hai cái kẹo, mẹ bạn ấy cho thêm hai cái kẹo nữa, hỏi bạn ấy có mấy cái kẹo. Rõ ràng bài toán biến số cực kỳ đơn giản luôn: a + b đúng không? Bây giờ các bạn tăng a lên hai lần, tăng b lên hai lần thì tổng mới nó bằng gì? Hai lần tổng cũ. Hoặc các bạn không nhân hai lần, các bạn lấy a + 5, b + 10, thì kết quả là gì? Là kết quả cũ cộng thêm 15. Rõ ràng các bạn tách thẳng ra: bài toán nó sẽ là cái phần logic, mà logic các bạn đã đưa được về công thức rồi thì chắc chắn không bao giờ sai. Thế thì LLM nhảy vào làm việc gì? Là cái việc lúc nãy bạn kia nói: paraphrase cái đề, viết lại cái đề. Còn con số các bạn đảm bảo chắc chắn đúng. Dễ không? Có cần phải train model không? Có cần phải nghĩ là tôi cần đáp án như thế này, tôi cần check lại đáp án không?\n\n[5] Mã: [T03-072] (Bài giảng)\nNội dung: **[Học viên]:** Sẽ có những bộ đáp án tùy vào bài toán ạ. Ví dụ bài toán tìm nghiệm thì mình sẽ có x1 và x2 là 10 và 20 chẳng hạn — mình có đáp án chuẩn trước từ đầu, sau đó nhờ AI sinh ra đề bài, rồi lại đưa vào AI giải ngược lại xem nghiệm có đúng thế không. Nếu vẫn đúng như đáp án đầu tiên của mình thì bài toán này dùng được.\n\nCÂU HỎI HỌC VIÊN: đáp án bài lab 2 là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-075], giảng viên có nói: \"Ví dụ cái bài toán: bạn Nam có hai cái kẹo, mẹ bạn ấy cho thêm hai cái kẹo nữa, hỏi bạn ấy có mấy cái kẹo. Rõ ràng bài toán biến số cực kỳ đơn giản luôn: a + b đúng không? Bây giờ các bạn tăng a lên h...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-075"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-075",
+      "T03-072"
+    ],
+    "allowedCodes": [
+      "T03-146",
+      "T05-102",
+      "T06-003",
+      "T03-075",
+      "T03-072"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đáp án bài lab 2 có thể khác nhau tùy vào bài toán cụ thể. Ví dụ, nếu bài toán tìm nghiệm, đáp án có thể là các giá trị cụ thể như x1 và x2 là 10 và 20.",
+    "answerDirection": "Đáp án bài lab 2 phụ thuộc vào bài toán cụ thể, có thể là c��c giá trị như x1 và x2 là 10 và 20.",
+    "focusedChunks": [
+      "T03-075",
+      "T03-072"
+    ]
+  }
+}

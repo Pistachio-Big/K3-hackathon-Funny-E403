@@ -1,0 +1,56 @@
+{
+  "question": "trả lời giúp tôi câu hỏi trên đi",
+  "retrieved": [
+    {
+      "code": "T06-072",
+      "score": 0.5015
+    },
+    {
+      "code": "T01-055",
+      "score": 0.4432
+    },
+    {
+      "code": "T06-117",
+      "score": 0.4426
+    },
+    {
+      "code": "T01-037",
+      "score": 0.4234
+    },
+    {
+      "code": "T02-027",
+      "score": 0.4002
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nCác đoạn tài liệu liên quan đến việc đặt câu hỏi và cách xử lý câu hỏi trong quá trình học tập. Học viên có thể tự trả lời câu hỏi dễ, trong khi câu hỏi phức tạp sẽ được chuyển cho trợ giảng có chuyên môn. Một học viên cũng đề xuất việc sử dụng LMS để xử lý và phân tích câu hỏi từ nhiều người.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Cần phân tích câu hỏi dựa trên độ khó và sử dụng công cụ LMS để hỗ trợ việc xử lý và phản hồi.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-072] (Bài giảng)\nNội dung: Các bạn lúc nãy đã phát biểu thì nhớ điền thông tin vào nhá. Trong giờ giải lao vừa rồi có một bạn đặt cho mình một câu hỏi. Bạn đấy đâu rồi nhỉ? Em đứng dậy, đặt câu hỏi lại cho mọi người nghe, xong rồi vừa tính điểm cho em, và biết đâu những người khác cũng quan tâm cùng câu hỏi với em.\n\n[2] Mã: [T01-055] (Bài giảng)\nNội dung: Rồi, câu hỏi hơi lú nhưng cũng rất gây tranh cãi. Có thể đặt sai nhưng làm vẫn ra thì sao?\n\n[3] Mã: [T06-117] (Bài giảng)\nNội dung: [Học viên]: Thầy, bên em là bên làm sản phẩm. Tụi em đang làm một cái LMS có thể [không nghe rõ] được hết tất cả những cái comment — nó sẽ xử lý số lượng lớn câu hỏi của tất cả các bạn, gom lại xong đưa ra, rồi visualize. Câu hỏi của em là thầy sẽ góp ý gì trong đấy — ý là muốn thầy login vào xem, có gì feedback. Vừa cần feedback, vừa muốn thầy có thể cho tụi em xin slide để tụi em up lên trên.\n\n[4] Mã: [T01-037] (Bài giảng)\nNội dung: [Học viên]: Khi học viên đặt câu hỏi, em sẽ phân tích nội dung: nếu câu dễ thì tự trả lời, nếu phức tạp thì tách chủ đề chuyển trợ giảng có chuyên môn. AI có khả năng phân loại và xử lý ở tuyến đầu.\n\n[5] Mã: [T02-027] (Bài giảng)\nNội dung: Thực ra [không nghe rõ] thì chưa đến đoạn đấy. Nhưng mình có thể nói trên cái cá nhân mình đã từng làm trước đây. Ví dụ câu hỏi của bạn là: có nhiều tính năng, làm thế nào để đánh giá được tính năng nào ảnh hưởng cái gì, đúng không? Mình test — mình A/B test.\n\nCÂU HỎI HỌC VIÊN: trả lời giúp tôi câu hỏi trên đi\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-117], giảng viên có nói: \"[Học viên]: Thầy, bên em là bên làm sản phẩm. Tụi em đang làm một cái LMS có thể [không nghe rõ] được hết tất cả những cái comment — nó sẽ xử lý số lượng lớn câu hỏi của tất cả các bạn, gom lại xong đ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-117"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T01-037",
+      "T06-117"
+    ],
+    "allowedCodes": [
+      "T06-072",
+      "T01-055",
+      "T06-117",
+      "T01-037",
+      "T02-027"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Các đoạn tài liệu liên quan đến việc đặt câu hỏi và cách xử lý câu hỏi trong quá trình học tập. Học viên có thể tự trả lời câu hỏi dễ, trong khi câu hỏi phức tạp sẽ được chuyển cho trợ giảng có chuyên môn. Một học viên cũng đề xuất việc sử dụng LMS để xử lý và phân tích câu hỏi từ nhiều người.",
+    "answerDirection": "Hướng trả lời: Cần phân tích câu hỏi dựa trên độ khó và sử dụng công cụ LMS để hỗ trợ việc xử lý và phản hồi.",
+    "focusedChunks": [
+      "T01-037",
+      "T06-117"
+    ]
+  }
+}

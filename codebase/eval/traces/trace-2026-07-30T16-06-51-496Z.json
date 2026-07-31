@@ -1,0 +1,54 @@
+{
+  "question": "slide 37 có gì vậy thầy",
+  "retrieved": [
+    {
+      "code": "T03-006",
+      "score": 0.4162
+    },
+    {
+      "code": "T06-117",
+      "score": 0.4066
+    },
+    {
+      "code": "T06-119",
+      "score": 0.3888
+    },
+    {
+      "code": "T03-082",
+      "score": 0.3632
+    },
+    {
+      "code": "T04-036",
+      "score": 0.3472
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nSlide 37 là một phần của chương trình mà nhiều người đã tham gia vào việc tạo ra, bao gồm cả một hội đồng định hướng và các cá nhân điều chỉnh theo phong cách riêng. Hiện tại, slide đang được chọn từ một người có kinh nghiệm trong lĩnh vực sản phẩm AI.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Slide 37 là sản phẩm của nhiều người làm, hiện tại đang được chọn từ một chuyên gia trong lĩnh vực AI.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-006] (Bài giảng)\nNội dung: Các bạn hiện tại tiếp cận rất nhiều slide của chương trình. Cái slide này không phải chỉ một người làm mà rất nhiều người làm: ban đầu sẽ có một hội đồng nhóm các anh chị đưa ra định hướng high level như thế nào, break down từng thứ từng thứ, xong rồi từng người sẽ custom lại cho phù hợp với style của họ. Hiện tại mình đang chọn slide của một chị cũng khá là ổn. Chị đang làm bên FPT Long Châu, làm product manager chuyên về những dự án AI. Tại vì mình thiên về kỹ sư, mà đây là những slide về product, mình không có nhiều kinh nghiệm thực tế, cho nên mình sẽ sử dụng slide của những người có kinh nghiệm.\n\n[2] Mã: [T06-117] (Bài giảng)\nNội dung: [Học viên]: Thầy, bên em là bên làm sản phẩm. Tụi em đang làm một cái LMS có thể [không nghe rõ] được hết tất cả những cái comment — nó sẽ xử lý số lượng lớn câu hỏi của tất cả các bạn, gom lại xong đưa ra, rồi visualize. Câu hỏi của em là thầy sẽ góp ý gì trong đấy — ý là muốn thầy login vào xem, có gì feedback. Vừa cần feedback, vừa muốn thầy có thể cho tụi em xin slide để tụi em up lên trên.\n\n[3] Mã: [T06-119] (Bài giảng)\nNội dung: Slide thì thầy dùng cái bản basic thôi. Sau đó thầy sẽ có một bản doc để cho các bạn tự đọc. Thế là giải quyết số một là slide nhá: thầy dùng bản base slide của chương trình, rồi thầy có tạo cho mỗi học viên một bài gọi là self-reading để các bạn có thể đọc lại để hiểu kỹ. Ok chưa? Thế còn cái hệ thống, các em nếu lấy feedback thì đầu tiên là cũng hỏi đúng người đấy. Thực ra năm 2017 là thầy bắt đầu vọc vạch — lúc đấy [không nghe rõ] còn chưa phát triển — thì có một hệ thống gọi là adaptive learning tương tự. Chắc bọn em chưa đến tuổi để tìm cái này luôn. Thầy nghiên cứu về adaptive learning từ đúng năm 2017, giờ còn quá trời subscription email của tụi nó. Thời điểm đấy — để thầy nói tiếp nhá — bọn em đang đặt sai bài toán. Hồi đấy có một bên, thầy suýt nữa thì contribute cho tụi nó luôn, nhưng giờ dự án này cũng đi rồi. Thầy tham gia từ 2017. Cái này thì hôm nào để làm với cả [giảng viên] một cái webinar. Hồi thầy cung cấp add-on ấy, có một thằng bên Hàn Quốc nó share cho thầy cách nó quản lý. Hôm nào các em quan tâm thì thầy sẽ làm một webinar về vận hành.\n\n[4] Mã: [T03-082] (Bài giảng)\nNội dung: [Hoạt động lớp: học viên báo slide trên LMS chưa được mở khoá; giảng viên kiểm tra, phát hiện nhầm và mở khoá slide cho cả lớp.]\n\n[5] Mã: [T04-036] (Bài giảng)\nNội dung: Vấn đề ở đây: cờ vây là một bộ môn có cực kỳ nhiều tổ hợp có thể xảy ra trên bàn cờ. Thực ra các chuyên gia chơi cờ vây phải qua rất nhiều năm kinh nghiệm, và họ hình thành trong đầu cái gọi là mental model về các nước đi — nhiều khi hình thành trực giác về cái đấy. Kinh nghiệm và trực giác: nhiều khi họ nhìn nước đi đấy, họ đã chơi qua quá nhiều nước đi tương tự rồi, nên họ nhìn ra được. Thế nhưng AI ở đây có một câu chuyện gọi là rất đột phá: AlphaGo nổi tiếng với nước đi số 37 — mọi người có thể tìm hiểu thêm nhá. Nước đi số 37 là một nước đi khiến cho Lee Sedol — kỳ thủ cờ vây hàng đầu thế giới, người Hàn Quốc — đã phải đứng lên 15 phút để đi ra ngoài, vì ông không thể hiểu nổi vì sao nó lại có thể đi được nước đấy. Vì nước đi này chưa từng tồn tại — đấy không phải một nước đi mà con người sẽ đi. Thậm chí những người bình luận viên của trận cờ đấy cũng không thể hiểu nổi vì sao đi như vậy, và họ nghĩ là AlphaGo sẽ thua. Thế nhưng cuối cùng trận đấu đấy AlphaGo đã thắng. Chỉ vì một lý do đơn giản thôi: trong hàng triệu lần tự chơi với chính mình, nó đã tự khám phá ra những nước đi mới mà con người chưa từng nhìn thấy. Đấy là một thời điểm tạo ra cú sốc trong ngành.\n\nCÂU HỎI HỌC VIÊN: slide 37 có gì vậy thầy\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-006], giảng viên có nói: \"Các bạn hiện tại tiếp cận rất nhiều slide của chương trình. Cái slide này không phải chỉ một người làm mà rất nhiều người làm: ban đầu sẽ có một hội đồng nhóm các anh chị đưa ra định hướng high level ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-006"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-006"
+    ],
+    "allowedCodes": [
+      "T03-006",
+      "T06-117",
+      "T06-119",
+      "T03-082",
+      "T04-036"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Slide 37 là một phần của chương trình mà nhiều người đã tham gia vào việc tạo ra, bao gồm cả một hội đồng định hướng và các cá nhân điều chỉnh theo phong cách riêng. Hiện tại, slide đang được chọn từ một người có kinh nghiệm trong lĩnh vực sản phẩm AI.",
+    "answerDirection": "Hướng trả lời: Slide 37 là sản phẩm của nhiều người làm, hiện tại đang được chọn từ một chuyên gia trong lĩnh vực AI.",
+    "focusedChunks": [
+      "T03-006"
+    ]
+  }
+}

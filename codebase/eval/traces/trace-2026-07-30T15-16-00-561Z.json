@@ -1,0 +1,76 @@
+{
+  "question": "Tóm tắt toàn bộ nội dung khóa học AI & LLM Foundation",
+  "retrieved": [
+    {
+      "code": "T03-118",
+      "score": 0.6364
+    },
+    {
+      "code": "T03-036",
+      "score": 0.5455
+    },
+    {
+      "code": "T06-045",
+      "score": 0.5455
+    },
+    {
+      "code": "T01-036",
+      "score": 0.4545
+    },
+    {
+      "code": "T01-040",
+      "score": 0.4545
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.636 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Tóm tắt toàn bộ nội dung khóa học AI & LLM Foundation",
+    "topChunks": [
+      {
+        "code": "T03-118",
+        "score": 0.6363636363636364
+      },
+      {
+        "code": "T03-036",
+        "score": 0.5454545454545454
+      },
+      {
+        "code": "T06-045",
+        "score": 0.5454545454545454
+      },
+      {
+        "code": "T01-036",
+        "score": 0.45454545454545453
+      },
+      {
+        "code": "T01-040",
+        "score": 0.45454545454545453
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_zfaNnhIlfpa2YTCZQlIiJBef",
+      "name": "lookup_document",
+      "args": {
+        "topic": "AI & LLM Foundation"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Khóa học AI & LLM Foundation tập trung vào việc xây dựng hệ thống AI hiệu quả, nhấn mạnh tầm quan trọng của việc hiểu và xử lý ngôn từ trong các mô hình ngôn ngữ lớn (LLM), cũng như việc áp dụng các kỹ thuật như RAG để cải thiện độ chính xác của hệ thống. Học viên sẽ được khuyến khích phát triển kỹ năng quan sát và xây dựng sản phẩm từ những vấn đề thực tiễn.",
+    "answerDirection": "Hướng trả lời: Tóm tắt nội dung khóa học AI & LLM Foundation, nhấn mạnh vào các kỹ thuật và kỹ năng cần thiết để xây dựng hệ thống AI hiệu quả.",
+    "focusedChunks": [
+      "T03-118",
+      "T03-036",
+      "T06-045",
+      "T01-040"
+    ]
+  }
+}

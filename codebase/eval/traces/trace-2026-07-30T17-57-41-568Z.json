@@ -1,0 +1,123 @@
+{
+  "question": "AI Prototyping là gì?",
+  "retrieved": [
+    {
+      "code": "T01-085",
+      "score": 0.5417
+    },
+    {
+      "code": "T03-045",
+      "score": 0.5333
+    },
+    {
+      "code": "T04-024",
+      "score": 0.5227
+    },
+    {
+      "code": "T04-007",
+      "score": 0.5164
+    },
+    {
+      "code": "T03-011",
+      "score": 0.4935
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-5 đoạn):\n[1] Mã đoạn: [T01-085] (Bài giảng)\nNội dung: Thế thì mình nghĩ cái khiến chúng ta có thể nhanh chóng xây dựng được sản phẩm và tối ưu, đấy là bạn quay cái vòng lặp này nhiều nhất có thể — mỗi lần chúng ta sẽ học được một bài học và tối ưu — quay vòng lặp này nhiều nhất với chi phí tiết kiệm nhất. Xây prototype chưa cần phải xây production; bạn hoàn toàn có thể validate ý tưởng bằng [không nghe rõ]. Tất nhiên bây giờ khi AI giúp chúng ta nhanh hơn và rẻ hơn, thì bạn hoàn toàn có thể validate bằng production. Cái cuối cùng, câu hỏi vẫn đặt ra là: bạn có thể đi kiểm chứng cái giả thuyết này với chi phí rẻ nhất và nhanh nhất như thế nào? Bạn trả lời được câu đấy — thì thực ra bây giờ mình nghĩ cái prototype có thể đã thay đổi: không cần prototype, mà nếu scope đủ nhỏ, bạn hoàn toàn có thể xây luôn ra một sản phẩm; còn nếu không thì mình vẫn quay lại làm như vậy.\n\n[2] Mã đoạn: [T03-045] (Bài giảng)\nNội dung: Còn hôm nay các bạn chỉ tập trung vào việc: làm thế nào xây dựng được một cái idea AI hoàn chỉnh. Tựu chung lại, những thứ AI làm tốt — đơn giản là những thứ cái máy tính làm tốt — là repetition: việc cứ lặp đi lặp lại, lặp đi lặp lại, với số lượng lớn. Hoặc là gì? Duyệt dữ liệu, đọc hồ sơ, summarize. Ở đây chắc chắn không bạn nào dám tự tin vỗ ngực là mình có trí nhớ tốt hơn cái máy tính đúng không? Cái máy tính nó đâu cần nhớ — nó cứ mở vào cái file đấy, dò thông tin, đưa ra cho bạn, giống như copy paste ấy. Nhưng trí não con người thì khác đúng không? Truy cập thông tin, nhiều khi phải cần một cái gì đấy để gợi nhớ. Nên bây giờ các bạn phải xem: trong cái pipeline mà các bạn đang muốn xây dựng hệ thống AI ấy, có khoảng nào các bạn có thể thay thế được không. Theo mình thấy nhá — mình cũng muốn khoá này các bạn nên thử tập trung vào lĩnh vực giáo dục xem. Tại vì nếu chịu khó lên Google xem thì cái triển lãm giáo dục của bên Trung Quốc — họ làm rất nhiều thứ. Tức là họ có thể nhận dạng chữ viết của giáo viên nhá.\n\n[3] Mã đoạn: [T04-024] (Bài giảng)\nNội dung: Đây là mốc đầu tiên — năm khai sinh 1956. Đại khái là có một hội nghị: rất nhiều chuyên gia, nhà khoa học nghiên cứu về AI tổ chức một hội thảo vào mùa hè. Trong hội thảo này, họ đặt ra với nhau một ý tưởng: nếu trí thông minh có thể được mô tả đủ rõ, thì máy móc cũng có thể mô phỏng được. Nghĩa là nếu con người có thể viết ra suy luận của mình, viết ra thành luật nào đấy — vì sao tôi lại làm như này, với việc này tôi sẽ giải quyết như này — nếu toàn bộ những việc đấy có thể viết thành luật được, thì máy có thể học được. Đấy là tiền đề đầu tiên của những ý tưởng này: khi họ thấy được trí thông minh của con người hoàn toàn có thể viết lại thành các luật, thì máy tính sẽ mô phỏng được việc đấy. Cái này hình thành ra mô hình AI đầu tiên, có một thuật ngữ gọi là symbolic AI — nghĩa là dạy máy bằng luật: có một ông chuyên gia ngồi đấy viết ra tất cả những luật để giải việc đấy, sau đấy máy học toàn bộ những luật đấy.\n\n[4] Mã đoạn: [T04-007] (Bài giảng)\nNội dung: Năm ngoái mình có khoảng 6 tháng làm ở AI Center của FPT Software. Ở đấy mình làm một sản phẩm mà idea là: làm thế nào để tất cả mọi người có thể tạo ra các AI agent mà không cần phải biết code. Idea hồi đấy rất đơn giản: bạn prompt bằng một câu, sau đấy AI tự sinh ra các step, các bước, và tự động nối các bước đấy lại là nó có thể làm được. Thế nhưng dự án thời đấy giờ cũng đóng lại rồi — không thể theo kịp những ông lớn. Bây giờ nếu mọi người xài Claude Code, Codex, mọi người sẽ thấy mọi người prompt là nó có thể làm việc đấy cực kỳ tốt.\n\n[5] Mã đoạn: [T03-011] (Bài giảng)\nNội dung: Tuy nhiên thời đại bây giờ AI system bùng nổ rồi. Ở đây chắc các bạn cũng biết những cái trend, những con robot mini dễ thương, làm cái hành động gì đấy xong rồi nói chuyện với con người đúng không? Thế thì các bạn chỉ cần nghĩ đến việc làm được một hệ thống AI chuyên biệt hoá. Ví dụ lúc trước có một công ty họ làm một con robot AI làm người tư vấn, tiếp xúc với trẻ tự kỷ. Kiểu như nó biết về tâm lý học này, biết về STEAM này, nó được lập trình sẵn. Nói lập trình sẵn ở đây thì các bạn nên hiểu là lập trình sẵn theo kiểu AI agentic nhá — tức là sẽ có những kịch bản được đưa ra là mình chơi thế nào, play game thế nào.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] AI Prototyping | Definition and Overview\nURL: https://www.producttalk.org/glossary-ai-ai-prototyping\nNội dung: AI prototyping is the practice of using AI-powered tools to rapidly create interactive prototypes by describing what you want to build rather than manually coding or designing it. Tools like Lovable, V0, Bolt, and Replit make it easy to spin up interactive prototypes in minutes, enabling teams to te\n\n[Nguồn 2] AI Prototyping vs. Traditional Prototyping: Speed, Cost & Quality\nURL: https://www.magicpatterns.com/blog/ai-prototyping-vs-traditional-prototyping\nNội dung: AI prototyping is the new way to create prototypes for a feature or product using AI tools. In AI prototyping, all you need is a strong prompt and relevant references to generate high-fidelity prototypes in minutes. With many design platforms, the output also comes with working code. AI massively sp\n\n[Nguồn 3] Hướng dẫn toàn diện AI Prototyping cho Non-technical Founder\nURL: https://simpleproductmind.substack.com/p/huong-dan-toan-dien-ai-prototyping\nNội dung: Nên hiểu AI Prototyping như một công cụ giúp bạn đưa ý tưởng trong đầu ra thực tế nhanh hơn, tốn ít nguồn lực hơn, từ đó thử được nhiều ý tưởng hơn. Sau khi validate ý tưởng, bạn vẫn cần developer để xy sản phẩm thật. Nhưng lúc đó, bạn đã giảm rủi ro đáng kể và hiểu rõ mình cần gì.\n\nCốt lõi là gì? A\n\n[Nguồn 4] A Practical Guide to AI Prototyping\nURL: https://www.builder.io/blog/ai-prototyping-guide\nNội dung: AI prototyping tools are systems that turn prompts or design inputs into working UI, logic, and data-connected flows. They help teams test ideas quickly without manual setup.\n\nMost AI prototyping tools let PMs and designers build usable flows without writing code, though developers still refine and \n\n[Nguồn 5] AI Prototyping: From Sketch to App in Hours | Full Guide\nURL: https://productschool.com/blog/artificial-intelligence/ai-prototyping\nNội dung: AI prototyping is rapidly moving from a novelty to a must-have skill in product development. After going through these tools and building projects, we’re convinced that AI-powered prototyping is not just hype. It genuinely expands what product teams can do. [...] All-in-one AI Prototyping Platforms \n\nCÂU HỎI HỌC VIÊN: AI Prototyping là gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T01-085], giảng viên có nói: \"Thế thì mình nghĩ cái khiến chúng ta có thể nhanh chóng xây dựng được sản phẩm và tối ưu, đấy là bạn quay cái vòng lặp này nhiều nhất có thể — mỗi lần chúng ta sẽ học được một bài học và tối ưu — quay...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T01-085"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T01-085",
+      "T03-045",
+      "T04-024",
+      "T04-007",
+      "T03-011"
+    ],
+    "allowedCodes": [
+      "T01-085",
+      "T03-045",
+      "T04-024",
+      "T04-007",
+      "T03-011"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "AI Prototyping là gì?",
+    "topChunks": [
+      {
+        "code": "T01-085",
+        "score": 0.5416806
+      },
+      {
+        "code": "T03-045",
+        "score": 0.53329754
+      },
+      {
+        "code": "T04-024",
+        "score": 0.5226724
+      },
+      {
+        "code": "T04-007",
+        "score": 0.5163538
+      },
+      {
+        "code": "T03-011",
+        "score": 0.49352384
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "AI Prototyping là gì?",
+      "AI Prototyping là gì? T01-085"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "AI Prototyping | Definition and Overview",
+        "url": "https://www.producttalk.org/glossary-ai-ai-prototyping",
+        "snippet": "AI prototyping is the practice of using AI-powered tools to rapidly create interactive prototypes by describing what you want to build rather than manually coding or designing it. Tools like Lovable, V0, Bolt, and Replit make it easy to spin up interactive prototypes in minutes, enabling teams to te"
+      },
+      {
+        "id": "S2",
+        "title": "AI Prototyping vs. Traditional Prototyping: Speed, Cost & Quality",
+        "url": "https://www.magicpatterns.com/blog/ai-prototyping-vs-traditional-prototyping",
+        "snippet": "AI prototyping is the new way to create prototypes for a feature or product using AI tools. In AI prototyping, all you need is a strong prompt and relevant references to generate high-fidelity prototypes in minutes. With many design platforms, the output also comes with working code. AI massively sp"
+      },
+      {
+        "id": "S3",
+        "title": "Hướng dẫn toàn diện AI Prototyping cho Non-technical Founder",
+        "url": "https://simpleproductmind.substack.com/p/huong-dan-toan-dien-ai-prototyping",
+        "snippet": "Nên hiểu AI Prototyping như một công cụ giúp bạn đưa ý tưởng trong đầu ra thực tế nhanh hơn, tốn ít nguồn lực hơn, từ đó thử được nhiều ý tưởng hơn. Sau khi validate ý tưởng, bạn vẫn cần developer để xy sản phẩm thật. Nhưng lúc đó, bạn đã giảm rủi ro đáng kể và hiểu rõ mình cần gì.\n\nCốt lõi là gì? A"
+      },
+      {
+        "id": "S4",
+        "title": "A Practical Guide to AI Prototyping",
+        "url": "https://www.builder.io/blog/ai-prototyping-guide",
+        "snippet": "AI prototyping tools are systems that turn prompts or design inputs into working UI, logic, and data-connected flows. They help teams test ideas quickly without manual setup.\n\nMost AI prototyping tools let PMs and designers build usable flows without writing code, though developers still refine and "
+      },
+      {
+        "id": "S5",
+        "title": "AI Prototyping: From Sketch to App in Hours | Full Guide",
+        "url": "https://productschool.com/blog/artificial-intelligence/ai-prototyping",
+        "snippet": "AI prototyping is rapidly moving from a novelty to a must-have skill in product development. After going through these tools and building projects, we’re convinced that AI-powered prototyping is not just hype. It genuinely expands what product teams can do. [...] All-in-one AI Prototyping Platforms "
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": null,
+    "focusedChunks": [
+      "T01-085",
+      "T03-045",
+      "T04-024",
+      "T04-007",
+      "T03-011"
+    ]
+  }
+}

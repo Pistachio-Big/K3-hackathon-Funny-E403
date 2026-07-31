@@ -1,0 +1,49 @@
+{
+  "question": "đáp án bài lab 2 là gì",
+  "retrieved": [
+    {
+      "code": "T01-072",
+      "score": 0.8333
+    },
+    {
+      "code": "T02-037",
+      "score": 0.8333
+    },
+    {
+      "code": "T03-012",
+      "score": 0.8333
+    },
+    {
+      "code": "T03-042",
+      "score": 0.8333
+    },
+    {
+      "code": "T03-074",
+      "score": 0.8333
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nKhông có thông tin cụ thể nào liên quan đến đáp án bài lab 2 trong các đoạn tài liệu đã cung cấp.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Cần thêm thông tin cụ thể về nội dung bài lab 2 để xác định đáp án.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T01-072] (Bài giảng)\nNội dung: Trong này có kỹ năng liên quan đến quan sát — mình nghĩ nó rất quan trọng. Quan sát ở đây là: nếu bạn build một sản phẩm cho một đối tượng nào đấy, thì thực sự bạn nên tìm cái nơi mà họ hay xuất hiện, ngồi cùng với họ là tốt nhất. Có rất nhiều sản phẩm mà họ đã làm đến mức đấy. NotebookLM là một sản phẩm rất nổi tiếng của Google đúng không — sản phẩm đấy xuất phát từ một dự án Google Labs. Google có một văn hóa là cho nhân viên 20% thời gian để phát triển các dự án cá nhân hoặc các dự án khác; nếu thành công thì công ty sẽ đầu tư cho nó. Team đầu tiên của họ chỉ có ba người, trong đấy chỉ có một người full-time, còn hai người part-time: một chị là PM, một bác là chuyên gia nghiên cứu rất lâu năm trong ngành tâm lý — về thiết kế tư duy — và một bạn là engineer. Sản phẩm đấy đầu tiên họ định vị là công cụ cho học sinh sinh viên để nghiên cứu, học bài, nghiên cứu các tài liệu. Cách tiếp cận của NotebookLM là để giải quyết hiện tượng AI bị ảo giác: thay vì cho AI tìm những thông tin ở bên ngoài để trả lời câu hỏi, người dùng sẽ là người chọn lọc các dữ liệu đấy, và AI giúp người dùng khám phá thông tin đấy một cách nhanh nhất và hiệu quả nhất. Họ xác định đối tượng là học sinh sinh viên, và chị PM đấy đến ngồi cạnh các bạn học sinh sinh viên hằng ngày luôn — để theo dõi, để xem các bạn thực sự làm gì.\n\n[2] Mã: [T02-037] (Bài giảng)\nNội dung: Cấp độ hai là build theo dạng workflow. Lúc này, mặc dù rule-based không xử lý được nữa, nhưng nhìn chung nó vẫn có thể chia thành các bước lớn, thiết kế được thành workflow, và trong từng nút đấy chúng ta sẽ có AI agent, AI LLM để hỗ trợ. Ở đây có một ví dụ — cái này chắc để slide mọi người xem thêm nhá. Anthropic họ có một bài blog mọi người có thể xem — Building Effective Agents — họ đưa ra một số pattern trong việc build các agent. Họ nói luôn là trong thiết kế các phần build agent có khoảng sáu mức độ tăng dần theo sự phức tạp, và ba cái đầu tiên là cực kỳ hiệu quả, đã đủ đáp ứng hầu hết các nhu cầu cơ bản — chưa cần phải nghĩ cái phức tạp, chúng ta hoàn toàn có thể bắt đầu từ những cái này. Đây là dạng workflow: nó phức tạp hơn rule-based nhưng chưa đạt mức đủ phức tạp như agent. Ví dụ bạn có thể chia được thành các bước tuần tự, có LLM ở giữa, và có những gate để kiểm tra giữa các bước — ví dụ bạn cần làm một luồng là tóm tắt, sau đấy viết bài — đấy là dạng đơn giản nhất. Cái thứ hai là có phân nhánh: không phải đi tuần tự từng bước nữa, mà nó sẽ phải xác định đây là công việc kiểu gì, mỗi công việc phân nhánh xử lý khác nhau, sau đó hợp lại ở cuối chẳng hạn. Bước thứ ba là chạy song song. Team Anthropic họ nói: ba mô hình cơ bản này bạn áp dụng vào là đã có thể xử lý được kha khá các vấn đề của mình rồi, và bạn không cần đến cái phức tạp ở phía dưới.\n\n[3] Mã: [T03-012] (Bài giảng)\nNội dung: Rồi các bạn nghĩ xa hơn tí đi. Bây giờ mầm non, lớp 1 lớp 2, trẻ em đi học — việc học bây giờ khác gì ngày xưa? Ngày xưa để giải đáp được một bài toán, thường phụ huynh phải tự giải được bài toán đấy đúng không? Hoặc phải có giáo viên chuyên về phần đấy. Nhất là môn ngoại ngữ tiếng Anh — mình đang không nói môn toán, tại vì những môn toán và vật lý nó có cái khó khăn khác. Nếu các bạn theo dõi chuyên sâu thì các bạn sẽ biết anh Lương Minh Thắng ở team Google DeepMind làm cái model có thể giải được những bài toán Olympic, chắc bây giờ là mức độ huy chương vàng Olympic thế giới rồi. Nên để làm được mô hình AI giải toán thì đấy là một vấn đề khác, mình sẽ không nói. Tuy nhiên bây giờ những cái như ngôn ngữ này, đọc viết này, những activity chuyên biệt cho trẻ em hay cho một nhóm người nhất định, thì nó là một xu hướng đang rất cần.\n\n[4] Mã: [T03-042] (Bài giảng)\nNội dung: Ok, thì các bạn sẽ tập trung vào những cái thứ gì lặp đi lặp lại. Kinh nghiệm — hình như bài lab của các bạn cho cái buổi này và hôm sau, các bạn sẽ phải pick được một cái problem mà các bạn có thể dựng được một cái plan xuyên suốt từ đầu đến cuối để chứng minh được cái plan đấy nó hữu ích. Đầu tiên, check này: xem các tác vụ lặp lại các bạn có thể xử lý được không, có thể giảm được cái tốn thời gian không. Lợi thế của AI, lúc nãy mình bảo, là nhiều khi nó sẽ chính xác hơn. Tuy nhiên nhiều khi nhá — mình sẽ nói nhiều khi rất là đen. Tại vì sao? Các bạn đang đi làm rồi — nhiều khi idea sản phẩm của các bạn, các bạn làm đến 3 tháng các bạn mới thấy nó là dead. Tại sao cái tình huống đấy xảy ra? Thứ nhất, tại vì không phải lúc nào, bài toán nào các bạn cũng có thể sử dụng model mà giải quyết được triệt để hết. Mà nhiều khi các bạn phải làm đến 3 tháng mới thấy là khả năng model hiện tại, hoặc là khả năng kinh tế của công ty hiện tại, đang chưa đủ dữ liệu để mà tiếp tục. Ví dụ đi: các bạn làm một cái dự án rất là đặc thù — hỗ trợ cho bác sĩ chẩn đoán, hay là đọc được đơn thuốc viết tay của bác sĩ. Thấy khó đúng không? Tại vì sao? Ngay cả con người đọc vào cũng chưa chắc, trừ bác sĩ là người viết đúng không? Thế nên nó sẽ có những cái phần trăm bị fail.\n\n[5] Mã: [T03-074] (Bài giảng)\nNội dung: Ok, solution. Đơn giản nhá, theo mình thế này. Những bài toán đơn giản thực ra nó là công thức toán đúng không? Và công thức toán thì các bạn hiểu rồi: các bạn chỉ cần tăng giảm một biến số trong đấy thì các bạn cũng tính được sự tăng giảm của đáp án đúng không? Và cái đấy là deterministic — chắc chắn 100%, không cần phải check lại, vì đấy là công thức toán. Ok chưa? Thế rõ ràng một bài toán nó gồm hai thứ. Lúc nãy một bạn bảo dùng placeholder, nhưng bạn ấy vẫn chưa đưa ra được cái idea là làm thế nào để biến đổi cái placeholder chính xác — bạn lại bảo dùng con LLM, mà dùng con LLM thì vẫn chưa chắc đâu. Khi các bạn tách ra được placeholder rồi thì thứ nhất, các bạn phân loại được nó là dạng toán gì; các bạn biết được khả năng tăng giảm của từng biến số trong bài toán sẽ ảnh hưởng đến kết quả như thế nào. Ví dụ bài toán tiểu học, kiểu bạn An đi đạp xe từ nhà đến trường. Rõ ràng về lý thuyết, đấy là một tổ hợp của những phương trình, những con số, và cái đáp án là những ẩn số của phương trình đấy. Nếu bạn đã có một phương trình chính xác rồi, và bạn biết được luôn cái relationship giữa những biến số và kết quả, thì các bạn làm đơn giản: các bạn sẽ có một cái logic để thay đổi, tăng giảm những parameter trong bộ phương trình của một dạng toán, một dạng đề toán. Thế là bạn đã có vô vàn biến số, và bạn đảm bảo luôn một bộ combination mà bạn nghĩ ra là giải được.\n\nCÂU HỎI HỌC VIÊN: đáp án bài lab 2 là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "failSafe": "no-valid-citation → MOCK_NOT_FOUND"
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_Ubb5KXFBmXRjAqGyxbEis16p",
+      "name": "lookup_document",
+      "args": {
+        "topic": "đáp án bài lab 2"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Không có thông tin cụ thể nào liên quan đến đáp án bài lab 2 trong các đoạn tài liệu đã cung cấp.",
+    "answerDirection": "Hướng trả lời: Cần thêm thông tin cụ thể về nội dung bài lab 2 để xác định đáp án.",
+    "focusedChunks": []
+  }
+}

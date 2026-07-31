@@ -20,15 +20,14 @@ codebase/
 ├── mock-transcripts.html  ← Transcript page (click citation)
 ├── code.js                ← Mock data + entrypoint
 └── eval/
-    ├── loadenv.js         ← Load GEMINI_API_KEY từ .env
+    ├── loadenv.js         ← Load OPENROUTER_API_KEY + JINA_API_KEY từ .env
     ├── chunker.js         ← Tách transcript + chatlog → chunks.json
     ├── chatlog_chunker.js ← Index chatlog thành Q/A chunks
     ├── qdrant.js          ← Qdrant REST client (zero-dep)
-    ├── ingest.js          ← Embed + upsert toàn bộ chunks vào Qdrant
+    ├── ingest.js          ← Embed (Jina) + upsert toàn bộ chunks vào Qdrant
     ├── rag.js             ← Core RAG pipeline (retrieve + generate + verify)
     ├── chunks.json        ← 2,192 chunks (700 transcript + 1,492 chatlog)
-    ├── qdrant-cache.json  ← Cache embeddings (bypass khi restart)
-    ├── embeddings.json    ← Legacy fallback (chỉ dùng khi không có Qdrant)
+    ├── embeddings.json    ← Cache embeddings (jina-embeddings-v3, 1024-dim)
     ├── chatlog-chunks.json
     └── traces/            ← Log mỗi lần askTutor (1 JSON/turn)
 ```
@@ -37,8 +36,8 @@ codebase/
 
 | | Mock (CP2) | AI thật (CP3) |
 |---|---|---|
-| **Answer** | Bảng cứng trong `data.js` | Gemini `gemini-3-flash` sinh |
-| **Retrieval** | Keyword match | Gemini `text-embedding-004` cosine trong Qdrant |
+| **Answer** | Bảng cứng trong `data.js` | OpenRouter (gpt-4o-mini) sinh |
+| **Retrieval** | Keyword match | Jina `jina-embeddings-v3` cosine trong Qdrant |
 | **Citation** | Hardcoded trong mock | RAG tự sinh, **verifier** strip mã bịa |
 | **Hallucination** | Không có | Test bằng 20+ golden case (rubric §7) |
 
@@ -49,7 +48,7 @@ codebase/
 ```bash
 # Sao chép env mẫu
 cp .env.example .env
-# Điền GEMINI_API_KEY vào .env (lấy từ https://aistudio.google.com/apikey)
+# Điền OPENROUTER_API_KEY và JINA_API_KEY vào .env
 ```
 
 ### 2. Khởi động stack
@@ -63,7 +62,7 @@ docker compose up -d
 
 `entrypoint.sh` tự động:
 1. Đợi Qdrant healthy
-2. Kiểm tra collection — nếu rỗng → chạy `ingest.js` (embed 2,192 chunks)
+2. Kiểm tra collection — nếu rỗng → chạy `ingest.js` (embed 2,192 chunks bằng Jina)
 3. Khởi động server
 
 ### 3. Mở UI
@@ -84,7 +83,7 @@ docker run -d -p 6333:6333 -p 6334:6334 \
 
 # 2. Điền key
 cp codebase/eval/.env.example codebase/eval/.env
-# Sửa GEMINI_API_KEY
+# Sửa OPENROUTER_API_KEY và JINA_API_KEY
 
 # 3. Ingest
 node codebase/eval/ingest.js
@@ -102,16 +101,16 @@ node codebase/server.js
 [Query Analyzer]  ← skip (chỉ 1 loại query: hỏi về tài liệu)
      │
      ▼
-[Retriever]       ← Qdrant cosine top-5 (Gemini embed)
+[Retriever]       ← Qdrant cosine top-5 (Jina embed, transcript + chatlog)
      │
      ▼
-[Verifier #1]     ← threshold check: top-1 < 0.5 → fail-safe
+[Verifier #1]     ← threshold check: top-1 < 0.35 → fail-safe
      │
      ▼
 [Prompt builder]  ← ghép context + question + 4 quy tắc cite
      │
      ▼
-[Gemini generate] ← gemini-3-flash, temperature 0.2
+[OpenRouter generate] ← gpt-4o-mini, temperature 0.2 (hỗ trợ tool calling)
      │
      ▼
 [Verifier #2]     ← regex match [Txx-NNN] / [Cxxxx-Tyyyy-K]

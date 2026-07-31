@@ -1,0 +1,85 @@
+{
+  "question": "Memory injection là gì?",
+  "retrieved": [
+    {
+      "code": "T04-088",
+      "score": 0.2667
+    },
+    {
+      "code": "T04-087",
+      "score": 0.2642
+    },
+    {
+      "code": "T06-137",
+      "score": 0.2638
+    },
+    {
+      "code": "T06-086",
+      "score": 0.2629
+    },
+    {
+      "code": "T05-036",
+      "score": 0.2611
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Tuy nhiên, mình có thể cung cấp thông tin từ các nguồn web.\n\nMemory injection là một kỹ thuật tấn công mạng, trong đó mã độc được chèn trực tiếp vào không gian bộ nhớ của một quá trình đang chạy. Kỹ thuật này thường được gọi là \"malware không file\" vì không có tệp nào rõ ràng nằm trên đĩa cứng. Thay vì sử dụng tệp thực thi thông thường, kẻ tấn công sẽ tải mã độc vào một quá trình đang hoạt động, điều này làm cho việc phát hiện trở nên khó khăn hơn.\n\nCó một số phương pháp phổ biến trong tấn công memory injection, bao gồm:\n- **Process Hollowing**: Tạo một quá trình hợp pháp bị đình chỉ, thay thế mã của nó bằng mã độc, sau đó tiếp tục thực hiện.\n- **Reflective DLL Injection**: Tải một DLL trực tiếp từ bộ nhớ mà không ghi nó vào đĩa, làm cho việc phát hiện trở nên khó khăn hơn.\n\nCác phương pháp này nhằm mục đích thực thi mã tùy ý mà không bị phát hiện dễ dàng (Nguồn: [3] Understanding Memory Injection Attacks: Process Hollowing, DLL | eSHIELD IT SERVICES - https://eshielditservices.com/understanding-memory-injection-attacks-process-hollowing-dll-injection-code-injection-explained). \n\nNếu bạn cần thêm thông tin chi tiết hoặc có câu hỏi khác, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T04-088",
+      "T04-087",
+      "T06-137",
+      "T06-086",
+      "T05-036"
+    ],
+    "focusedCodes": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Memory injection là gì?",
+    "topChunks": [
+      {
+        "code": "T04-088",
+        "score": 0.26674467
+      },
+      {
+        "code": "T04-087",
+        "score": 0.26415676
+      },
+      {
+        "code": "T06-137",
+        "score": 0.26383775
+      },
+      {
+        "code": "T06-086",
+        "score": 0.26285896
+      },
+      {
+        "code": "T05-036",
+        "score": 0.26114368
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Memory injection là gì?",
+      "Memory injection là gì? T04-088"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_eITLYZfU4hfxDgZeYayUALpj",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Memory injection"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Memory injection là một kỹ thuật trong lập trình và bảo mật, liên quan đến việc chèn mã vào bộ nhớ của một ứng dụng đang chạy để thay đổi hành vi của nó hoặc để thực hiện các tác vụ không được phép.",
+    "answerDirection": "Hướng trả lời: Cần tìm hiểu thêm về khái niệm và ứng dụng của memory injection trong lĩnh vực bảo mật và lập trình.",
+    "focusedChunks": []
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "question": "Tại sao không nên lạm dụng Agent?",
+  "retrieved": [
+    {
+      "code": "T03-009",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-038",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-042",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-108",
+      "score": 0.7143
+    },
+    {
+      "code": "T03-119",
+      "score": 0.7143
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.714 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Tại sao không nên lạm dụng Agent?",
+    "topChunks": [
+      {
+        "code": "T03-009",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-038",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-042",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-108",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T03-119",
+        "score": 0.7142857142857143
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_KhicvxqU3xCZ4E9YxuSWaejP",
+      "name": "lookup_document",
+      "args": {
+        "topic": "lạm dụng Agent"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Việc lạm dụng Agent có thể dẫn đến những rủi ro như giảm khả năng tổng quát của mô hình, làm cho nó chỉ phù hợp với một lĩnh vực ngách mà không thể áp dụng rộng rãi. Ngoài ra, việc fine-tuning không phải lúc nào cũng mang lại kết quả tốt, vì nó có thể làm mất đi khả năng xử lý các tác vụ chung của mô hình.",
+    "answerDirection": "Hướng trả lời: Không nên lạm dụng Agent vì có thể làm giảm khả năng tổng quát của mô hình và fine-tuning không phải lúc nào cũng mang lại lợi ích.",
+    "focusedChunks": [
+      "T03-119"
+    ]
+  }
+}

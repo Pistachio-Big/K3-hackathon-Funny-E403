@@ -1,0 +1,58 @@
+{
+  "question": "vậy cho em hỏi luôn là attention vs self-attention khác nhau chỗ nào",
+  "retrieved": [
+    {
+      "code": "T06-086",
+      "score": 0.6571
+    },
+    {
+      "code": "T06-130",
+      "score": 0.4727
+    },
+    {
+      "code": "T06-002",
+      "score": 0.4553
+    },
+    {
+      "code": "T06-161",
+      "score": 0.4216
+    },
+    {
+      "code": "T04-040",
+      "score": 0.3887
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nSelf-attention cho phép mỗi token tự nhìn và đánh giá các token khác trong ngữ cảnh, trong khi attention tổng quát hơn, cho phép mô hình nhận diện mối liên hệ giữa nhiều từ trong một câu. Self-attention sử dụng các công thức Q, K, V để tính toán độ tương đồng giữa các token.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: So sánh self-attention và attention, nhấn mạnh cách mà self-attention hoạt động trong ngữ cảnh của các token và cách attention tổng quát hơn trong việc nhận diện mối liên hệ giữa các từ.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-086] (Bài giảng)\nNội dung: Cái self-attention bản chất là mỗi một token sẽ nhìn các token khác trong ngữ cảnh đang đặt ra. Thứ hai là multi-head attention: sẽ có nhiều góc nhìn song song. Rồi feed-forward: xử lý phi tuyến tính cho từng vị trí. Và residual connection ở dưới làm cho việc kết nối trôi chảy. Cái này tốt nhất là tí nữa các bạn sẽ cùng nhau run cái demo xem attention hoạt động thế nào — bạn hỗ trợ sẽ online trên Discord, các bạn lấy link ở trên đó, chạy thì sẽ hiểu multi-head attention là như nào và self-attention là như nào. Về mặt lý thuyết thì chỗ này chắc phải đưa ví dụ cho dễ nhớ hơn một chút.\n\n[2] Mã: [T06-130] (Bài giảng)\nNội dung: Cái cơ chế self-attention ở đây, hiểu một cách thân thiện: cứ một từ — đơn giản hóa gọi một từ là một token — thì làm sao mỗi từ đấy chúng ta biểu diễn nó trong không gian toán học để tự cái từ đấy nhìn được những từ khác. Sau khi nó tự nhìn được và tự đánh giá được mức độ similarity score — mức độ tương đồng — thì sau đó nó mới đoán được \"nó\" ở đây chính là con mèo. Thế thì nó có công thức Q, K, V với hàm softmax — các bạn nhìn vào phần bên trái trước đã, để mình lấy ví dụ cho dễ. Chữ Q đại diện cho query — cái truy vấn mà các bạn gửi vào. Chữ K đại diện cho key — cái nhãn. Còn chữ V là value.\n\n[3] Mã: [T06-002] (Bài giảng)\nNội dung: Trong buổi học hôm nay, mình cũng xin giới thiệu với các bạn: mình là [giảng viên], mình vừa ra từ Sài Gòn sáng hôm nay. Trong phiên học hôm nay thì cũng có thêm một bạn sẽ hỗ trợ thêm phần demo về cách mà cơ chế attention hoạt động như thế nào. Hiện tại mình là một Google Developer Expert — Google họ công nhận cái này trên phạm vi toàn cầu, ở Việt Nam hiện tại có khoảng tám người. Và mình cũng muốn biết về các bạn, nên mời các bạn vào cái mã này, có một vài câu hỏi bên trong, chúng ta cùng trả lời để chúng ta cùng biết nhau như thế nào nhé. Có hai câu hỏi. Khi các bạn trả lời câu hỏi thì chúng ta sẽ thấy luôn được kết quả.\n\n[4] Mã: [T06-161] (Bài giảng)\nNội dung: Để access vào bài lab này, mọi người vào cái slide mình đã gửi trong channel welcome-and-rules; ở slide thứ sáu mọi người sẽ thấy \"live demo self-attention\" — quét mã QR để vào notebook, lấy notebook này về chạy demo. Không có gì tốt bằng việc chính mọi người tự trải nghiệm xem cơ chế song song hoạt động như thế nào, và nó đang nhìn token này, token kia theo chiều nào. Bài lab này giúp trực quan hóa cơ chế self-attention, giúp mọi người nắm được các đặc tính của Transformer lúc nãy nói. Các bạn đảm bảo là đã access được vào cái này, rồi về tự chạy nhá.\n\n[5] Mã: [T04-040] (Bài giảng)\nNội dung: Transformer có một cách tiếp cận khác, đặc biệt hơn — tại sao lại có chữ attention trong \"Attention Is All You Need\" ở đây: thay vì lần lượt đọc và dịch từng chữ một, nó sẽ đọc cả cụm đấy, và nhận diện được đâu là — hiểu nôm na — những keyword, đâu là những cụm từ có sự liên quan đến nhau, để nhận diện ra được mối liên kết giữa nhiều từ trong một câu. Nó có thể xử lý được cả một câu dài: thay vì chỉ nhìn từng chữ nhỏ lẻ, nhìn từng phần nhỏ lẻ, nó sẽ nhìn cả một đoạn dài và tìm ra các mối liên hệ giữa các từ ở trong đấy. Thực ra trong một câu, trong một văn bản, không phải mọi từ đều có độ quan trọng như nhau. Sẽ có những từ là keyword — những từ chiếm tỉ trọng phần lớn để xác định được ngữ nghĩa của văn bản đấy. Mô hình này được xây ra để có thể nhận diện được ngay lập tức đâu là những thứ chúng ta cần tập trung. Đấy là lý do của chữ attention: trong toàn bộ dữ liệu này, tôi sẽ tập trung vào những từ này — đấy là những chữ quan trọng của đoạn văn bản này, và những chữ này liên quan đến nhau, khi đứng với nhau thì có ý nghĩa như thế này. Đấy là diễn giải một cách dễ hiểu nhất về cách transformer hoạt động. Bài báo này xây dựng ra nền tảng của transformer từ tận năm 2017 cơ — và thậm chí là từ team Google luôn.\n\nCÂU HỎI HỌC VIÊN: vậy cho em hỏi luôn là attention vs self-attention khác nhau chỗ nào\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-086], giảng viên có nói: \"Cái self-attention bản chất là mỗi một token sẽ nhìn các token khác trong ngữ cảnh đang đặt ra. Thứ hai là multi-head attention: sẽ có nhiều góc nhìn song song. Rồi feed-forward: xử lý phi tuyến tính ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-086"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-086",
+      "T06-130",
+      "T04-040"
+    ],
+    "allowedCodes": [
+      "T06-086",
+      "T06-130",
+      "T06-002",
+      "T06-161",
+      "T04-040"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Self-attention cho phép mỗi token tự nhìn và đánh giá các token khác trong ngữ cảnh, trong khi attention tổng quát hơn, cho phép mô hình nhận diện mối liên hệ giữa nhiều từ trong một câu. Self-attention sử dụng các công thức Q, K, V để tính toán độ tương đồng giữa các token.",
+    "answerDirection": "Hướng trả lời: So sánh self-attention và attention, nhấn mạnh cách mà self-attention hoạt động trong ngữ cảnh của các token và cách attention tổng quát hơn trong việc nhận diện mối liên hệ giữa các từ.",
+    "focusedChunks": [
+      "T06-086",
+      "T06-130",
+      "T04-040"
+    ]
+  }
+}

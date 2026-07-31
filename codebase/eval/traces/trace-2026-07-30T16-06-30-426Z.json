@@ -1,0 +1,54 @@
+{
+  "question": "t có hỏi vs mấy bạn vs vs mình vs vs",
+  "retrieved": [
+    {
+      "code": "T06-072",
+      "score": 0.4808
+    },
+    {
+      "code": "T06-004",
+      "score": 0.425
+    },
+    {
+      "code": "T02-027",
+      "score": 0.4203
+    },
+    {
+      "code": "T06-118",
+      "score": 0.4129
+    },
+    {
+      "code": "T06-021",
+      "score": 0.402
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nTrong đoạn tài liệu, có một bạn đã đặt câu hỏi cho mọi người trong lớp và được khuyến khích chia sẻ câu hỏi đó để mọi người cùng thảo luận. Điều này cho thấy sự tương tác và giao lưu giữa các bạn trong lớp.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Câu hỏi đã được đặt ra và khuyến khích mọi người cùng thảo luận.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-072] (Bài giảng)\nNội dung: Các bạn lúc nãy đã phát biểu thì nhớ điền thông tin vào nhá. Trong giờ giải lao vừa rồi có một bạn đặt cho mình một câu hỏi. Bạn đấy đâu rồi nhỉ? Em đứng dậy, đặt câu hỏi lại cho mọi người nghe, xong rồi vừa tính điểm cho em, và biết đâu những người khác cũng quan tâm cùng câu hỏi với em.\n\n[2] Mã: [T06-004] (Bài giảng)\nNội dung: Đấy, ở bên tay phải là đáp án mà các bạn đang trả lời, chúng ta sẽ làm việc trên dữ liệu này. 13% các bạn nhận ra AI có sức mạnh khủng, 87% [không nghe rõ]. 16% [không nghe rõ] — nói gì thì nói, ví dụ như trong ngành thời trang đúng không, có cái bot nào mới là các bạn gái cũng rất thích, phải theo mốt đúng không, bây giờ AI cũng vậy đúng không — 68%. Tổng lớp hôm nay là bao nhiêu bạn nhỉ? 207 bạn. Ok, mình chuyển sang câu hỏi số 2 nhé. Thêm một câu hỏi nữa, câu này mời các bạn. Thực ra mình nghĩ rất là tuyệt vời: từ khóa 1 cho đến bây giờ khóa 3, nghe có vẻ chất lượng học viên đổ vào càng ngày càng cao, rất là tuyệt vời. Có ai dũng cảm nói là đến từ hành tinh khác không? [không nghe rõ] Quả này có vẻ là cũng chưa nhiều bạn đi làm đúng không, mà phần lớn là sinh viên. Có bao nhiêu bạn ở đây đang đi làm rồi ạ? Khoảng 10-15 bạn gì đấy đúng không? Ai đi làm trên 5 năm rồi? Một bạn, hai bạn. Ok. Trong khi chờ mọi người hoàn thành thì mời bạn đi làm trên 5 năm — bạn làm công ty nào nhỉ? Giao lưu chút. Các bạn khác cứ trả lời tiếp các bạn nhé.\n\n[3] Mã: [T02-027] (Bài giảng)\nNội dung: Thực ra [không nghe rõ] thì chưa đến đoạn đấy. Nhưng mình có thể nói trên cái cá nhân mình đã từng làm trước đây. Ví dụ câu hỏi của bạn là: có nhiều tính năng, làm thế nào để đánh giá được tính năng nào ảnh hưởng cái gì, đúng không? Mình test — mình A/B test.\n\n[4] Mã: [T06-118] (Bài giảng)\nNội dung: À, tức là em nằm trong các bạn [không nghe rõ] hả? — Dạ đúng rồi.\n\n[5] Mã: [T06-021] (Bài giảng)\nNội dung: Rồi, bây giờ nhìn lại đây một chút phần cuối này: các bạn chủ yếu đến từ Bách Khoa. Bách Khoa đông thế, giơ tay đúng không ạ? Chủ yếu là các bạn sinh viên đúng không? Rồi, cảm ơn các bạn. Câu cuối thì các bạn vote cái này luôn nhé cho xong thủ tục. Thực ra cái này quan trọng, tại vì mình muốn biết xem mức độ mà các bạn theo các dự án nó như thế nào. Câu hỏi này không phải mình nghĩ ra đâu — AI nghĩ cả câu hỏi và hai cái đáp án đấy. Cái đáp án số hai thì mình đang check xem các bạn để ý chuyện đấy đến đâu rồi. Nhân đây thì hỏi là có ai nhớ [không nghe rõ] ra đời năm nào không? 2021? 2021 à. Có ai biết chữ T ở trong chữ GPT viết tắt của gì không? Chuẩn. 162 bạn thì phần lớn các bạn đã trả lời — mình nghĩ là trước 2022. Rồi, chắc là chúng ta bắt đầu các bạn nhé, ngần này cũng đủ insight rồi.\n\nCÂU HỎI HỌC VIÊN: t có hỏi vs mấy bạn vs vs mình vs vs\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-072], giảng viên có nói: \"Các bạn lúc nãy đã phát biểu thì nhớ điền thông tin vào nhá. Trong giờ giải lao vừa rồi có một bạn đặt cho mình một câu hỏi. Bạn đấy đâu rồi nhỉ? Em đứng dậy, đặt câu hỏi lại cho mọi người nghe, xong ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-072"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-072"
+    ],
+    "allowedCodes": [
+      "T06-072",
+      "T06-004",
+      "T02-027",
+      "T06-118",
+      "T06-021"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Trong đoạn tài liệu, có một bạn đã đặt câu hỏi cho mọi người trong lớp và được khuyến khích chia sẻ câu hỏi đó để mọi người cùng thảo luận. Điều này cho thấy sự tương tác và giao lưu giữa các bạn trong lớp.",
+    "answerDirection": "Hướng trả lời: Câu hỏi đã được đặt ra và khuyến khích mọi người cùng thảo luận.",
+    "focusedChunks": [
+      "T06-072"
+    ]
+  }
+}

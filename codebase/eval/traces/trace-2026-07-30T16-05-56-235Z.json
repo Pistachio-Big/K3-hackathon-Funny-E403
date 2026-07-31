@@ -1,0 +1,60 @@
+{
+  "question": "Hệ sinh thái AI gồm những gì?",
+  "retrieved": [
+    {
+      "code": "T05-006",
+      "score": 0.5156
+    },
+    {
+      "code": "T04-015",
+      "score": 0.5126
+    },
+    {
+      "code": "T03-045",
+      "score": 0.4409
+    },
+    {
+      "code": "T05-105",
+      "score": 0.4266
+    },
+    {
+      "code": "T04-073",
+      "score": 0.4213
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nHệ sinh thái AI bao gồm nhiều thành phần khác nhau, từ AI tổng quát đến các công nghệ cụ thể như machine learning, deep learning và generative AI. Một hệ thống AI cần có mô hình, ngữ cảnh, lập kế hoạch và các công cụ để hoạt động hiệu quả.\n\n## HƯỚNG TRẢ LỜI\nHệ sinh thái AI bao gồm các thành phần như AI tổng quát, machine learning, deep learning, generative AI, mô hình, ngữ cảnh, lập kế hoạch và các công cụ hỗ trợ.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T05-006] (Bài giảng)\nNội dung: Nội dung cả bài, nếu các bạn học từ bây giờ cho đến chiều, có bảy phần lý thuyết. Phần một là AI landscape — chúng ta sẽ đi sâu hơn vào những con số ngày hôm qua đã nói. Sau đó là các anti-pattern, tức là những cái cần tránh. Rồi chúng ta nói về AI product life cycle và các cổng đánh giá tại từng bước. Sau đó chúng ta sẽ xem một AI system có những component, những thành tố loại nào. Kế đến là một khung để chọn đúng mức độ ứng dụng AI. Rồi đến phần liên quan đến problem statement và cách mình viết nó. Phần tiếp theo, trong quá trình thảo luận, chúng ta sẽ xây dựng một khung đánh giá xem những người liên quan nên quan sát như thế nào, nên tham gia ra sao, ai là người chịu trách nhiệm. Và cuối cùng là cái mà người ta hay gọi là discovery workshop, cộng với việc đánh giá khả thi về mặt kỹ thuật trước khi chúng ta bắt đầu code.\n\n[2] Mã: [T04-015] (Bài giảng)\nNội dung: Ở đây chúng ta sẽ nhìn vào một hình ảnh để dễ dàng hình dung các thuật ngữ này nằm ở đâu trong bức tranh lớn. Rộng nhất chúng ta có AI — tắt của artificial intelligence. AI là một từ bao phủ tất cả những từ bên trong. AI về bản chất, nhìn chung có thể hiểu nôm na, là một hệ thống có trí thông minh. Ý tưởng đầu tiên mà con người và những nhà nghiên cứu khoa học đặt ra khi đặt ra từ này là câu hỏi: làm thế nào để có thể tái tạo và mô phỏng được trí thông minh con người — đấy là từ AI. Vòng bên trong là machine learning — thế hệ tiếp theo: sau khi đặt ra câu hỏi đấy, họ trả lời bằng một lời giải là bây giờ tôi có thể cung cấp các dữ liệu cho máy — liệu máy có thể học được từ các dữ liệu đấy không, thay vì tôi cứ phải define các kết luận bằng tay, if-else kiểu vậy. Vòng tiếp theo bên trong là tập con nữa: deep learning. Deep learning là ý tưởng về việc liệu tôi có thể tái tạo được một mạng neuron thần kinh giống như cách con người suy luận hay không — nó có nhiều tầng để có thể tự học được các đặc trưng từ dữ liệu, tự suy ra được quy luật. Và tầng bên trong cùng là tầng của generative AI — tầng con của các tầng bên ngoài. Đấy là công nghệ AI tạo sinh — tiếng Việt là AI tạo sinh — nằm đằng sau các chatbot thông minh bây giờ: ChatGPT, Claude mà mọi người đang xài. Đây là bức tranh lớn để chúng ta đặt vào: các vòng bên trong là tập con của các tầng bên ngoài, và thực ra thứ tự công nghệ di chuyển cũng đi từ bên ngoài vào bên trong.\n\n[3] Mã: [T03-045] (Bài giảng)\nNội dung: Còn hôm nay các bạn chỉ tập trung vào việc: làm thế nào xây dựng được một cái idea AI hoàn chỉnh. Tựu chung lại, những thứ AI làm tốt — đơn giản là những thứ cái máy tính làm tốt — là repetition: việc cứ lặp đi lặp lại, lặp đi lặp lại, với số lượng lớn. Hoặc là gì? Duyệt dữ liệu, đọc hồ sơ, summarize. Ở đây chắc chắn không bạn nào dám tự tin vỗ ngực là mình có trí nhớ tốt hơn cái máy tính đúng không? Cái máy tính nó đâu cần nhớ — nó cứ mở vào cái file đấy, dò thông tin, đưa ra cho bạn, giống như copy paste ấy. Nhưng trí não con người thì khác đúng không? Truy cập thông tin, nhiều khi phải cần một cái gì đấy để gợi nhớ. Nên bây giờ các bạn phải xem: trong cái pipeline mà các bạn đang muốn xây dựng hệ thống AI ấy, có khoảng nào các bạn có thể thay thế được không. Theo mình thấy nhá — mình cũng muốn khoá này các bạn nên thử tập trung vào lĩnh vực giáo dục xem. Tại vì nếu chịu khó lên Google xem thì cái triển lãm giáo dục của bên Trung Quốc — họ làm rất nhiều thứ. Tức là họ có thể nhận dạng chữ viết của giáo viên nhá.\n\n[4] Mã: [T05-105] (Bài giảng)\nNội dung: Ở đây các bạn sẽ thấy những keyword quan trọng: một hệ thống AI thì đầu tiên nó sẽ có một mô hình, sau đấy phải có những ngữ cảnh — xa hơn nữa các bạn có thể hiểu đó là context management, phần quản lý ngữ cảnh. Rồi sau đó chúng ta có planning — phần liên quan đến lập kế hoạch — và những cái tool. Tool thì có nhiều cách gọi, có người gọi là [không nghe rõ], còn bây giờ chúng ta gọi thêm nữa là MCP.\n\n[5] Mã: [T04-073] (Bài giảng)\nNội dung: Xuất phát điểm của chúng ta là từ một mô hình thôi. Bây giờ chúng ta làm cho mô hình có tay, có chân, có bộ não, có thêm nhiều ngữ cảnh khác để làm được việc — đấy là con đường đi đến AI agent. Hiểu nôm na, nó không phải chỉ sinh văn bản nữa: nó có thể làm được việc, có thể tương tác với thế giới. Để làm được việc đấy, nó cần được gắn tay, gắn chân — kết nối với các công cụ, với thế giới bên ngoài. Tại sao cần? Vì chúng ta có rất nhiều công cụ, đặc biệt trong doanh nghiệp — nhiều khi doanh nghiệp phải làm việc với đến 10 công cụ khác nhau. Để AI thực sự đưa vào hoạt động trong một môi trường thật thì nó phải được kết nối với những công cụ đang có. Đấy là con đường từ một mô hình cần lắp thêm bên ngoài để có khả năng hoạt động, có khả năng lên kế hoạch. Trong những buổi tiếp theo mình sẽ đi sâu hơn, các bạn sẽ được học sâu hơn về các kỹ thuật [không nghe rõ].\n\nCÂU HỎI HỌC VIÊN: Hệ sinh thái AI gồm những gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T05-006], giảng viên có nói: \"Nội dung cả bài, nếu các bạn học từ bây giờ cho đến chiều, có bảy phần lý thuyết. Phần một là AI landscape — chúng ta sẽ đi sâu hơn vào những con số ngày hôm qua đã nói. Sau đó là các anti-pattern, tứ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T05-006"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T04-015",
+      "T05-105",
+      "T05-006",
+      "T04-073"
+    ],
+    "allowedCodes": [
+      "T05-006",
+      "T04-015",
+      "T03-045",
+      "T05-105",
+      "T04-073"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Hệ sinh thái AI bao gồm nhiều thành phần khác nhau, từ AI tổng quát đến các công nghệ cụ thể như machine learning, deep learning và generative AI. Một hệ thống AI cần có mô hình, ngữ cảnh, lập kế hoạch và các công cụ để hoạt động hiệu quả.",
+    "answerDirection": "Hệ sinh thái AI bao gồm các thành phần như AI tổng quát, machine learning, deep learning, generative AI, mô hình, ngữ cảnh, lập kế hoạch và các công cụ hỗ trợ.",
+    "focusedChunks": [
+      "T04-015",
+      "T05-105",
+      "T05-006",
+      "T04-073"
+    ]
+  }
+}

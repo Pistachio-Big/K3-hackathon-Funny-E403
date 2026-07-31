@@ -1,0 +1,77 @@
+{
+  "question": "Context là gì?",
+  "retrieved": [
+    {
+      "code": "C0002-T0330-A",
+      "score": 0.4544
+    },
+    {
+      "code": "T06-150",
+      "score": 0.4307
+    },
+    {
+      "code": "T04-052",
+      "score": 0.4282
+    },
+    {
+      "code": "C0013-T0990-A",
+      "score": 0.3889
+    },
+    {
+      "code": "C0247-T1194-A",
+      "score": 0.383
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Bạn nên:\n• Hỏi giảng viên hoặc TA trong Discord\n• Tra cứu tài liệu bên ngoài\n\nNếu bạn có câu hỏi cụ thể nào khác, hãy cho mình biết!",
+  "verified": null,
+  "mode": "LIVE",
+  "research": {
+    "question": "Context là gì?",
+    "topChunks": [
+      {
+        "code": "C0002-T0330-A",
+        "score": 0.45443094
+      },
+      {
+        "code": "T06-150",
+        "score": 0.43069482
+      },
+      {
+        "code": "T04-052",
+        "score": 0.42822772
+      },
+      {
+        "code": "C0013-T0990-A",
+        "score": 0.38889033
+      },
+      {
+        "code": "C0247-T1194-A",
+        "score": 0.38301387
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Context là gì?",
+      "Context là gì? C0002-T0330-A"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_GKA4iuhRRlaImxTRESbz5qFj",
+      "name": "lookup_document",
+      "args": {
+        "topic": "context"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Context (ngữ cảnh) là một cấu trúc quản lý thông tin trong kỹ thuật lập trình Agent, bao gồm các thành phần mà mô hình đọc vào. Nó có thể được hình dung như một 'bàn làm việc' có giới hạn, ảnh hưởng đến khả năng xử lý thông tin của mô hình.",
+    "answerDirection": "Hướng trả lời: Giải thích về ngữ cảnh trong lập trình và mô hình ngôn ngữ, cùng với các yếu tố ảnh hưởng đến hiệu quả của nó.",
+    "focusedChunks": [
+      "C0002-T0330-A",
+      "C0013-T0990-A"
+    ]
+  }
+}

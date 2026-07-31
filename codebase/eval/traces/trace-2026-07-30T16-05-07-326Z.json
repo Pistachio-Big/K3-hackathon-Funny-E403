@@ -1,0 +1,56 @@
+{
+  "question": "Giải thích token và embedding cho người hoàn toàn mới",
+  "retrieved": [
+    {
+      "code": "T06-128",
+      "score": 0.6249
+    },
+    {
+      "code": "T04-051",
+      "score": 0.5683
+    },
+    {
+      "code": "T06-134",
+      "score": 0.4921
+    },
+    {
+      "code": "T04-049",
+      "score": 0.4752
+    },
+    {
+      "code": "T06-133",
+      "score": 0.4739
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nToken là đơn vị cơ bản trong các mô hình ngôn ngữ lớn, không phải là từ hay chữ cái mà là một phần nhỏ hơn, giúp máy tính xử lý ngôn ngữ. Embedding là quá trình chuyển đổi token thành vectơ trong không gian toán học, cho phép mô hình hiểu và tìm ra sự tương đồng giữa các token.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Giải thích rõ ràng về khái niệm token và embedding cho người mới bắt đầu.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-128] (Bài giảng)\nNội dung: Sau đó, ở bước thứ hai, mỗi token sau khi được chuyển vào một vectơ có nghĩa là nó được định danh. Vectơ là gì? Vectơ là chúng ta định danh một cái gì đó trong không gian toán học. Giống như mỗi vị trí trên trái đất được định nghĩa bằng latitude và longitude của GPS thì chúng ta mới tracking được mình đang đi đâu đúng không? Trong không gian toán học thì bước embedding làm cái chuyện đấy — đó là bước số hai các bạn. Sau đó, mỗi token trong không gian toán học đấy nhìn lẫn nhau để tìm ra similarity score — điểm tương đồng. Sau bước đó nó tiếp tục feed forward — đẩy toàn bộ những cái đã diễn ra trước đó về phía trước. Và cuối cùng nó đoán next token là gì — next token giải mã lại thì chính là từ tiếp theo. Mình nói lại: về mặt kiến trúc, cái này rất quan trọng, cần phải học, và cái này phải giải thích đi giải thích lại nhá.\n\n[2] Mã: [T04-051] (Bài giảng)\nNội dung: Rồi sau token thì cũng có một khái niệm rất là quan trọng, đấy là context. Context nghĩa là bối cảnh, ngữ cảnh. Context ở đây nghĩa là gì? Là toàn bộ những thông tin mà một mô hình nó có thể tiêu thụ trong một lần — có thể hiểu nôm na là thế. Context càng nhiều thì nó càng có thể tiêu thụ được nhiều thông tin. Ví dụ như những mô hình thời đầu, khi context này nó ngắn, nó có giới hạn ngữ cảnh — có một từ là context window ấy, nghĩa là cửa sổ ngữ cảnh — là một mô hình một lúc nó chỉ tiếp nhận được một số lượng nhất định, ví dụ như kiểu vài chục trang sách thôi. Lúc đấy bạn có thể gửi cho nó vài chục trang sách một lúc thì nó có thể đọc, tóm tắt được hết. Nhưng giả sử bạn gửi cho nó vài quyển sách chẳng hạn, thì nó sẽ không thể nào xử lý được hết, nó phải cắt nhỏ ra và làm. Thế thì khi nó cắt nhỏ ra và xử lý, thứ nhất là nó sẽ phức tạp hơn, bởi vì nó có thể bị mất mát thông tin của những phần phía trước. Thậm chí khi nó tiếp nhận một lượng thông tin có giới hạn, nó sẽ chỉ nhìn trong một phạm vi hẹp thôi, nó không thể nhìn được rộng hơn. Thế nhưng bây giờ cửa sổ ngữ cảnh của các mô hình càng ngày càng lớn rồi. Đến bây giờ thì 1 triệu token là một chuyện bình thường. 1 triệu token sẽ rơi vào khoảng — ở đây mình lấy một ví dụ thôi — khoảng bốn đến năm cuốn sách một lúc. Nhưng mà ngày xưa, những mô hình đầu tiên thời đầu, nó chỉ là một cuốn sách khoảng 300 trang thôi. Mình có thể hình dung context đó là một cái bàn làm việc của một mô hình: trong một thời điểm nó có thể bày ra được tối đa bao nhiêu, thì nó có thể xử lý được chừng đấy thông tin trong thời điểm đấy thôi.\n\n[3] Mã: [T06-134] (Bài giảng)\nNội dung: Đơn vị cơ bản của LLM là cái nãy giờ chúng ta gọi là token. Quá trình huấn luyện dữ liệu đầu vào trước đây chủ yếu dùng tiếng Anh, bởi vậy logic của nó vẫn đi từ trái sang phải, và bởi vậy nếu các bạn gõ tiếng Việt thì bao giờ lượng token nó burn cũng cao hơn tiếng Anh. Ví dụ từ \"Hello World\" được tách thành hai token, nhưng \"Xin chào Việt Nam\" đôi khi lại thành ba token. Rồi một từ dùng trong code, ví dụ \"def function\", thì là bốn token — nó có những logic nhất định.\n\n[4] Mã: [T04-049] (Bài giảng)\nNội dung: Trong các mô hình ngôn ngữ lớn thì có một thuật ngữ quan trọng chúng ta cần nắm được, đấy là token. Nó sẽ là một đơn vị tính — nó không phải là từ, không phải là chữ cái, mà nó là token. Các bạn có thể sẽ thấy các mô hình bây giờ nó có cửa sổ ngữ cảnh 1 triệu token ấy — có nghĩa là có thể đọc được 1 triệu token trong một lúc chẳng hạn. Mô hình nó không nhìn toàn bộ thông tin văn bản một cách nguyên vẹn; nói chung mọi người có thể hiểu token là ngôn ngữ của máy. Con người chúng ta nói chuyện với nhau bằng ngôn ngữ của từ ngữ đúng không? Nhưng mà máy nói chuyện với nhau bằng ngôn ngữ của token. Nó sẽ chẻ nhỏ những cái từ đấy ra thành token — cái này các bạn có thể hiểu nôm na thôi. Khi nó chẻ thành token thì nó không còn nguyên vẹn một cái từ đấy nữa. Và token này cũng sẽ có sự khác biệt cho từng ngôn ngữ khác nhau. Ví dụ như tiếng Việt thì sẽ tốn hơn tiếng Anh, bởi vì tiếng Việt nó có dấu. Bây giờ mình không nhớ chính xác là bao nhiêu, nhưng mà như ngày trước nó sẽ tốn hơn khoảng một phẩy mấy lần ấy — 1,3, 1,4 lần. Đấy là một đơn vị tính của các mô hình ngôn ngữ lớn: token.\n\n[5] Mã: [T06-133] (Bài giảng)\nNội dung: Mình sẽ cố gắng giải thích tiếp chuyện này thêm vài phút nữa, sau đó các bạn sẽ trực tiếp làm cái này để hiểu cách nó gán việc token này nhìn sang token khác như thế nào — sẽ dễ hiểu hơn nhá. Và có một thuật ngữ quan trọng nữa, đó là ngữ cảnh: nó nhìn hết từ này xong từ kia rồi nó đoán.\n\nCÂU HỎI HỌC VIÊN: Giải thích token và embedding cho người hoàn toàn mới\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-128], giảng viên có nói: \"Sau đó, ở bước thứ hai, mỗi token sau khi được chuyển vào một vectơ có nghĩa là nó được định danh. Vectơ là gì? Vectơ là chúng ta định danh một cái gì đó trong không gian toán học. Giống như mỗi vị tr...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-128"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-134",
+      "T06-128"
+    ],
+    "allowedCodes": [
+      "T06-128",
+      "T04-051",
+      "T06-134",
+      "T04-049",
+      "T06-133"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Token là đơn vị cơ bản trong các mô hình ngôn ngữ lớn, không phải là từ hay chữ cái mà là một phần nhỏ hơn, giúp máy tính xử lý ngôn ngữ. Embedding là quá trình chuyển đổi token thành vectơ trong không gian toán học, cho phép mô hình hiểu và tìm ra sự tương đồng giữa các token.",
+    "answerDirection": "Hướng trả lời: Giải thích rõ ràng về khái niệm token và embedding cho người mới bắt đầu.",
+    "focusedChunks": [
+      "T06-134",
+      "T06-128"
+    ]
+  }
+}

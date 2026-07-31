@@ -1,0 +1,53 @@
+{
+  "question": "Agent khác chatbot thế nào?",
+  "retrieved": [
+    {
+      "code": "T01-030",
+      "score": 0.8
+    },
+    {
+      "code": "T03-015",
+      "score": 0.8
+    },
+    {
+      "code": "T03-037",
+      "score": 0.8
+    },
+    {
+      "code": "T05-113",
+      "score": 0.8
+    },
+    {
+      "code": "T01-032",
+      "score": 0.6
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nAgent khác chatbot ở chỗ agent có khả năng thực hiện các tác vụ phức tạp hơn, như tìm kiếm thông tin và so sánh sản phẩm, trong khi chatbot thường chỉ trả lời câu hỏi đơn giản. ChatGPT và các hệ thống tương tự không chỉ là chatbot mà còn là hệ thống agent có khả năng xử lý và phân tích thông tin từ nhiều nguồn.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Agent có khả năng thực hiện các tác vụ phức tạp hơn so với chatbot, như tìm kiếm và phân tích thông tin.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T01-030] (Bài giảng)\nNội dung: Đây là một câu mà mình gặp được rất nhiều — nhiều công ty hay đặt ra câu hỏi này, nhiều sếp hay bảo là muốn xây dựng AI chatbot support. Khi nhận cái đề bài này thì các bạn sẽ phải tự tay xử lý toàn bộ. Với mình, đề bài này là rất lớn: support — cuối cùng là support để làm gì? Đây là một đề bài vẫn còn mơ hồ và nó quá rộng. Việc của chúng ta sẽ là phải xác định được cái mục tiêu, cái pain point thực sự ở phía sau đấy là gì. Nhiều khi sếp bảo là xây dựng chatbot cho khách hàng, nhưng cuối cùng khi hỏi ra thì thực ra lý do là vì sale đang quá tải. Bạn hỏi ra thì mình biết là sale đang quá tải; thế thì bắt đầu đi vào hỏi sale: thực ra quá tải chỗ nào? Có khi bạn có một giải pháp khác mà bạn không cần build chatbot. Đấy là cách bạn thực sự đi khai thác: từ câu hỏi đấy bạn nên khai thác ra cái insight thực sự phía sau. Có một framework rất phổ biến là bạn dùng Five Whys — bạn hỏi why đến năm lần, nó cũng giúp bạn đào sâu được. Mình nghĩ cái đầu tiên là khi bạn nhận một đề bài, hãy phản biện nó, và hãy cố gắng từ cái đề bài đấy mình dò, mình tìm ra được cái point thực sự, cái vấn đề thực sự phía sau — bởi vì đề bài của bạn có thể chỉ là thứ bề mặt thôi. Một cái AI chatbot chỉ là một thứ mà người ta — đặc biệt là rất nhiều lãnh đạo — hay có kiểu ngay lập tức nhảy vào đưa ra một cái giải pháp.\n\n[2] Mã: [T03-015] (Bài giảng)\nNội dung: Track thứ hai là MLOps: làm thế nào deploy được kết quả của ông AI engineer lên một hệ thống thực tế. Nếu làm một con chat bình thường, các bạn có thể bỏ tiền vào ChatGPT — họ có option cho các bạn tự tạo một con custom agent luôn: đặt tên cho nó, bảo nó chuyên làm cái gì; nói chuyện với nó thì nó càng ngày càng tích luỹ kiến thức đấy. Nhưng bạn có lo gì về máy chủ không? Chả cần lo gì hết, chỉ cần có kết nối Internet và trả tiền cho OpenAI; còn lại mọi thứ từ A đến Z bạn không cần quan tâm, cũng không cần care bên trong họ làm như thế nào. Tuy nhiên nếu bạn là người làm chủ sản phẩm thì phải nghĩ: bây giờ một người dùng, hai người dùng, 100 người dùng cùng lúc thì có vấn đề gì không? Dữ liệu phải lưu trữ như thế nào? Nếu bị rò rỉ, bị tấn công, hay bị sập một bên thì có cách nào backup không? Đấy là thứ ông MLOps phải suy nghĩ. Rồi hệ thống AI không chỉ deploy trên máy tính — có thể deploy trên điện thoại, hoặc camera thông minh cũng có chip ở đấy. Ông MLOps bắt buộc phải dựng được một cái luồng đảm bảo chi phí vận hành tối ưu nhất, nhưng cái performance, cái latency của hệ thống vẫn chấp nhận được trong ngưỡng của khách hàng. Đấy là track thứ hai.\n\n[3] Mã: [T03-037] (Bài giảng)\nNội dung: Rồi. Khi các bạn đã xác định là cái bài toán mình có khả năng làm được bằng LLM rồi, thì các bạn phải nghĩ tiếp: các bạn đang muốn bán sản phẩm đúng không? Thế thì đầu tiên các bạn phải làm được cái gì? Cạnh tranh được với những đối thủ trên thị trường. Mấy khoá trước có nhiều nhóm làm mấy con AI so sánh bảng giá hay là gì gì đấy, mình hỏi thẳng luôn: thế bọn em có thử so sánh với ChatGPT bây giờ chưa? Tại vì ChatGPT bây giờ nó không còn là một cái chatbot thuần tuý nữa, mà nó là một cái agent system bên dưới luôn. Các bạn chỉ cần đặt ra một câu hỏi — ChatGPT, hoặc Gemini bạn trả tiền, hoặc Claude, hoặc Claude API — thì nó sẽ detect cho bạn: bạn muốn so sánh sản phẩm đúng không? Ok luôn. Tôi lấy sản phẩm A, search — họ có search engine, có thể họ dùng của Google, có thể họ dùng của bên khác — họ search ra thông tin. Tiếp tục sản phẩm B, họ search ra thông tin. Có hai sản phẩm rồi, họ đưa vào cái luồng so sánh, đánh giá, kiểm chứng. Chưa đủ, phải làm nữa: tôi sẽ search xem có bao nhiêu cái review sản phẩm A, bao nhiêu review sản phẩm B. Nếu họ đã dồn hết tâm huyết vào chỉ một hệ thống so sánh sản phẩm như vậy, thì gần như ý tưởng của các bạn sẽ rất dễ bị thua. Tại vì bản thân các bạn chỉ là gọi lại cái API LLM của họ thôi. Còn những phần khác các bạn cũng phải trả phí — search engine cũng phải trả tiền; dùng free thì rất khó chạy ra sản phẩm thật vì kết quả không ổn định; rồi phải tốn API gọi liên tục. Trong khi họ tự host model, họ bán một cái gói 30 đô có đủ hết tất cả. Vậy nên cho dù ý tưởng của các bạn xác nhận là có thể dùng AI làm được, các bạn phải xác nhận thêm: hiện tại người dùng có thể tự làm cái đấy bằng những phương tiện sẵn có như Gemini hay không?\n\n[4] Mã: [T05-113] (Bài giảng)\nNội dung: Hôm nay chúng ta nói đến planning phức tạp — lập kế hoạch để tạo ra personalize cho khách du lịch chẳng hạn — đấy là việc nhiều bước. Rồi chúng ta sẽ cần công cụ khi hệ thống agent của chúng ta cần tương tác với cả một hệ thống bên ngoài. Rủi ro lúc này chúng ta kiểm soát bằng cách nào? Chúng ta tạo ra cơ chế sandbox, và tạo ra allow list — IP nào được quyền truy xuất vào hệ thống của mình. Những chuyện đấy sẽ giúp chúng ta kiểm soát được sự an toàn hay không an toàn. Chi phí cho chuyện này sẽ là chi phí gọi API, hoặc trong những trường hợp thất bại thì nó sẽ như thế nào.\n\n[5] Mã: [T01-032] (Bài giảng)\nNội dung: Các sếp nhiều khi họ sẽ ngay lập tức nhảy thẳng ra giải pháp thôi. Và vấn đề là trong cái thế giới bây giờ, khi AI phát triển quá nhanh như thế này, nhiều người — đặc biệt là nhiều lãnh đạo — họ cũng không thực sự hiểu được hết là năng lực AI có thể làm được gì và đến đâu. Cho nên không gian lời giải của họ có thể đang bị giới hạn, và khi họ ngay lập tức đưa ra lời giải thì lời giải đấy hoàn toàn có thể không phải là lời giải tốt nhất để giải bài toán cuối cùng mà họ mong muốn. Mình nghĩ một skill quan trọng là từ cái đề bài, các bạn hãy cố gắng khai thác được cái vấn đề thực sự ở phía sau. Có rất nhiều bài toán kiểu này có rất nhiều lời giải khác chứ không phải cứ lao đầu vào xây chatbot với AI — thực ra phần lớn có khi là làm manually. Đừng lạm dụng AI quá.\n\nCÂU HỎI HỌC VIÊN: Agent khác chatbot thế nào?\n\nTRẢ LỜI:",
+  "rawAnswer": "Agent khác chatbot ở chỗ agent có khả năng thực hiện các tác vụ phức tạp hơn, như tìm kiếm thông tin và so sánh sản phẩm. Trong khi đó, chatbot thường chỉ trả lời các câu hỏi đơn giản. Ví dụ, ChatGPT không chỉ là một chatbot mà còn là một hệ thống agent có khả năng xử lý và phân tích thông tin từ nhiều nguồn khác nhau [T03-015].",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [
+      "T03-015"
+    ],
+    "failSafe": "no-valid-citation → MOCK_NOT_FOUND"
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_wghZKnQoA7RmTTUipcVSY5gL",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Agent và chatbot"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Agent khác chatbot ở chỗ agent có khả năng thực hiện các tác vụ phức tạp hơn, như tìm kiếm thông tin và so sánh sản phẩm, trong khi chatbot thường chỉ trả lời câu hỏi đơn giản. ChatGPT và các hệ thống tương tự không chỉ là chatbot mà còn là hệ thống agent có khả năng xử lý và phân tích thông tin từ nhiều nguồn.",
+    "answerDirection": "Hướng trả lời: Agent có khả năng thực hiện các tác vụ phức tạp hơn so với chatbot, như tìm kiếm và phân tích thông tin.",
+    "focusedChunks": [
+      "T03-037"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "question": "làm sao để pass môn này thầy ơi",
+  "retrieved": [
+    {
+      "code": "T05-114",
+      "score": 0.3717
+    },
+    {
+      "code": "T03-076",
+      "score": 0.3518
+    },
+    {
+      "code": "T05-102",
+      "score": 0.3359
+    },
+    {
+      "code": "T06-067",
+      "score": 0.3349
+    },
+    {
+      "code": "T03-068",
+      "score": 0.3348
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[qdrant] top-1 score 0.372 < threshold 0.4"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "làm sao để pass môn này thầy ơi",
+    "topChunks": [
+      {
+        "code": "T05-114",
+        "score": 0.37173223
+      },
+      {
+        "code": "T03-076",
+        "score": 0.35179728
+      },
+      {
+        "code": "T05-102",
+        "score": 0.33588594
+      },
+      {
+        "code": "T06-067",
+        "score": 0.33493644
+      },
+      {
+        "code": "T03-068",
+        "score": 0.33483976
+      }
+    ]
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Để pass môn này, sinh viên cần chú ý đến việc thu thập dữ liệu và kiểm tra lại từng phần của bài toán. Việc xác định tính chất của bài toán và áp dụng các phương pháp giải quyết từng bước nhỏ sẽ giúp sinh viên hoàn thành tốt hơn.",
+    "answerDirection": "Hướng trả lời: Tập trung vào việc thu thập dữ liệu, kiểm tra tiến độ và áp dụng phương pháp giải quyết bài toán từng bước nhỏ.",
+    "focusedChunks": [
+      "T03-076",
+      "T05-102",
+      "T03-068"
+    ]
+  }
+}

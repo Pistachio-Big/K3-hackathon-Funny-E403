@@ -1,0 +1,43 @@
+{
+  "question": "thầy ơi kìa",
+  "retrieved": [
+    {
+      "code": "T06-117",
+      "score": 0.3959
+    },
+    {
+      "code": "T01-034",
+      "score": 0.3581
+    },
+    {
+      "code": "T03-065",
+      "score": 0.354
+    },
+    {
+      "code": "T06-005",
+      "score": 0.3433
+    },
+    {
+      "code": "T06-014",
+      "score": 0.3358
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nCâu hỏi của học viên không có trong tài liệu bài giảng. Tuy nhiên, mình đã tìm kiếm web và thu thập được thông tin bổ sung.\n\nQUY TẮC BẮT BUỘC:\n1. Trả lời dựa trên thông tin tìm được. Nếu không chắc chắn, nói rõ.\n2. LUÔN ghi rõ nguồn theo format: (Nguồn: tiêu đề - url)\n3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.\n\nTHÔNG TIN TỪ TÌM KIẾM WEB:\n[Nguồn 1] Thầy Ơi (Official Video) | Plum Village Band\nURL: https://www.youtube.com/watch?v=5sxR_In9L1M\nNội dung: ... Thầy ơi, Con đã đi tìm Thầy từ muôn vạng kiếp trước Con đã đi tìm như thể đó là lời hẹn ước Từ thuở nước non đang còn tuổi sơ sinh Thầy ơi\n\n[Nguồn 2] THẦY ƠI - Sư cô Trăng Từ Hiếu & Plum Village Band\nURL: https://www.facebook.com/HT.ThichNhatHanh/posts/-th%E1%BA%A7y-%C6%A1i-thi%E1%BB%81n-ca-l%C3%A0ng-mai-s%C3%A1ng-t%C3%A1c-tr%C3%ACnh-b%C3%A0y-s%C6%B0-c%C3%B4-tr%C4%83ng-t%E1%BB%AB-hi%E1%BA%BFu-plum-village-b/838358521616687\nNội dung: THẦY ƠI - Thiền ca Làng Mai | Sáng tác, trình bày: Sư cô Trăng Từ Hiếu & Plum Village Band ----- Thầy ơi, Con đã đi tìm Thầy từ muôn vạn kiếp\n\n[Nguồn 3] Được cái này phải mất cái kia, muốn có thành công thì phải trả giá bằng nỗ lực - Thầy Pháp Hòa\nURL: https://www.youtube.com/watch?v=4H6FNOPhFtY\nNội dung: thấy tội Bà ủng hộ nhưng mà lần này bà thử nữa bà kêu một cô gái đẹp hơn ôm Ông thầy lần nữa nó Thầy ơi bây giờ thầy cảm thấy sao lúc này ông thầy mới trả lời tôi biết cô biết đừng cho bà già đó biết quý vị hiểu được chỗ đó không hai người mình ôm nhau Tôi cảm sao tôi biết cô cảm Sao cô biết bà già \n\n[Nguồn 4] Ơn Thầy Thầy Ơi | Bé Bảo An\nURL: https://www.youtube.com/watch?v=VBWGOUiUif0\nNội dung: #bebaoan #onthaythayoi #onthay Mừng ngày Nhà Giáo Việt Nam 20-11- 2015 .Bé Bào An kính tặng thầy cô bài hát mới sáng tác Ơn Thầy Thầy Ơi .do\n\n[Nguồn 5] Ở đời không khổ cái này cũng khổ cái kia, nghe để biết chuyển hóa khổ ...\nURL: https://www.youtube.com/watch?v=ZJ0sq9ukTaQ\nNội dung: Thầy Trụ Trì Thích Pháp. Ở đời không khổ cái này cũng khổ cái kia, nghe để biết chuyển hóa khổ đau - Thầy Thích Pháp Hòa … 32K views5 years ago\n\nNGUỒN THAM KHẢO:\n[1] Thầy Ơi (Official Video) | Plum Village Band (https://www.youtube.com/watch?v=5sxR_In9L1M)\n[2] THẦY ƠI - Sư cô Trăng Từ Hiếu & Plum Village Band (https://www.facebook.com/HT.ThichNhatHanh/posts/-th%E1%BA%A7y-%C6%A1i-thi%E1%BB%81n-ca-l%C3%A0ng-mai-s%C3%A1ng-t%C3%A1c-tr%C3%ACnh-b%C3%A0y-s%C6%B0-c%C3%B4-tr%C4%83ng-t%E1%BB%AB-hi%E1%BA%BFu-plum-village-b/838358521616687)\n[3] Được cái này phải mất cái kia, muốn có thành công thì phải trả giá bằng nỗ lực - Thầy Pháp Hòa (https://www.youtube.com/watch?v=4H6FNOPhFtY)\n[4] Ơn Thầy Thầy Ơi | Bé Bảo An (https://www.youtube.com/watch?v=VBWGOUiUif0)\n[5] Ở đời không khổ cái này cũng khổ cái kia, nghe để biết chuyển hóa khổ ... (https://www.youtube.com/watch?v=ZJ0sq9ukTaQ)\n\nCÂU HỎI HỌC VIÊN: thầy ơi kìa\n\nTRẢ LỜI:",
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[qdrant] top-1 score 0.396 < threshold 0.4"
+  },
+  "mode": "LIVE",
+  "research": {
+    "error": "OpenRouter HTTP 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 1479. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\",\"provider_name\":null,\"previous_errors\":[{\"code\":402,\"message\":\"This request req"
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Đoạn tài liệu liên quan đến việc học viên đề xuất thầy góp ý cho một hệ thống LMS mà họ đang phát triển, trong đó có việc thầy sẽ login vào xem và cho feedback.",
+    "answerDirection": "Hướng trả lời: Thầy có thể xem và góp ý cho hệ thống LMS mà học viên đang phát triển.",
+    "focusedChunks": [
+      "T06-117"
+    ]
+  }
+}

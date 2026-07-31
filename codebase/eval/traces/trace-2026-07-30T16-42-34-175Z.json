@@ -1,0 +1,86 @@
+{
+  "question": "Công thức nấu phở bò",
+  "retrieved": [
+    {
+      "code": "T03-145",
+      "score": 0.1652
+    },
+    {
+      "code": "T06-103",
+      "score": 0.1504
+    },
+    {
+      "code": "T04-071",
+      "score": 0.1418
+    },
+    {
+      "code": "T01-042",
+      "score": 0.1405
+    },
+    {
+      "code": "T04-089",
+      "score": 0.1402
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu khoá học. Bạn nên:\n• Hỏi giảng viên hoặc TA trong Discord\n• Tra cứu tài liệu bên ngoài\n\nTuy nhiên, mình có thể cung cấp một số thông tin về cách nấu phở bò từ các nguồn web:\n\n1. **Nguyên liệu cần chuẩn bị**:\n   - Xương ống: 0,5 kg\n   - Nạm bò: 0,5 kg\n   - Nước: 2,2 lít\n   - Hành tím, gừng: nướng thơm và đập dập\n   - Các loại gia vị như quế, hoa hồi, tiêu, hạt ngò, và các loại rau sống như giá, hành lá, rau mùi [Nguồn 2](https://netspace.edu.vn/cach-nau-pho-bo-ngon-nhu-quan).\n\n2. **Cách nấu**:\n   - Hầm xương và nạm bò trong khoảng 1 tiếng 40 phút để lấy nước dùng.\n   - Sau khi hầm, vớt các nguyên liệu ra và lọc lấy nước dùng.\n   - Thịt bò thái lát mỏng, chần qua nước sôi cùng với bánh phở và các loại rau sống trước khi cho vào tô và chan nước dùng nóng lên trên [Nguồn 3](https://www.huongnghiepaau.com/pho-bo).\n\nNếu bạn cần thêm thông tin chi tiết hơn, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T03-145",
+      "T06-103",
+      "T04-071",
+      "T01-042",
+      "T04-089"
+    ],
+    "focusedCodes": []
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Công thức nấu phở bò",
+    "topChunks": [
+      {
+        "code": "T03-145",
+        "score": 0.16520852
+      },
+      {
+        "code": "T06-103",
+        "score": 0.15043195
+      },
+      {
+        "code": "T04-071",
+        "score": 0.14183186
+      },
+      {
+        "code": "T01-042",
+        "score": 0.14052394
+      },
+      {
+        "code": "T04-089",
+        "score": 0.14015636
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Công thức nấu phở bò",
+      "công thức nấu phở",
+      "Công thức nấu phở bò T03-145"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_EUlxpdyMgehOXi82etUR0led",
+      "name": "lookup_document",
+      "args": {
+        "topic": "công thức nấu phở bò"
+      }
+    }
+  ],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "Không có đoạn tài liệu nào liên quan trực tiếp đến công thức nấu phở bò.",
+    "answerDirection": "Cần tìm kiếm thêm tài liệu cụ thể về công thức nấu phở bò.",
+    "focusedChunks": []
+  }
+}

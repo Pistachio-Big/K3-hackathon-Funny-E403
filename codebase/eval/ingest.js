@@ -1,18 +1,15 @@
 #!/usr/bin/env node
 /**
- * ingest.js — Đẩy toàn bộ chunks vào Qdrant
+ * ingest.js — Embed chunks và đẩy vào Qdrant
  *
- * Pipeline:
- *   1. Load chunks.json (transcript + chatlog)
- *   2. ensureCollection (tạo nếu chưa có)
- *   3. Với mỗi chunk: embed bằng Gemini (nếu chưa có trong cache) → upsert
- *   4. Cache embeddings vào qdrant-cache.json (chỉ dùng để skip re-embed khi restart)
+ * Đã được cập nhật để dùng Jina embed (đồng bộ với embedder.js).
+ * Nếu embeddings.json đã có sẵn thì dùng luôn, không embed lại.
  *
  * Cache format:
  *   { "T01-001": [0.012, -0.034, ...], ... }
  *
  * Biến môi trường:
- *   GEMINI_API_KEY (bắt buộc)
+ *   JINA_API_KEY (bắt buộc nếu embeddings.json chưa có)
  *   QDRANT_URL (mặc định http://localhost:6333)
  *
  * Chạy:
@@ -28,50 +25,40 @@ require("./loadenv.js");
 const { ensureCollection, upsertPoints, count, deleteAll, COLLECTION } = require("./qdrant.js");
 
 const CHUNKS = path.resolve(__dirname, "chunks.json");
-const CACHE = path.resolve(__dirname, "qdrant-cache.json");
-const MODEL_EMBED = process.env.GEMINI_MODEL_EMBED || "text-embedding-004";
-const DIM = 768;
-const BATCH = 100;
+const EMBEDDINGS = path.resolve(__dirname, "embeddings.json");
+const MODEL_EMBED = "jina-embeddings-v3";
+const DIM = 1024;
+const BATCH = 32;
 
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = process.env.JINA_API_KEY;
 if (!apiKey) {
-  console.error("⚠ GEMINI_API_KEY chưa set — điền vào codebase/eval/.env");
+  console.error("⚠ JINA_API_KEY chưa set — điền vào codebase/eval/.env");
   process.exit(1);
 }
 
-// ============== CACHE ==============
-let cache = {};
-if (fs.existsSync(CACHE)) {
-  try {
-    cache = JSON.parse(fs.readFileSync(CACHE, "utf-8"));
-  } catch {}
-}
-function saveCache() {
-  fs.writeFileSync(CACHE, JSON.stringify(cache));
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
 }
 
-// ============== EMBED BATCH ==============
+// ============== EMBED BATCH (Jina) ==============
 function embedBatch(texts) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      requests: texts.map((text) => ({
-        model: `models/${MODEL_EMBED}`,
-        content: { parts: [{ text }] },
-        taskType: "RETRIEVAL_DOCUMENT",
-        outputDimensionality: DIM,
-      })),
+      model: MODEL_EMBED,
+      input: texts,
+      dimensions: DIM,
+      normalized: true,
+      task: "retrieval.passage",
     });
-    const url = new URL(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_EMBED}:batchEmbedContents?key=${apiKey}`
-    );
     const req = https.request(
       {
+        hostname: "api.jina.ai",
+        path: "/v1/embeddings",
         method: "POST",
-        hostname: url.hostname,
-        path: url.pathname + url.search,
         headers: {
           "Content-Type": "application/json",
           "Content-Length": Buffer.byteLength(body),
+          Authorization: `Bearer ${apiKey}`,
         },
       },
       (res) => {
@@ -83,9 +70,9 @@ function embedBatch(texts) {
           }
           try {
             const j = JSON.parse(buf);
-            resolve(j.embeddings.map((e) => e.values));
+            return resolve(j.data.map((d) => d.embedding));
           } catch (e) {
-            reject(e);
+            return reject(e);
           }
         });
       }
@@ -96,88 +83,99 @@ function embedBatch(texts) {
   });
 }
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-async function main() {
-  const chunks = JSON.parse(fs.readFileSync(CHUNKS, "utf-8"));
-  console.log(`→ Corpus: ${chunks.length} chunks`);
-
-  if (process.argv.includes("--reset")) {
-    console.log("→ Reset collection...");
-    try {
-      await deleteAll();
-    } catch (e) {
-      console.log(`  (collection chưa tồn tại hoặc lỗi reset: ${e.message})`);
-    }
-  }
-
-  await ensureCollection();
-  const before = await count();
-  console.log(`→ Qdrant collection '${COLLECTION}': ${before} vectors`);
-
-  // Cache code có sẵn trong Qdrant để skip re-embed (nếu muốn idempotent)
-  // Đơn giản: cache theo file qdrant-cache.json (không gọi Qdrant scroll để tiết kiệm)
-  const missing = chunks.filter((c) => !cache[c.code]);
-  console.log(`→ Cần embed ${missing.length} chunk mới (cache có ${Object.keys(cache).length}).`);
-
-  let done = 0;
-  for (let i = 0; i < missing.length; i += BATCH) {
-    const batch = missing.slice(i, i + BATCH);
-    let attempt = 0;
-    while (true) {
-      try {
-        const vecs = await embedBatch(batch.map((c) => c.text));
-        for (let j = 0; j < batch.length; j++) {
-          cache[batch[j].code] = vecs[j];
-        }
-        saveCache();
-        done += batch.length;
-        console.log(`  embed: ${done}/${missing.length}`);
-        break;
-      } catch (e) {
-        attempt++;
-        if (attempt >= 3) {
-          console.error(`✗ Lỗi sau 3 lần: ${e.message}`);
-          process.exit(1);
-        }
-        console.log(`  retry ${attempt}: ${e.message.slice(0, 100)}`);
-        await sleep(2000 * attempt);
-      }
-    }
-    await sleep(300);
-  }
-
-  // Upsert tất cả (cả cache cũ + mới) vào Qdrant
-  console.log(`→ Upsert ${chunks.length} points vào Qdrant...`);
-  const points = chunks.map((c) => ({
-    id: hashId(c.code),
-    vector: cache[c.code],
-    payload: {
-      code: c.code,
-      source: c.source,
-      file: c.file,
-      text: c.text,
-      charCount: c.charCount,
-      ...(c.conversation_id ? { conversation_id: c.conversation_id } : {}),
-      ...(c.kind ? { kind: c.kind } : {}),
-    },
-  }));
-  await upsertPoints(points);
-
-  const after = await count();
-  console.log(`→ Qdrant sau ingest: ${after} vectors`);
-  console.log("✓ Done.");
-}
-
-// Qdrant point ID phải là unsigned int hoặc UUID. Code của ta là string.
-// → hash thành số 32-bit (giả lập UUID v5-style).
 function hashId(s) {
   let h = 5381;
   for (let i = 0; i < s.length; i++) {
     h = ((h << 5) + h + s.charCodeAt(i)) | 0;
   }
-  // Trả về số dương 32-bit
   return Math.abs(h);
+}
+
+async function main() {
+  const shouldReset = process.argv.includes("--reset");
+  if (shouldReset) {
+    console.log("→ --reset: xoá collection trước...");
+    try { await deleteAll(); } catch {}
+  }
+
+  console.log("→ Load chunks...");
+  const chunks = JSON.parse(fs.readFileSync(CHUNKS, "utf-8"));
+
+  // Build embeddings cache: load từ embeddings.json (từ embedder.js)
+  let embeddings = {};
+  if (fs.existsSync(EMBEDDINGS)) {
+    const arr = JSON.parse(fs.readFileSync(EMBEDDINGS, "utf-8"));
+    for (const e of arr) embeddings[e.code] = e.embedding;
+    console.log(`→ Đã có ${Object.keys(embeddings).length} embeddings trong cache.`);
+  }
+
+  // Embed các chunks thiếu
+  const missing = chunks.filter((c) => !embeddings[c.code]);
+  if (missing.length > 0) {
+    console.log(`→ Cần embed ${missing.length} đoạn mới...`);
+    let done = 0;
+    for (let i = 0; i < missing.length; i += BATCH) {
+      const batch = missing.slice(i, i + BATCH);
+      let attempt = 0;
+      while (true) {
+        try {
+          const vecs = await embedBatch(batch.map((c) => c.text));
+          for (let j = 0; j < batch.length; j++) {
+            embeddings[batch[j].code] = vecs[j];
+          }
+          done += batch.length;
+          console.log(`  ${done}/${missing.length}`);
+          break;
+        } catch (e) {
+          attempt++;
+          if (attempt >= 3) {
+            console.error(`✗ Lỗi sau 3 lần: ${e.message}`);
+            process.exit(1);
+          }
+          console.log(`  ! Retry ${attempt}/3: ${e.message.slice(0, 100)}`);
+          await sleep(2000 * attempt);
+        }
+      }
+      await sleep(200);
+    }
+    // Lưu embeddings.json để lần sau dùng lại
+    const out = chunks.map((c) => ({ code: c.code, embedding: embeddings[c.code] })).filter((x) => x.embedding);
+    fs.writeFileSync(EMBEDDINGS, JSON.stringify(out));
+  }
+
+  await ensureCollection();
+  const before = await count();
+  console.log(`→ Qdrant collection: ${before} vectors trước ingest`);
+
+  // Build points
+  const points = [];
+  let missingCount = 0;
+  for (const c of chunks) {
+    const vec = embeddings[c.code];
+    if (!vec) { missingCount++; continue; }
+    points.push({
+      id: hashId(c.code),
+      vector: vec,
+      payload: {
+        code: c.code,
+        source: c.source || "",
+        file: c.file || "",
+        text: c.text,
+        charCount: c.charCount || c.text.length,
+        ...(c.conversation_id ? { conversation_id: c.conversation_id } : {}),
+        ...(c.kind ? { kind: c.kind } : {}),
+      },
+    });
+  }
+
+  if (missingCount > 0) console.log(`⚠ ${missingCount} chunks thiếu embedding, bỏ qua`);
+
+  console.log(`→ Upsert ${points.length} points...`);
+  await upsertPoints(points);
+
+  const after = await count();
+  console.log(`→ Qdrant sau ingest: ${after} vectors`);
+  console.log("✓ Done.");
 }
 
 main().catch((e) => {

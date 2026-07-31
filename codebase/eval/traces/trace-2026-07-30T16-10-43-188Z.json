@@ -1,0 +1,68 @@
+{
+  "question": "MVP là gì? Cho ví dụ",
+  "retrieved": [
+    {
+      "code": "T01-008",
+      "score": 0.3826
+    },
+    {
+      "code": "T03-043",
+      "score": 0.3156
+    },
+    {
+      "code": "T03-151",
+      "score": 0.2859
+    },
+    {
+      "code": "T01-072",
+      "score": 0.2779
+    },
+    {
+      "code": "T06-014",
+      "score": 0.2701
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "[qdrant] top-1 score 0.383 < threshold 0.4"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "MVP là gì? Cho ví dụ",
+    "topChunks": [
+      {
+        "code": "T01-008",
+        "score": 0.3825915
+      },
+      {
+        "code": "T03-043",
+        "score": 0.31561166
+      },
+      {
+        "code": "T03-151",
+        "score": 0.28589416
+      },
+      {
+        "code": "T01-072",
+        "score": 0.27792522
+      },
+      {
+        "code": "T06-014",
+        "score": 0.27010158
+      }
+    ]
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": null,
+    "focusedChunks": [
+      "T01-008",
+      "T03-043",
+      "T03-151",
+      "T01-072",
+      "T06-014"
+    ]
+  }
+}

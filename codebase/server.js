@@ -3,13 +3,13 @@
  * server.js — HTTP server cho VLearn Tutor UI
  *
  * Serve static files (index.html, app.js, rag-browser.js, eval/chunks.json...)
- * Proxy endpoint /api/ask tới Gemini để GIẤU API key khỏi browser.
+ * Proxy endpoint /api/ask tới OpenRouter để GIẤU API key khỏi browser.
  *
  * Chạy:  node codebase/server.js
  * Mở:    http://localhost:3000
  *
  * Biến môi trường:
- *   GEMINI_API_KEY (load từ codebase/eval/.env)
+ *   OPENROUTER_API_KEY, JINA_API_KEY (load từ codebase/eval/.env)
  *   PORT (mặc định 3000)
  */
 
@@ -17,18 +17,19 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const url = require("url");
-require("./eval/loadenv.js"); // load GEMINI_API_KEY
+require("./eval/loadenv.js"); // load keys từ .env
 
 const ROOT = __dirname;
 const PORT = process.env.PORT || 3000;
-const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL_EMBED = process.env.GEMINI_MODEL_EMBED || "text-embedding-004";
-const MODEL_GEN = process.env.GEMINI_MODEL_GEN || "gemini-3-flash";
-const DIM = 768;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const JINA_API_KEY = process.env.JINA_API_KEY;
 
-if (!API_KEY) {
-  console.error("⚠ GEMINI_API_KEY chưa set — điền vào codebase/eval/.env hoặc export env.");
-  console.error("  Server vẫn chạy để serve UI, nhưng /api/ask sẽ trả lỗi.");
+if (!OPENROUTER_API_KEY) {
+  console.error("⚠ OPENROUTER_API_KEY chưa set — điền vào codebase/eval/.env hoặc export env.");
+  console.error("  Server vẫn chạy để serve UI, nhưng /api/ask sẽ trả lởi.");
+}
+if (!JINA_API_KEY) {
+  console.error("⚠ JINA_API_KEY chưa set — embed query sẽ fail, fallback TF-IDF.");
 }
 
 const qdrant = require("./eval/qdrant.js");
@@ -44,39 +45,6 @@ const MIME = {
   ".png": "image/png",
   ".ico": "image/x-icon",
 };
-
-// ============== GEMINI CLIENT ==============
-function callGemini(method, path, body) {
-  return new Promise((resolve, reject) => {
-    const data = JSON.stringify(body);
-    const fullUrl = new URL(
-      `https://generativelanguage.googleapis.com/v1beta/${path}?key=${encodeURIComponent(API_KEY)}`
-    );
-    const req = http.request(
-      {
-        method,
-        hostname: fullUrl.hostname,
-        path: fullUrl.pathname + fullUrl.search,
-        headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(data) },
-      },
-      (res) => {
-        let buffer = "";
-        res.on("data", (c) => (buffer += c));
-        res.on("end", () => {
-          if (res.statusCode >= 400) return reject(new Error(`HTTP ${res.statusCode}: ${buffer.slice(0, 300)}`));
-          try {
-            resolve(JSON.parse(buffer));
-          } catch (e) {
-            reject(e);
-          }
-        });
-      }
-    );
-    req.on("error", reject);
-    req.write(data);
-    req.end();
-  });
-}
 
 // ============== STATIC FILE ==============
 function serveStatic(req, res) {
@@ -142,9 +110,9 @@ async function handleRetrieve(req, res) {
 
 // ============== /api/ask ==============
 async function handleAsk(req, res) {
-  if (!API_KEY) {
+  if (!OPENROUTER_API_KEY) {
     res.writeHead(500, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ error: "GEMINI_API_KEY chưa set — điền vào codebase/eval/.env" }));
+    res.end(JSON.stringify({ error: "OPENROUTER_API_KEY chưa set — điền vào codebase/eval/.env" }));
     return;
   }
   let body = "";
@@ -253,9 +221,8 @@ const server = http.createServer(async (req, res) => {
       res.end(
         JSON.stringify({
           ok: true,
-          hasKey: !!API_KEY,
-          embed: MODEL_EMBED,
-          gen: MODEL_GEN,
+          hasOpenRouterKey: !!OPENROUTER_API_KEY,
+          hasJinaKey: !!JINA_API_KEY,
           qdrant: { ...qdHealth, vectors: qdCount, collection: qdrant.COLLECTION },
         })
       );
@@ -282,7 +249,7 @@ server.listen(PORT, () => {
   console.log(`\n  VLearn Tutor UI:  http://localhost:${PORT}`);
   console.log(`  Health check:     http://localhost:${PORT}/api/health`);
   console.log(`  Web Research:     http://localhost:${PORT}/api/research (POST)`);
-  console.log(`  Gemini mode:      ${API_KEY ? "✓ enabled (key loaded)" : "✗ no key"}`);
-  console.log(`  Embed model:      ${MODEL_EMBED}`);
-  console.log(`  Gen model:        ${MODEL_GEN}\n`);
+  console.log(`  OpenRouter mode:  ${OPENROUTER_API_KEY ? "✓ enabled (key loaded)" : "✗ no key"}`);
+  console.log(`  Jina embed:       ${JINA_API_KEY ? "✓ enabled (key loaded)" : "✗ no key"}`);
+  console.log(`  Vector DB:        Qdrant (${qdrant.COLLECTION})\n`);
 });

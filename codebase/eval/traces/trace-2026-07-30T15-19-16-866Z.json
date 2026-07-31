@@ -1,0 +1,53 @@
+{
+  "question": "trả lời giúp tôi câu hỏi trên đi",
+  "retrieved": [
+    {
+      "code": "T03-132",
+      "score": 1
+    },
+    {
+      "code": "T01-086",
+      "score": 0.875
+    },
+    {
+      "code": "T02-017",
+      "score": 0.875
+    },
+    {
+      "code": "T03-098",
+      "score": 0.875
+    },
+    {
+      "code": "T04-003",
+      "score": 0.875
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nĐoạn tài liệu liên quan đến việc sử dụng AI và các mô hình ngôn ngữ lớn để tối ưu hóa quy trình làm việc và giải quyết các vấn đề phức tạp. Nó nhấn mạnh tầm quan trọng của việc xác định rõ ràng phạm vi và quy trình trong việc xây dựng giải pháp hiệu quả.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Tập trung vào việc sử dụng AI để tối ưu hóa quy trình và tầm quan trọng của việc xác định phạm vi trong việc đặt câu hỏi.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-132] (Bài giảng)\nNội dung: Routing ở đây là một ví dụ khác nha. Các bạn có thể hiểu như nãy mình bảo: hiện tại trên ChatGPT bây giờ họ đang dùng routing. Bạn nhập một cái prompt, cho dù bạn được quyền chọn instant hay advanced thinking, thực tế họ cũng đã có một con bot check luôn: nếu request của bạn — cho dù bạn cần instant — lại liên quan đến việc kiểu \"hãy so sánh cho tôi iPhone 16 và iPhone 17 vừa mới ra\" chẳng hạn. Câu hỏi là so sánh, là hai sản phẩm. Thế thì họ phải làm gì? Họ không thể lấy từ dữ liệu kiến thức được, họ phải đi Google search sản phẩm iPhone 16, iPhone 17, sau đó combination lại. Tức là con này sẽ phân tích: tôi có thể đưa ra câu trả lời ngay lập tức, hay tôi phải đi một nhánh là tool call. Sau khi có kết luận — có thông tin iPhone 16, iPhone 17 — thì tùy lựa chọn của các bạn lúc đặt: instant thì họ sẽ dùng model to hay nhỏ, hay thêm bước là tôi sẽ viết báo cáo kiểu technical review hay chỉ viết báo cáo bình thường. Cái routing này thứ nhất giúp tiết kiệm chi phí cho các bạn và tiết kiệm thời gian cho người dùng. Thứ hai, nhiều khi có những ứng dụng các bạn thấy là phải chia ra những trường hợp nhất định. Hôm trước các bạn học rồi thì biết về mixture of experts — MoE đúng không? Một mô hình cũng không mới lắm nhưng theo tư tưởng: câu hỏi của bạn về lĩnh vực y tế thì nó đi nhánh những model train chuyên về y tế; còn hỏi về toán học hay vật lý thì đi hướng khác. Cái routing này cũng tương tự như vậy. Có thể trong ứng dụng của bạn nó phức tạp quá, làm một luồng chung cho mọi trường hợp rất khó, thế thì bạn route ngay từ đầu: cái này dễ — cho theo cái logic dễ, chắc chắn đúng; cái này khó — tôi phải dùng model, kết hợp xoay vòng tool call ra đáp án, có thể xử lý được độ phức tạp cao nhưng độ chính xác, độ chắc chắn không cao. Đó là cách dùng.\n\n[2] Mã: [T01-086] (Bài giảng)\nNội dung: Cái này quay trở lại những câu hỏi nguyên bản — nó cũng là một không gian, một cách để tạo ra những ý tưởng mới. Có rất nhiều sản phẩm thành công bây giờ xuất phát từ những sự tò mò, những câu hỏi không ai dám đặt ra. Newton thấy quả táo rơi xuống đất thì mới đặt câu hỏi, rồi bắt đầu mới phát hiện ra những định luật. Máy ảnh — con gái của nhà phát minh, một ngày phải chờ bố đi in ảnh, cô hỏi là có thể có ảnh liền không, tại sao phải đợi như này — nên mới sinh ra cái máy ảnh đấy. Airbnb cũng là một ý tưởng rất táo bạo: tôi có nhà và tôi thừa chỗ sống trong nhà tôi, cho thuê được hay không? Tất cả những cái này — mình nghĩ trong thế giới bây giờ, việc mình build càng ngày càng dễ hơn, và AI cũng giúp tất cả chúng ta có thể trả lời những sự tò mò, khám phá những sự tò mò. Mình nghĩ một điều rất tốt là mình luôn giữ cái sự tò mò đấy — không để những đánh giá, những định kiến ở bên ngoài làm mình ngừng sự tò mò — và cởi mở với cách làm mới.\n\n[3] Mã: [T02-017] (Bài giảng)\nNội dung: Đây là một ví dụ đã điền — hơi nhỏ xíu — một phác thảo rất đơn giản đầu tiên khi bạn xác định ra đề bài và bắt đầu có ý rất nhanh về các chỉ số để đánh giá việc đấy thành công, thì chúng ta viết ra một cái thẻ kiểu phát biểu vấn đề. Bài toán ở đây: mỗi thứ Hai em mất khoảng 90 phút để tổng hợp weekly report từ nhiều nền tảng khác nhau, mất thời gian nhất ở bước viết narrative. Đối tượng là một bạn PM chịu trách nhiệm gửi các báo cáo đấy cho các leader cấp cao hơn. Và quy trình của bạn đấy — cái này rất quan trọng: trong quá trình các bạn muốn xây dựng một giải pháp, mình nghĩ sự khác biệt của giải pháp của các bạn là do cái quy trình này mà các bạn cần phải viết ra. AI, công nghệ nói chung, cũng chỉ là chúng ta đang cố gắng giúp con người làm việc đấy nhanh hơn và hiệu quả hơn — nó vẫn dựa trên những quy trình, đặc biệt trong các chuyên môn, các lĩnh vực cần con người là chuyên gia của lĩnh vực đấy. Ví dụ một quy trình dành cho một người nghiên cứu trong lĩnh vực y tế chẳng hạn: họ phải nghiên cứu với những nguồn tin rất đặc thù của họ, và khi tổng hợp kết quả ra họ phải theo một số template mẫu — đấy là những cái rất đặc thù mà một người bình thường không theo ngành đấy sẽ không biết được. Đặc biệt phần quy trình này chúng ta cố gắng khai thác và viết nó kỹ nhất có thể thành các bước, có bộ câu hỏi trả lời.\n\n[4] Mã: [T03-098] (Bài giảng)\nNội dung: Cái mà em thiếu là em không hiểu về cái scope: em đặt ra một bài toán nhưng em không có scope của em. Giống như em giải bài toán \"bạn An đi chợ mua hai quả táo\" — nó rõ ràng hết đúng không? Không có vụ tự nhiên bạn em bảo \"bài táo này phải là năm quả, tại vì lúc ấy trên trời có một quả táo rơi xuống chỗ bạn An\". Em có chấp nhận câu trả lời này không? Dĩ nhiên là không. Tại vì sao? Vì em có một cái scope. Hay bây giờ em mở PlayStation lên chơi, họ bảo bạn phải calibrate cái tay cầm để đảm bảo trải nghiệm tốt nhất đúng không? Em để tay cầm lung tung, em đua xe nó đâm quẹt — em không thể trách nhà sản xuất, bởi vì nhà sản xuất đã đưa ra instruction mà em không follow. Bây giờ mọi người hay bảo \"con AI nó ngu, tôi hỏi nó trả lời sai hết\", nhưng có nhiều người lại bảo \"không, tôi thấy nó rất tốt\". Tại sao cùng một sản phẩm ChatGPT, có người dùng được, có người không? Skill issue đúng không? Có người họ đọc hướng dẫn, họ làm theo những prompt mẫu đảm bảo kết quả, thử là ra kết quả đúng; còn có người không đọc hướng dẫn, tự làm theo ý họ, họ nghĩ là họ hiểu đúng chứ nó không nằm trong hướng dẫn. Nên câu hỏi của bạn em ngay từ đầu: em phải xác định cái scope, và do em không có scope nên bạn em hỏi một phát là em \"chết\". Em nghĩ em làm được cái thứ rất perfect luôn, hệ thống lỗi đâu vẫn chạy được — thấy sai đúng không? Hệ thống của em dựa vào sensor đúng không — sensor \"đơ\" thì đành chịu. Còn em nhận dạng sai thì đó là vấn đề khác: nhận dạng sai thì em phải nói hệ thống em nhận dạng với độ chính xác bao nhiêu phần trăm — đấy là bảng khác đúng không?\n\n[5] Mã: [T04-003] (Bài giảng)\nNội dung: Ngày hôm nay chúng ta vào bài đầu tiên: học về nền tảng của AI và các mô hình ngôn ngữ lớn — LLM. Giải thích tại sao ChatGPT có thể làm được những việc đấy — bây giờ có rất nhiều: Gemini, Claude — tại sao nó có thể làm được rất nhiều việc như vậy, phía bên dưới nó vận hành như thế nào. Đây sẽ là kiến thức nền tảng mà chúng ta cần nắm vững, bởi vì khoá học, chương trình lần này được xây dựng, thiết kế để các bạn ứng dụng nhiều hơn. AI thì rất là rộng: trước khi ChatGPT ra đời, chúng ta đã có AI vài chục năm rồi, và ngày xưa đã có những mô hình AI mà bọn mình hay gọi là AI truyền thống — AI trước thời ChatGPT — đã có rất nhiều rồi. Thế nhưng sau thời ChatGPT thì các mô hình ngôn ngữ lớn nổi lên với những năng lực rất khác. Ngày hôm nay chúng ta sẽ trả lời câu hỏi: nó khác nhau như thế nào, và với năng lực mới này thì tôi có thể làm được cái gì. Toàn bộ khoá học lần này được thiết kế để chúng ta đi sâu vào phần LLM hơn, và build các công cụ trên nền tảng large language model, build agent — đấy là scope của khoá này.\n\nCÂU HỎI HỌC VIÊN: trả lời giúp tôi câu hỏi trên đi\n\nTRẢ LỜI:",
+  "rawAnswer": "Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "failSafe": "no-valid-citation → MOCK_NOT_FOUND"
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_mCYw9BUontyuU8h9KKwxApS3",
+      "name": "lookup_document",
+      "args": {
+        "topic": "trả lời câu hỏi"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Đoạn tài liệu liên quan đến việc sử dụng AI và các mô hình ngôn ngữ lớn để tối ưu hóa quy trình làm việc và giải quyết các vấn đề phức tạp. Nó nhấn mạnh tầm quan trọng của việc xác định rõ ràng phạm vi và quy trình trong việc xây dựng giải pháp hiệu quả.",
+    "answerDirection": "Hướng trả lời: Tập trung vào việc sử dụng AI để tối ưu hóa quy trình và tầm quan trọng của việc xác định phạm vi trong việc đặt câu hỏi.",
+    "focusedChunks": [
+      "T03-132",
+      "T03-098",
+      "T01-086"
+    ]
+  }
+}

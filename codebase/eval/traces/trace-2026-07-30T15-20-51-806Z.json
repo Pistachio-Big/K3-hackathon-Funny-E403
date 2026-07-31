@@ -1,0 +1,76 @@
+{
+  "question": "hjx mình ko hiểu gì hết",
+  "retrieved": [
+    {
+      "code": "T01-032",
+      "score": 0.6667
+    },
+    {
+      "code": "T03-040",
+      "score": 0.6667
+    },
+    {
+      "code": "T03-091",
+      "score": 0.6667
+    },
+    {
+      "code": "T03-097",
+      "score": 0.6667
+    },
+    {
+      "code": "T03-111",
+      "score": 0.6667
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.667 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "hjx mình ko hiểu gì hết",
+    "topChunks": [
+      {
+        "code": "T01-032",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T03-040",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T03-091",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T03-097",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T03-111",
+        "score": 0.6666666666666666
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_j3L9i0kjKlDE4ngdsn3QBlUJ",
+      "name": "lookup_document",
+      "args": {
+        "topic": "khó hiểu"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Nội dung chính liên quan đến việc hiểu rõ vấn đề và yêu cầu trong công việc, cũng như việc sử dụng AI một cách hợp lý và có định hướng. Cần có mindset chủ động và rõ ràng về mục tiêu dự án để đạt được kết quả tốt nhất.",
+    "answerDirection": "Hướng trả lời: Cần hiểu rõ vấn đề và yêu cầu trong công việc, có mindset chủ động và sử dụng AI một cách hợp lý để đạt được kết quả tốt nhất.",
+    "focusedChunks": [
+      "T01-032",
+      "T03-040",
+      "T03-091",
+      "T03-097"
+    ]
+  }
+}

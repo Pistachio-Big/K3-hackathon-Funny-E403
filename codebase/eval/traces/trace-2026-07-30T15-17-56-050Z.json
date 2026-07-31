@@ -1,0 +1,74 @@
+{
+  "question": "Hệ sinh thái AI gồm những gì?",
+  "retrieved": [
+    {
+      "code": "T03-127",
+      "score": 0.7143
+    },
+    {
+      "code": "T04-044",
+      "score": 0.7143
+    },
+    {
+      "code": "T04-067",
+      "score": 0.7143
+    },
+    {
+      "code": "T05-024",
+      "score": 0.7143
+    },
+    {
+      "code": "T05-039",
+      "score": 0.7143
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.714 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Hệ sinh thái AI gồm những gì?",
+    "topChunks": [
+      {
+        "code": "T03-127",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T04-044",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T04-067",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T05-024",
+        "score": 0.7142857142857143
+      },
+      {
+        "code": "T05-039",
+        "score": 0.7142857142857143
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_fengEM48e0QjkQiO72fc7P7M",
+      "name": "lookup_document",
+      "args": {
+        "topic": "hệ sinh thái AI"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Hệ sinh thái AI bao gồm các mô hình lớn, công cụ hỗ trợ, và các ứng dụng thực tiễn trong đời sống như nhận diện khuôn mặt và quản lý an ninh. Ngoài ra, việc tích hợp các công cụ để cập nhật thông tin mới và hỗ trợ người dùng cũng là một phần quan trọng trong hệ sinh thái này.",
+    "answerDirection": "Hệ sinh thái AI bao gồm các mô hình lớn, công cụ hỗ trợ và ứng dụng thực tiễn trong đời sống.",
+    "focusedChunks": [
+      "T04-067",
+      "T05-024"
+    ]
+  }
+}

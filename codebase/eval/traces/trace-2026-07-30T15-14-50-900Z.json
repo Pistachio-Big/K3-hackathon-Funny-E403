@@ -1,0 +1,53 @@
+{
+  "question": "ReAct là gì? Tác dụng khi dùng trong Agent",
+  "retrieved": [
+    {
+      "code": "T01-062",
+      "score": 0.7778
+    },
+    {
+      "code": "T03-021",
+      "score": 0.7778
+    },
+    {
+      "code": "T03-032",
+      "score": 0.7778
+    },
+    {
+      "code": "T03-119",
+      "score": 0.7778
+    },
+    {
+      "code": "T03-020",
+      "score": 0.6667
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nReAct là một phương pháp trong AI agent giúp cải thiện khả năng tương tác và phản hồi của hệ thống bằng cách sử dụng các kỹ thuật như RAG (Retrieval-Augmented Generation) và prompt engineering. Nó cho phép hệ thống tập trung vào một không gian tri thức cụ thể, từ đó tối ưu hóa khả năng xử lý và đưa ra quyết định.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: ReAct là phương pháp tối ưu hóa khả năng tương tác của AI agent thông qua RAG và prompt engineering, giúp hệ thống xử lý thông tin hiệu quả hơn.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T01-062] (Bài giảng)\nNội dung: Thực ra có một bài rất hay về Elon Musk — vì bạn ấy vừa nhắc đến Musk thì mình gửi cho mọi người, mình rất thích bài đấy — nói về cách ông ấy dùng để giải quyết một vấn đề. Elon Musk rất nổi tiếng với việc sử dụng First Principle Thinking. First principle thinking là tư duy từ nguyên bản: không đi sao chép cách làm của người khác, mà cố gắng bóc tách vấn đề về những nguyên lý nguyên bản nhất — không thể nào chia nhỏ hơn được nữa — và đi giải các vấn đề. Ông ấy giải bài SpaceX như thế: vấn đề ngày xưa là chi phí sản xuất tên lửa quá đắt đỏ. Ông quay trở lại: tại sao đắt? Một cái tên lửa gồm những gì? Khi chia nhỏ các cấu phần đấy ra thì nó đâu có đắt như vậy. Rồi: nếu nó đắt, thì phóng lên xong nó rơi xuống, tái sử dụng những cái đấy có được hay không? Ông đặt ra những câu hỏi như thế và cố gắng giải quyết vấn đề đấy. Trong cái mental model — sơ đồ tư duy của ông ấy trong đầu — ông cũng xây dựng một bộ khung tư duy về việc luôn cập nhật bối cảnh mới của thế giới vào những hộp tư duy của mình, để luôn có thể xem lại các vấn đề hiện tại có thực sự còn đúng trong bối cảnh đấy hay không, và các giải pháp mới trong bối cảnh này còn có thể là gì.\n\n[2] Mã: [T03-021] (Bài giảng)\nNội dung: Ok, quay lại chủ đề bài hôm nay. Chúng ta sẽ học những góc nhìn và những phương pháp để các bạn nhìn thấy được, trong hiện tại hoặc có thể trong tương lai, những lĩnh vực nào, những bài toán nào, những problem nào có thể sử dụng AI agent, LLM để giải quyết được. Hôm nay nó sẽ chuyên về cho track thứ ba. Tuy nhiên với góc nhìn AI Engineer thì các bạn cũng nên học cái này. Để làm gì? Thời đại bây giờ gần như mỗi bạn giống như một giám đốc công ty vậy: chỉ cần trả chắc 20 đô, 30 đô, thế là bạn có cả dàn nhân viên là AI, tha hồ đặt tên A B C D, làm trong phòng này phòng nọ. Nhưng muốn làm được như vậy, các bạn cũng phải hiểu được cái bản chất và cái công việc. Thời buổi bây giờ, nếu muốn CV đẹp khi apply vào những công ty xây dựng hệ thống agentic, các bạn chỉ cần chứng minh được là đã tự xây dựng một hệ thống riêng, một cái assistant cho mình, sử dụng những kỹ thuật A B C D. Càng dùng nhiều kỹ thuật mới, càng tối ưu hệ thống của mình, thì đó gần như là một bằng chứng cực kỳ thuyết phục. Bạn không cần bằng đẹp, điểm cao luôn — bạn show cái hệ thống đấy ra, giải thích tường tận, đảm bảo có việc làm, và việc làm ở mức độ cao ấy nha.\n\n[3] Mã: [T03-032] (Bài giảng)\nNội dung: Kinh nghiệm tiếp theo khi các bạn đi làm nhá: thường sếp sẽ đưa bạn một yêu cầu rất là to luôn, khách hàng cũng thế. Các bạn vừa mới bắt đầu làm mà cố hoàn thiện hết toàn bộ yêu cầu đấy thì sẽ gặp vấn đề: ví dụ có 10 yêu cầu, các bạn làm được bảy cái tốt và ba cái không tốt, bạn cố fix — ok, ba cái không tốt nó tốt lên thì bốn cái đã tốt lại không tốt xuống, và cứ qua lại rất nhiều. Trong khi việc đơn giản nhất chỉ cần đề nghị: ok, bước đầu tiên tập trung làm lần lượt, cải tiến dần lên. Thế làm thế nào để bắt khách hàng phải follow cái ứng dụng của mình? Các bạn dùng Claude Code hay dùng ChatGPT, hay các bạn dùng code assistant đi — có phải khi con agent có cái gì đấy không rõ, nó sẽ đặt câu hỏi 1, 2, 3 — nó hoàn toàn narrow down cái freedom của các bạn trong cái việc trả lời lung tung luôn. Tức là một: bạn chọn một — ok, hướng đầu tiên nó suggest, nó chạy tiếp hướng thứ nhất. Hoặc bạn chọn số hai, nó chạy số hai. Hoặc bạn chọn số ba — số ba là gì? Bạn thích yêu cầu cái gì, bạn có thể chat nhảm cũng được, thì tự động nó biết: ok, nó switch những cái luồng khác, hoặc nó sẽ consider à bạn muốn kết hợp cả hai. Tức là cái logic nó sẽ đơn giản hơn hẳn nếu các bạn kết hợp cái UI/UX vào trong cái ứng dụng, cái system của các bạn.\n\n[4] Mã: [T03-119] (Bài giảng)\nNội dung: Cũng là kinh nghiệm cho các bạn: các bạn cũng đừng quá [không nghe rõ] cái kỹ thuật gọi là fine-tuning nhá. Tại vì để sử dụng được kỹ thuật fine-tuning, các bạn phải có kinh nghiệm trong việc phát triển model, phải có dữ liệu, phải validate được. Vì sao? Nếu đụng đến fine-tuning, đa phần là các bạn đang cố deploy hệ thống vào một lĩnh vực ngách rất đặc thù, dẫn đến general knowledge của một model bình thường — ví dụ model xử lý ảnh YOLO detection — chưa cover được, nhưng nó vẫn có khả năng cover bằng cách các bạn tune. Chọn đường đấy thì bắt buộc các bạn phải nắm kỹ thuật về dữ liệu: data label này, data flow này. Ngoài ra còn phải tính tới: hệ thống ngách như vậy, nếu người dùng hay công ty đổi sang domain khác tương tự thì công sức bỏ ra cho domain mới có tiết kiệm được không — có cách nào chỉ cần train một domain mới mà adapt được cho các domain tương tự? Đấy là phần khá chuyên sâu nếu bạn làm AI engineering chuyên về deep learning model. Tuy nhiên, đa phần nếu các bạn làm AI chatbot, agent, thì cái thứ đầu tiên mình quan tâm chỉ là RAG system và prompt engineering — các bạn chỉ cần cố gắng narrow down cái scope, có được một knowledge space riêng của ứng dụng đấy, đẩy lên, kết hợp thêm những cái tool: lôi thông tin dự báo thời tiết, lôi biểu giá vàng hay giá công ty gì đấy nếu các bạn làm con chatbot về tài chính. Lúc đấy các bạn sẽ không cần quan tâm nhiều đến fine-tuning, vì fine-tuning khá tốn công sức và nhiều khi lại không tốt. Mình nói lý do sao không tốt: vì bản chất model vẫn chỉ là reasoning model dựa trên text thôi. Các bạn fine-tune, ok, nó có thể steer cái reasoning của nó về dữ liệu của các bạn — nhưng trừ khi ứng dụng ngách của các bạn cần nó overfit luôn, overfit thẳng vào dữ liệu các bạn đang xử lý, thì các bạn mới làm. Còn không, đã fine-tune rồi thì chắc chắn nó mất đi cái generalization so với model gốc, và khả năng làm tác vụ chung chung sẽ bị giảm. Đó là sự đánh đổi các bạn phải hiểu. Nên không phải lúc nào fine-tune cũng tốt, hoặc lúc nào RAG cũng tốt — tùy tình huống.\n\n[5] Mã: [T03-020] (Bài giảng)\nNội dung: Thật ra cái này không phải chỉ dùng trong AI agent — mình từng làm system mình biết: cái agent của các bạn, về độ đảm bảo an toàn, còn thấp hơn rất nhiều so với xe tự hành. Xe tự hành mọi người đặt rất nhiều câu hỏi: đang chạy tự nhiên camera bị tắt; cảm biến có vấn đề; con chip điều khiển bị lỗi — xử lý thế nào? Toàn những câu hỏi mà nếu không trả lời được thì rất khó ra sản phẩm, tại vì liên quan đến tính mạng con người. Mình từng có kinh nghiệm làm một system mà những hành động, quyết định đưa ra phải thuyết phục trên bàn cân là tính mạng con người, nên mình có kinh nghiệm đảm bảo những luồng khi đưa xuống sản phẩm chạy được hết. Các bạn thì chưa có kinh nghiệm, nên bây giờ có thể từ từ nhìn lại một góc độ: làm thế nào một system chạy hoàn hảo. Hoàn hảo ở đây là gì? Có lỗi vẫn báo được cho user, vẫn bắt được lỗi, vẫn xử lý được — cho user biết tình hình đang thế nào và đưa ra một câu trả lời thuyết phục được user. Đấy là cái mình gọi là một cái flow hoàn hảo.\n\nCÂU HỎI HỌC VIÊN: ReAct là gì? Tác dụng khi dùng trong Agent\n\nTRẢ LỜI:",
+  "rawAnswer": "ReAct là một phương pháp trong AI agent giúp cải thiện khả năng tương tác và phản hồi của hệ thống bằng cách sử dụng các kỹ thuật như RAG (Retrieval-Augmented Generation) và prompt engineering. Phương pháp này cho phép hệ thống tập trung vào một không gian tri thức cụ thể, từ đó tối ưu hóa khả năng xử lý và đưa ra quyết định. Việc áp dụng ReAct giúp cho AI agent hoạt động hiệu quả hơn trong việc giải quyết các bài toán và tương tác với người dùng. [T03-020]",
+  "verified": {
+    "verifiedCitations": [
+      "T03-020"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_e22dWtH5vt2c9BmnDFaItNaV",
+      "name": "lookup_document",
+      "args": {
+        "topic": "ReAct trong Agent"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "ReAct là một phương pháp trong AI agent giúp cải thiện khả năng tương tác và phản hồi của hệ thống bằng cách sử dụng các kỹ thuật như RAG (Retrieval-Augmented Generation) và prompt engineering. Nó cho phép hệ thống tập trung vào một không gian tri thức cụ thể, từ đó tối ưu hóa khả năng xử lý và đưa ra quyết định.",
+    "answerDirection": "Hướng trả lời: ReAct là phương pháp tối ưu hóa khả năng tương tác của AI agent thông qua RAG và prompt engineering, giúp hệ thống xử lý thông tin hiệu quả hơn.",
+    "focusedChunks": [
+      "T03-119",
+      "T03-020"
+    ]
+  }
+}

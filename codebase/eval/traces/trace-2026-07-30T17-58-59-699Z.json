@@ -1,0 +1,58 @@
+{
+  "question": "Bạn có thể giải thích cụ thể về MVP trong bài học không?",
+  "retrieved": [
+    {
+      "code": "T03-104",
+      "score": 0.4128
+    },
+    {
+      "code": "T01-008",
+      "score": 0.386
+    },
+    {
+      "code": "T06-066",
+      "score": 0.3838
+    },
+    {
+      "code": "T06-014",
+      "score": 0.3721
+    },
+    {
+      "code": "T03-102",
+      "score": 0.3395
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nMVP (Minimum Viable Product) là một sản phẩm tối thiểu có thể ra mắt với những tính năng cơ bản nhất để thu hút người dùng và nhận phản hồi. Trong quá trình học, người học cần hiểu rõ kết quả cuối cùng mà khóa học sẽ mang lại và các bước cần thực hiện để đạt được điều đó.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Giải thích về MVP và tầm quan trọng của việc hiểu rõ kết quả và quy trình trong khóa học.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-104] (Bài giảng)\nNội dung: **Giảng viên:** Chỉ là đi làm thực hành nhiều hơn thôi. Còn slide thì vẫn có trên LMS, bọn em vẫn đọc được — vào file là nó sẽ có slide cho engineer, slide cho ông PM, slide cho từng track. Bạn nào cũng tiếp cận được đầy đủ cả ba track hết, chỉ là hôm đấy các bạn chọn thực hành gì thì đi nghe truyền đạt thực tế cái đấy. Giống như thầy không làm chuyên về MLOps thì thầy không thể chia sẻ những kinh nghiệm thực tế, những pain point khi làm MLOps — em muốn làm em phải đi nghe người làm thực tế đúng không? Thầy cũng không làm PM, thầy chỉ nói về engineer thôi; còn góc nhìn của PM, họ có pain point gì khi gặp khách hàng cụ thể thì thầy chỉ có vài kinh nghiệm thôi. Đấy, tùy em.\n\n[2] Mã: [T01-008] (Bài giảng)\nNội dung: Bây giờ trong một team có bạn product owner, product manager. PM ở đây mình nói P là product nhá, không phải project — nó khác nhau. Có ai định nghĩa được nó khác như thế nào không? Tại vì ở Việt Nam từ PM hay dùng cho project nhiều hơn, bởi vì các công ty outsourcing nhiều, giờ mình cần định nghĩa lại nhá.\n\n[3] Mã: [T06-066] (Bài giảng)\nNội dung: Anh góp ý là em trả lời vậy thì đang đi ngược lại cái chuyện quan trọng. Mọi chương trình học bao giờ cũng vậy, phải cho người học biết được — ở đây câu hỏi của bạn rất xác đáng, đó là lý do anh ghi nhận câu hỏi này rất giá trị. Khi em học cái gì đó thì cần biết outcome của cả khóa em sẽ thu nhận cái gì, và cả quá trình nó là gì. Còn theo cách cũ thì cứ đến buổi nào tôi dạy buổi đấy. Cái này để tí nữa anh nghĩ cách.\n\n[4] Mã: [T06-014] (Bài giảng)\nNội dung: Ok, các bạn thấy đấy đúng không ạ? Mình đang thấy có một phần hay nhất trong phần trình bày của bạn — bạn tên gì nhỉ? [học viên] đúng không? Phần hay nhất trong phần trình bày vừa rồi của [học viên] là gì? Đó là vibe code. Bây giờ có bạn nào không đồng tình chuyện này không? Em không đồng tình — vì sao, cầm mic lên. Các bạn khác chưa làm thì tranh thủ làm cho xong nhé.\n\n[5] Mã: [T03-102] (Bài giảng)\nNội dung: **Giảng viên:** Về Ops bây giờ đã có AI hỗ trợ rất nhiều rồi đúng không? Việc bạn ấy phải tìm hiểu là những quy tắc deploy, chi phí, những kế hoạch, những kịch bản deploy sản phẩm khả thi và chi phí đi kèm. Bất kỳ ai cũng có thể làm trong thời đại này — thầy nói thẳng luôn, chỉ cần biết code, tại vì AI nó provide hết rồi. Trong khóa học cũng sẽ provide những cái chuyên sâu cho bên Ops đấy, hoặc bọn em lên hỏi Google luôn. Quan trọng là bọn em phải bỏ thời gian ra tìm hiểu, tại vì nó là một lĩnh vực khác hoàn toàn với việc xây dựng logic của hệ thống AI. Một bên là tôi đã có hệ thống logic ở dưới máy tính rồi; còn đây là tôi deploy nó lên, scale up lên cloud, chi phí bao nhiêu, khách hàng bao nhiêu. Nó là hai bài toán khác nhau. Nếu một người làm được — thầy nói một người vẫn làm được nhá — nhưng bọn em phải gấp đôi thời gian: vừa đảm bảo cái logic, xong ngày hôm sau phải deploy. Thế thì người trong nhóm bọn em chuyên về MLOps bắt buộc phải chuyên về việc đấy thôi: nói chuyện với khách hàng của dự án xem họ muốn deploy ở đâu; ví dụ họ bảo làm giám sát thì phải đặt câu hỏi là camera đấy đã có internet chưa, có cloud service chưa, hay mình phải vào từng camera, hay mình có thể truy cập vào cloud service đấy, lấy storage gửi về xử lý. Đó là nhiệm vụ phải đặt câu hỏi.\n\nCÂU HỎI HỌC VIÊN: Bạn có thể giải thích cụ thể về MVP trong bài học không?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T03-104], giảng viên có nói: \"**Giảng viên:** Chỉ là đi làm thực hành nhiều hơn thôi. Còn slide thì vẫn có trên LMS, bọn em vẫn đọc được — vào file là nó sẽ có slide cho engineer, slide cho ông PM, slide cho từng track. Bạn nào cũ...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T03-104"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-104",
+      "T06-066",
+      "T03-102"
+    ],
+    "allowedCodes": [
+      "T03-104",
+      "T01-008",
+      "T06-066",
+      "T06-014",
+      "T03-102"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": "MVP (Minimum Viable Product) là một sản phẩm tối thiểu có thể ra mắt với những tính năng cơ bản nhất để thu hút người dùng và nhận phản hồi. Trong quá trình học, người học cần hiểu rõ kết quả cuối cùng mà khóa học sẽ mang lại và các bước cần thực hiện để đạt được điều đó.",
+    "answerDirection": "Hướng trả lời: Giải thích về MVP và tầm quan trọng của việc hiểu rõ kết quả và quy trình trong khóa học.",
+    "focusedChunks": [
+      "T03-104",
+      "T06-066",
+      "T03-102"
+    ]
+  }
+}

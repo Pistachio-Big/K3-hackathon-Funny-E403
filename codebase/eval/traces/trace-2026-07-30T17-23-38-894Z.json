@@ -1,0 +1,61 @@
+{
+  "question": "Context window là gì? Tại sao nó quan trọng?",
+  "retrieved": [
+    {
+      "code": "T06-150",
+      "score": 0.5687
+    },
+    {
+      "code": "T04-052",
+      "score": 0.4414
+    },
+    {
+      "code": "T04-053",
+      "score": 0.441
+    },
+    {
+      "code": "T04-057",
+      "score": 0.4023
+    },
+    {
+      "code": "T06-157",
+      "score": 0.3967
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T06-150] (Bài giảng)\nNội dung: Các mô hình, ví dụ bên [không nghe rõ], người ta tiếp cận theo hướng context window của nó 512K thôi; còn bên Google thì lên 1 triệu, thậm chí bây giờ là 2 triệu. Bởi vậy nếu các bạn dùng những mô hình của Google cho workflow phức tạp thì sẽ tốt hơn; còn làm cái gì đó fast, nhanh, thì bên nào cũng ok. Để hiểu về context window, các bạn cứ tưởng tượng một học giả rất uyên bác, nhưng ông chỉ sống trong một cái buồng nào đó và trước mắt chỉ nhìn được [không nghe rõ] sách thôi — vì trong cái buồng đấy nên đôi khi ông sẽ bị quên. Đó là lý do sinh ra giới hạn về context window.\n\n[2] Mã: [T04-052] (Bài giảng)\nNội dung: Tuy nhiên cái context này nó cũng có một khái niệm là context rot. Có nghĩa là khi bạn càng đưa nhiều thông tin, càng đưa nhiều ngữ cảnh, thì cái mô hình càng ngày về sau nó sẽ càng kém đi, và nó sẽ thường quên những thông tin ở lúc đầu. Cho nên không phải cứ context lớn là nó sẽ tốt. Thực tế đã có rất nhiều chuyên gia, nhiều người sử dụng các mô hình — ví dụ như Opus 4.7 và 4.8 chẳng hạn, context 1 triệu — nhưng không phải 1 triệu là nó tốt hơn nhiều. Mình cũng là người sử dụng, mà mình thấy là khi mình bật chế độ context 1 triệu, mình thấy nó không thông minh bằng khi context nó ngắn hơn.\n\n[3] Mã: [T04-053] (Bài giảng)\nNội dung: Bởi vì thực ra — mình sẽ quay trở lại khái niệm attention trong kiến trúc Transformer ban đầu ấy — bản chất là để một mô hình có thể làm được việc này rất tốt, thì nó phải chú ý được đúng cái nơi nó cần chú ý. Khi bạn đưa cho nó 1 triệu token ngữ cảnh, nó có thể là chú ý sai chỗ. Nhưng khi bạn đưa cho nó — đôi khi chỉ 100.000 token thôi — nhưng là những thông tin thực sự chất lượng và quý giá, thì nó sẽ chú ý được vào đúng những chỗ nó cần, vào những chỗ quan trọng, và nó vẫn làm được việc đấy đủ tốt. Thế nên cái cuối cùng của việc chúng ta vận dụng, xây dựng các sản phẩm AI, hay là chúng ta làm việc với AI thôi, vibe code với AI thôi — thì việc quản lý cái cửa sổ ngữ cảnh này rất là quan trọng: chúng ta cần biết được là lúc nào nên đưa cái gì cho AI. Mình nghĩ là khi bạn quản lý việc đấy tốt thì bạn cũng sẽ sử dụng AI rất là tốt. Vì AI cũng sẽ như con người thôi: trong một lúc nào đấy nó cũng sẽ overload, nó không thể nào xử lý được nhiều việc, và bạn cũng phải chỉ cho nó là cái nào là cái quan trọng mày cần chú ý đến, thay vì mình cứ tống hết cho nó rất nhiều thông tin vào đấy.\n\n[4] Mã: [T04-057] (Bài giảng)\nNội dung: Rồi, thế thì sau tất cả những cái này, mình rút ra một cái mình nghĩ rất là quan trọng cho tất cả chúng ta khi chúng ta sẽ cần làm việc với AI rất nhiều trong giai đoạn tới, đặc biệt là vibe code. Bản chất đấy là: bạn hãy quản lý cái sự chú ý của các mô hình, và quản lý cái context mà bạn đưa cho các mô hình. Mình nghĩ bạn chỉ quản lý việc đấy tốt thôi, bạn sẽ code cũng tốt hơn, bạn build các sản phẩm nó cũng có năng lực tốt và tiết kiệm về mặt chi phí, và bạn vibe code nó sẽ tốt hơn. Không phải bạn cứ trả tiền cho một mô hình có năng lực cao, có cửa sổ ngữ cảnh lớn, là bạn có thể làm được mọi task tốt đâu. Vì cuối cùng càng làm càng về sau, đặc biệt khi bạn càng ngày càng chạm đến giới hạn về ngữ cảnh, thì nó bắt đầu phải tự động tóm tắt ấy. Không biết ở đây các bạn xài Claude Code chẳng hạn — tất cả các sản phẩm nó đều có cái đấy: khi bạn chạm cái ngưỡng của cửa sổ ngữ cảnh của phiên làm việc đấy, nó sẽ có một cơ chế tự động tóm tắt đúng không? Nhưng cái đoạn nó tự động tóm tắt ấy, bạn không kiểm soát được nó tóm tắt cái gì. Thế nên một cái tip mà những chuyên gia vibe code, làm việc với AI, họ sẽ khuyên: đấy là bạn hãy chủ động cho việc giao cho agent, hoặc viết những cái skill, để agent trong quá trình nó làm việc nó tự động ghi lại từng bước một. Nó làm xong thì nó sẽ luôn ghi lại vào một cái file hoặc là plan: tôi đã làm cái gì, tôi đã quyết định gì, những cái gì quan trọng — để mình chủ động cho việc lưu trữ lại những quyết định đấy, thay vì để cho mô hình nó tự động quyết định ở phía cuối. Tất nhiên bây giờ theo như mình quan sát, đã bắt đầu có những mô hình mà khi tràn context nó tự động compact ấy — compacting context — khi đạt được chế độ đấy thì nó cũng bắt đầu thông minh hơn rất nhiều rồi. Tuy nhiên việc đấy vẫn khiến cho bạn có thể tiêu tốn nhiều token hơn khi bạn cố gắng làm việc với một cửa sổ lớn. Bởi vì bản chất ở đây là khi bạn làm việc, chat qua 10 lần, 20 lần, thì mỗi một lần chat tiếp theo là bạn đang phải trả phí cho cả cuộc hội thoại rất là dài. Thì việc bạn quản lý được cái context đấy cũng sẽ khiến cho chúng ta tiết kiệm được chi phí và giữ hiệu năng nữa.\n\n[5] Mã: [T06-157] (Bài giảng)\nNội dung: Cái context window lúc nãy mình nói cũng rất quan trọng nhá. Sau này khi các bạn thiết kế một hệ thống thật, giống như của bạn kia, đôi khi không hiểu tại sao nó trả về không đúng như mọi khi — đơn giản là người ta giới hạn token mà query của user thì dài. Các bạn thử đẩy lên GPT khoảng tầm 100 cuốn ebook, nó sẽ báo input đầu vào vượt quá context; hoặc đơn giản là đưa một video dài, nó cũng vậy. Chỗ này các bạn nhớ thêm những thông tin như thế này — đây là một gợi ý ví dụ để các bạn tính.\n\nCÂU HỎI HỌC VIÊN: Context window là gì? Tại sao nó quan trọng?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-150], giảng viên có nói: \"Các mô hình, ví dụ bên [không nghe rõ], người ta tiếp cận theo hướng context window của nó 512K thôi; còn bên Google thì lên 1 triệu, thậm chí bây giờ là 2 triệu. Bởi vậy nếu các bạn dùng những mô hìn...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-150"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-150",
+      "T04-052",
+      "T04-053",
+      "T04-057",
+      "T06-157"
+    ],
+    "allowedCodes": [
+      "T06-150",
+      "T04-052",
+      "T04-053",
+      "T04-057",
+      "T06-157"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": null,
+  "toolCalls": [],
+  "retrieveMode": "qdrant",
+  "docSummary": {
+    "summary": null,
+    "focusedChunks": [
+      "T06-150",
+      "T04-052",
+      "T04-053",
+      "T04-057",
+      "T06-157"
+    ]
+  }
+}

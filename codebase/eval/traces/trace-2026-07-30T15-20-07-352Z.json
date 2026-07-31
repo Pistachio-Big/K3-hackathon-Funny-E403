@@ -1,0 +1,52 @@
+{
+  "question": "làm sao để pass môn này thầy ơi",
+  "retrieved": [
+    {
+      "code": "T03-121",
+      "score": 0.875
+    },
+    {
+      "code": "T05-050",
+      "score": 0.75
+    },
+    {
+      "code": "T01-062",
+      "score": 0.625
+    },
+    {
+      "code": "T01-086",
+      "score": 0.625
+    },
+    {
+      "code": "T02-017",
+      "score": 0.625
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN].\n\n## TÓM TẮT TÀI LIỆU LIÊN QUAN\nĐể pass môn này, sinh viên cần có kế hoạch đầy đủ cho dự án, xác định được các rủi ro và có khả năng chứng minh reasoning hợp lý cho những thất bại. Dự án không nhất thiết phải thành công hoàn toàn, miễn là sinh viên có thể chỉ ra được lý do và cách thức để cải thiện.\n\n## HƯỚNG TRẢ LỜI\nHướng trả lời: Tập trung vào việc lập kế hoạch và quản l�� rủi ro trong dự án để có thể pass môn học.\n\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã: [T03-121] (Bài giảng)\nNội dung: Các bạn chú ý: nội dung slide này là về mặt lý thuyết — mình sẽ dự trù được nó làm được hay không. Quay lại lời mình nói hồi đầu buổi: có khả năng ở giai đoạn này, các bạn dùng tất cả kiến thức của ngày hôm nay, xác định một cái agent system cho hệ thống AI này. Nhưng trong tương lai, khoảng 5-6 tuần các bạn học, các bạn làm dự án thật, các bạn phát hiện: ồ thôi, fail rồi. Nhưng không sao — nếu các bạn có kế hoạch đầy đủ, có metric để đánh giá fail, thì sau 6 tuần làm thấy fail rồi vẫn tính là pass. Vì sao? Vì các bạn đã nhìn ra được cái risk của nó, đo đạc được, và fail là vì chưa đủ cái này cái kia — chưa đủ thiết bị, chưa đủ data, chưa đủ đề án. Các bạn có một reasoning hợp lý, dựa trên đúng tiên đoán của các bạn lúc lập kế hoạch phát triển hệ thống, thì tất cả vẫn sẽ được chấp nhận. Tức là dự án không phải như đi học — bắt buộc làm được bài mới qua môn. Làm dự án thật là gì? Bạn có kế hoạch đầy đủ, khả năng chứng minh đầy đủ, xong các bạn làm thôi. Các bạn nói: sếp ơi em làm không nổi nữa, tại vì thế này thế này, đổi dự án đi, kế hoạch này fail rồi — thì ok, mọi người vẫn sẽ ok thôi. Bây giờ đi làm mà ai làm cũng thành công, cũng xong hệ thống, thì đâu cần đến các bạn phải làm nữa đúng không? Nên vẫn sẽ có chấp nhận rủi ro. Nhưng như nãy mình nói, khi làm kế hoạch các bạn phải xác định được mức độ nào là có thể đi tiếp, mức độ nào nên dừng, không follow được. Lúc đầu mình đưa ra những đánh giá, những câu hỏi; trong quá trình làm dự án, câu hỏi A được trả lời, câu hỏi B được trả lời, các bạn có thêm thông tin, dần dần hình dung được: ok dự án này đi được 50%, 60%, hoặc dự án này không đi được nữa, phải dừng. Các bạn cũng cần lưu ý.\n\n[2] Mã: [T05-050] (Bài giảng)\nNội dung: Rất là tuyệt vời. Cái ý kiến này mình đề nghị các bạn hôm nay nên ghi nhận lại. Bản chất là nó đang đến từ phía của các học viên. Để mình nói về bối cảnh một chút: chính các bạn cũng sẽ phải build sản phẩm đúng không ạ? Trong khoá học 6-7 tháng này thì sẽ có 30 ngày các bạn phải build sản phẩm. Khi build sản phẩm, học xong các bạn cũng sẽ hỏi \"vậy mình build cái gì\" — chính là cái phần lúc này học đấy. Rồi hôm nào đấy các bạn lại hỏi \"tôi nên chọn công ty nào để thực tập\". Khoá trước có bạn đặt câu hỏi: thầy ơi, em nên đi theo track về product management, hay nên đi cloud infrastructure, hay đi vào software development — có ba cách như vậy. Quay về câu hỏi của bạn — câu hỏi rất hay: hiện tại mọi người đang bị cái là có quá nhiều hệ thống người dùng đúng không? Và cái thứ hai, giá trị của mỗi một hệ thống đó với việc học của các bạn là gì thì nó cũng chưa được nhìn một cách rõ ràng — có thể nó đã được định nghĩa rồi nhưng các bạn chưa có cơ hội được nghe, đúng không? Thành ra đây là câu hỏi rất hay. Còn đi vào chi tiết thì mình không phải là người thiết kế ra hệ thống đấy — đấy là cái số một. Cái số hai là mình rất respect các bạn đã build được sản phẩm như vậy. Còn cái mà mình có thể đóng góp được là hướng dẫn các bạn làm thế nào để có một kế hoạch roll out cái sản phẩm đấy ra làm sao — chứ như hiện giờ, mọi người, như các bạn, không cảm nhận được là nó có giá trị, đúng không? Không biết mình trả lời câu hỏi vậy thì bạn có thấy nó clear không? Câu chuyện của em là làm rõ scope đến đâu đúng không?\n\n[3] Mã: [T01-062] (Bài giảng)\nNội dung: Thực ra có một bài rất hay về Elon Musk — vì bạn ấy vừa nhắc đến Musk thì mình gửi cho mọi người, mình rất thích bài đấy — nói về cách ông ấy dùng để giải quyết một vấn đề. Elon Musk rất nổi tiếng với việc sử dụng First Principle Thinking. First principle thinking là tư duy từ nguyên bản: không đi sao chép cách làm của người khác, mà cố gắng bóc tách vấn đề về những nguyên lý nguyên bản nhất — không thể nào chia nhỏ hơn được nữa — và đi giải các vấn đề. Ông ấy giải bài SpaceX như thế: vấn đề ngày xưa là chi phí sản xuất tên lửa quá đắt đỏ. Ông quay trở lại: tại sao đắt? Một cái tên lửa gồm những gì? Khi chia nhỏ các cấu phần đấy ra thì nó đâu có đắt như vậy. Rồi: nếu nó đắt, thì phóng lên xong nó rơi xuống, tái sử dụng những cái đấy có được hay không? Ông đặt ra những câu hỏi như thế và cố gắng giải quyết vấn đề đấy. Trong cái mental model — sơ đồ tư duy của ông ấy trong đầu — ông cũng xây dựng một bộ khung tư duy về việc luôn cập nhật bối cảnh mới của thế giới vào những hộp tư duy của mình, để luôn có thể xem lại các vấn đề hiện tại có thực sự còn đúng trong bối cảnh đấy hay không, và các giải pháp mới trong bối cảnh này còn có thể là gì.\n\n[4] Mã: [T01-086] (Bài giảng)\nNội dung: Cái này quay trở lại những câu hỏi nguyên bản — nó cũng là một không gian, một cách để tạo ra những ý tưởng mới. Có rất nhiều sản phẩm thành công bây giờ xuất phát từ những sự tò mò, những câu hỏi không ai dám đặt ra. Newton thấy quả táo rơi xuống đất thì mới đặt câu hỏi, rồi bắt đầu mới phát hiện ra những định luật. Máy ảnh — con gái của nhà phát minh, một ngày phải chờ bố đi in ảnh, cô hỏi là có thể có ảnh liền không, tại sao phải đợi như này — nên mới sinh ra cái máy ảnh đấy. Airbnb cũng là một ý tưởng rất táo bạo: tôi có nhà và tôi thừa chỗ sống trong nhà tôi, cho thuê được hay không? Tất cả những cái này — mình nghĩ trong thế giới bây giờ, việc mình build càng ngày càng dễ hơn, và AI cũng giúp tất cả chúng ta có thể trả lời những sự tò mò, khám phá những sự tò mò. Mình nghĩ một điều rất tốt là mình luôn giữ cái sự tò mò đấy — không để những đánh giá, những định kiến ở bên ngoài làm mình ngừng sự tò mò — và cởi mở với cách làm mới.\n\n[5] Mã: [T02-017] (Bài giảng)\nNội dung: Đây là một ví dụ đã điền — hơi nhỏ xíu — một phác thảo rất đơn giản đầu tiên khi bạn xác định ra đề bài và bắt đầu có ý rất nhanh về các chỉ số để đánh giá việc đấy thành công, thì chúng ta viết ra một cái thẻ kiểu phát biểu vấn đề. Bài toán ở đây: mỗi thứ Hai em mất khoảng 90 phút để tổng hợp weekly report từ nhiều nền tảng khác nhau, mất thời gian nhất ở bước viết narrative. Đối tượng là một bạn PM chịu trách nhiệm gửi các báo cáo đấy cho các leader cấp cao hơn. Và quy trình của bạn đấy — cái này rất quan trọng: trong quá trình các bạn muốn xây dựng một giải pháp, mình nghĩ sự khác biệt của giải pháp của các bạn là do cái quy trình này mà các bạn cần phải viết ra. AI, công nghệ nói chung, cũng chỉ là chúng ta đang cố gắng giúp con người làm việc đấy nhanh hơn và hiệu quả hơn — nó vẫn dựa trên những quy trình, đặc biệt trong các chuyên môn, các lĩnh vực cần con người là chuyên gia của lĩnh vực đấy. Ví dụ một quy trình dành cho một người nghiên cứu trong lĩnh vực y tế chẳng hạn: họ phải nghiên cứu với những nguồn tin rất đặc thù của họ, và khi tổng hợp kết quả ra họ phải theo một số template mẫu — đấy là những cái rất đặc thù mà một người bình thường không theo ngành đấy sẽ không biết được. Đặc biệt phần quy trình này chúng ta cố gắng khai thác và viết nó kỹ nhất có thể thành các bước, có bộ câu hỏi trả lời.\n\nCÂU HỎI HỌC VIÊN: làm sao để pass môn này thầy ơi\n\nTRẢ LỜI:",
+  "rawAnswer": "Để pass môn này, bạn cần có một kế hoạch đầy đủ cho dự án của mình. Quan trọng là bạn phải xác định được các rủi ro có thể xảy ra và có khả năng chứng minh reasoning hợp lý cho những thất bại. Dự án không nhất thiết phải thành công hoàn toàn, miễn là bạn có thể chỉ ra được lý do và cách thức để cải thiện. \n\nCụ thể, bạn nên chú ý đến việc lập kế hoạch và quản lý rủi ro. Nếu trong quá trình thực hiện dự án bạn phát hiện ra rằng nó không khả thi, hãy ghi nhận và phân tích lý do. Nếu bạn có kế hoạch đầy đủ và có metric để đánh giá thất bại, thì bạn vẫn có thể pass môn học, ngay cả khi dự án không thành công như mong đợi [T03-121]. \n\nHãy nhớ rằng, việc nhận diện và chấp nhận rủi ro là một phần quan trọng trong quá trình học tập và phát triển kỹ năng của bạn. Chúc bạn thành công!",
+  "verified": {
+    "verifiedCitations": [
+      "T03-121"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": [
+    {
+      "id": "call_2M3T047X6NhCXf5Y7I20EOk5",
+      "name": "lookup_document",
+      "args": {
+        "topic": "pass môn"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Để pass môn này, sinh viên cần có kế hoạch đầy đủ cho dự án, xác định được các rủi ro và có khả năng chứng minh reasoning hợp lý cho những thất bại. Dự án không nhất thiết phải thành công hoàn toàn, miễn là sinh viên có thể chỉ ra được lý do và cách thức để cải thiện.",
+    "answerDirection": "Hướng trả lời: Tập trung vào việc lập kế hoạch và quản l�� rủi ro trong dự án để có thể pass môn học.",
+    "focusedChunks": [
+      "T03-121"
+    ]
+  }
+}

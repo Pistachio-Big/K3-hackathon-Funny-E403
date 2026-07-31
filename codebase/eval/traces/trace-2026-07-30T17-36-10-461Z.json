@@ -1,0 +1,141 @@
+{
+  "question": "LayerNorm và BatchNorm khác nhau thế nào?",
+  "retrieved": [
+    {
+      "code": "T03-128",
+      "score": 0.0574
+    },
+    {
+      "code": "T06-038",
+      "score": 0.0565
+    },
+    {
+      "code": "T06-043",
+      "score": 0.0541
+    },
+    {
+      "code": "T06-042",
+      "score": 0.0313
+    },
+    {
+      "code": "T04-076",
+      "score": 0.0308
+    },
+    {
+      "code": "T06-134",
+      "score": 0.0303
+    },
+    {
+      "code": "T03-035",
+      "score": 0.0299
+    },
+    {
+      "code": "T04-074",
+      "score": 0.0294
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-8 đoạn):\n[1] Mã đoạn: [T03-128] (Bài giảng)\nNội dung: Ở đây là một phân biệt đơn giản nhỏ thôi. Rule script — các bạn có thể gọi là SQL hoặc những cái cố định như function code, database query bình thường — tức là các bạn đảm bảo chỉ một input đầu vào format như vậy thì không thể nào vượt qua cái scope được. Tuy nhiên rule script có giới hạn: dĩ nhiên nó không adapt được theo thời gian mà các bạn phải tự cập nhật thêm, và có khả năng nó narrow down cái scope trả lời của system của các bạn. LLM thì các bạn cũng hiểu rồi — nó là probability model nên không có chắc chắn. Còn agent là kết hợp của hai thằng trước, nên nó sẽ có phần deterministic — nếu các bạn dùng tool thì chắc chắn gọi đúng tool đấy ra đúng kết quả đấy; còn gọi nhánh liên quan đến LLM hoặc thuật toán xác suất, model deep learning có xác suất trong đấy, thì vẫn có khả năng nó respond không chắc chắn. Đấy là ba định nghĩa cơ bản thôi.\n\n[2] Mã đoạn: [T06-038] (Bài giảng)\nNội dung: [học viên]: Chào mọi người ạ, em [học viên] ạ. Theo em nghĩ thì nó khác ở chỗ là deep learning sẽ dùng neural network, và nó sẽ có thêm các hàm phi tuyến tạo ra tính [không nghe rõ], còn bình thường sẽ là các hàm tuyến tính.\n\n[3] Mã đoạn: [T06-043] (Bài giảng)\nNội dung: Ok. Các ý đóng góp của các bạn đều rất tuyệt vời nhé. Mình nghĩ cái phép chốt là ở phần trả lời của bạn: nó có hai đặc điểm khác biệt lớn — đó là khả năng tính toán đòi hỏi cao hơn, rồi cái dataset nó cũng cao hơn. Các bạn tưởng tượng thế này: giả sử các bạn có một con chó, các bạn huấn luyện nó với một cái dataset tầm độ năm món đồ, 15 loại thức ăn — hàng ngày các bạn huấn luyện thì con chó nó cũng sẽ tự nhận ra được đâu là cái món ăn mà các bạn đã đào tạo nó, đúng không? Nhưng tưởng tượng với não bộ của con chó được tăng cường thêm nhiều lớp neuron, thì ngay lập tức sự liên kết giữa các lớp ấy sẽ giúp cho khả năng nhận ra những cái mới của con chó nó mở rộng lên. Đấy, chúng ta có thể hiểu nôm na về neural network là như vậy.\n\n[4] Mã đoạn: [T06-042] (Bài giảng)\nNội dung: [học viên]: Với em thì điểm khác biệt lớn nhất của deep learning: ví dụ deep learning thì nó sẽ có ba lớp, so với machine learning chỉ có input output thôi, còn deep learning sẽ có cái lớp ẩn và nó sẽ trích ra các đặc điểm, những cấu trúc bên trong của mô hình. Ví dụ mình chỉ cần cung cấp là vật thể — nếu như học có giám sát thì nhãn nó sẽ là chó và mèo, còn deep learning thì nó sẽ phải trích ra đặc điểm: tai như thế nào, các thứ như thế.\n\n[5] Mã đoạn: [T04-076] (Bài giảng)\nNội dung: Mấy cái này chắc mình sẽ skip. Đây là một landscape các mô hình. Hiểu nôm na: vùng màu trắng là các mô hình đóng, vùng màu cam là các mô hình mã nguồn mở — thường là ở bên Trung Quốc — và làn sóng này đang càng ngày càng lớn dần, từ năm 2022 cho đến nay là năm 2026. Cái quan trọng là giá đang rơi: người ta có con số tính trung bình sẽ giảm khoảng 10 lần mỗi năm. Ví dụ mô hình bạn đang xài bây giờ có giá 1 đô cho input token chẳng hạn, năm sau nó hoàn toàn có thể là 0,1 đô, và các mô hình mới lại ra đời với năng lực mạnh hơn.\n\n[6] Mã đoạn: [T06-134] (Bài giảng)\nNội dung: Đơn vị cơ bản của LLM là cái nãy giờ chúng ta gọi là token. Quá trình huấn luyện dữ liệu đầu vào trước đây chủ yếu dùng tiếng Anh, bởi vậy logic của nó vẫn đi từ trái sang phải, và bởi vậy nếu các bạn gõ tiếng Việt thì bao giờ lượng token nó burn cũng cao hơn tiếng Anh. Ví dụ từ \"Hello World\" được tách thành hai token, nhưng \"Xin chào Việt Nam\" đôi khi lại thành ba token. Rồi một từ dùng trong code, ví dụ \"def function\", thì là bốn token — nó có những logic nhất định.\n\n[7] Mã đoạn: [T03-035] (Bài giảng)\nNội dung: Nếu bây giờ các bạn bảo: tôi dùng thuần tuý luôn, dùng LLM để trả lời số lượng chữ cái cho một cái từ — khả năng các bạn fail là rất cao. Trong khi các bạn chỉ cần lắp thêm một cái lớp nữa bắt cái intent: ok, người dùng đang muốn làm phép cộng đúng không — bắt hai cái số trong phép cộng đấy nhét vào. Thật ra dĩ nhiên bây giờ LLM nó thông minh hơn, ở cái mức độ là nếu các bạn cho một phép tính mà bắt nó reasoning từng bước thì khả năng nó vẫn làm ra được nhé. Tức là như nãy mình bảo — LLM bản chất là gì? Là được train trên một chuỗi reasoning, trên một văn bản. Thế thì nếu các bạn train nó và bắt nó reasoning từng bước theo như một cái văn bản mà đúng cái logic các bạn cần làm, thì nó cũng có thể đưa ra được cái đáp án. Đấy là cái vấn đề cách sử dụng hiệu quả thôi.\n\n[8] Mã đoạn: [T04-074] (Bài giảng)\nNội dung: Bản thân LLM chỉ là một bộ não phía bên trong. Để bộ não này phát huy hết năng lực, nó cần các lớp lớn hơn bên ngoài. Thứ nhất là context — bối cảnh: các mô hình AI dù rất thông minh nhưng không có ngữ cảnh về doanh nghiệp của bạn, về quy định của công ty bạn, nên nó cần các dữ liệu đấy. Nó phải có tool để kết nối với các công cụ bên ngoài. Nó phải có memory để lưu trữ ký ức, không bị kiểu chat đến câu thứ 10 lại quên câu 1 thì dở, đúng không? Rồi nó phải có những lan can an toàn — guardrail: làm thế nào để khi bạn hỏi về Trường Sa, Hoàng Sa nó trả lời là của Việt Nam chẳng hạn; hay khi bạn hỏi một câu mà AI không được phép trả lời thì nó phải từ chối.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] Batch Norm vs Layer Norm: When to Use Which | Abhik Sarkar\nURL: https://www.abhik.ai/concepts/deep-learning/batch-vs-layer-norm\nNội dung: TL;DR. BatchNorm normalizes each channel using statistics pooled across the batch and spatial dimensions, so it depends on batch composition. LayerNorm normalizes each sample using statistics pooled across the channel and spatial dimensions, so it depends only on that one sample. CNNs typically use \n\n[Nguồn 2] Medium\nURL: https://medium.com/@florian_algo/batchnorm-and-layernorm-2637f46a998b\nNội dung: ## Difference between Batch Normalization and Layer Normalization\n\nBatchNorm normalizes each feature within a batch of samples, while LayerNorm normalizes all features within each sample.\n\nLet’s assume we have a two-dimensional input matrix, where the rows represent the batch and the columns represe\n\n[Nguồn 3] Batch Norm vs Layer Norm: What’s the Difference?\nURL: https://eureka.patsnap.com/article/batch-norm-vs-layer-norm-whats-the-difference\nNội dung: Batch Norm works by normalizing the inputs of a layer across the mini-batch. Specifically, it computes the mean and variance of the inputs over the mini-batch and uses these statistics to normalize the data. After normalization, Batch Norm applies a learnable scale and shift transformation, enabling\n\n[Nguồn 4] Batch Norm vs Layer Norm - Explained\nURL: https://www.youtube.com/watch?v=o4chPk_S5C0\nNội dung: the heart of it. Because batch norm pulls across the batch, an example's output secretly depends on whoever else happened to share its batch. Layer norm cuts that cord. It boxes off each row and normalizes it using nothing but itself. So, every token is completely self-contained. For a model whose e\n\n[Nguồn 5] Pytorch Tutorial: BatchNorm vs LayerNorm\nURL: https://www.youtube.com/watch?v=cNt7UvuwDTY\nNội dung: clearly shows the fundamental difference. Look at the image with three panels. The middle panel shows batchnorm groups where colors indicate what gets normalized together. Batchorm normalizes vertically across the batch dimension for each feature. The right panel shows layer norm groups where each r\n\nCÂU HỎI HỌC VIÊN: LayerNorm và BatchNorm khác nhau thế nào?\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T06-134], giảng viên có nói: \"Đơn vị cơ bản của LLM là cái nãy giờ chúng ta gọi là token. Quá trình huấn luyện dữ liệu đầu vào trước đây chủ yếu dùng tiếng Anh, bởi vậy logic của nó vẫn đi từ trái sang phải, và bởi vậy nếu các bạn...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T06-134"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T06-134"
+    ],
+    "allowedCodes": [
+      "T03-128",
+      "T06-038",
+      "T06-043",
+      "T06-042",
+      "T04-076"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "LayerNorm và BatchNorm khác nhau thế nào?",
+    "topChunks": [
+      {
+        "code": "T03-128",
+        "score": 0.05737704918032787
+      },
+      {
+        "code": "T06-038",
+        "score": 0.056451612903225805
+      },
+      {
+        "code": "T06-043",
+        "score": 0.05413409144752428
+      },
+      {
+        "code": "T06-042",
+        "score": 0.03125
+      },
+      {
+        "code": "T04-076",
+        "score": 0.03076923076923077
+      },
+      {
+        "code": "T06-134",
+        "score": 0.030303030303030304
+      },
+      {
+        "code": "T03-035",
+        "score": 0.029850746268656716
+      },
+      {
+        "code": "T04-074",
+        "score": 0.029411764705882353
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "LayerNorm và BatchNorm khác nhau thế nào?",
+      "layernorm batchnorm khác nhau",
+      "LayerNorm và BatchNorm khác nhau thế nào? T03-128"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Batch Norm vs Layer Norm: When to Use Which | Abhik Sarkar",
+        "url": "https://www.abhik.ai/concepts/deep-learning/batch-vs-layer-norm",
+        "snippet": "TL;DR. BatchNorm normalizes each channel using statistics pooled across the batch and spatial dimensions, so it depends on batch composition. LayerNorm normalizes each sample using statistics pooled across the channel and spatial dimensions, so it depends only on that one sample. CNNs typically use "
+      },
+      {
+        "id": "S2",
+        "title": "Medium",
+        "url": "https://medium.com/@florian_algo/batchnorm-and-layernorm-2637f46a998b",
+        "snippet": "## Difference between Batch Normalization and Layer Normalization\n\nBatchNorm normalizes each feature within a batch of samples, while LayerNorm normalizes all features within each sample.\n\nLet’s assume we have a two-dimensional input matrix, where the rows represent the batch and the columns represe"
+      },
+      {
+        "id": "S3",
+        "title": "Batch Norm vs Layer Norm: What’s the Difference?",
+        "url": "https://eureka.patsnap.com/article/batch-norm-vs-layer-norm-whats-the-difference",
+        "snippet": "Batch Norm works by normalizing the inputs of a layer across the mini-batch. Specifically, it computes the mean and variance of the inputs over the mini-batch and uses these statistics to normalize the data. After normalization, Batch Norm applies a learnable scale and shift transformation, enabling"
+      },
+      {
+        "id": "S4",
+        "title": "Batch Norm vs Layer Norm - Explained",
+        "url": "https://www.youtube.com/watch?v=o4chPk_S5C0",
+        "snippet": "the heart of it. Because batch norm pulls across the batch, an example's output secretly depends on whoever else happened to share its batch. Layer norm cuts that cord. It boxes off each row and normalizes it using nothing but itself. So, every token is completely self-contained. For a model whose e"
+      },
+      {
+        "id": "S5",
+        "title": "Pytorch Tutorial: BatchNorm vs LayerNorm",
+        "url": "https://www.youtube.com/watch?v=cNt7UvuwDTY",
+        "snippet": "clearly shows the fundamental difference. Look at the image with three panels. The middle panel shows batchnorm groups where colors indicate what gets normalized together. Batchorm normalizes vertically across the batch dimension for each feature. The right panel shows layer norm groups where each r"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "qdrant-hybrid",
+  "docSummary": {
+    "summary": "LayerNorm và BatchNorm là hai kỹ thuật chuẩn hóa khác nhau trong học sâu. BatchNorm chuẩn hóa dữ liệu theo từng batch, trong khi LayerNorm chuẩn hóa theo từng lớp, giúp cải thiện độ ổn định và tốc độ huấn luyện của mô hình.",
+    "answerDirection": "Hướng trả lời: So sánh giữa LayerNorm và BatchNorm, nhấn mạnh cách thức hoạt động và ứng dụng của từng loại.",
+    "focusedChunks": [
+      "T06-134"
+    ]
+  }
+}

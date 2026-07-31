@@ -1,0 +1,74 @@
+{
+  "question": "Giải thích Multi-head attention bằng ví dụ đời thường",
+  "retrieved": [
+    {
+      "code": "T06-059",
+      "score": 0.6667
+    },
+    {
+      "code": "T04-054",
+      "score": 0.5556
+    },
+    {
+      "code": "T04-056",
+      "score": 0.5556
+    },
+    {
+      "code": "T06-016",
+      "score": 0.5556
+    },
+    {
+      "code": "T06-044",
+      "score": 0.5556
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "failSafe": "[tfidf] top-1 score 0.667 < threshold 0.75"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Giải thích Multi-head attention bằng ví dụ đời thường",
+    "topChunks": [
+      {
+        "code": "T06-059",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T04-054",
+        "score": 0.5555555555555556
+      },
+      {
+        "code": "T04-056",
+        "score": 0.5555555555555556
+      },
+      {
+        "code": "T06-016",
+        "score": 0.5555555555555556
+      },
+      {
+        "code": "T06-044",
+        "score": 0.5555555555555556
+      }
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_1odoHvMBJX8ozQcHz30FYDbv",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Multi-head attention"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Multi-head attention là một kỹ thuật trong mô hình Transformer, cho phép nhiều 'đầu' (head) cùng nhìn vào dữ liệu để nhận diện nhiều đặc trưng khác nhau. Điều này tương tự như việc nhiều thầy bói cùng sờ vào một con voi để có cái nhìn toàn diện hơn.",
+    "answerDirection": "Hướng trả lời: Sử dụng ví dụ về thầy bói xem voi để giải thích cách mà multi-head attention hoạt động trong việc nhận diện và tổng hợp thông tin từ nhiều góc độ khác nhau.",
+    "focusedChunks": [
+      "T04-056",
+      "T04-054"
+    ]
+  }
+}

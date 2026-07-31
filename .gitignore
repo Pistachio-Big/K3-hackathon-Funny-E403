@@ -12,3 +12,6 @@ docker-compose.override.yml
 # Qdrant cache (có thể regenerate)
 codebase/eval/qdrant-cache.json
 codebase/eval/embeddings.json
+codebase/eval/embeddings.json
+
+venv/
