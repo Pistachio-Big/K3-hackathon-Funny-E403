@@ -1,0 +1,93 @@
+{
+  "question": "MVP là gì",
+  "retrieved": [
+    {
+      "code": "T01-002",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-003",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-004",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-005",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-013",
+      "score": 0.6667
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "MVP (Minimum Viable Product) là sản phẩm tối thiểu khả thi, tức là phiên bản đơn giản nhất của một sản phẩm mà vẫn có thể đáp ứng nhu cầu cơ bản của người dùng. Tuy nhiên, trong tài liệu hiện tại, không có thông tin cụ thể về định nghĩa MVP. Mình chỉ tìm thấy một đoạn liên quan đến các bài học kỹ thuật trong quy trình phát triển sản phẩm [T05-088]. \n\nNếu bạn cần thêm thông tin chi tiết về MVP, mình có thể tìm kiếm trên Internet. Bạn có muốn mình làm vậy không?",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [
+      "T05-088"
+    ],
+    "allowedCodes": [
+      "T01-002",
+      "T01-003",
+      "T01-004",
+      "T01-005",
+      "T01-013"
+    ],
+    "focusedCodes": [
+      "T01-004",
+      "T01-005"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "MVP là gì",
+    "topChunks": [
+      {
+        "code": "T01-002",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-003",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-004",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-005",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-013",
+        "score": 0.6666666666666666
+      }
+    ],
+    "sourcesFound": 2,
+    "queriesUsed": [
+      "MVP là gì",
+      "MVP là gì T01-002"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_jIdnQyiGX2SDXv7DQc6Cj64U",
+      "name": "lookup_document",
+      "args": {
+        "topic": "MVP"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "MVP (Minimum Viable Product) là sản phẩm tối thiểu có thể ra mắt để kiểm tra ý tưởng và thu thập phản hồi từ người dùng. Nó giúp xác định vấn đề cụ thể mà công nghệ cần giải quyết và tạo ra giá trị thực sự cho khách hàng.",
+    "answerDirection": "Hướng trả lời: MVP là sản phẩm tối thiểu có thể ra mắt để kiểm tra ý tưởng và thu thập phản hồi từ người dùng, giúp xác định vấn đề cụ thể mà công nghệ cần giải quyết.",
+    "focusedChunks": [
+      "T01-004",
+      "T01-005"
+    ]
+  }
+}

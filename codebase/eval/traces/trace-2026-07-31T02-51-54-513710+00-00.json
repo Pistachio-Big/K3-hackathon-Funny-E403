@@ -1,0 +1,90 @@
+{
+  "question": "Định nghĩa ReAct",
+  "retrieved": [
+    {
+      "code": "T01-008",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-083",
+      "score": 0.6667
+    },
+    {
+      "code": "T02-032",
+      "score": 0.6667
+    },
+    {
+      "code": "T03-128",
+      "score": 0.6667
+    },
+    {
+      "code": "T04-013",
+      "score": 0.6667
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-008",
+      "T01-083",
+      "T02-032",
+      "T03-128",
+      "T04-013"
+    ],
+    "focusedCodes": [
+      "T02-032"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Định nghĩa ReAct",
+    "topChunks": [
+      {
+        "code": "T01-008",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-083",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T02-032",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T03-128",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T04-013",
+        "score": 0.6666666666666666
+      }
+    ],
+    "sourcesFound": 3,
+    "queriesUsed": [
+      "Định nghĩa ReAct",
+      "định nghĩa react",
+      "Định nghĩa ReAct T01-008"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_bIehWUU9QmzRuxybsmitIsvC",
+      "name": "lookup_document",
+      "args": {
+        "topic": "ReAct"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "ReAct là một phương pháp trong lĩnh vực AI, liên quan đến việc lựa chọn mức độ tự động hóa (automation) hoặc tăng cường (augmentation) trong các công việc, cho phép AI hỗ trợ hoặc tự động hóa hoàn toàn các tác vụ.",
+    "answerDirection": "Hướng trả lời: Định nghĩa ReAct trong bối cảnh AI và sự lựa chọn giữa tự động hóa và tăng cường.",
+    "focusedChunks": [
+      "T02-032"
+    ]
+  }
+}

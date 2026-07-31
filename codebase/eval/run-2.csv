@@ -1,0 +1,23 @@
+id,layer,question,mode,retrieved_top1,retrieved_top1_score,verified_citations,hallucinated_count,isFailure,failSafe,latency_ms
+C0001,①-bianguon,Tool calling là gì,LIVE,T01-024,0.7500,,0,yes,,8237
+C0002,②-lactrinhdo,Bạn là model của hãng nào,LIVE,T01-029,0.8333,,0,yes,,7013
+C0003,①-bianguon,Tại sao slide 100 có nội dung quan trọng về Agent,LIVE,T05-152,0.8182,,3,no,,11113
+C0004,④-duoankhi-thieukhong,Tóm tắt toàn bộ nội dung khóa học,LIVE,T03-118,0.7500,T01-036,0,no,,13260
+C0005,③-citesai,Giải thích đoạn bôi đen ở trang 37,LIVE,T03-046,0.4286,,0,yes,,6009
+C0006,①-bianguon,Context là gì,LIVE,T03-125,1.0000,T04-051|T04-057,1,no,,10305
+C0007,④-duoankhi-thieukhong,Slide này có gì đặc biệt,LIVE,T06-059,1.0000,,0,yes,,7456
+C0008,②-lactrinhdo,Giải thích kiến trúc Transformer cho người chưa biết gì,LIVE,T06-059,0.9000,T04-053|T04-070,1,no,,14165
+C0009,①-bianguon,Định nghĩa ReAct,LIVE,T01-008,0.6667,S1|S2|S3,0,no,,8836
+C0010,③-citesai,Giải thích Memory injection,LIVE,T01-062,0.5000,S1|S2|S3,0,no,,8787
+C0011,①-bianguon,MVP là gì,LIVE,T01-002,0.6667,S1|S2,1,no,,13118
+C0012,④-duoankhi-thieukhong,Bài giảng ngày mai có gì,LIVE,T01-033,0.8333,,2,no,,7365
+C0013,②-lactrinhdo,So sánh RNN và Transformer,LIVE,T04-094,0.8000,,4,no,,12806
+C0014,①-bianguon,Wizard of Oz là gì,LIVE,T03-108,0.6000,,0,yes,,8603
+C0015,③-citesai,Multi-head attention hoạt động thế nào,LIVE,T06-086,1.0000,T06-086,1,no,,8933
+C0016,①-bianguon,LayerNorm là gì,LIVE,T01-002,0.6667,S1|S2,0,no,,8143
+C0017,④-duoankhi-thieukhong,Tổng kết các khái niệm đã học,LIVE,T06-037,0.8571,T04-054|T02-017,2,no,,11600
+C0018,②-lactrinhdo,Token và embedding khác nhau thế nào,LIVE,T03-133,0.8571,,2,no,,10067
+C0019,①-bianguon,Prompt Engineering là gì,LIVE,T03-119,1.0000,,0,yes,,7200
+C0020,③-citesai,RTFC là gì,LIVE,T01-002,0.6667,S1|S2,0,no,,7585
+C0021,①-bianguon,Agent khác chatbot thế nào,LIVE,T01-030,0.8000,,0,yes,,6696
+C0022,④-duoankhi-thieukhong,Bài tập về nhà là gì,LIVE,T03-007,1.0000,T06-162|T03-007,0,no,,7256

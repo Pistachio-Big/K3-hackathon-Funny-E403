@@ -1,0 +1,35 @@
+{
+  "question": "Memory Injection là gì?",
+  "retrieved": [
+    {
+      "code": "C0010-T0268-Q",
+      "score": 0.8398
+    },
+    {
+      "code": "C0400-T0866-A",
+      "score": 0.779
+    },
+    {
+      "code": "C0283-T0310-A",
+      "score": 0.6974
+    },
+    {
+      "code": "C0145-T0136-A",
+      "score": 0.6968
+    },
+    {
+      "code": "C0283-T0711-Q",
+      "score": 0.6784
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN]. Hội thoại học viên [Cxxxx] chỉ dùng để bổ sung ngữ cảnh khi bài giảng không có.\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã đoạn: [C0010-T0268-Q] (Hội thoại học viên)\nNội dung: (Trang 22, đoạn được chọn: \"Memory injection\n\n[2] Mã đoạn: [C0400-T0866-A] (Hội thoại học viên)\nNội dung: \"Memory injection\" là kỹ thuật lựa chọn và cung cấp thông tin (facts) vào context của mô hình chỉ khi các thông tin đó thực sự cần thiết cho task hiện tại [trang 37].\n\n[3] Mã đoạn: [C0283-T0310-A] (Hội thoại học viên)\nNội dung: Đoạn văn này giải thích về kỹ thuật **Direct Injection** (Tấn công chèn trực tiếp), một kiểu tấn công nhằm vào các mô hình ngôn ngữ (LLM).\n\n[4] Mã đoạn: [C0145-T0136-A] (Hội thoại học viên)\nNội dung: \"Direct injection\" là một dạng tấn công nhắm vào mô hình ngôn ngữ (hoặc LLM agent), trong đó người dùng trực tiếp đưa ra các yêu cầu hoặc câu lệnh để ghi đè lên các chỉ dẫn (instructions) ban đầu của hệ thống [trang 42].\n\n[5] Mã đoạn: [C0283-T0711-Q] (Hội thoại học viên)\nNội dung: (Trang 42, đoạn được chọn: \"Indirect injection\n\nCÂU HỎI HỌC VIÊN: Memory Injection là gì?\n\nTRẢ LỜI:",
+  "rawAnswer": "Chào bạn! \"Memory injection\" là kỹ thuật lựa chọn và cung cấp thông tin (facts) vào context của mô hình chỉ khi các thông tin đó thực sự cần thiết cho task hiện tại [C0400-T0866-A].",
+  "verified": {
+    "verifiedCitations": [
+      "C0400-T0866-A"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "retrieveMode": "qdrant"
+}

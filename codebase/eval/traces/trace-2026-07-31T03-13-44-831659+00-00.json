@@ -1,0 +1,95 @@
+{
+  "question": "d",
+  "retrieved": [
+    {
+      "code": "T01-001",
+      "score": 0.0
+    },
+    {
+      "code": "T01-002",
+      "score": 0.0
+    },
+    {
+      "code": "T01-003",
+      "score": 0.0
+    },
+    {
+      "code": "T01-004",
+      "score": 0.0
+    },
+    {
+      "code": "T01-005",
+      "score": 0.0
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung nào liên quan đến \"d\" trong tài liệu. Nếu bạn có thể cung cấp thêm thông tin hoặc làm rõ câu hỏi, mình sẽ rất vui lòng hỗ trợ!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-001",
+      "T01-002",
+      "T01-003",
+      "T01-004",
+      "T01-005"
+    ],
+    "focusedCodes": [
+      "T01-001",
+      "T01-002",
+      "T01-004",
+      "T01-005"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "d",
+    "topChunks": [
+      {
+        "code": "T01-001",
+        "score": 0.0
+      },
+      {
+        "code": "T01-002",
+        "score": 0.0
+      },
+      {
+        "code": "T01-003",
+        "score": 0.0
+      },
+      {
+        "code": "T01-004",
+        "score": 0.0
+      },
+      {
+        "code": "T01-005",
+        "score": 0.0
+      }
+    ],
+    "sourcesFound": 2,
+    "queriesUsed": [
+      "d",
+      "d T01-001"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_mgwQGXzTF1GwDXIq2LwknM6S",
+      "name": "lookup_document",
+      "args": {
+        "topic": "d"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Câu hỏi 'd' liên quan đến việc xác định và giải quyết vấn đề trong ứng dụng AI, nhấn mạnh tầm quan trọng của việc biến các yêu cầu mơ hồ thành các bài toán cụ thể có thể triển khai. Việc này đặc biệt quan trọng trong bối cảnh nhiều công ty đang tìm cách áp dụng AI nhưng thiếu người có khả năng xác định đúng vấn đề cần giải quyết.",
+    "answerDirection": "Hướng trả lời: Tập trung vào việc xác định và giải quyết vấn đề trong ứng dụng AI.",
+    "focusedChunks": [
+      "T01-001",
+      "T01-002",
+      "T01-004",
+      "T01-005"
+    ]
+  }
+}

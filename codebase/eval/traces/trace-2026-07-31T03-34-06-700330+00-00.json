@@ -1,0 +1,12 @@
+{
+  "question": "Tóm tắt toàn bộ nội dung khóa học AI & LLM Foundation",
+  "retrieved": [],
+  "prompt": null,
+  "rawAnswer": null,
+  "verified": {
+    "failSafe": "broad-course-scope-refusal"
+  },
+  "mode": "LIVE",
+  "research": null,
+  "toolCalls": []
+}
