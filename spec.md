@@ -132,5 +132,13 @@ Thực thi & privacy:
 - Kế hoạch: follow canvas-cp1.md pipeline: finish golden-set → run eval → produce `eval/run-1.csv` → analyze & iterate → validation CP5.
 
 ## §9. Changelog
-- To be completed after running eval/run-1.csv and collecting validation feedback. (Leave for later as requested.)
+| Thời điểm | Đổi gì | Vì sao (trỏ về feedback/case nào) |
+|---|---|---|
+| 2026-07-30 | Bản nháp spec ban đầu, chọn hướng A — Improve citation coverage & accuracy | Decision log §2 ("Date: 2026-07-30 — Chosen A")
+| 2026-07-30 | Chạy eval run-1 (file: `codebase/eval/run-1.csv`): N=40, pass=36 (90%), content_accurate=30/40 (75%), has_citation=0/40, safe_not_guess=39/40; layer dist: ①:12, ②:4, ③:4, ④:5, ⑤:15 | Kết quả thực tế cho thấy thiếu citation coverage và một số case nội dung không chính xác → cần pipeline trích dẫn & chỉnh prompt. Các case fail: GS008, GS013, GS023, GS025 (xem `codebase/eval/run-1.csv`).
+| 2026-07-30 | Cập nhật spec/criteria: thêm metric "citation_coverage" (target ≥80%), yêu cầu golden-set ≥20 cases (≥5 từ chatlog thực tế), và bổ sung kiểm tra bắt buộc trường citation trong evaluator; yêu cầu content_accuracy ≥80% cho pass | Để đảm bảo cải tiến đo lường được và khắc phục thiếu provenance (tham chiếu kết quả run-1 và `codebase/eval/golden-set.json`).
+| 2026-07-31 (plan) | Hành động tiếp theo: annotate N=50 replies thiếu citation → convert thành golden-set mở rộng → chạy run-2 → tập trung sửa prompt/citation-pipeline trên các case fail | Dựa trên đề xuất trong §1 Evidence và các script trong `codebase/eval/` (chunker, evaluator). Mục tiêu: tăng citation coverage ≥80% và content_accuracy ≥80% trước CP6.
+
+
+
 
