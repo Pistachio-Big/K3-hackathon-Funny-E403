@@ -1,0 +1,97 @@
+{
+  "question": "hullacination là gì",
+  "retrieved": [
+    {
+      "code": "T01-002",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-003",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-004",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-005",
+      "score": 0.6667
+    },
+    {
+      "code": "T01-013",
+      "score": 0.6667
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-002",
+      "T01-003",
+      "T01-004",
+      "T01-005",
+      "T01-013"
+    ],
+    "focusedCodes": [
+      "T01-002",
+      "T01-003",
+      "T01-004",
+      "T01-005",
+      "T01-013"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "hullacination là gì",
+    "topChunks": [
+      {
+        "code": "T01-002",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-003",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-004",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-005",
+        "score": 0.6666666666666666
+      },
+      {
+        "code": "T01-013",
+        "score": 0.6666666666666666
+      }
+    ],
+    "sourcesFound": 2,
+    "queriesUsed": [
+      "hullacination là gì",
+      "hullacination là gì T01-002"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_zg8tjnvfjYk5ivacFAWhiIf1",
+      "name": "lookup_document",
+      "args": {
+        "topic": "hullacination"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Các đoạn tài liệu không đề cập trực tiếp đến khái niệm 'hullacination'. Tuy nhiên, chúng tập trung vào việc ứng dụng AI trong doanh nghiệp và những thách thức liên quan đến việc xác định vấn đề cụ thể mà AI cần giải quyết.",
+    "answerDirection": "Cần tìm kiếm thêm tài liệu hoặc nguồn khác để hiểu rõ về khái niệm 'hullacination'.",
+    "focusedChunks": [
+      "T01-002",
+      "T01-003",
+      "T01-004",
+      "T01-005",
+      "T01-013"
+    ]
+  }
+}

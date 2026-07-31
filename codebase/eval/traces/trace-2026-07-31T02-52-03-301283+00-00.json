@@ -1,0 +1,98 @@
+{
+  "question": "Giải thích Memory injection",
+  "retrieved": [
+    {
+      "code": "T01-062",
+      "score": 0.5
+    },
+    {
+      "code": "T03-021",
+      "score": 0.5
+    },
+    {
+      "code": "T03-046",
+      "score": 0.5
+    },
+    {
+      "code": "T03-095",
+      "score": 0.5
+    },
+    {
+      "code": "T03-133",
+      "score": 0.5
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-062",
+      "T03-021",
+      "T03-046",
+      "T03-095",
+      "T03-133"
+    ],
+    "focusedCodes": [
+      "T01-062",
+      "T03-021",
+      "T03-046",
+      "T03-095",
+      "T03-133"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "Giải thích Memory injection",
+    "topChunks": [
+      {
+        "code": "T01-062",
+        "score": 0.5
+      },
+      {
+        "code": "T03-021",
+        "score": 0.5
+      },
+      {
+        "code": "T03-046",
+        "score": 0.5
+      },
+      {
+        "code": "T03-095",
+        "score": 0.5
+      },
+      {
+        "code": "T03-133",
+        "score": 0.5
+      }
+    ],
+    "sourcesFound": 3,
+    "queriesUsed": [
+      "Giải thích Memory injection",
+      "giải thích memory injection",
+      "Giải thích Memory injection T01-062"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_BuJXgTaXZ22YLv2VvHYi13YJ",
+      "name": "lookup_document",
+      "args": {
+        "topic": "Memory injection"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Memory injection là một kỹ thuật trong lập trình và an ninh mạng, liên quan đến việc chèn mã vào bộ nhớ của một ứng dụng hoặc hệ thống để thực hiện các hành động không mong muốn. Kỹ thuật này thường được sử dụng trong các cuộc tấn công nhằm khai thác lỗ hổng bảo mật.",
+    "answerDirection": "Hướng trả lời: Giải thích khái niệm Memory injection và cách thức hoạt động của nó trong bối cảnh an ninh mạng.",
+    "focusedChunks": [
+      "T01-062",
+      "T03-021",
+      "T03-046",
+      "T03-095",
+      "T03-133"
+    ]
+  }
+}

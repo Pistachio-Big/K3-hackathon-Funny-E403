@@ -1,0 +1,37 @@
+{
+  "question": "Memory Injection và Context Compression trong Prompt Engineering là gì",
+  "retrieved": [
+    {
+      "code": "C0494-T0354-A",
+      "score": 0.8608
+    },
+    {
+      "code": "C0242-T0720-A",
+      "score": 0.7742
+    },
+    {
+      "code": "C0400-T1214-A",
+      "score": 0.7432
+    },
+    {
+      "code": "C0549-T0833-A",
+      "score": 0.7291
+    },
+    {
+      "code": "C0400-T0866-A",
+      "score": 0.7166
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn CHỈ được trả lời dựa trên các đoạn dưới đây.\n\nQUY TẮC BẮT BUỘC:\n1. Câu trả lời phải dựa trên context. Mỗi phát biểu quan trọng phải kèm mã đoạn ngay trong text.\n   - Đoạn bài giảng: [Txx-NNN]\n   - Đoạn hội thoại học viên: [Cxxxx-Tyyyy-Q] (câu hỏi) hoặc [Cxxxx-Tyyyy-A] (trả lời)\n2. CHỈ được dùng mã đoạn có trong danh sách dưới. KHÔNG được bịa mã.\n3. Nếu context không đủ để trả lời, hãy nói thẳng: \"Mình không tìm thấy nội dung này trong tài liệu. Bạn nên hỏi giảng viên hoặc mở tài liệu gốc.\"\n4. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n5. Ưu tiên trích dẫn từ bài giảng [Txx-NNN]. Hội thoại học viên [Cxxxx] chỉ dùng để bổ sung ngữ cảnh khi bài giảng không có.\n\nCONTEXT (top-5 đoạn liên quan):\n[1] Mã đoạn: [C0494-T0354-A] (Hội thoại học viên)\nNội dung: Trong kỹ thuật Prompt Engineering, \"Memory Injection\" và \"Context Compression\" là hai phương pháp quan trọng để tối ưu hóa việc quản lý dữ liệu đầu vào cho mô hình, đặc biệt khi làm việc với các hệ thống có lịch sử hội thoại dài [trang 22]:\n\n[2] Mã đoạn: [C0242-T0720-A] (Hội thoại học viên)\nNội dung: Prompt Engineering bao hàm phạm vi rộng hơn việc chỉ mô tả ngữ cảnh. Đúng là việc cung cấp thêm ngữ cảnh là một phần quan trọng, nhưng Prompt Engineering còn bao gồm việc thiết kế cấu trúc câu lệnh, xác định vai trò cho AI (system prompt), cung cấp các ví dụ mẫu (few-shot prompting), định dạng đầu ra mong muốn, và các kỹ thuật suy luận (như Chain-of-Thought) để tối ưu hóa kết quả nhận được từ mô hình [trang 3].\n\n[3] Mã đoạn: [C0400-T1214-A] (Hội thoại học viên)\nNội dung: Trong kỹ thuật prompt, \"Compression\" (nén ngữ cảnh) là các chiến lược giúp tối ưu hóa không gian (token) của context bằng cách xử lý thông tin cũ, thay vì giữ lại toàn bộ lịch sử trò chuyện [trang 37]:\n\n[4] Mã đoạn: [C0549-T0833-A] (Hội thoại học viên)\nNội dung: Chủ đề về **Prompt Injection** được giới thiệu chi tiết bắt đầu từ trang 52 của bài giảng [trang 52].\n\n[5] Mã đoạn: [C0400-T0866-A] (Hội thoại học viên)\nNội dung: \"Memory injection\" là kỹ thuật lựa chọn và cung cấp thông tin (facts) vào context của mô hình chỉ khi các thông tin đó thực sự cần thiết cho task hiện tại [trang 37].\n\nCÂU HỎI HỌC VIÊN: Memory Injection và Context Compression trong Prompt Engineering là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Chào bạn! Trong kỹ thuật Prompt Engineering, \"Memory Injection\" và \"Context Compression\" là hai phương pháp rất quan trọng giúp tối ưu hóa việc quản lý dữ liệu đầu vào cho mô hình, nhất là khi làm việc với các hệ thống có lịch sử hội thoại dài [C0494-T0354-A]. \n\nMình xin giải thích chi tiết hơn về từng kỹ thuật nhé:\n\n* **Memory Injection**: Đây là kỹ thuật lựa chọn và cung cấp các thông tin (facts) vào context của mô hình, nhưng chỉ đưa vào khi những thông tin đó thực sự cần thiết cho tác vụ hiện tại [C0400-T0866-A].\n* **Context Compression (Nén ngữ cảnh)**: Đây là các chiến lược giúp tối ưu hóa không gian (token) của context bằng cách xử lý thông tin cũ, thay vì bắt buộc phải giữ lại toàn bộ lịch sử trò chuyện [C0400-T1214-A].",
+  "verified": {
+    "verifiedCitations": [
+      "C0494-T0354-A",
+      "C0400-T0866-A",
+      "C0400-T1214-A"
+    ],
+    "hallucinated": []
+  },
+  "mode": "LIVE",
+  "retrieveMode": "qdrant"
+}

@@ -13,3 +13,7 @@ codebase/eval/qdrant-cache.json
 codebase/eval/embeddings.json
 
 venv/
+.claude/
+data/
+codebase/docker/
+codebase/__pycache__/

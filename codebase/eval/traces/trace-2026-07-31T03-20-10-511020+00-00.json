@@ -1,0 +1,95 @@
+{
+  "question": "d",
+  "retrieved": [
+    {
+      "code": "T01-001",
+      "score": 0.0
+    },
+    {
+      "code": "T01-002",
+      "score": 0.0
+    },
+    {
+      "code": "T01-003",
+      "score": 0.0
+    },
+    {
+      "code": "T01-004",
+      "score": 0.0
+    },
+    {
+      "code": "T01-005",
+      "score": 0.0
+    }
+  ],
+  "prompt": null,
+  "rawAnswer": "Mình không tìm thấy nội dung nào liên quan đến \"d\" trong tài liệu. Bạn có thể thử tìm kiếm trên web hoặc hỏi giảng viên trực tiếp để có thêm thông tin.",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "allowedCodes": [
+      "T01-001",
+      "T01-002",
+      "T01-003",
+      "T01-004",
+      "T01-005"
+    ],
+    "focusedCodes": [
+      "T01-001",
+      "T01-002",
+      "T01-004",
+      "T01-005"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "d",
+    "topChunks": [
+      {
+        "code": "T01-001",
+        "score": 0.0
+      },
+      {
+        "code": "T01-002",
+        "score": 0.0
+      },
+      {
+        "code": "T01-003",
+        "score": 0.0
+      },
+      {
+        "code": "T01-004",
+        "score": 0.0
+      },
+      {
+        "code": "T01-005",
+        "score": 0.0
+      }
+    ],
+    "sourcesFound": 2,
+    "queriesUsed": [
+      "d",
+      "d T01-001"
+    ]
+  },
+  "toolCalls": [
+    {
+      "id": "call_KHi0yDG2mqsq5JWeeEiHEAMY",
+      "name": "lookup_document",
+      "args": {
+        "topic": "d"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": "Cần có khả năng xác định và cụ thể hóa bài toán từ yêu cầu mơ hồ trong việc ứng dụng AI vào doanh nghiệp. Nhiều công ty gặp khó khăn vì không có người đặt ra vấn đề cụ thể cho AI engineer giải quyết.",
+    "answerDirection": "Hướng trả lời: Cần nhấn mạnh vai trò của việc xác định bài toán và khả năng cụ thể hóa yêu cầu trong ứng dụng AI.",
+    "focusedChunks": [
+      "T01-001",
+      "T01-002",
+      "T01-004",
+      "T01-005"
+    ]
+  }
+}
