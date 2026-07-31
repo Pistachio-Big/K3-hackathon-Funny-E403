@@ -1,0 +1,3 @@
+Nguyễn Huy Anh: tôi thấy UI chưa đẹp
+Phạm Trung Kiên: tôi thấy chatbot này đang bị giới hạn với nội dung trong transcript, ở nội dung học
+Hà Tấn Phong: tôi thấy output hơi dài và lan man
