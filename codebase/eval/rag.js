@@ -34,7 +34,14 @@ require("./loadenv.js"); // load OPENROUTER_API_KEY và JINA_API_KEY từ .env
 
 const CHUNKS = path.resolve(__dirname, "chunks.json");
 const TRACE_DIR = path.resolve(__dirname, "traces");
-const TOP_K = 5;
+
+// === BUDGET CONTROL (chống vượt credit OpenRouter) ===
+// Khi account còn ít credit (free), mỗi request chỉ được ~1500 input + output tokens.
+// Mặc định trước đây là TOP_K=5 + max_tokens=4096 → hay nổ 402.
+// Tweak các hằng số dưới đây để cân bằng chất lượng câu trả lời và tổng credit.
+const TOP_K = 3;                    // số chunks truy xuất (giảm từ 5)
+const MAX_CHUNK_CHARS = 1200;       // cắt text mỗi chunk — ~480 tokens
+const SKIP_SUMMARIZATION = true;    // bước summarize tốn 1 request call, tắt khi credit thấp
 
 // OpenRouter cho generation (chat)
 const apiKey = process.env.OPENROUTER_API_KEY;
@@ -229,8 +236,9 @@ ${chunksText}
 
 CHỉ trả về JSON, không giải thích thêm.`;
 
-  // Use OpenRouter for summarization
-  return openrouter.chat(prompt, { temperature: 0.2, max_tokens: 1024 })
+  // Use OpenRouter for summarization — dùng max_tokens thấp (256)
+  // Kết quả là JSON ngắn nên 256 là đủ.
+  return openrouter.chat(prompt, { temperature: 0.2, max_tokens: 256 })
     .then(text => {
       const match = text.match(/\{[\s\S]*\}/);
       if (match) {
@@ -257,7 +265,7 @@ function buildFocusedPrompt(question, topChunks, docSummary) {
     .map((c, i) => {
       const ch = codeToChunk.get(c.code);
       const srcLabel = ch?.source === "transcript" ? "Bài giảng" : "Hội thoại học viên";
-      const text = ch?.text || "";
+      const text = trimChunkText(ch?.text || "");
       return `[${i + 1}] Mã: [${ch?.code}] (${srcLabel})\nNội dung: ${text}`;
     })
     .join("\n\n");
@@ -314,10 +322,13 @@ async function callOpenRouterWithTools(systemPrompt, userPrompt, tools = null) {
 
 /**
  * Gọi OpenRouter continuation sau tool results
+ *
+ * Continuation này nhận `messages` (OpenAI format đầy đủ) nên không qua
+ * default-max_tokens của `chat()`. Do đó ta set trực tiếp ở đây.
+ * Dùng 512 để an toàn credit; caller có thể override nếu cần.
  */
 async function callOpenRouterContinuation(messages, tools = null) {
-  // messages đã đúng format cho OpenRouter
-  const requestOptions = { temperature: 0.3, max_tokens: 4096 };
+  const requestOptions = { temperature: 0.3, max_tokens: 512 };
   if (tools && tools.length > 0) {
     // OpenAI-compatible format requires type:"function" wrapper
     requestOptions.tools = tools.map(t => ({
@@ -340,11 +351,28 @@ function callOpenRouter(prompt) {
 }
 
 /**
- * Simple OpenRouter call cho answer generation
- * Không dùng system prompt vì prompt đã có đầy đủ context
+ * Simple OpenRouter call cho answer generation.
+ * Để max_tokens thấp (512) — `chat()` sẽ tự log + auto-retry nếu 402.
  */
 async function callOpenRouterSimple(userPrompt) {
-  return openrouter.chat(userPrompt, { temperature: 0.3, max_tokens: 4096 });
+  return openrouter.chat(userPrompt, { temperature: 0.3, max_tokens: 512 });
+}
+
+// ============== TRIM CHUNK TEXT (chống prompt quá to → 402) ==============
+/**
+ * Cắt text của một chunk về MAX_CHUNK_CHARS, giữ đầu + cuối để
+ * tutor vẫn thấy được context quan trọng nhất.
+ * @param {string} text
+ */
+function trimChunkText(text) {
+  if (!text) return "";
+  if (text.length <= MAX_CHUNK_CHARS) return text;
+  const half = Math.floor(MAX_CHUNK_CHARS / 2) - 20;
+  return (
+    text.slice(0, half) +
+    "\n\n[…đoạn này đã được rút gọn để tránh vượt hạn mức API…]\n\n" +
+    text.slice(text.length - half)
+  );
 }
 
 // ============== PROMPT ==============
@@ -354,13 +382,14 @@ function buildPrompt(question, topChunks, chunkTexts = null, researchResult = nu
     .map((c, i) => {
       const ch = codeToChunk.get(c.code);
       const srcLabel = ch.source === "transcript" ? "Bài giảng" : "Hội thoại học viên";
-      return `[${i + 1}] Mã đoạn: [${ch.code}] (${srcLabel})\nNội dung: ${texts[i] || ch.text}`;
+      return `[${i + 1}] Mã đoạn: [${ch.code}] (${srcLabel})\nNội dung: ${trimChunkText(texts[i] || ch.text)}`;
     })
     .join("\n\n");
 
   let researchSection = "";
   if (researchResult && researchResult.needed && researchResult.mergedContext) {
-    researchSection = `\n\nTHÔNG TIN BỔ SUNG TỪ TÌM KIẾM WEB:\n${researchResult.mergedContext}\n\nNếu thông tin web giúp trả lời câu hỏi tốt hơn, hãy sử dụng nhưng ghi rõ nguồn.`;
+    // Cắt ngắn web context để tránh vượt prompt limit
+    researchSection = `\n\nTHÔNG TIN BỔ SUNG TỪ TÌM KIẾM WEB (đã rút gọn):\n${trimChunkText(researchResult.mergedContext)}\n\nNếu thông tin web giúp trả lời câu hỏi tốt hơn, hãy sử dụng nhưng ghi rõ nguồn.`;
   }
 
   return `Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.
@@ -400,8 +429,8 @@ QUY TẮC BẮT BUỘC:
 3. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng "mình".
 4. Nêu rõ đây là thông tin bổ sung từ tìm kiếm web, không phải từ tài liệu khoá học.
 
-THÔNG TIN TỪ TÌM KIẾM WEB:
-${webContext}
+THÔNG TIN TỪ TÌM KIẾM WEB (đã rút gọn):
+${trimChunkText(webContext)}
 
 NGUỒN THAM KHẢO:
 ${srcList}
@@ -446,12 +475,12 @@ function buildEnhancedPrompt(question, topChunks, chunkTexts, webContext, webSou
     .map((c, i) => {
       const ch = codeToChunk.get(c.code);
       const srcLabel = ch.source === "transcript" ? "Bài giảng" : "Hội thoại học viên";
-      return `[${i + 1}] Mã đoạn: [${ch.code}] (${srcLabel})\nNội dung: ${chunkTexts[i] || ch.text}`;
+      return `[${i + 1}] Mã đoạn: [${ch.code}] (${srcLabel})\nNội dung: ${trimChunkText(chunkTexts[i] || ch.text)}`;
     })
     .join("\n\n");
 
   const webSection = webSources
-    .map((s, i) => `[Nguồn ${i + 1}] ${s.title}\nURL: ${s.url}\nNội dung: ${s.snippet}`)
+    .map((s, i) => `[Nguồn ${i + 1}] ${s.title}\nURL: ${s.url}\nNội dung: ${trimChunkText(s.snippet)}`)
     .join("\n\n");
 
   return `Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.
@@ -534,7 +563,9 @@ async function askTutor(question, opts = {}) {
   // ========== SUMMARIZE DOCUMENTS (lọc tài liệu theo trọng tâm) ==========
   let docSummary = null;
   let focusedCodes = allowedCodes;
-  if (top.length > 0 && apiKey) {
+  // Tắt summarize khi tài khoản OpenRouter credit thấp — tránh nổ 402
+  // vì bước này tốn thêm 1 request call + chi phí.
+  if (top.length > 0 && apiKey && !SKIP_SUMMARIZATION) {
     try {
       console.log(`[askTutor] Summarizing ${top.length} retrieved documents...`);
       docSummary = await summarizeDocuments(question, top);
@@ -546,11 +577,17 @@ async function askTutor(question, opts = {}) {
     } catch (e) {
       console.warn(`[askTutor] Summarization failed: ${e.message}`);
     }
+  } else if (top.length > 0 && apiKey && SKIP_SUMMARIZATION) {
+    console.log(`[askTutor] SKIP_SUMMARIZATION=true — dùng thẳng top-K chunks`);
   }
   // ========================================================================
 
   // ========== TOOL CALLING MODE ==========
-  if (USE_TOOL_CALLING && apiKey && enableResearch) {
+  // Tool-calling thêm overhead ~700 tokens (system prompt + tools schema).
+  // Khi đã có top chunks với score tốt, BỎ QUA tool calling để giảm rủi ro
+  // vượt prompt budget → 402.
+  const useToolsHere = USE_TOOL_CALLING && apiKey && enableResearch && hasLowScore;
+  if (useToolsHere) {
     try {
       const tools = TOOL_DEFINITIONS.tools;
       const userPrompt = `Câu hỏi: ${question}\n\nHãy tra cứu tài liệu trước, sau đó trả lời.`;
@@ -957,9 +994,9 @@ function buildWebContextPrompt(question, webContext, sources) {
   const srcList = sources.map((s, i) => `[${i + 1}] ${s.title} (${s.url})`).join("\n");
 
   return `
-THÔNG TIN BỔ SUNG TỪ TÌM KIẾM WEB:
+THÔNG TIN BỔ SUNG TỪ TÌM KIẾM WEB (đã rút gọn):
 
-${webContext}
+${trimChunkText(webContext)}
 
 NGUỒN THAM KHẢO:
 ${srcList}

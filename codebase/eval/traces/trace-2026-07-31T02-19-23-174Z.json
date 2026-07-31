@@ -1,0 +1,92 @@
+{
+  "question": "AI là gì",
+  "retrieved": [
+    {
+      "code": "T01-002",
+      "score": 1
+    },
+    {
+      "code": "T01-003",
+      "score": 1
+    },
+    {
+      "code": "T01-004",
+      "score": 1
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-3 đoạn):\n[1] Mã đoạn: [T01-002] (Bài giảng)\nNội dung: Trong khoảng hai năm trở lại đây, sau làn sóng AI, các công ty có áp lực phải đưa AI vào tổ chức của mình. Ở Việt Nam mình quan sát thấy có một làn sóng đầu tiên là các công ty tuyển rất nhiều AI engineer, khoảng 2024 và 2025. Họ đặt ra một câu hỏi \"bây giờ tôi muốn AI cho doanh nghiệp\", và việc đầu tiên là họ tuyển — mình thấy rất nhiều tin tuyển dụng như vậy. Nhưng cuối cùng câu chuyện là ông AI engineer đấy chỉ giải được cái bài mà đã có người đưa sẵn một đề bài cụ thể. Vấn đề ở đây là cái người đặt ra đề bài đấy thì lại không có. Không có ai chỉ ra được là trong 7749 cái việc tôi phải làm mỗi ngày, cái gì tôi nên đưa vào làm trước, cái gì tôi nên làm để tạo ra được thành quả ngay đầu tiên. Sau đấy thì nhiều công ty thấy là không hiệu quả và mất niềm tin về cách làm việc đấy.\n\n[2] Mã đoạn: [T01-003] (Bài giảng)\nNội dung: Thực tế có những nghiên cứu, những thống kê trên thế giới nói rằng việc đưa AI vào ứng dụng, đặc biệt trong doanh nghiệp, thì 70% của nó đến từ con người và vận hành chứ không phải đến từ công nghệ. Không phải là chúng ta nhìn thấy AI có thể làm được mọi thứ, lúc nào cũng AI first — nhưng cuối cùng AI để giải cái gì?\n\n[3] Mã đoạn: [T01-004] (Bài giảng)\nNội dung: Góc nhìn của mình từ trước đến giờ với công nghệ rất đơn giản: mình luôn nghĩ công nghệ sinh ra để giải quyết một vấn đề gì đấy. Đầu tiên mình phải biết vấn đề là gì, sau đấy công nghệ mới là công cụ để giải nó. Bây giờ có rất nhiều công nghệ khác nhau có thể giải một vấn đề nào đấy, cho nên bước đầu tiên chúng ta phải xác định được đúng vấn đề — cái đấy quan trọng hơn nhiều. Nhiều khi con người có một cái quán tính là nhảy thẳng vào giải pháp. Đặc biệt mình thấy ở thị trường Việt Nam khoảng hai năm trở lại đây, các lãnh đạo thường xuyên kiểu \"bây giờ anh phải làm một cái AI support, ai cũng phải có AI support\" — nhưng support để làm gì, cho ai thì chưa trả lời được.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] Ai là người phát minh ra trí tuệ nhân tạo (AI)? AI là gì?\nURL: https://vinuni.edu.vn/vi/tri-tue-nhan-tao-la-gi-ai-la-nguoi-phat-minh-ra-tri-tue-nhan-tao\nNội dung: Trí tuệ nhân tạo (AI) hay còn gọi là trí thông minh nhân tạo, là một lĩnh vực công nghệ tiên tiến, thuộc ngành khoa học máy tính. Mục tiêu của trí tuệ nhân tạo là phát triển các hệ thống máy tính có khả năng thực hiện các nhiệm vụ thông minh như con người, bao gồm suy nghĩ logic, giải quyết vấn đề, \n\n[Nguồn 2] Trí Tuệ Nhân Tạo (AI) là gì? Học AI Trong 3 Phút | Làm Bạn Với AI\nURL: https://www.youtube.com/watch?v=M5xe04_4YrU\nNội dung: AI là viết tắt của Artificial Intelligence hay còn gọi là trí tuệ nhân tạo. Đây là một lĩnh vực rộng lớn của khoa học máy tính giúp máy móc có vẻ như có trí thông minh của con người. Machine Learning hay máy học là một nhánh con của AI. Nghĩa là ngoài máy học, AI còn bao gồm nhiều lĩnh vực khác. Ba \n\n[Nguồn 3] AI là gì? – Giải thích về trí tuệ nhân tạo – AWS\nURL: https://aws.amazon.com/vi/what-is/artificial-intelligence\nNội dung: ## Trí tuệ nhn tạo (AI) là gì?\n\nTrí tuệ nhn tạo (AI) là một công nghệ mang tính chuyển đổi cho phép máy móc thực hiện các tác vụ giải quyết vấn đề giống con người. Từ nhận dạng hình ảnh và tạo nội dung sáng tạo đến đưa ra dự đoán dựa trên dữ liệu, AI hỗ trợ các doanh nghiệp đưa ra quyết định thông m\n\n[Nguồn 4] Trí tuệ nhân tạo (AI) là gì? - Giải thích dễ hiểu cho người mới bắt đầu.\nURL: https://www.youtube.com/watch?v=ICkqlr9-Xo0\nNội dung: Bạn có bao giờ nói chuyện với Chat GPT, dùng Siri hoặc xem YouTube mà hệ thống tự gợi ý đúng thứ bạn thích? Đó không phải là phép màu, đó chính là AI, trí tuệ nhân tạo đang làm việc phía sau. Nói một cách đơn giản, AI là các hệ thống máy tính được thiết kế để có trí tuệ giống con người. AI có thể cả\n\n[Nguồn 5] Công nghệ AI là gì? Ứng dụng trí tuệ nhân tạo AI như thế nào trong cuộc sống?\nURL: https://www.dienmayxanh.com/kinh-nghiem-hay/tri-tue-nhan-tao-ai-la-gi-ung-dung-nhu-the-nao-tro-1117277\nNội dung: ### 1 Trí tuệ nhân tạo là gì?\n\nTrí tuệ nhân tạo (AI) là công nghệ cho phép máy móc, đặc biệt là máy tính, \"học hỏi\" và \"suy nghĩ\" như con người. Trí tuệ nhân tạo khác với việc lập trình logic trong các ngôn ngữ lập trình là ở việc ứng dụng các hệ thống học máy (machine learning) để mô phỏng trí tuệ \n\nCÂU HỎI HỌC VIÊN: AI là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "AI, hay trí tuệ nhân tạo, là một lĩnh vực công nghệ tiên tiến thuộc ngành khoa học máy tính, với mục tiêu phát triển các hệ thống máy tính có khả năng thực hiện các nhiệm vụ thông minh như con người, bao gồm suy nghĩ logic và giải quyết vấn đề (Nguồn: [1]). \n\nTrong bối cảnh doanh nghiệp, việc áp dụng AI không chỉ đơn thuần là việc triển khai công nghệ, mà còn liên quan đến cách mà con người vận hành và sử dụng công nghệ đó. Theo bài giảng, khoảng 70% thành công trong việc đưa AI vào ứng dụng đến từ con người và cách vận hành, chứ không chỉ từ công nghệ (T01-003). \n\nMình cũng muốn nhấn mạnh rằng, trước khi áp dụng AI, các doanh nghiệp cần xác định rõ vấn đề mà họ muốn giải quyết. Công nghệ chỉ là công cụ để giải quyết vấn đề, và việc xác định đúng vấn đề là rất quan trọng (T01-004). \n\nNếu bạn c�� thêm câu hỏi nào khác về AI hoặc muốn tìm hiểu sâu hơn, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T01-002",
+      "T01-003",
+      "T01-004"
+    ],
+    "allowedCodes": [
+      "T01-002",
+      "T01-003",
+      "T01-004"
+    ],
+    "failSafe": "no-valid-citation → MOCK_NOT_FOUND"
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "AI là gì",
+    "topChunks": [
+      {
+        "code": "T01-002",
+        "score": 1
+      },
+      {
+        "code": "T01-003",
+        "score": 1
+      },
+      {
+        "code": "T01-004",
+        "score": 1
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "AI là gì",
+      "AI là gì T01-002"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Ai là người phát minh ra trí tuệ nhân tạo (AI)? AI là gì?",
+        "url": "https://vinuni.edu.vn/vi/tri-tue-nhan-tao-la-gi-ai-la-nguoi-phat-minh-ra-tri-tue-nhan-tao",
+        "snippet": "Trí tuệ nhân tạo (AI) hay còn gọi là trí thông minh nhân tạo, là một lĩnh vực công nghệ tiên tiến, thuộc ngành khoa học máy tính. Mục tiêu của trí tuệ nhân tạo là phát triển các hệ thống máy tính có khả năng thực hiện các nhiệm vụ thông minh như con người, bao gồm suy nghĩ logic, giải quyết vấn đề, "
+      },
+      {
+        "id": "S2",
+        "title": "Trí Tuệ Nhân Tạo (AI) là gì? Học AI Trong 3 Phút | Làm Bạn Với AI",
+        "url": "https://www.youtube.com/watch?v=M5xe04_4YrU",
+        "snippet": "AI là viết tắt của Artificial Intelligence hay còn gọi là trí tuệ nhân tạo. Đây là một lĩnh vực rộng lớn của khoa học máy tính giúp máy móc có vẻ như có trí thông minh của con người. Machine Learning hay máy học là một nhánh con của AI. Nghĩa là ngoài máy học, AI còn bao gồm nhiều lĩnh vực khác. Ba "
+      },
+      {
+        "id": "S3",
+        "title": "AI là gì? – Giải thích về trí tuệ nhân tạo – AWS",
+        "url": "https://aws.amazon.com/vi/what-is/artificial-intelligence",
+        "snippet": "## Trí tuệ nhn tạo (AI) là gì?\n\nTrí tuệ nhn tạo (AI) là một công nghệ mang tính chuyển đổi cho phép máy móc thực hiện các tác vụ giải quyết vấn đề giống con người. Từ nhận dạng hình ảnh và tạo nội dung sáng tạo đến đưa ra dự đoán dựa trên dữ liệu, AI hỗ trợ các doanh nghiệp đưa ra quyết định thông m"
+      },
+      {
+        "id": "S4",
+        "title": "Trí tuệ nhân tạo (AI) là gì? - Giải thích dễ hiểu cho người mới bắt đầu.",
+        "url": "https://www.youtube.com/watch?v=ICkqlr9-Xo0",
+        "snippet": "Bạn có bao giờ nói chuyện với Chat GPT, dùng Siri hoặc xem YouTube mà hệ thống tự gợi ý đúng thứ bạn thích? Đó không phải là phép màu, đó chính là AI, trí tuệ nhân tạo đang làm việc phía sau. Nói một cách đơn giản, AI là các hệ thống máy tính được thiết kế để có trí tuệ giống con người. AI có thể cả"
+      },
+      {
+        "id": "S5",
+        "title": "Công nghệ AI là gì? Ứng dụng trí tuệ nhân tạo AI như thế nào trong cuộc sống?",
+        "url": "https://www.dienmayxanh.com/kinh-nghiem-hay/tri-tue-nhan-tao-ai-la-gi-ung-dung-nhu-the-nao-tro-1117277",
+        "snippet": "### 1 Trí tuệ nhân tạo là gì?\n\nTrí tuệ nhân tạo (AI) là công nghệ cho phép máy móc, đặc biệt là máy tính, \"học hỏi\" và \"suy nghĩ\" như con người. Trí tuệ nhân tạo khác với việc lập trình logic trong các ngôn ngữ lập trình là ở việc ứng dụng các hệ thống học máy (machine learning) để mô phỏng trí tuệ "
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "tfidf"
+}

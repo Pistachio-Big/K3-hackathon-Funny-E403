@@ -1,0 +1,94 @@
+{
+  "question": "hallucination là gì",
+  "retrieved": [
+    {
+      "code": "T04-048",
+      "score": 1
+    },
+    {
+      "code": "T05-086",
+      "score": 1
+    },
+    {
+      "code": "T05-106",
+      "score": 1
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-3 đoạn):\n[1] Mã đoạn: [T04-048] (Bài giảng)\nNội dung: Và toàn bộ quá trình này có một đặc điểm: các mô hình này bản chất nó chỉ đang dự đoán thôi. Cái này là một cái mà mình thấy thời đầu rất nhiều người hay có câu hỏi là: thế ChatGPT cái gì cũng làm được, thế nó có dự đoán được giá vàng không? Nó có dự đoán được giá Bitcoin không? Có rất nhiều câu như vậy. Nhưng mà bản chất nó chỉ là một cỗ máy, nó sinh ra và tự động nối cái từ tiếp theo vào thôi. Thế nên đấy là một lý do khiến cho văn bản AI sinh ra nhìn trông rất là có lý, trông rất là thuận mắt, nhưng mà thực ra không phải thế — thực ra nó có thể sai. Đấy sẽ là hiện tượng ảo giác mà các bạn có thể gặp phải — hallucination. Nó sinh ra sai chỉ đơn giản là nó đang cố nối những cái từ với nhau cho có nghĩa thôi, nhưng mà thực ra cái thông tin nó sai. Cũng bởi vì nó sinh ra như thế này, cho nên về sau khi các bạn build AI, gọi AI vào và chạy, nó sẽ có một chế độ gọi là streaming. Streaming là một chế độ mà thay vì bạn đợi nó sinh ra cả đoạn văn bản mới trả về kết quả, thì nó sẽ trả về từng từ một cho bạn. Có thể là ngày mai trong bài tập lab chúng ta sẽ có phần đấy, chúng ta bắt đầu gọi thử.\n\n[2] Mã đoạn: [T05-086] (Bài giảng)\nNội dung: Sau đó, cái kế tiếp là giai đoạn build và eval. Đối với các bạn thì mình đặc biệt nhấn mạnh như này: sự khác nhau giữa một cái người builder bên ngoài với người đi học cái khóa này, thì các bạn sẽ có sự khác biệt là gì — là bọn tôi không chỉ biết cách build mà bọn tôi biết cách eval. Tức là bọn tôi biết cách đánh giá, bọn tôi biết cách check xem là cái agent nó đang bị hallucination hay là như thế nào. Và bọn tôi biết cách trực những cái kịch bản của tôi — dùng guardrail, và tôi biết là nó đang như này, nó đang như thế kia.\n\n[3] Mã đoạn: [T05-106] (Bài giảng)\nNội dung: Đi theo thứ tự thì tool thường hướng đến hành động. Khi nói đến nhóm này thì sẽ có những rủi ro — ví dụ rủi ro về security khi chúng ta gọi API ra bên ngoài, nó làm cho chính cái AI của chúng ta hiểu sai chẳng hạn. Rồi ở tầng đầu tiên, phần model, rủi ro là gì? Là chúng ta gặp hallucination mà chúng ta không biết. Rủi ro thứ hai là nó vượt quá ngân sách mà chúng ta không biết. Rồi ở tầng ngữ cảnh, ví dụ có rủi ro là chúng ta truy xuất sai dữ liệu cần truy xuất; hay bộ nhớ vượt quá khả năng mà context window có thể xử lý mà chúng ta không lường được. Rồi ở phần planning, rủi ro là có quá nhiều vòng lặp, và đôi khi chúng ta không nhận ra nó vi phạm cái policy mà chúng ta đã thiết lập cho hệ thống. Còn trung tâm sẽ là một cái gọi là orchestrator system — nó sẽ điều phối tất cả.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] AI Hallucination là gì? Cách kiểm soát và giảm thiểu hiệu quả\nURL: https://cellphones.com.vn/sforum/ai-hallucination-la-gi\nNội dung: AI Hallucination (ảo giác AI) là hiện tượng trí tuệ nhn tạo tạo ra các thông tin sai lệch, không chính xác hoặc hoàn toàn hư cấu nhưng lại được trình bày dưới văn phong vô cùng thuyết phục. Đy là lỗi logic khi mô hình ngôn ngữ lớn (LLM) tự vẽ ra các sự kiện, số liệu hoặc trích dẫn không có thực tron\n\n[Nguồn 2] AI Hallucination Là Gì? 5 Cách Đối Phó Hiệu Quả Với Ảo Giác AI - Viecoi.vn\nURL: https://viecoi.vn/cam-nang-nghe-nghiep/chi-tiet-ai-hallucination-la-gi-5-cach-doi-pho-hieu-qua-voi-ao-giac-ai-2776.html\nNội dung: AI Hallucination (hay còn gọi là \"ảo giác AI\") là hiện tượng khi một hệ thống trí tuệ nhn tạo tạo ra thông tin sai lệch hoặc không có thật, nhưng lại trình bày chúng một cách rất tự tin và logic. Đy là một vấn đề đáng lo ngại, đặc biệt là trong bối cảnh AI ngày càng được sử dụng rộng rãi trong nhiều\n\n[Nguồn 3] Hiểu về ảo giác AI (AI hallucination) và cách phòng tránh\nURL: https://www.tuhoc.ai.vn/p/hieu-ve-ao-giac-ai-ai-hallucination\nNội dung: Ảo giác AI, hay còn gọi là \"hallucination” trong tiếng Anh, là hiện tượng khi một hệ thống AI tạo ra thông tin không chính xác hoặc không tồn tại, nhưng lại trình bày nó một cách tự tin như thể đó là sự thật.\n\nYann LeCun, Giám đốc AI tại Meta, giải thích: \"Ảo giác AI xảy ra khi mô hình ngôn ngữ 'điề\n\n[Nguồn 4] Ảo giác AI (AI Hallucination): Nguyên nhân và cách khắc phục | bởi Hoàng Hằng | Brands Vietnam\nURL: https://www.brandsvietnam.com/congdong/topic/ao-giac-ai-ai-hallucination-nguyen-nhan-va-cach-khac-phuc\nNội dung: Ảo giác AI là hiện tượng khi một mô hình AI tự tin tạo ra những thông tin sai sự thật, không có trong dữ liệu huấn luyện hoặc đơn giản là bịa đặt thông tin, nhưng lại trình bày một cách cực kỳ thuyết phục và logic. Sự thật là AI không \"biết\" là mình đang nói dối, mà chỉ đang thực hiện tốt nhất nhiệm\n\n[Nguồn 5] HALLUCINATION | Định nghĩa trong Từ điển tiếng Anh Cambridge\nURL: https://dictionary.cambridge.org/vi/dictionary/english/hallucination\nNội dung: Thêm hallucination vào một trong các danh sách dưới đây của bạn, hoặc thêm mới.\n\n{{message}}\n\n{{message}}\n\nCó lỗi xảy ra.\n\n{{message}}\n\n{{message}}\n\nCó lỗi xảy ra.\n\n{{message}}\n\n{{message}}\n\nCó vấn đề xảy ra khi gửi báo cáo của bạn.\n\n{{message}}\n\n{{message}}\n\nCó vấn đề xảy ra khi gửi báo cáo của bạn\n\nCÂU HỎI HỌC VIÊN: hallucination là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Hallucination (ảo giác) trong ngữ cảnh của trí tuệ nhân tạo (AI) là hiện tượng mà một mô hình AI tạo ra thông tin sai lệch hoặc không có thật, nhưng lại trình bày chúng một cách rất tự tin và thuyết phục. Điều này có thể dẫn đến việc người dùng tin tưởng vào thông tin không chính xác mà AI cung cấp. Theo bài giảng [T04-048], các mô hình AI như ChatGPT chỉ đơn giản là dự đoán từ tiếp theo mà không thực sự hiểu nội dung, do đó chúng có thể tạo ra thông tin sai lệch mà không nhận thức được.\n\nNgoài ra, trong bài giảng [T05-086], mình cũng nhấn mạnh rằng việc đánh giá (eval) là rất quan trọng để nhận diện và kiểm soát hiện tượng hallucination này. Khi xây dựng AI, việc hiểu rõ cách thức hoạt động và các rủi ro liên quan, như hallucination, sẽ giúp chúng ta phát triển các giải pháp hiệu quả hơn.\n\nNếu bạn muốn tìm hiểu thêm về cách kiểm soát và giảm thiểu hallucination, có thể tham khảo các nguồn bổ sung như bài viết trên Cellphones.com.vn (Nguồn: AI Hallucination là gì? Cách kiểm soát và giảm thiểu hiệu quả) hoặc Viecoi.vn (Nguồn: AI Hallucination Là Gì? 5 Cách Đối Phó Hiệu Quả Với Ảo Giác AI).",
+  "verified": {
+    "verifiedCitations": [
+      "T04-048",
+      "T05-086"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T04-048",
+      "T05-086",
+      "T05-106"
+    ],
+    "allowedCodes": [
+      "T04-048",
+      "T05-086",
+      "T05-106"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "hallucination là gì",
+    "topChunks": [
+      {
+        "code": "T04-048",
+        "score": 1
+      },
+      {
+        "code": "T05-086",
+        "score": 1
+      },
+      {
+        "code": "T05-106",
+        "score": 1
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "hallucination là gì",
+      "hallucination là gì T04-048"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "AI Hallucination là gì? Cách kiểm soát và giảm thiểu hiệu quả",
+        "url": "https://cellphones.com.vn/sforum/ai-hallucination-la-gi",
+        "snippet": "AI Hallucination (ảo giác AI) là hiện tượng trí tuệ nhn tạo tạo ra các thông tin sai lệch, không chính xác hoặc hoàn toàn hư cấu nhưng lại được trình bày dưới văn phong vô cùng thuyết phục. Đy là lỗi logic khi mô hình ngôn ngữ lớn (LLM) tự vẽ ra các sự kiện, số liệu hoặc trích dẫn không có thực tron"
+      },
+      {
+        "id": "S2",
+        "title": "AI Hallucination Là Gì? 5 Cách Đối Phó Hiệu Quả Với Ảo Giác AI - Viecoi.vn",
+        "url": "https://viecoi.vn/cam-nang-nghe-nghiep/chi-tiet-ai-hallucination-la-gi-5-cach-doi-pho-hieu-qua-voi-ao-giac-ai-2776.html",
+        "snippet": "AI Hallucination (hay còn gọi là \"ảo giác AI\") là hiện tượng khi một hệ thống trí tuệ nhn tạo tạo ra thông tin sai lệch hoặc không có thật, nhưng lại trình bày chúng một cách rất tự tin và logic. Đy là một vấn đề đáng lo ngại, đặc biệt là trong bối cảnh AI ngày càng được sử dụng rộng rãi trong nhiều"
+      },
+      {
+        "id": "S3",
+        "title": "Hiểu về ảo giác AI (AI hallucination) và cách phòng tránh",
+        "url": "https://www.tuhoc.ai.vn/p/hieu-ve-ao-giac-ai-ai-hallucination",
+        "snippet": "Ảo giác AI, hay còn gọi là \"hallucination” trong tiếng Anh, là hiện tượng khi một hệ thống AI tạo ra thông tin không chính xác hoặc không tồn tại, nhưng lại trình bày nó một cách tự tin như thể đó là sự thật.\n\nYann LeCun, Giám đốc AI tại Meta, giải thích: \"Ảo giác AI xảy ra khi mô hình ngôn ngữ 'điề"
+      },
+      {
+        "id": "S4",
+        "title": "Ảo giác AI (AI Hallucination): Nguyên nhân và cách khắc phục | bởi Hoàng Hằng | Brands Vietnam",
+        "url": "https://www.brandsvietnam.com/congdong/topic/ao-giac-ai-ai-hallucination-nguyen-nhan-va-cach-khac-phuc",
+        "snippet": "Ảo giác AI là hiện tượng khi một mô hình AI tự tin tạo ra những thông tin sai sự thật, không có trong dữ liệu huấn luyện hoặc đơn giản là bịa đặt thông tin, nhưng lại trình bày một cách cực kỳ thuyết phục và logic. Sự thật là AI không \"biết\" là mình đang nói dối, mà chỉ đang thực hiện tốt nhất nhiệm"
+      },
+      {
+        "id": "S5",
+        "title": "HALLUCINATION | Định nghĩa trong Từ điển tiếng Anh Cambridge",
+        "url": "https://dictionary.cambridge.org/vi/dictionary/english/hallucination",
+        "snippet": "Thêm hallucination vào một trong các danh sách dưới đây của bạn, hoặc thêm mới.\n\n{{message}}\n\n{{message}}\n\nCó lỗi xảy ra.\n\n{{message}}\n\n{{message}}\n\nCó lỗi xảy ra.\n\n{{message}}\n\n{{message}}\n\nCó vấn đề xảy ra khi gửi báo cáo của bạn.\n\n{{message}}\n\n{{message}}\n\nCó vấn đề xảy ra khi gửi báo cáo của bạn"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "tfidf"
+}

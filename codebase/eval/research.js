@@ -347,7 +347,7 @@ async function askResearchDecision(question, topChunks, chunkTexts) {
   const prompt = buildResearchDecisionPrompt(question, topChunks, chunkTexts);
 
   try {
-    const text = await openrouter.chat(prompt, { temperature: 0.1, max_tokens: 200 });
+    const text = await openrouter.chat(prompt, { temperature: 0.1, max_tokens: 150 });
     // Parse JSON từ response
     const match = text.match(/\{[\s\S]*\}/);
     if (match) {

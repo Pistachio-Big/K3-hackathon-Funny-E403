@@ -1,0 +1,94 @@
+{
+  "question": "context là gì",
+  "retrieved": [
+    {
+      "code": "T03-125",
+      "score": 1
+    },
+    {
+      "code": "T04-051",
+      "score": 1
+    },
+    {
+      "code": "T04-057",
+      "score": 1
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-3 đoạn):\n[1] Mã đoạn: [T03-125] (Bài giảng)\nNội dung: Ok, đây là những hướng các bạn có thể phát triển hệ thống cho dự án: model, context, planning, tool. Rồi mình sẽ nói về keyword UI/UX — sau này khi học các bạn sẽ được nghe rất nhiều. UI là gì? Là cái người dùng nhìn vào, đọc. UI tốt tức là gì? Mô hình có lỗi gì, báo gì, người dùng nhìn một phát: à tôi biết cái này có lỗi rồi; tôi nhìn thấy kết quả của tôi rồi. Còn UX — cái experience này từ đâu? Từ cái interaction với hệ thống của các bạn. Ví dụ nãy mình bảo thi thoảng con ChatGPT đưa ra hai câu trả lời rồi hỏi bạn chọn cái nào — cách họ đưa ra câu trả lời, cách họ cho người dùng select A hay B, phải làm cho người dùng cảm thấy dễ nhất có thể.\n\n[2] Mã đoạn: [T04-051] (Bài giảng)\nNội dung: Rồi sau token thì cũng có một khái niệm rất là quan trọng, đấy là context. Context nghĩa là bối cảnh, ngữ cảnh. Context ở đây nghĩa là gì? Là toàn bộ những thông tin mà một mô hình nó có thể tiêu thụ trong một lần — có thể hiểu nôm na là thế. Context càng nhiều thì nó càng có thể tiêu thụ được nhiều thông tin. Ví dụ như những mô hình thời đầu, khi context này nó ngắn, nó có giới hạn ngữ cảnh — có một từ là context window ấy, nghĩa là cửa sổ ngữ cảnh — là một mô hình một lúc nó chỉ tiếp nhận được một số lượng nhất định, ví dụ như kiểu vài chục trang sách thôi. Lúc đấy bạn có\n\n[…đoạn này đã được rút gọn để tránh vượt hạn mức API…]\n\nẹp thôi, nó không thể nhìn được rộng hơn. Thế nhưng bây giờ cửa sổ ngữ cảnh của các mô hình càng ngày càng lớn rồi. Đến bây giờ thì 1 triệu token là một chuyện bình thường. 1 triệu token sẽ rơi vào khoảng — ở đây mình lấy một ví dụ thôi — khoảng bốn đến năm cuốn sách một lúc. Nhưng mà ngày xưa, những mô hình đầu tiên thời đầu, nó chỉ là một cuốn sách khoảng 300 trang thôi. Mình có thể hình dung context đó là một cái bàn làm việc của một mô hình: trong một thời điểm nó có thể bày ra được tối đa bao nhiêu, thì nó có thể xử lý được chừng đấy thông tin trong thời điểm đấy thôi.\n\n[3] Mã đoạn: [T04-057] (Bài giảng)\nNội dung: Rồi, thế thì sau tất cả những cái này, mình rút ra một cái mình nghĩ rất là quan trọng cho tất cả chúng ta khi chúng ta sẽ cần làm việc với AI rất nhiều trong giai đoạn tới, đặc biệt là vibe code. Bản chất đấy là: bạn hãy quản lý cái sự chú ý của các mô hình, và quản lý cái context mà bạn đưa cho các mô hình. Mình nghĩ bạn chỉ quản lý việc đấy tốt thôi, bạn sẽ code cũng tốt hơn, bạn build các sản phẩm nó cũng có năng lực tốt và tiết kiệm về mặt chi phí, và bạn vibe code nó sẽ tốt hơn. Không phải bạn cứ trả tiền cho một mô hình có năng lực cao, có cửa sổ ngữ cảnh lớn, là bạn\n\n[…đoạn này đã được rút gọn để tránh vượt hạn mức API…]\n\ngiờ theo như mình quan sát, đã bắt đầu có những mô hình mà khi tràn context nó tự động compact ấy — compacting context — khi đạt được chế độ đấy thì nó cũng bắt đầu thông minh hơn rất nhiều rồi. Tuy nhiên việc đấy vẫn khiến cho bạn có thể tiêu tốn nhiều token hơn khi bạn cố gắng làm việc với một cửa sổ lớn. Bởi vì bản chất ở đây là khi bạn làm việc, chat qua 10 lần, 20 lần, thì mỗi một lần chat tiếp theo là bạn đang phải trả phí cho cả cuộc hội thoại rất là dài. Thì việc bạn quản lý được cái context đấy cũng sẽ khiến cho chúng ta tiết kiệm được chi phí và giữ hiệu năng nữa.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] Context trong communication là gì?\nURL: https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html\nNội dung: Context (bối cảnh) bắt nguồn từ tiếng Latin, có nghĩa là những gì xung quanh một sự kiện hoặc thực tế. Bối cảnh là hoàn cảnh, môi trường, vật lý hoặc biểu tượng, tập hợp các hiện tượng, tình huống và hoàn cảnh (giới tính, tuổi tác, communication, kinh nghiệm, sở thích, v.v), không thể so sánh với nh\n\n[Nguồn 2] Tìm hiểu về Context trong các ứng dụng Android\nURL: https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG\nNội dung: # 1. Context là gì ?\n\nContext trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác.\n\nMột vài quan điểm về context: [...] Nó là bối cảnh hiện tại của ứng dụng.\n Nó có thể được sử dụng để lấy thông tin liên quan đến activity và ứng dụng.\n Nó có thể được sử dụng để truy cập vào các\n\n[Nguồn 3] Nghĩa của từ Context - Từ điển Anh - Việt\nURL: http://tratu.soha.vn/dict/en_vn/Context\nNội dung: và cỡ chữ. Trong MS-DOS và Microsoft Windows, thuộc tính là thông tin về tập tin để chỉ đó là loại tập tin chỉ đọc ra, tập tin ẩn, hoặc tập tin hệ thống. [...] cùng với mỗi ký tự trogn vùng đệm video của một adapter video chạy ở chế độ ký tự như: các thuộc tính điều khiển màu nền và màu ký tự, gạch \n\n[Nguồn 4] Cái \"context\" là cái gì vậy trời? : r/golang\nURL: https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi\nNội dung: \"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. \n\nTao\n\n[Nguồn 5] CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge\nURL: https://dictionary.cambridge.org/vi/dictionary/english/context\nNội dung: to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl\n\nCÂU HỎI HỌC VIÊN: context là gì\n\nTRẢ LỜI:",
+  "rawAnswer": "Context, hay còn gọi là bối cảnh, là một khái niệm rất quan trọng trong lĩnh vực AI và xử lý ngôn ngữ tự nhiên. Theo bài giảng [T04-051], context được hiểu là toàn bộ thông tin mà một mô hình có thể tiêu thụ trong một lần. Nói cách khác, context chính là \"cửa sổ ngữ cảnh\" mà mô hình có thể tiếp nhận và xử lý thông tin. \n\nContext càng lớn, mô hình càng có khả năng xử lý nhiều thông tin hơn. Ví dụ, những mô hình thời kỳ đầu chỉ có thể xử lý một lượng thông tin hạn chế, nhưng hiện nay, với sự phát triển của công nghệ, nhiều mô hình có thể xử lý lên tới 1 triệu token, tương đương với khoảng bốn đến năm cuốn sách.\n\nNgoài ra, việc quản lý context cũng rất quan trọng trong quá trình phát triển ứng dụng AI. Như mình đã đề cập trong bài giảng [T04-057], việc quản lý sự chú ý và context mà bạn đưa cho mô hình sẽ giúp bạn tiết kiệm chi phí và nâng cao hiệu suất khi làm việc với AI.\n\nNếu bạn cần thêm thông tin hoặc có câu hỏi nào khác, hãy cho mình biết nhé!",
+  "verified": {
+    "verifiedCitations": [
+      "T04-051",
+      "T04-057"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T03-125",
+      "T04-051",
+      "T04-057"
+    ],
+    "allowedCodes": [
+      "T03-125",
+      "T04-051",
+      "T04-057"
+    ]
+  },
+  "mode": "LIVE",
+  "research": {
+    "question": "context là gì",
+    "topChunks": [
+      {
+        "code": "T03-125",
+        "score": 1
+      },
+      {
+        "code": "T04-051",
+        "score": 1
+      },
+      {
+        "code": "T04-057",
+        "score": 1
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "context là gì",
+      "context là gì T03-125"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Context trong communication là gì?",
+        "url": "https://www.marketenterprise.vn/blog/context-trong-communication-la-gi.html",
+        "snippet": "Context (bối cảnh) bắt nguồn từ tiếng Latin, có nghĩa là những gì xung quanh một sự kiện hoặc thực tế. Bối cảnh là hoàn cảnh, môi trường, vật lý hoặc biểu tượng, tập hợp các hiện tượng, tình huống và hoàn cảnh (giới tính, tuổi tác, communication, kinh nghiệm, sở thích, v.v), không thể so sánh với nh"
+      },
+      {
+        "id": "S2",
+        "title": "Tìm hiểu về Context trong các ứng dụng Android",
+        "url": "https://viblo.asia/p/tim-hieu-ve-context-trong-cac-ung-dung-android-RnB5pWQ2lPG",
+        "snippet": "# 1. Context là gì ?\n\nContext trong Android là bối cảnh của nơi mà chúng ta đang hiện diện và tương tác.\n\nMột vài quan điểm về context: [...] Nó là bối cảnh hiện tại của ứng dụng.\n Nó có thể được sử dụng để lấy thông tin liên quan đến activity và ứng dụng.\n Nó có thể được sử dụng để truy cập vào các"
+      },
+      {
+        "id": "S3",
+        "title": "Nghĩa của từ Context - Từ điển Anh - Việt",
+        "url": "http://tratu.soha.vn/dict/en_vn/Context",
+        "snippet": "và cỡ chữ. Trong MS-DOS và Microsoft Windows, thuộc tính là thông tin về tập tin để chỉ đó là loại tập tin chỉ đọc ra, tập tin ẩn, hoặc tập tin hệ thống. [...] cùng với mỗi ký tự trogn vùng đệm video của một adapter video chạy ở chế độ ký tự như: các thuộc tính điều khiển màu nền và màu ký tự, gạch "
+      },
+      {
+        "id": "S4",
+        "title": "Cái \"context\" là cái gì vậy trời? : r/golang",
+        "url": "https://www.reddit.com/r/golang/comments/18mphqt/what_even_is_context?tl=vi",
+        "snippet": "\"Context\" là cái quái gì vậy? Tao coi tài liệu của Google rồi mà vẫn không hiểu, coi mấy video trên YouTube cũng vậy. \n\nTao"
+      },
+      {
+        "id": "S5",
+        "title": "CONTEXT | Định nghĩa trong Từ điển tiếng Anh Cambridge",
+        "url": "https://dictionary.cambridge.org/vi/dictionary/english/context",
+        "snippet": "to be friendly towards someone\n\nBiding your time and bottling it (Newspaper idioms)\n\nTrang nhật ký cá nhân\n\nBiding your time and bottling it (Newspaper idioms)\n\n<p>tasteslop\n\nTừ mới\n\ntasteslop\n\nAI icon\n\nAI icon\ncdo logo\ncdo logo\ncdo logo\ncdo logo\n\n## Tìm hiểu thêm với +Plus\n\n## Tìm hiểu thêm với +Pl"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [],
+  "retrieveMode": "tfidf"
+}

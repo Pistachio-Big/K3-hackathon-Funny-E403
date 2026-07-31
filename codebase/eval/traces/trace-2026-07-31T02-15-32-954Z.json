@@ -1,0 +1,132 @@
+{
+  "question": "Làm sao để xác định bài toán từ mơ hồ",
+  "retrieved": [
+    {
+      "code": "T01-001",
+      "score": 0.9
+    },
+    {
+      "code": "T01-030",
+      "score": 0.8
+    },
+    {
+      "code": "T03-098",
+      "score": 0.8
+    },
+    {
+      "code": "T01-017",
+      "score": 0.7
+    },
+    {
+      "code": "T01-029",
+      "score": 0.7
+    }
+  ],
+  "prompt": "Bạn là VLearn Tutor — AI hỗ trợ học viên trong khoá AI Thực Chiến.\nHọc viên hỏi về nội dung bài giảng. Bạn có context từ tài liệu khoá học VÀ thông tin bổ sung từ tìm kiếm web.\n\nQUY TẮC BẮT BUỘC:\n1. Ưu tiên sử dụng thông tin từ BÀI GIẢNG [Txx-NNN] làm nguồn chính.\n2. Dùng thông tin WEB để BỔ SUNG nếu tài liệu khoá học không đủ chi tiết.\n3. Khi dùng thông tin web, ghi rõ nguồn: (Nguồn: tiêu đề)\n4. KHÔNG được bịa mã đoạn. Chỉ dùng [Txx-NNN] và [Cxxxx-Tyyyy-Q/A] từ danh sách dưới.\n5. Văn phong: tutor thân thiện, tiếng Việt tự nhiên, xưng \"mình\".\n\nTÀI LIỆU KHOÁ HỌC (top-5 đoạn):\n[1] Mã đoạn: [T01-001] (Bài giảng)\nNội dung: Một trong những kỹ năng mình nghĩ quan trọng và đang cần nhất — đặc biệt ở các công ty muốn đưa AI vào ứng dụng — là khả năng xác định ra một bài toán từ một yêu cầu rất mơ hồ, hoặc khi các bạn tham gia vào một doanh nghiệp thì tìm được bài toán đáng để làm, sau đấy bóc tách nó ra cho team development phát triển. Theo quan sát của mình, đấy là một trong những vị trí đang rất thiếu.\n\n[2] Mã đoạn: [T01-030] (Bài giảng)\nNội dung: Đây là một câu mà mình gặp được rất nhiều — nhiều công ty hay đặt ra câu hỏi này, nhiều sếp hay bảo là muốn xây dựng AI chatbot support. Khi nhận cái đề bài này thì các bạn sẽ phải tự tay xử lý toàn bộ. Với mình, đề bài này là rất lớn: support — cuối cùng là support để làm gì? Đây là một đề bài vẫn còn mơ hồ và nó quá rộng. Việc của chúng ta sẽ là phải xác định được cái mục tiêu, cái pain point thực sự ở phía sau đấy là gì. Nhiều khi sếp bảo là xây dựng chatbot cho khách hàng, nhưng cuối cùng khi hỏi ra thì thực ra lý do là vì sale đang quá tải. Bạn hỏi ra thì mình biết là sale đang quá tải; thế thì bắt đầu đi vào hỏi sale: thực ra quá tải chỗ nào? Có khi bạn có một giải pháp khác mà bạn không cần build chatbot. Đấy là cách bạn thực sự đi khai thác: từ câu hỏi đấy bạn nên khai thác ra cái insight thực sự phía sau. Có một framework rất phổ biến là bạn dùng Five Whys — bạn hỏi why đến năm lần, nó cũng giúp bạn đào sâu được. Mình nghĩ cái đầu tiên là khi bạn nhận một đề bài, hãy phản biện nó, và hãy cố gắng từ cái đề bài đấy mình dò, mình tìm ra được cái point thực sự, cái vấn đề thực sự phía sau — bởi vì đề bài của bạn có thể chỉ là thứ bề mặt thôi. Một cái AI chatbot chỉ là một thứ mà người ta — đặc biệt là rất nhiều lãnh đạo — hay có kiểu ngay lập tức nhảy vào đưa ra một cái giải pháp.\n\n[3] Mã đoạn: [T03-098] (Bài giảng)\nNội dung: Cái mà em thiếu là em không hiểu về cái scope: em đặt ra một bài toán nhưng em không có scope của em. Giống như em giải bài toán \"bạn An đi chợ mua hai quả táo\" — nó rõ ràng hết đúng không? Không có vụ tự nhiên bạn em bảo \"bài táo này phải là năm quả, tại vì lúc ấy trên trời có một quả táo rơi xuống chỗ bạn An\". Em có chấp nhận câu trả lời này không? Dĩ nhiên là không. Tại vì sao? Vì em có một cái scope. Hay bây giờ em mở PlayStation lên chơi, họ bảo bạn phải calibrate cái tay cầm để đảm bảo trải nghiệm tốt nhất đúng không? Em để tay cầm lung tung, em đua xe nó đâm quẹt — em không thể trách nhà sản xuất, bởi vì nhà sản xuất đã đưa ra instruction mà em không follow. Bây giờ mọi người hay bảo \"con AI nó ngu, tôi hỏi nó trả lời sai hết\", nhưng có nhiều người lại bảo \"không, tôi thấy nó rất tốt\". Tại sao cùng một sản phẩm ChatGPT, có người dùng được, có người không? Skill issue đúng không? Có người họ đọc hướng dẫn, họ làm theo những prompt mẫu đảm bảo kết quả, thử là ra kết quả đúng; còn có người không đọc hướng dẫn, tự làm theo ý họ, họ nghĩ là họ hiểu đúng chứ nó không nằm trong hướng dẫn. Nên câu hỏi của bạn em ngay từ đầu: em phải xác định cái scope, và do em không có scope nên bạn em hỏi một phát là em \"chết\". Em nghĩ em làm được cái thứ rất perfect luôn, hệ thống lỗi đâu vẫn chạy được — thấy sai đúng không? Hệ thống của em dựa vào sensor đúng không — sensor \"đơ\" thì đành chịu. Còn em nhận dạng sai thì đó là vấn đề khác: nhận dạng sai thì em phải nói hệ thống em nhận dạng với độ chính xác bao nhiêu phần trăm — đấy là bảng khác đúng không?\n\n[4] Mã đoạn: [T01-017] (Bài giảng)\nNội dung: Rồi, hôm nay mình sẽ đi vào ý chính với câu hỏi trọng tâm: xác định một bài toán thực sự có cần với ai hay không — một bài toán đáng để làm — chọn một giải pháp phù hợp cho nó, và sau đấy viết nó thành một yêu cầu, một problem statement rõ ràng. Nó cũng rất đơn giản thôi. Nội dung ngày hôm nay mình nghĩ thiên về tư duy nhiều hơn — mình sẽ rất cố gắng truyền đạt cho mọi người một số phương pháp và tư duy để mọi người có thể thử luyện tập. Còn framework với mình thực ra chỉ là một cách để áp dụng thôi. Framework là một cái đã được đưa thành workflow, các bước cụ thể để chúng ta có thể áp dụng theo, nhưng khi áp dụng chúng ta cần phải hiểu bản chất của nó phía sau. Cái thứ mình nghĩ khiến các bạn có thể thực sự khác biệt và có được tư duy product là cái bạn phải xây dựng từ tầng tư duy phía dưới: bạn dùng framework thì bạn phải hiểu framework đấy sinh ra làm cái gì, cho ai. Trong ngành sản phẩm thực ra có rất nhiều framework, và thực ra nhiều khi bọn mình làm cũng không cần nhiều framework đến mức vậy đâu. Tư tưởng của mình thì hay kiểu less is more, back to basic — mình hay tin là trong mọi cái việc bạn làm, dù nó phức tạp đến đâu, cũng luôn có thể diễn giải cho dễ hiểu, hoặc đưa nó thành những cái đơn giản nhất có thể. Bài hôm nay mình sẽ cố gắng đưa những thứ đơn giản nhất thôi.\n\n[5] Mã đoạn: [T01-029] (Bài giảng)\nNội dung: Có một tài liệu của Google — People + AI Guidebook — mọi người click vào cái link. Cái này cũng sẽ là một tài liệu ngày hôm nay chúng ta sẽ đọc. Cái framework này của Google rất chi tiết, rất đầy đủ luôn, chắc nó thay được cả buổi học luôn — nó chia đến các module như này. Thực ra nó được xây dựng từ cái thời các mô hình AI machine learning thôi, hồi đấy đã có cái này rồi, và bây giờ được update dần lên để có thể adapt được với các mô hình ngôn ngữ lớn. Bạn sẽ nhìn được các module như thế này, và mình nghĩ bạn hoàn toàn có thể dùng nó làm một cái sườn để đi theo từng bước một trong cả quá trình mình làm sản phẩm — hoàn toàn có thể là một cái sườn để các bạn bám vào. Buổi ngày hôm nay mình sẽ đi nhiều vào phần đầu tiên là define success. Trong này có các module kiến thức về data, về mental model — mental model và expectation chính là mô hình tư duy của con người như thế nào; mình hiểu được cái đấy thì mình mới thiết kế được sản phẩm, trải nghiệm phù hợp. Rồi các layer về làm thế nào để giữ được niềm tin của người dùng với sản phẩm AI, và có rất nhiều những ví dụ ở phía bên trong nữa. Một chương này cực kỳ dài — khối lượng kiến thức rất nhiều, và bạn rất nên dành thời gian để đọc sâu hơn. Ở cuối nó còn có những bài tập nhỏ để các bạn có thể ứng dụng nữa. Ngày hôm nay chúng ta sẽ đi sâu hơn vào chương đầu tiên: xác định nhu cầu của user, đánh giá sức mạnh của AI, và từ đấy tìm ra được cái nơi mà nên đưa AI vào trong sản phẩm. Còn lại hai phần chúng ta có thể đọc thêm một số bài viết của Anthropic hay của Google để các bạn hiểu được một số cách chúng ta chọn — chắc là khi bạn định đưa AI vào thì trong AI nó cũng có rất nhiều mức độ chứ không phải chỉ có một mức độ, bạn cũng phải chọn cái mức độ phù hợp.\n\nTHÔNG TIN BỔ SUNG TỪ WEB:\n[Nguồn 1] Hướng dẫn phân tích bài toán\nURL: https://www.youtube.com/watch?v=u4i3eGLlhoY\nNội dung: chào mọi người Hôm nay mình đã cập nhật một cái giao diện mới cho Trang demo của mini web khi mình khi mình gặp một cái đề bài Khi mình gặp một cái đề bài thì trong đa số trường hợp là mình không có biết trước được là mình cần làm gì mình cũng không mường tượng được chi tiết nó như thế nào như vậy t\n\n[Nguồn 2] Lỗi logic, lỗi câu mơ hồ và cách sửa (Lý thuyết, Bài tập)\nURL: https://vietjack.com/tai-lieu-mon-ngu-van/loi-logic-loi-cau-mo-ho-va-cach-sua.jsp\nNội dung: Khi sửa lỗi câu mơ hồ, trước hết, phải xác định được ý cần biểu đạt, tiếp đó, đọc lại câu để biết cần sắp xếp lại trật tự các thành phần câu như\n\n[Nguồn 3] [Toán suy luận] Suy luận tìm ra số tuổi từ thông tin \"mơ hồ\"\nURL: https://www.youtube.com/watch?v=C8GJ0JLqG8c\nNội dung: bài toán thông [Toán suy luận] Suy luận tìm ra số tuổi từ thông tin \"mơ hồ\" @akile5 likes86 views4 years ago\n\n[Nguồn 4] Hướng dẫn tại nhà cho gia đình\nURL: https://www.dpi.nc.gov/rethink-education-3-math-vietnamese-parent-guide/open\nNội dung: bài toán với một ký hiệu thay cho ẩn số. Bài toán: Tìm ẩn số: 96 - n = 60 Để giải bài này, học sinh có thể làm như sau: 90 + 6 - 60 + 0 Bài toán này yêu cầu học sinh lấy 10 từ 90 và đổi nó lấy 10 đơn vị, bạn sẽ có 16 thay vì 6. 80 + 16 -60______ 20 + 16 = 36 n = 36 Học sinh cũng có thể giải bài toán\n\n[Nguồn 5] 📢 Khi nhắc đến xác suất có điều kiện, ...\nURL: https://www.facebook.com/thaytranvantoan/posts/-khi-nh%E1%BA%AFc-%C4%91%E1%BA%BFn-x%C3%A1c-su%E1%BA%A5t-c%C3%B3-%C4%91i%E1%BB%81u-ki%E1%BB%87n-nhi%E1%BB%81u-h%E1%BB%8Dc-sinh-c%E1%BA%A3m-th%E1%BA%A5y-b%E1%BB%91i-r%E1%BB%91i-m%C6%A1-h%E1%BB%93-th%E1%BA%ADm-c/939399531693440\nNội dung: ➡ Cách khắc phục: Đừng học thuộc công thức một cách máy móc! Hãy sử dụng sơ đồ cây, bảng thống kê, hoặc phân tích từng bước nhỏ để hiểu bản\n\nCÂU HỎI HỌC VIÊN: Làm sao để xác định bài toán từ mơ hồ\n\nTRẢ LỜI:",
+  "rawAnswer": "Theo đoạn [T01-001], giảng viên có nói: \"Một trong những kỹ năng mình nghĩ quan trọng và đang cần nhất — đặc biệt ở các công ty muốn đưa AI vào ứng dụng — là khả năng xác định ra một bài toán từ một yêu cầu rất mơ hồ, hoặc khi các bạn tham g...\"",
+  "verified": {
+    "verifiedCitations": [
+      "T01-001"
+    ],
+    "hallucinated": [],
+    "focusedCodes": [
+      "T01-001",
+      "T01-030",
+      "T03-098",
+      "T01-017",
+      "T01-029"
+    ],
+    "allowedCodes": [
+      "T01-001",
+      "T01-030",
+      "T03-098",
+      "T01-017",
+      "T01-029"
+    ]
+  },
+  "mode": "FALLBACK-AFTER-ERROR",
+  "research": {
+    "question": "Làm sao để xác định bài toán từ mơ hồ",
+    "topChunks": [
+      {
+        "code": "T01-001",
+        "score": 0.9
+      },
+      {
+        "code": "T01-030",
+        "score": 0.8
+      },
+      {
+        "code": "T03-098",
+        "score": 0.8
+      },
+      {
+        "code": "T01-017",
+        "score": 0.7
+      },
+      {
+        "code": "T01-029",
+        "score": 0.7
+      }
+    ],
+    "sourcesFound": 5,
+    "queriesUsed": [
+      "Làm sao để xác định bài toán từ mơ hồ",
+      "làm xác định bài",
+      "Làm sao để xác định bài toán từ mơ hồ T01-001"
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Hướng dẫn phân tích bài toán",
+        "url": "https://www.youtube.com/watch?v=u4i3eGLlhoY",
+        "snippet": "chào mọi người Hôm nay mình đã cập nhật một cái giao diện mới cho Trang demo của mini web khi mình khi mình gặp một cái đề bài Khi mình gặp một cái đề bài thì trong đa số trường hợp là mình không có biết trước được là mình cần làm gì mình cũng không mường tượng được chi tiết nó như thế nào như vậy t"
+      },
+      {
+        "id": "S2",
+        "title": "Lỗi logic, lỗi câu mơ hồ và cách sửa (Lý thuyết, Bài tập)",
+        "url": "https://vietjack.com/tai-lieu-mon-ngu-van/loi-logic-loi-cau-mo-ho-va-cach-sua.jsp",
+        "snippet": "Khi sửa lỗi câu mơ hồ, trước hết, phải xác định được ý cần biểu đạt, tiếp đó, đọc lại câu để biết cần sắp xếp lại trật tự các thành phần câu như"
+      },
+      {
+        "id": "S3",
+        "title": "[Toán suy luận] Suy luận tìm ra số tuổi từ thông tin \"mơ hồ\"",
+        "url": "https://www.youtube.com/watch?v=C8GJ0JLqG8c",
+        "snippet": "bài toán thông [Toán suy luận] Suy luận tìm ra số tuổi từ thông tin \"mơ hồ\" @akile5 likes86 views4 years ago"
+      },
+      {
+        "id": "S4",
+        "title": "Hướng dẫn tại nhà cho gia đình",
+        "url": "https://www.dpi.nc.gov/rethink-education-3-math-vietnamese-parent-guide/open",
+        "snippet": "bài toán với một ký hiệu thay cho ẩn số. Bài toán: Tìm ẩn số: 96 - n = 60 Để giải bài này, học sinh có thể làm như sau: 90 + 6 - 60 + 0 Bài toán này yêu cầu học sinh lấy 10 từ 90 và đổi nó lấy 10 đơn vị, bạn sẽ có 16 thay vì 6. 80 + 16 -60______ 20 + 16 = 36 n = 36 Học sinh cũng có thể giải bài toán"
+      },
+      {
+        "id": "S5",
+        "title": "📢 Khi nhắc đến xác suất có điều kiện, ...",
+        "url": "https://www.facebook.com/thaytranvantoan/posts/-khi-nh%E1%BA%AFc-%C4%91%E1%BA%BFn-x%C3%A1c-su%E1%BA%A5t-c%C3%B3-%C4%91i%E1%BB%81u-ki%E1%BB%87n-nhi%E1%BB%81u-h%E1%BB%8Dc-sinh-c%E1%BA%A3m-th%E1%BA%A5y-b%E1%BB%91i-r%E1%BB%91i-m%C6%A1-h%E1%BB%93-th%E1%BA%ADm-c/939399531693440",
+        "snippet": "➡ Cách khắc phục: Đừng học thuộc công thức một cách máy móc! Hãy sử dụng sơ đồ cây, bảng thống kê, hoặc phân tích từng bước nhỏ để hiểu bản"
+      }
+    ],
+    "used": true
+  },
+  "toolCalls": [
+    {
+      "id": "call_O3YNJiihxEE7XCBTAX3cdA9K",
+      "name": "lookup_document",
+      "args": {
+        "topic": "xác định bài toán từ đề bài mơ hồ"
+      }
+    }
+  ],
+  "retrieveMode": "tfidf",
+  "docSummary": {
+    "summary": null,
+    "focusedChunks": [
+      "T01-001",
+      "T01-030",
+      "T03-098",
+      "T01-017",
+      "T01-029"
+    ]
+  }
+}

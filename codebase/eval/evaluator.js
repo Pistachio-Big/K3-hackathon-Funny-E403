@@ -131,7 +131,10 @@ ${context}
 
 CÂU HỎI: ${prompt}
 
-Trả lời dựa trên ngữ cảnh trên. Nếu không có thông tin, hãy thừa nhận rõ ràng.`
+QUAN TRỌNG - YÊU CẦU TRẢ LỜI:
+1. Nếu ngữ cảnh có thông tin liên quan: TRẢ LỜI và BẮT BUỘC cite theo format [trang X] (ví dụ: [trang 22])
+2. Nếu ngữ cảnh không đủ hoặc không liên quan: TỪ CHỐI trả lời, nói rõ lý do
+3. KHÔNG ĐƯỢC bịa thông tin hoặc trả lời khi không có căn cứ`
       }],
       temperature: 0.3,
       max_tokens: 500
@@ -253,6 +256,7 @@ async function main() {
     const c = cases[i];
     console.log(`[${i + 1}/${cases.length}] ${c.id}: ${c.question.slice(0, 50)}...`);
 
+    const t0 = Date.now();
     try {
       // Search relevant chunks
       const searchResults = searchLocal(c.question, 5);
@@ -268,6 +272,7 @@ async function main() {
 
       // Evaluate
       const evalResult = evaluate(response, c);
+      const latency = Date.now() - t0;
 
       results.push({
         id: c.id,
@@ -279,12 +284,14 @@ async function main() {
         safe_not_guess: evalResult.safe_not_guess,
         overall_pass: evalResult.overall_pass,
         expected_acceptable: c.is_acceptable,
-        response_preview: response.slice(0, 100)
+        response_preview: response.slice(0, 100),
+        latency_ms: latency
       });
 
-      console.log(`   ✓ Pass: ${evalResult.overall_pass} | Citation: ${evalResult.has_citation}`);
+      console.log(`   ✓ Pass: ${evalResult.overall_pass} | Citation: ${evalResult.has_citation} | Latency: ${latency}ms`);
 
     } catch (e) {
+      const latency = Date.now() - t0;
       console.error(`   ✗ Lỗi: ${e.message}`);
       results.push({
         id: c.id,
@@ -296,7 +303,8 @@ async function main() {
         safe_not_guess: false,
         overall_pass: false,
         expected_acceptable: c.is_acceptable,
-        response_preview: `ERROR: ${e.message.slice(0, 80)}`
+        response_preview: `ERROR: ${e.message.slice(0, 80)}`,
+        latency_ms: latency
       });
     }
 
@@ -304,7 +312,7 @@ async function main() {
   }
 
   // Write CSV
-  const header = "id,layer,question,has_citation,cite_format_ok,content_accurate,safe_not_guess,overall_pass,expected_acceptable,response_preview\n";
+  const header = "id,layer,question,has_citation,cite_format_ok,content_accurate,safe_not_guess,overall_pass,expected_acceptable,response_preview,latency_ms\n";
   const rows = results.map(r =>
     [
       r.id,
@@ -316,7 +324,8 @@ async function main() {
       r.safe_not_guess,
       r.overall_pass,
       r.expected_acceptable,
-      `"${r.response_preview.replace(/"/g, '""')}"`
+      `"${r.response_preview.replace(/"/g, '""')}"`,
+      r.latency_ms
     ].join(",")
   );
 
